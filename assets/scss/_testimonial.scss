@@ -1,0 +1,200 @@
+
+// About 02
+.about-area2{
+    position: relative;
+    padding-top: 195px;
+    padding-bottom: 210px;
+
+    @media #{$laptop}{
+        padding-top: 25px;
+        padding-bottom: 230px;
+    }
+    @media #{$lg}{
+        height: 523px;
+        width: 100%;
+        padding: 50px 30px;
+    }
+    @media #{$md}{
+        padding-top: 20px;
+        padding-bottom: 110px;
+    }
+    @media #{$sm}{
+        padding-top: 20px;
+        padding-bottom: 110px;
+    }
+    @media #{$xs}{
+        padding-top: 20px;
+        padding-bottom: 110px;
+    }
+    
+    // left content
+    .about-caption{
+        .quotes-sign {
+            margin-bottom: 70px;
+            @media #{$lg}{
+                margin-bottom: 34px;
+                display: none;
+            }
+        }
+    }
+    // Right img
+    .about-img2{
+        padding-left: 90px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+
+        @media #{$laptop}{
+            // padding-left: 70px;
+        }
+        @media #{$lg}{
+            width: 57%;
+        }
+        @media #{$md}{
+           display: none;
+        }
+        @media #{$sm}{
+           display: none;
+        }
+        @media #{$xs}{
+           display: none;
+        }
+        img{
+            width: 100%;
+            @media #{$md}{
+                width: 80%;
+            }
+            @media #{$sm}{
+                width: 80%;
+            }
+        }
+    }
+}
+
+.founder-img {
+	margin-left: -15px;
+}
+
+.testimonial-area{
+    .testimonial-caption{
+        p{
+            font-size:16px;
+            color: $heading_color;
+            color:#717b9b;
+            line-height: 45px;
+            line-height: 1.5;
+            margin-bottom: 37px;
+
+            @media #{$lg}{
+                margin-bottom: 15px;
+            }
+            @media #{$sm}{
+                width: 99%;
+            }
+        }
+    }
+    .rattiong-caption{
+        span{
+            color: #06080a;
+            font-size: 24px;
+            font-weight: 500;
+            text-transform: uppercase;
+           font-family:$font_1;
+            span{
+                color: #767676;
+                font-size: 16px;
+                text-transform: capitalize;
+                padding-left: 15px;
+            }
+        }
+    }
+    .founder-text {
+        span{
+
+            color: #1D2547;
+            font-weight: 500;
+            line-height: 1.5;
+            font-size: 22px;
+        }
+        p {
+            color: #646D77;
+            font-size: 14px;
+            @media #{$xs}{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+/* Homepage1 Testimonial */
+.h1-testimonial-active{
+    button.slick-arrow {
+        position: absolute;
+        border: 0;
+        padding: 10px;
+        cursor: pointer;
+        background: none;
+        @include transition(.4s);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 10px;
+        font-size: 20px;
+        color: #ff5a5a;;
+        bottom: -72px;
+        z-index: 1;
+        transform: rotate(-45deg) !important;
+        
+    } 
+   button.slick-next {
+        left: 55px !important;
+        transform: rotate(45deg) !important;
+       
+    }
+    // slick-dot style
+    &.dot-style{
+        .slick-dots {
+            bottom: -13%;
+            left: 44px;
+            position: absolute;
+            @media #{$lg}{
+                bottom: -22%;
+                left: 46px;
+            }
+            @media #{$sm}{
+                bottom: -12%;
+                left: 46px;
+            }
+            @media #{$xs}{
+                bottom: -11%;
+                left: 44px;
+            }
+        }
+        .slick-dots li {
+            display: inline-block;
+        }
+        .slick-dots button {
+            // padding: 0;
+            margin-right: 7px;
+            cursor: pointer;
+            background:none;
+            color: #000;
+            border: 0;
+            font-size: 16px;
+            padding:0;
+        }
+        .slick-active button{
+            // position: relative;
+            // text-decoration: underline;
+            // text-decoration-style: solid;
+            // padding-bottom: 5px;
+        }
+    }
+// End dot style
+}
+
+.slick-initialized .slick-slide {
+    outline: 0;
+}
+
