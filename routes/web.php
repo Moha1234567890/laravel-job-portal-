@@ -18,9 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index', function () {
-    return view('jobs.index');
-});
+
 
 
 Route::get('/contact', function () {

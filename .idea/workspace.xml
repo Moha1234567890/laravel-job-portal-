@@ -1,7 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e5b8d30-37eb-447c-ae8a-ee1c6bd10fce" name="Default Changelist" comment="" />
+    <list default="true" id="7e5b8d30-37eb-447c-ae8a-ee1c6bd10fce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/._jobhub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._Doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._assets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._blog_details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._categori.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._contact_process.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._job-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._listing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/._register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._fonts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/._syntax-highlighter" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/css/._font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/css/._main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/css/._normalize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/fonts/._FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/fonts/._fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/fonts/._fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/fonts/._fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/fonts/._fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/img/._logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/js/._custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/js/._jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/js/._jquery.nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/._scripts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/._styles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shAutoloader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushAS3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushAppleScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushBash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushCSharp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushColdFusion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushCpp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushCss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushDelphi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushDiff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushErlang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushGroovy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushJScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushJava.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushJavaFX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushPerl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushPhp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushPlain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushPowerShell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushPython.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushRuby.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushSass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushScala.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushSql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushVb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shBrushXml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/scripts/._shLegacy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCore.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shCoreRDark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/Doc/syntax-highlighter/styles/._shThemeRDark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/._css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/._fonts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/._img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/._js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/._scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._animated-headline.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._fontawesome-all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._gijgo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._hamburgers.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._nice-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._price_rangs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._progressbar_barfiller.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._slick.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._slicknav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._style.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/css/._themify-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._Flaticon.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._Flaticon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._Flaticon.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._Flaticon.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._Flaticon.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/.__flaticon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._flaticon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._gijgo-material.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._gijgo-material.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._gijgo-material.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._gijgo-material.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._themify.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._themify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._themify.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/fonts/._themify.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._blog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._elements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._gallery" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._hero" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._icon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._login-bg.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._logo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/._post" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._author.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._comment_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._comment_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._comment_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._learn_about_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._single_blog_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._single_blog_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._single_blog_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._single_blog_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._single_blog_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/blog/._slide_thumb_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._disabled-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._disabled-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._f8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._g8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._primary-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._primary-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._success-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/elements/._success-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._about.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._brand1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._brand2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._brand3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._brand4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._brand5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._footer-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._footer_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._form.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._h1_hero2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._heart1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._hero2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._job-pos-banner1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._job-pos-banner2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._qutaion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._section_bg01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._testimonail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/gallery/._testimonial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/hero/._h1_hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/hero/._hero2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._Homepage_testi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._job-pos-banner2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._jon-iocn1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._jon-iocn2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._jon-iocn3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._jon-iocn4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._jon-iocn5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._quotes-sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/icon/._services6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/logo/._loder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/logo/._loder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/logo/._logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/logo/._logo2_footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._post_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/img/post/._preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._animated.headline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._gijgo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._hover-direction-snake.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.ajaxchimp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.barfiller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.countdown.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.counterup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.magnific-popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.nice-select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.paroller.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.slicknav.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._jquery.vide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._mail-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._one-page-nav-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._price-range.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._vendor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/._wow.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/vendor/._jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/js/vendor/._modernizr-3.5.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__about.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__blog_page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__bradcam.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__category-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__common.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__contact.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__contact_form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__date_tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__details.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__elements.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__extend.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__h1-hero.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__headerMenu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__job-post.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__job_details.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__login.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__overlay.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__services.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__services_section.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__team.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__testimonial.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/.__wantTowork.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/__MACOSX/jobhub/assets/scss/._style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,79 +321,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="333">
+              <caret line="68" column="33" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="68" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/jobs.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/logins/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/includes/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobs/contact.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6870">
-              <caret line="229" column="11" selection-start-line="229" selection-start-column="11" selection-end-line="229" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/site.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/includes/footer.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="333">
+              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -99,8 +342,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+            <state relative-caret-position="210">
+              <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +358,18 @@
       <find>header</find>
       <find>__data</find>
       <find>about</find>
+      <find>home</find>
+      <find>ho</find>
+      <find>x</find>
+      <find>authenticatesusers.php</find>
+      <find>login</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\jobs</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -120,16 +377,24 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/resources/views/jobs.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/jobs.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/jobs/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/site.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/header.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/jobs/contact.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/site.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" />
+        <option value="$PROJECT_DIR$/resources/views/logins/login.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/logins/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/jobs/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/jobs/contact.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -245,11 +510,13 @@
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,13 +538,28 @@
             <path>
               <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
@@ -316,16 +598,49 @@
             <path>
               <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="logins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-backend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -370,17 +685,19 @@
       <workItem from="1598971604269" duration="2437000" />
       <workItem from="1599048105144" duration="1863000" />
       <workItem from="1599057148274" duration="967000" />
+      <workItem from="1599306241174" duration="10810000" />
+      <workItem from="1599387049915" duration="9441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12542000" />
+    <option name="totallyTimeSpent" value="32793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.26319876" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.29968944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5009242" side_tool="true" weight="0.2228261" />
@@ -425,76 +742,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/jobs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="433">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/jobs.blade.php">
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css" />
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includes/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/contact.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6870">
-          <caret line="229" column="11" selection-start-line="229" selection-start-column="11" selection-end-line="229" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/site.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret line="3" selection-start-line="3" selection-end-line="422" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includes/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="-1530">
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/header.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/site.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+        <state relative-caret-position="300">
+          <caret line="43" selection-start-line="43" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logins/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="64" column="40" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="60" selection-start-line="59" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logins/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1942">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="643">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="333">
+          <caret line="68" column="33" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="68" selection-end-column="33" />
         </state>
       </provider>
     </entry>
