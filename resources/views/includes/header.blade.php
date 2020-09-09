@@ -1,6 +1,6 @@
 <header>
     <!-- Header Start -->
-    <div class="header-area header-transparent">
+    <div class="header-area header-transparent" style="background: #3B74FF;">
         <div class="main-header ">
             <div class="header-bottom  header-sticky">
                 <div class="container-fluid">
@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('assets/img/logo/logo.png')}}" alt=""></a>
+                                <a href="{{url('/')}}"><img src="{{asset('assets/img/logo/logo.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">
@@ -49,14 +49,15 @@
                                                         </form>
                                                     </div>
                                                 </li>
-                                            @endguest
+
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-65">
-                                    <a href="contact.html" class="border-btn">Post a Job</a>
+                                    <a href="{{url('job/create')}}" class="border-btn">Post a Job</a>
                                 </div>
+                                @endguest
                             </div>
                         </div>
                         <!-- Mobile Menu -->

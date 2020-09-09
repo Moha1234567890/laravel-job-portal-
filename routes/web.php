@@ -27,4 +27,9 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+
+Route::group([ 'prefix' => 'job', 'namespace' => 'jobs', 'middleware' => 'auth:guest'], function(){
+    Route::get('create','JobsController@create')->name('createjob');
+});

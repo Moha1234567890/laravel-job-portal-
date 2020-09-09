@@ -1,3 +1,4 @@
+<div class="container">
 <footer >
     <div class="footer-wrappper pl-100 pr-100 section-bg" data-background="assets/img/gallery/footer-bg.png">
         <!-- Footer Start-->
@@ -113,3 +114,5 @@
         <!-- Footer End-->
     </div>
 </footer>
+
+</div>
