@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.css" rel="stylesheet">
 </head>
 <body>
 <!-- ? Preloader Start -->
@@ -97,6 +98,7 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{asset('assets/js/plugins.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
 
 
 </body>

@@ -27,9 +27,11 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group([ 'prefix' => 'job', 'namespace' => 'jobs', 'middleware' => 'auth:guest'], function(){
+Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
     Route::get('create','JobsController@create')->name('createjob');
+    Route::post('store','JobsController@store')->name('store.job');
+
 });
