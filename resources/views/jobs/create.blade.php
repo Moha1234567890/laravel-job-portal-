@@ -54,7 +54,29 @@
                             <option value="part time">part time</option>
 
                         </select>
+                        <br>
                         @error('jobtype')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Job category: </label>
+                        <br>
+
+
+                        <select class="form-control" name="jobcategory" id="exampleFormControlSelect1">
+                            <optgroup label="Choose job category">
+                                <option value="developemnt">developemnt</option>
+                                <option value="arts">arts</option>
+                                <option value="marketing">marketing</option>
+                            </optgroup>
+
+                        </select>
+                        <br>
+
+                        @error('jobcategory')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
                     </div>
@@ -62,8 +84,9 @@
                     <br>
 
                     <div class="form-group">
-                        <br>
+
                         <label for="exampleInputEmail1">Job description: </label>
+
                         <input type="hidden" class="form-control form-control-lg" name="jobdesc" id ="x" placeholder="enter description" rows="6">
                         @error('jobdesc')
                         <span class="text-danger">{{$message}} </span>

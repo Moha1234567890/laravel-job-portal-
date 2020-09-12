@@ -32,6 +32,7 @@
                                                    <li><a href="{{url('login')}}">Log in</a></li>
                                                 @endif
                                             @else
+                                                <li><a href="{{route('browse.jobs')}}">Browse Jobs</a></li>
                                                 <li class="nav-item dropdown">
                                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::user()->name }}

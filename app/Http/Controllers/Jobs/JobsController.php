@@ -9,6 +9,16 @@ use App\Http\Requests\JobsRequest;
 use App\Models\Job;
 class JobsController extends Controller
 {
+    public function index() {
+
+       // $jobs = Job::select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at' );
+
+        return view('jobs.index')->with('jobs', Job::all());
+
+
+
+    }
+
     public function create() {
 
        return  view('jobs.create');
@@ -17,21 +27,34 @@ class JobsController extends Controller
 
     public function store(JobsRequest $request) {
 
-       $job = Job::create($request->all());
 
-       if($job) {
-           session()->flash('success', 'created');
+        $job = Job::create($request->all());
 
-           return redirect(route('home'));
+        if ($job) {
+            session()->flash('success', 'created');
 
-       }else {
-           session()->flash('error', 'smth wrong');
-       }
+            return redirect(route('home'));
 
-       //dd($request->all());
+        } else {
+            session()->flash('error', 'smth wrong');
+        }
+    }
 
+
+    public function show($id) {
+
+        return view('jobs.show');
 
     }
+
+
+
+
+
+
+
+
+
 
 
 }

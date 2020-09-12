@@ -33,5 +33,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
     Route::get('create','JobsController@create')->name('createjob');
     Route::post('store','JobsController@store')->name('store.job');
+    Route::get('/','JobsController@index')->name('browse.jobs');
+    Route::get('show/{id}','JobsController@show')->name('browse.one.job');
+
+
+
 
 });
