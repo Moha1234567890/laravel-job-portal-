@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 
@@ -60,7 +61,7 @@ class JobsController extends Controller
         ];
 
         $to = "moha1234566044@gmail.com";
-        //$from = "hsn42476@gmail.com";
+       // $from = "hsn42476@gmail.com";
 
         \Mail::to($to)->send(new \App\Mail\ApplyMail($data));
         //\Mail::from($from)->send(new \App\Mail\ApplyMail($data));
