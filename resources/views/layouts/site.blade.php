@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="{{asset('site.webmanifest')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.css" rel="stylesheet">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -24,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <!-- ? Preloader Start -->

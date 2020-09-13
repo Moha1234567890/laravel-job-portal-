@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Jobs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\JobsRequest;
+use App\Mail\ApplyMail;
 
 use App\Models\Job;
 class JobsController extends Controller
@@ -41,10 +42,30 @@ class JobsController extends Controller
     }
 
 
-    public function show($id) {
+    public function show(Request $request) {
 
-        return view('jobs.show');
+        $job = Job::find($request->id);
 
+        if($job)
+            return view('jobs.show', compact('job'));
+
+
+
+    }
+
+    public function send(Request $request) {
+        $data = [
+            'name' => $request->name,
+            'image' => $request->file('image'),
+        ];
+
+        $to = "moha1234566044@gmail.com";
+        //$from = "hsn42476@gmail.com";
+
+        \Mail::to($to)->send(new \App\Mail\ApplyMail($data));
+        //\Mail::from($from)->send(new \App\Mail\ApplyMail($data));
+
+        echo "sent successfully";
     }
 
 
