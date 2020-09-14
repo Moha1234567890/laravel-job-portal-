@@ -9,7 +9,27 @@ class Job extends Model
 
     protected $table = 'jobs';
 
-    protected $fillable = ['email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at', 'updated_at'];
+    protected $fillable = [
+        'email',
+        'jobtitle',
+        'location',
+        'region',
+        'jobtype',
+        'jobcategory',
+        'jobdesc',
+        'vacancy',
+        'ex',
+        'sal',
+        'gender',
+        'respon',
+        'edu',
+        'ben',
+        'companyname',
+        'website',
+        'linkedin',
+        'created_at',
+        'updated_at'
+    ];
 
     public $timesamps = true;
 

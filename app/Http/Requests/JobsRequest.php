@@ -30,10 +30,10 @@ class JobsRequest extends FormRequest
             'region' => 'required|string|max:100',
             'jobtype' => 'required',
             'jobcategory' => 'required',
-            'jobdesc' => 'required|string|max:200|min:100',
+            'jobdesc' => 'required|string|max:800|min:100',
             'companyname' => 'required|string|max:100',
-            'website' => 'required|string|max:400',
-            'linkedin' => 'required|string|max:400',
+            'website' => 'required|string|max:100',
+            'linkedin' => 'required|string|max:100',
 
 
         ];
@@ -44,7 +44,7 @@ class JobsRequest extends FormRequest
         return [
             'required' => 'this field is required',
             'string' => 'string only',
-            'max' => 'maxuim should be 400 charachters',
+            'max' => 'maxuim should be 800 charachters',
             'min' => 'minuim should be 100 charachters'
 
 

@@ -31,9 +31,9 @@
                         <div>
                             <h2>{{$job->jobtitle}}</h2>
                             <div>
-                                <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span>{{$job->companyname}}</span>
-                                <span class="m-2"><span class="icon-room mr-2"></span>{{$job->location}},{{$job->region}}</span>
-                                <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary">{{$job->jobtype}}</span></span>
+                                <span class="ml-0 mr-2 mb-2"><span class="fa fa-briefcase fa-1x mr-2"></span>{{$job->companyname}}</span>
+                                <span class="m-2"><span class="fa fa-map-marker  fa-1x mr-2"></span>{{$job->location}},{{$job->region}}</span>
+                                <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span class="text-primary">{{$job->jobtype}}</span></span>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">
-                            <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save</a>
+                            <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2  text-danger"></span>Save</a>
                         </div>
                         <div class="col-6">
                             <a href="#" class="btn btn-block btn-primary btn-md">Apply</a>
@@ -53,60 +53,67 @@
                 <div class="col-lg-8">
                     <div class="mb-5">
                         <figure class="mb-5"><img src="{{asset('assets/images/job_single_img_1.jpg')}}" alt="Image" class="img-fluid rounded"></figure>
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-pencil fa-2x mr-3"></span>Job Description</h3>
                         <p>{{strip_tags($job->jobdesc)}})</p>
 
                     </div>
                     <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Responsibilities</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-rocket fa-2x mr-3"></span>Responsibilities</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis n Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
+                            {{strip_tags($job->respon)}}
+
                         </ul>
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education + Experience</h3>
+                        <h3 class="h5 d-flex align-items-center  mb-4 text-primary"><span class="fa fa-book fa-2x mr-3"></span>Education + Experience</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
+                           <li class="d-flex align-items-start mb-2"> {{strip_tags($job->edu)}} </li>
+
                         </ul>
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-turned_in mr-3"></span>Other Benifits</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-apple fa-2x mr-3"></span>Other Benifits</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
+                            {{strip_tags($job->ben)}}
                         </ul>
                     </div>
 
-                    <div class="mb-5">
-                        <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="text" class="form-control form-control-lg" name="name"  placeholder="enter region">
-                            <input type="file" name="image" class="form-control">
-                            <input type="submit"  class="form-control" value="submit">
-                        </form>
+                    <div class="mb-5 form-group">
+                        @if($job->email === Auth::user()->email)
+                            <h3>you created this job</h3>
+                        @else
+                            <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}" placeholder="enter region">
+                                <input type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}" placeholder="enter region">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
+                                </div>
+                               <div class="from-group">
+                                   <input type="file" name="image" class="form-control">
+                               </div>
+
+                                <br>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-3 form-group">
+                                        <button class="btn btn-success btn-md" type="submit">Apply</button>
+                                    </div>
+                                    <div class="col-3 form-group">
+                                        <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save it</a>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+                        @endif
                     </div>
 
-                    <div class="row mb-5">
-                        <div class="col-6">
-                            <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save Job</a>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </div>
-                    </div>
+
 
                 </div>
                 <div class="col-lg-4">
@@ -114,12 +121,12 @@
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                         <ul class="list-unstyled pl-3 mb-0">
                             <li class="mb-2"><strong class="text-black">Published on:</strong> {{$job->created_at}}</li>
-                            <li class="mb-2"><strong class="text-black">Vacancy:</strong> 20</li>
+                            <li class="mb-2"><strong class="text-black">{{$job->vacancy}}:</strong> 20</li>
                             <li class="mb-2"><strong class="text-black">Employment Status:</strong> {{$job->jobtype}}</li>
-                            <li class="mb-2"><strong class="text-black">Experience:</strong> 2 to 3 year(s)</li>
+                            <li class="mb-2"><strong class="text-black">Experience:</strong> {{$job->ex}} year(s)</li>
                             <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$job->location}}</li>
-                            <li class="mb-2"><strong class="text-black">Salary:</strong> $60k - $100k</li>
-                            <li class="mb-2"><strong class="text-black">Gender:</strong> Any</li>
+                            <li class="mb-2"><strong class="text-black">Salary:</strong> {{$job->sal}} $</li>
+                            <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
                             <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
                         </ul>
                     </div>

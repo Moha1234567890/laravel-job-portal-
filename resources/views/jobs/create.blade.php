@@ -83,6 +83,53 @@
 
                     <br>
 
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">vacancy: </label>
+                        <input type="text" class="form-control form-control-lg" name="vacancy"  placeholder="enter number of vacances">
+                        @error('vacancy')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">years of experince: </label>
+                        <input type="text" class="form-control form-control-lg" name="ex"  placeholder="enter number of years of experince">
+                        @error('ex')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">salary: </label>
+                        <input type="text" class="form-control form-control-lg" name="sal"  placeholder="salary">
+                        @error('sal')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">gender: </label>
+                        <br>
+
+
+                        <select class="form-control" name="gender" id="exampleFormControlSelect1">
+                            <optgroup label="Choose job category">
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                                <option value="all">all</option>
+
+                            </optgroup>
+
+                        </select>
+                        <br>
+
+                        @error('gender')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                    </div>
+                    <br>
+
                     <div class="form-group">
 
                         <label for="exampleInputEmail1">Job description: </label>
@@ -94,6 +141,47 @@
                         <trix-editor input="x"></trix-editor>
 
                     </div>
+
+                    <div class="form-group">
+
+                        <label for="exampleInputEmail1">resposibialty: </label>
+
+                        <input type="hidden" class="form-control form-control-lg" name="respon" id ="y" placeholder="enter resposibialties" rows="6"
+                               value="">
+                        @error('respon')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                        <trix-editor input="y"></trix-editor>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="exampleInputEmail1">Education: </label>
+
+                        <input type="hidden" class="form-control form-control-lg" name="edu" id ="z" placeholder="enter resposibialties" rows="6">
+                        @error('edu')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                        <trix-editor input="z"></trix-editor>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="exampleInputEmail1">Benfites: </label>
+
+                        <input type="hidden" class="form-control form-control-lg" name="ben" id ="t" placeholder="enter benfites" rows="6">
+                        @error('ben')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+                        <trix-editor input="t"></trix-editor>
+
+                    </div>
+
+
+
+
 
                     <h2>Company Details</h2>
 

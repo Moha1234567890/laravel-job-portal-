@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
+use App\User;
 
 use App\Models\Job;
 class JobsController extends Controller
@@ -54,14 +55,17 @@ class JobsController extends Controller
 
     }
 
-    public function send(Request $request) {
+    public function send(Request $request, User $user) {
         $data = [
-            'name' => $request->name,
+            'to' => $request->to,
+            'from' => $request->from,
+            'subject' => $request->subject,
             'image' => $request->file('image'),
+
         ];
 
-        $to = "moha1234566044@gmail.com";
-       // $from = "hsn42476@gmail.com";
+        $to = $data['from'];
+
 
         \Mail::to($to)->send(new \App\Mail\ApplyMail($data));
         //\Mail::from($from)->send(new \App\Mail\ApplyMail($data));

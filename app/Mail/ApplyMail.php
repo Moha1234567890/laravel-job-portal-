@@ -32,10 +32,12 @@ class ApplyMail extends Mailable
     public function build()
     {
 
-        $name = $this->data['name'];
+        $from = $this->data['from'];
+        $subject = $this->data['subject'];
 
-        return $this->from('hsn42476@gmail.com')->subject('email')
-            ->view('jobs.success', compact('name'))
+
+        return $this->from($from)->subject($subject)
+            ->view('jobs.success', compact('from'))
             ->attach($this->data['image']->getRealPath(), [
                 'as' => $this->data['image']->getClientOriginalName()]);
     }
