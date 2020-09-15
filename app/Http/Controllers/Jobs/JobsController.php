@@ -67,7 +67,7 @@ class JobsController extends Controller
         $to = $data['to'];
 
 
-        \Mail::to($to)->send(new \App\Mail\ApplyMail($data));
+        \Mail::to($to)->send(new ApplyMail($data));
         //\Mail::from($from)->send(new \App\Mail\ApplyMail($data));
 
         echo "sent successfully";
