@@ -86,8 +86,8 @@
                         @else
                             <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}" placeholder="enter region">
-                                <input type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}" placeholder="enter region">
+                                <input  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}" placeholder="enter region"> from
+                                <input  class="form-control form-control-lg" name="to" value="{{$job->email}}" placeholder="enter region"> to
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
                                 </div>

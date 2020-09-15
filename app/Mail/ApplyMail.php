@@ -34,9 +34,10 @@ class ApplyMail extends Mailable
 
         $from = $this->data['from'];
         $subject = $this->data['subject'];
+        $to = $this->data['to'];
 
 
-        return $this->from($from)->subject($subject)
+        return $this->to($to)->from($from)->subject($subject)
             ->view('jobs.success', compact('from'))
             ->attach($this->data['image']->getRealPath(), [
                 'as' => $this->data['image']->getClientOriginalName()]);
