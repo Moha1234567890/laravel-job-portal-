@@ -24,16 +24,17 @@ class JobsRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|max:100',
-            'jobtitle' => 'required|string|max:100',
-            'location' => 'required|string|max:100',
-            'region' => 'required|string|max:100',
-            'jobtype' => 'required',
-            'jobcategory' => 'required',
-            'jobdesc' => 'required|string|max:800|min:100',
-            'companyname' => 'required|string|max:100',
-            'website' => 'required|string|max:100',
-            'linkedin' => 'required|string|max:100',
+            'email'        => 'required|string|max:100',
+            'jobtitle'     => 'required|string|max:100',
+            'location'     => 'required|string|max:100',
+            'region'       => 'required|string|max:100',
+            'jobtype'      => 'required',
+            'jobcategory'  => 'required',
+            'jobdesc'      => 'required|string|max:800|min:100',
+            'companyname'  => 'required|string|max:100',
+            'website'      => 'required|string|max:100',
+            'linkedin'     => 'required|string|max:100'
+
 
 
         ];
@@ -43,9 +44,9 @@ class JobsRequest extends FormRequest
     {
         return [
             'required' => 'this field is required',
-            'string' => 'string only',
-            'max' => 'maxuim should be 800 charachters',
-            'min' => 'minuim should be 100 charachters'
+            'string'   => 'string only',
+            'max'      => 'maxuim should be 800 charachters',
+            'min'      => 'minuim should be 100 charachters'
 
 
         ];

@@ -90,21 +90,29 @@
                                 <input  class="form-control form-control-lg" name="to" value="{{$job->email}}" placeholder="enter region"> to
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
+
+
+
                                 </div>
                                <div class="from-group">
                                    <input type="file" name="image" class="form-control">
+
+
                                </div>
+
+                                <button class="btn btn-success" type="submit">appply</button>
 
                                 <br>
                                 <br>
 
                                 <div class="row">
+                                    {{--
                                     <div class="col-3 form-group">
-                                        <button class="btn btn-success btn-md" type="submit">Apply</button>
+                                        <input class="btn btn-success btn-md" class="btn btn-block btn-light btn-md" type="submit">Apply
                                     </div>
                                     <div class="col-3 form-group">
                                         <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save it</a>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
 
@@ -121,11 +129,11 @@
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                         <ul class="list-unstyled pl-3 mb-0">
                             <li class="mb-2"><strong class="text-black">Published on:</strong> {{$job->created_at}}</li>
-                            <li class="mb-2"><strong class="text-black">{{$job->vacancy}}:</strong> 20</li>
+                            <li class="mb-2"><strong class="text-black">vacancy:</strong> {{$job->vacancy}}</li>
                             <li class="mb-2"><strong class="text-black">Employment Status:</strong> {{$job->jobtype}}</li>
                             <li class="mb-2"><strong class="text-black">Experience:</strong> {{$job->ex}} year(s)</li>
                             <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$job->location}}</li>
-                            <li class="mb-2"><strong class="text-black">Salary:</strong> {{$job->sal}} $</li>
+                            <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$job->sal}}k</li>
                             <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
                             <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
                         </ul>

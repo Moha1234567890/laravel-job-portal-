@@ -10,6 +10,8 @@ use App\Mail\ApplyMail;
 use App\User;
 
 use App\Models\Job;
+
+
 class JobsController extends Controller
 {
     public function index() {
@@ -50,12 +52,14 @@ class JobsController extends Controller
 
         if($job)
             return view('jobs.show', compact('job'));
+        else
+            return redirect(route('browse.jobs'));
 
 
 
     }
 
-    public function send(Request $request, User $user) {
+    public function send(Request $request) {
         $data = [
             'to' => $request->to,
             'from' => $request->from,

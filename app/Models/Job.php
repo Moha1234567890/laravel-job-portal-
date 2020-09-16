@@ -35,7 +35,7 @@ class Job extends Model
 
 
     public function scopeSelection($q) {
-        return $q->select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at', );
+        return $q->select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at' );
 
     }
 }
