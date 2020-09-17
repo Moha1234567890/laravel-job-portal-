@@ -10,6 +10,8 @@ class Job extends Model
     protected $table = 'jobs';
 
     protected $fillable = [
+
+        'id',
         'email',
         'jobtitle',
         'location',
@@ -31,7 +33,7 @@ class Job extends Model
         'updated_at'
     ];
 
-    public $timesamps = true;
+    public $timestamps = true;
 
 
     public function scopeSelection($q) {

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
+use App\Models\SavedJobs;
 
 use App\Models\Job;
 
@@ -61,6 +62,7 @@ class JobsController extends Controller
 
     public function send(Request $request) {
         $data = [
+            'id' => $request->id,
             'to' => $request->to,
             'from' => $request->from,
             'subject' => $request->subject,
@@ -69,12 +71,41 @@ class JobsController extends Controller
         ];
 
         $to = $data['to'];
+        $id = $data['id'];
 
 
-        \Mail::to($to)->send(new ApplyMail($data));
-        //\Mail::from($from)->send(new \App\Mail\ApplyMail($data));
+        $mail = \Mail::to($to)->send(new ApplyMail($data));
 
-        echo "sent successfully";
+
+        if($mail)
+            session()->flash('success','you appled to this job');
+            return redirect()->route('browse.one.job', ['id' => $id]);
+
+
+
+
+
+
+
+
+
+    }
+
+    public function save(Request $request) {
+
+        SavedJobs::create([
+
+            'job_id' => $request->job_id,
+            'user_id' => $request->user_id,
+
+
+
+
+        ]);
+
+        echo 'done';
+
+
     }
 
 

@@ -41,7 +41,17 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">
-                            <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2  text-danger"></span>Save</a>
+                            <form class="form-group" method="post" action="{{route('save.job')}}">
+                                @csrf
+
+                                <input  type="hidden" class="form-control form-control-lg" name="user_id" value="{{Auth::user()->id}}">
+
+                                <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
+                                <input  type="submit" value="save" class="btn btn-success">
+
+
+                            </form>
+
                         </div>
                         <div class="col-6">
                             <a href="#" class="btn btn-block btn-primary btn-md">Apply</a>
@@ -49,6 +59,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-8">
                     <div class="mb-5">
@@ -86,8 +97,11 @@
                         @else
                             <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}" placeholder="enter region"> from
-                                <input  class="form-control form-control-lg" name="to" value="{{$job->email}}" placeholder="enter region"> to
+                                <input type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
+                                <input  type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
+                                <input  type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
+
+
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
 
@@ -95,24 +109,27 @@
 
                                 </div>
                                <div class="from-group">
-                                   <input type="file" name="image" class="form-control">
+                                   <input type="file" name="image" class="form-control form-control-lg">
 
 
                                </div>
 
-                                <button class="btn btn-success" type="submit">appply</button>
+
+
+
 
                                 <br>
                                 <br>
 
                                 <div class="row">
-                                    {{--
+
                                     <div class="col-3 form-group">
-                                        <input class="btn btn-success btn-md" class="btn btn-block btn-light btn-md" type="submit">Apply
+                                        <button class="btn btn-success" type="submit">apply</button>
                                     </div>
                                     <div class="col-3 form-group">
-                                        <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save it</a>
-                                    </div> --}}
+
+
+                                    </div>
 
                                 </div>
 
