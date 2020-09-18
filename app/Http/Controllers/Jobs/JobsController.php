@@ -47,9 +47,10 @@ class JobsController extends Controller
     }
 
 
-    public function show(Request $request) {
+    public function show(Request $request, User $user) {
 
         $job = Job::find($request->id);
+        $job = User::find($user->id);
 
         if($job)
             return view('jobs.show', compact('job'));
