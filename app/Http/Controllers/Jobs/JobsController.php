@@ -47,15 +47,24 @@ class JobsController extends Controller
     }
 
 
-    public function show(Request $request, User $user) {
+    public function show(Request $request) {
 
-        $job = Job::find($request->id);
-        $job = User::find($user->id);
+         $job = Job::find($request->id);
+        $saved_job = SavedJobs::find($request->id);
+
+        $data = [
+
+            'job' => $job,
+            'saved_job' => $saved_job
+        ];
 
         if($job)
-            return view('jobs.show', compact('job'));
+            return view('jobs.show', compact('data'));
         else
             return redirect(route('browse.jobs'));
+
+        dd($request->all());
+
 
 
 

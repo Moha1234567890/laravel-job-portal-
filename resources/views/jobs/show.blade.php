@@ -8,11 +8,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
+                    <h1 class="text-primary font-weight-bold">{{$data['job']->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
                         <a class="text-primary" href="{{route('browse.jobs')}}">Jobs</a> <span class="mx-2 slash">/</span>
-                        <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
+                        <span class="text-white"><strong>{{$data['job']->jobtitle}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -29,11 +29,11 @@
                             <img src="{{asset('assets/images/job_logo_5.jpg')}}" alt="Image">
                         </div>
                         <div>
-                            <h2>{{$job->jobtitle}}</h2>
+                            <h2>{{$data['job']->jobtitle}}</h2>
                             <div>
-                                <span class="ml-0 mr-2 mb-2"><span class="fa fa-briefcase fa-1x mr-2"></span>{{$job->companyname}}</span>
-                                <span class="m-2"><span class="fa fa-map-marker  fa-1x mr-2"></span>{{$job->location}},{{$job->region}}</span>
-                                <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span class="text-primary">{{$job->jobtype}}</span></span>
+                                <span class="ml-0 mr-2 mb-2"><span class="fa fa-briefcase fa-1x mr-2"></span>{{$data['job']->companyname}}</span>
+                                <span class="m-2"><span class="fa fa-map-marker  fa-1x mr-2"></span>{{$data['job']->location}},{{$data['job']->region}}</span>
+                                <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span class="text-primary">{{$data['job']->jobtype}}</span></span>
                             </div>
                         </div>
                     </div>
@@ -46,8 +46,23 @@
 
                                 <input  type="hidden" class="form-control form-control-lg" name="user_id" value="{{Auth::user()->id}}">
 
-                                <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
-                                <input  type="submit" value="save" class="btn btn-success">
+                                <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$data['job']->id}}">
+                               {{-- @if($data['saved_job']->user_id == Auth::user()->id)
+
+                                    <input  type="submit" value="save" class="btn btn-success">
+                                @else
+                                    <input  type="submit" value="saved" class="btn btn-success">
+                                 @endif
+                                 --}}
+
+
+
+
+
+
+                            <?php var_dump($data['saved_job']); ?>
+
+
 
 
                             </form>
@@ -65,13 +80,13 @@
                     <div class="mb-5">
                         <figure class="mb-5"><img src="{{asset('assets/images/job_single_img_1.jpg')}}" alt="Image" class="img-fluid rounded"></figure>
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-pencil fa-2x mr-3"></span>Job Description</h3>
-                        <p>{{strip_tags($job->jobdesc)}})</p>
+                        <p>{{strip_tags($data['job']->jobdesc)}})</p>
 
                     </div>
                     <div class="mb-5">
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-rocket fa-2x mr-3"></span>Responsibilities</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            {{strip_tags($job->respon)}}
+                            {{strip_tags($data['job']->respon)}}
 
                         </ul>
                     </div>
@@ -79,7 +94,7 @@
                     <div class="mb-5">
                         <h3 class="h5 d-flex align-items-center  mb-4 text-primary"><span class="fa fa-book fa-2x mr-3"></span>Education + Experience</h3>
                         <ul class="list-unstyled m-0 p-0">
-                           <li class="d-flex align-items-start mb-2"> {{strip_tags($job->edu)}} </li>
+                           <li class="d-flex align-items-start mb-2"> {{strip_tags($data['job']->edu)}} </li>
 
                         </ul>
                     </div>
@@ -87,19 +102,19 @@
                     <div class="mb-5">
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-apple fa-2x mr-3"></span>Other Benifits</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            {{strip_tags($job->ben)}}
+                            {{strip_tags($data['job']->ben)}}
                         </ul>
                     </div>
 
                     <div class="mb-5 form-group">
-                        @if($job->email === Auth::user()->email)
+                        @if($data['job']->email === Auth::user()->email)
                             <h3>you created this job</h3>
                         @else
                             <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
-                                <input  type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
-                                <input  type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
+                                <input  type="hidden" class="form-control form-control-lg" name="to" value="{{$data['job']->email}}">
+                                <input  type="hidden" class="form-control form-control-lg" name="id" value="{{$data['job']->id}}">
 
 
                                 <div class="form-group">
@@ -145,13 +160,13 @@
                     <div class="bg-light p-3 border rounded mb-4">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                         <ul class="list-unstyled pl-3 mb-0">
-                            <li class="mb-2"><strong class="text-black">Published on:</strong> {{$job->created_at}}</li>
-                            <li class="mb-2"><strong class="text-black">vacancy:</strong> {{$job->vacancy}}</li>
-                            <li class="mb-2"><strong class="text-black">Employment Status:</strong> {{$job->jobtype}}</li>
-                            <li class="mb-2"><strong class="text-black">Experience:</strong> {{$job->ex}} year(s)</li>
-                            <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$job->location}}</li>
-                            <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$job->sal}}k</li>
-                            <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
+                            <li class="mb-2"><strong class="text-black">Published on:</strong> {{$data['job']->created_at}}</li>
+                            <li class="mb-2"><strong class="text-black">vacancy:</strong> {{$data['job']->vacancy}}</li>
+                            <li class="mb-2"><strong class="text-black">Employment Status:</strong> {{$data['job']->jobtype}}</li>
+                            <li class="mb-2"><strong class="text-black">Experience:</strong> {{$data['job']->ex}} year(s)</li>
+                            <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$data['job']->location}}</li>
+                            <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$data['job']->sal}}k</li>
+                            <li class="mb-2"><strong class="text-black">Gender:</strong> {{$data['job']->gender}}</li>
                             <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
                         </ul>
                     </div>
