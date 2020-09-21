@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
-use App\Models\SavedJobs;
+use App\Models\SavedJob;
 
 use App\Models\Job;
 
@@ -47,23 +47,36 @@ class JobsController extends Controller
     }
 
 
-    public function show(Request $request) {
+    public function show($id) {
 
-         $job = Job::find($request->id);
-        $saved_job = SavedJobs::find($request->id);
+        //$saved_job = SavedJob::find($id);
 
-        $data = [
 
-            'job' => $job,
-            'saved_job' => $saved_job
-        ];
+        $jobs =  Job::with('savedJobs')->find($id);
 
-        if($job)
-            return view('jobs.show', compact('data'));
-        else
-            return redirect(route('browse.jobs'));
+        $x = $jobs->savedJobs;
+        $f = $jobs;
 
-        dd($request->all());
+
+
+        /*echo $f->email;
+
+        foreach($x as $y) {
+            echo $y->id;
+        }*/
+
+
+
+
+
+
+
+
+
+        return view('jobs.show', with(['data' => $x, 'job' => $f]));
+
+
+        //dd($request->all());
 
 
 
@@ -103,7 +116,7 @@ class JobsController extends Controller
 
     public function save(Request $request) {
 
-        SavedJobs::create([
+        SavedJob::create([
 
             'job_id' => $request->job_id,
             'user_id' => $request->user_id,
@@ -116,7 +129,17 @@ class JobsController extends Controller
         echo 'done';
 
 
+
+
     }
+
+
+  /*  public function fuck ($job_id) {
+        //$job_id = 7;
+        $x = SavedJob::find($job_id);
+       $jobs = $x->jobs;
+        return $x;
+    } */
 
 
 

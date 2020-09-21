@@ -40,4 +40,9 @@ class Job extends Model
         return $q->select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at' );
 
     }
+
+    public function savedJobs()
+    {
+        return $this->hasMany('App\Models\SavedJob','job_id', 'id');
+    }
 }

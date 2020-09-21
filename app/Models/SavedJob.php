@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SavedJobs extends Model
+class SavedJob extends Model
 {
     protected $table = 'savedjobs';
 
@@ -20,4 +20,15 @@ class SavedJobs extends Model
     ];
 
     public $timestamps = true;
+
+
+    public function jobs()
+    {
+        return $this->belongsTo('App\Models\Job', 'job_id', 'id');
+    }
+
+
+
+
+
 }
