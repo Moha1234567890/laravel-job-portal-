@@ -190,11 +190,39 @@
     --}}
 
     <?php
-        $job->id;
+       // $job->id;
+
+
+    echo "<pre>";
+
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+
+    //echo ($data['uid']->job_id);
+    //echo ($data['jobs']->id);
+    //print_r ($jobx);
+
+    echo "<br>";
+
+    if(isset($data['uid']->job_id) && !$data['uid']->job_id == '') {
+        echo 'set';
+    } else {
+        echo "not set";
+    }
 
 
 
-// print_r($job);
+
+    // if($data['id'])
+
+
+
+    echo "</pre>";
+
 
     ?>
 

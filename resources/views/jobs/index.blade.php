@@ -13,7 +13,7 @@
 
                         <div class="job-listing-logo">
                             {{--fix url bug--}}
-                            <a href="{{route('browse.one.job', ['id' => $job->id])}}"> <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="Image" class="img-thumbnail mw-100" style="width: 150px; height: 150px;"></a>
+                            <a href="{{route('browse.one.job', ['id' => $job->id, 'uid' => Auth::user()->id])}}"> <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="Image" class="img-thumbnail mw-100" style="width: 150px; height: 150px;"></a>
                         </div>
 
                         <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">

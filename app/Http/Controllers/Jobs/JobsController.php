@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
@@ -47,23 +48,38 @@ class JobsController extends Controller
     }
 
 
-    public function show($id) {
+    public function show($id, $uid) {
 
-        //$saved_job = SavedJob::find($id);
+        //$job = SavedJob::find($id);
+
+        $uid = SavedJob::find($id);
+
+        //return $uid;
+
+        //$uid = 10;
 
 
-        $jobs =  Job::with('savedJobs')->find($id);
+        $jobs =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->distinct()->limit(1)->first();
+       //$jobx =  SavedJob::select('id','user_id','job_id')->from('savedjobs')->where('id', $uid->id)->distinct()->limit(1)->first();
 
-        $x = $jobs->savedJobs;
-        $f = $jobs;
+        //$x = $jobs->savedJobs;
+        //$f = $jobs;
+
+        $data = [
+            'uid' => $uid,
+            'jobs' => $jobs,
+           // 'jobx' => $jobx
+
+
+        ];
 
 
 
-        /*echo $f->email;
+       // print_r ($f->email);
 
-        foreach($x as $y) {
+       /* foreach($x as $y) {
             echo $y->id;
-        }*/
+        } */
 
 
 
@@ -73,7 +89,7 @@ class JobsController extends Controller
 
 
 
-        return view('jobs.show', with(['data' => $x, 'job' => $f]));
+       return view('jobs.show', compact('data'));
 
 
         //dd($request->all());
