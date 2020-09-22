@@ -52,26 +52,35 @@ class JobsController extends Controller
 
         //$job = SavedJob::find($id);
 
-        $uid = SavedJob::find($id);
+        $xid = $uid;
+
+        $jobs = Job::find($id);
+
+        //return $xid;
+        //return $xid;
+
+
+
+
 
         //return $uid;
 
         //$uid = 10;
 
 
-        $jobs =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->distinct()->limit(1)->first();
-       //$jobx =  SavedJob::select('id','user_id','job_id')->from('savedjobs')->where('id', $uid->id)->distinct()->limit(1)->first();
-
+        //$job =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->distinct()->limit(1)->first();
+       $jobx =  SavedJob::with('jobs')->from('savedjobs')->where('user_id', $uid)->distinct()->limit(2)->get();
+         //return $jobx->job_id;
         //$x = $jobs->savedJobs;
         //$f = $jobs;
 
-        $data = [
-            'uid' => $uid,
+        /*$data = [
+            'xid' => $xid,
             'jobs' => $jobs,
-           // 'jobx' => $jobx
+           //'jobx' => $jobx
 
 
-        ];
+        ];*/
 
 
 
@@ -87,9 +96,9 @@ class JobsController extends Controller
 
 
 
+      // you use jobs and jobx vars to get the data
 
-
-       return view('jobs.show', compact('data'));
+       return view('jobs.show', compact('jobs'));
 
 
         //dd($request->all());

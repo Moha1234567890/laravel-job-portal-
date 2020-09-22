@@ -202,17 +202,25 @@
     echo "<br>";
     echo "<br>";
 
-    //echo ($data['uid']->job_id);
-    //echo ($data['jobs']->id);
-    //print_r ($jobx);
+    //print_r ($data['xid']);
+  //  echo ($data['jobs']->id);
+    //print_r ($data['jobx']);
+    //print_r ($jobx->jobs);
+    /*foreach($jobx as $job) {
+        echo $job->job_id;
+        if($job->job_id ==9) {
+            echo "its nine";
+        } else {
+            echo "its somth else";
+        }
+    }*/
+
+   // print_r($jobs);
 
     echo "<br>";
 
-    if(isset($data['uid']->job_id) && !$data['uid']->job_id == '') {
-        echo 'set';
-    } else {
-        echo "not set";
-    }
+    print_r($jobs->jobdesc);
+
 
 
 
