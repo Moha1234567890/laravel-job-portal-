@@ -26,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+            <state relative-caret-position="243">
+              <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
               <folding>
                 <element signature="e#45#81#0#PHP" expanded="true" />
               </folding>
@@ -38,8 +38,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/jobs/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+            <state relative-caret-position="61">
+              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+              <folding>
+                <element signature="e#114#300#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,7 +50,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/SavedJob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="240">
               <caret line="8" column="33" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="33" />
             </state>
           </provider>
@@ -56,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
+            <state relative-caret-position="450">
               <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
             </state>
           </provider>
@@ -83,10 +86,11 @@
       <find>sal</find>
       <find>img</find>
       <find>brows</find>
-      <find>save</find>
       <find>$job-&gt;jobtitle</find>
       <find>saved_jobs</find>
       <find>savedJobs</find>
+      <find>data</find>
+      <find>save</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\jobs</dir>
@@ -435,18 +439,19 @@
       <workItem from="1600685394041" duration="1215000" />
       <workItem from="1600688611729" duration="10396000" />
       <workItem from="1600716934678" duration="4059000" />
-      <workItem from="1600765832119" duration="7831000" />
+      <workItem from="1600765832119" duration="8195000" />
+      <workItem from="1600876170815" duration="4900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156747000" />
+    <option name="totallyTimeSpent" value="162011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.23136646" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.23835404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5009242" side_tool="true" weight="0.2228261" />
@@ -690,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -706,15 +704,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/SavedJob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="240">
           <caret line="8" column="33" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+        <state relative-caret-position="243">
+          <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
           </folding>
@@ -723,8 +728,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/jobs/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+        <state relative-caret-position="61">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+          <folding>
+            <element signature="e#114#300#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

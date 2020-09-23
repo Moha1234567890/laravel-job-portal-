@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
-    {{--
+
     <section class="section-hero overlay inner-page bg-image" style="background-image: url({{asset('assets/images/hero_1.jpg')}}); margin-top: 102px;
             padding-bottom: 200px;
             padding-top: 200px;
@@ -13,7 +13,7 @@
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
                         <a class="text-primary" href="{{route('browse.jobs')}}">Jobs</a> <span class="mx-2 slash">/</span>
-                        <span class="text-white"><strong>{{$data['job']->jobtitle}}</strong></span>
+                        <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -49,10 +49,38 @@
 
                                 <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
 
+                                @foreach($jobx as $jobs)
+                                {{-- //echo $job->job_id;
+                                   if($job->job_id == $jobs->id) {
+                                 echo $job->job_id;
+                                 } else {
+                                 break;
+                                 } --}}
 
-                                    <input  type="submit" value="saved" class="btn btn-success">
+                                    @if($jobs->job_id == $job->id OR $jobs->job_id == [])
+                                        <input  type="submit" value="saved" class="btn btn-success">
+                                    @elseif($jobs->user_id === null)
 
-                                    <input  type="submit" value="save" class="btn btn-success">
+                                        <input  type="submit" value="save" class="btn btn-success">
+
+
+
+
+
+
+
+
+
+
+
+
+                                    @endif
+
+
+                                @endforeach
+
+
+
 
 
 
@@ -187,51 +215,8 @@
         </div>
     </section>
 
-    --}}
-
-    <?php
-       // $job->id;
-
-
-    echo "<pre>";
-
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-
-    //print_r ($data['xid']);
-  //  echo ($data['jobs']->id);
-    //print_r ($data['jobx']);
-    //print_r ($jobx->jobs);
-    /*foreach($jobx as $job) {
-        echo $job->job_id;
-        if($job->job_id ==9) {
-            echo "its nine";
-        } else {
-            echo "its somth else";
-        }
-    }*/
-
-   // print_r($jobs);
-
-    echo "<br>";
-
-    print_r($jobs->jobdesc);
 
 
 
-
-
-    // if($data['id'])
-
-
-
-    echo "</pre>";
-
-
-    ?>
 
 @endsection
