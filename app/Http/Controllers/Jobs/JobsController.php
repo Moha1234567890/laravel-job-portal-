@@ -158,13 +158,18 @@ class JobsController extends Controller
 
     }
 
+    public function delete($job_id) {
 
-  /*  public function fuck ($job_id) {
-        //$job_id = 7;
-        $x = SavedJob::find($job_id);
-       $jobs = $x->jobs;
-        return $x;
-    } */
+       $job_del = SavedJob::where('job_id', $job_id);
+
+        $job_del->delete();
+
+        return redirect(route('home'));
+
+    }
+
+
+
 
 
 

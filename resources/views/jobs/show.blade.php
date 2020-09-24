@@ -50,22 +50,27 @@
                                 <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
 
                                 @foreach($jobx as $jobs)
-                                {{-- //echo $job->job_id;
-                                   if($job->job_id == $jobs->id) {
-                                 echo $job->job_id;
-                                 } else {
-                                 break;
-                                 } --}}
-
-                                    @if($jobs->job_id == $job->id OR $jobs->job_id == [])
-                                        <input  type="submit" value="saved" class="btn btn-success">
-                                    @elseif($jobs->user_id === null)
-
-                                        <input  type="submit" value="save" class="btn btn-success">
 
 
 
 
+                                    @switch($jobs->user_id)
+                                        @case($jobs->job_id == $job->id)
+                                        <a href="{{route('delete.job', $jobs->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                        @break
+
+                                        @case($jobs->job_id)
+                                        <?php unset($jobs->job_id); ?>
+                                        <input  type="submit" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
+
+                                        @break
+
+
+
+                                        @default
+                                        <input  type="submit" class="form-control form-control-lg" name="job_id" value="save">
+
+                                    @endswitch
 
 
 
@@ -74,7 +79,19 @@
 
 
 
-                                    @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                                 @endforeach
@@ -89,7 +106,7 @@
 
 
 
-                            <?php //var_dump($job); ?>
+
 
 
 
