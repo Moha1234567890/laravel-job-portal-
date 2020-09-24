@@ -56,7 +56,7 @@
 
                                     @switch($jobs->user_id)
                                         @case($jobs->job_id == $job->id)
-                                        <a href="{{route('delete.job', $jobs->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                        <a href="{{route('delete.job', $jobs->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
                                         @break
 
                                         @case($jobs->job_id)

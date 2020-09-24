@@ -160,7 +160,7 @@ class JobsController extends Controller
 
     public function delete($job_id) {
 
-       $job_del = SavedJob::where('job_id', $job_id);
+       $job_del = SavedJob::where('id', $job_id);
 
         $job_del->delete();
 
