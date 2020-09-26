@@ -12,7 +12,7 @@
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
-                        <a class="text-primary" href="{{route('browse.jobs')}}">Jobs</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="">Jobs</a> <span class="mx-2 slash">/</span>
                         <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
                     </div>
                 </div>
@@ -47,44 +47,40 @@
 
                                 <input  type="hidden" class="form-control form-control-lg" name="user_id" value="{{Auth::user()->id}}">
 
+
                                 <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
 
-                                @foreach($jobx as $jobs)
+                               @if($jobx == [])
+                                    <button class="btn btn-success" type="submit">save</button>
+                                @else
+
+                                    @foreach($jobx as $jobs)
 
 
 
 
-                                    @switch($jobs->user_id)
-                                        @case($jobs->job_id == $job->id)
-                                        <a href="{{route('delete.job', $jobs->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
-                                        @break
+                                        @switch($jobs->user_id)
+                                            @case($jobs->job_id == $job->id)
+                                            <a href="{{route('delete.job', $jobs->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                            @break
 
-                                        @case($jobs->job_id)
-                                        <?php unset($jobs->job_id); ?>
-                                        <input  type="submit" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
+                                            @case(empty(isset($jobs->id)))
 
-                                        @break
+                                            <button class="btn btn-success" type="submit">save</button>
 
 
+                                            @break
 
-                                        @default
-                                        <input  type="submit" class="form-control form-control-lg" name="job_id" value="save">
 
-                                    @endswitch
+
+                                            @default
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+                                        @endswitch
+                                    @endforeach
+                                 @endif
 
 
 
@@ -94,7 +90,21 @@
 
 
 
-                                @endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,6 +212,11 @@
 
 
                 </div>
+
+
+
+
+
                 <div class="col-lg-4">
                     <div class="bg-light p-3 border rounded mb-4">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
@@ -228,12 +243,15 @@
                     </div>
 
                 </div>
+
             </div>
         </div>
+
     </section>
 
 
 
-
-
 @endsection
+
+
+

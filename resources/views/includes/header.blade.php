@@ -32,7 +32,17 @@
                                                    <li><a href="{{url('login')}}">Log in</a></li>
                                                 @endif
                                             @else
-                                                <li><a href="{{route('browse.jobs')}}">Browse Jobs</a></li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Browse Jobs by
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.cats')}}">Category</a>
+                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.cities')}}">City</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-primary" href="#">Something else here</a>
+                                                    </div>
+                                                </li>
                                                 <li class="nav-item dropdown">
                                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::user()->name }}

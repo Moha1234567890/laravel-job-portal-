@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -50,45 +51,12 @@ class JobsController extends Controller
 
     public function show($id, $uid) {
 
-        //$job = SavedJob::find($id);
 
-        $xid = $uid;
+
+
 
         $job = Job::find($id);
 
-        //return $xid;
-        //return $xid;
-
-
-
-
-
-        //return $uid;
-
-        //$uid = 10;
-
-
-        //$job =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->distinct()->limit(1)->first();
-       $jobx =  SavedJob::with('jobs')->from('savedjobs')->where('user_id', $uid)->distinct()->get();
-         //return $jobx->job_id;
-        //$x = $jobs->savedJobs;
-        //$f = $jobs;
-
-        /*$data = [
-            'xid' => $xid,
-            'jobs' => $jobs,
-           //'jobx' => $jobx
-
-
-        ];*/
-
-
-
-       // print_r ($f->email);
-
-       /* foreach($x as $y) {
-            echo $y->id;
-        } */
 
 
 
@@ -96,12 +64,31 @@ class JobsController extends Controller
 
 
 
-      // you use jobs and jobx vars to get the data
+
+
+        //$job =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->get();
+       $jobx =  SavedJob::with('jobs')->from('savedjobs')->where('user_id', $uid)->get();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        return view('jobs.show', compact('jobx', 'job'));
 
 
-        //dd($request->all());
+
 
 
 
@@ -164,7 +151,15 @@ class JobsController extends Controller
 
         $job_del->delete();
 
-        return redirect(route('home'));
+        return redirect(route('browse.jobs'));
+
+    }
+
+    public function cats() {
+
+
+
+        return view('jobs.cats')->with('cats', Category::all());
 
     }
 
