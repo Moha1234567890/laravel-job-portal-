@@ -164,6 +164,20 @@ class JobsController extends Controller
     }
 
 
+    public function category($name) {
+
+       
+
+        $category = Job::with('getCategory')->where('jobcategory', $name)->get();
+
+        if($category) {
+            return view('jobs.category', compact('category'));
+        } else {
+            return redirect('home');
+        }
+    }
+
+
 
 
 

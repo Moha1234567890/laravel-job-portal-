@@ -45,4 +45,8 @@ class Job extends Model
     {
         return $this->hasMany('App\Models\SavedJob','job_id', 'id');
     }
+
+    public function getCategory() {
+        return $this->belongsTo('App\Models\Category','jobcategory','name');
+    }
 }

@@ -11,7 +11,7 @@
                     @foreach($cats as $cat)
                 <div class=" col-md-4 ">
 
-                    <a href="service-single.html" class="text-center d-block">
+                    <a href="{{route('browse.category.jobs',$cat->name)}}" class="text-center d-block">
                         <span class="fa fa-facebook fa-2x" style="color:#3b74ff" ><span class="icon-magnet d-block"></span></span>
                         <h3>{{$cat->name}}</h3>
                         <p>{{$cat->cat_desc}}</p>
@@ -23,6 +23,9 @@
             </div>
         </div>
     </section>
+
+
+
 
 @endsection
 

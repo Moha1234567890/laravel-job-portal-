@@ -20,4 +20,9 @@ class Category extends Model
     public $timestamps = true;
 
 
+    public function hasJobs() {
+        return $this->hasMany('App\Models\Job', 'jobcategory','name');
+    }
+
+
 }
