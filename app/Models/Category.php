@@ -13,6 +13,8 @@ class Category extends Model
 
         'id',
         'name',
+        'font',
+        'cat_desc',
         'created_at',
         'updated_at'
     ];
