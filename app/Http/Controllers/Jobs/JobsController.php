@@ -178,6 +178,29 @@ class JobsController extends Controller
     }
 
 
+    public function cities() {
+
+
+
+
+       $cities = Job::select('region')->distinct()->get();
+
+        return view('jobs.cities', compact('cities'));
+
+    }
+
+    public function city($city) {
+
+        $region = Job::select()->where('region', $city)->get();
+
+       if($region) {
+           return view('jobs.city', compact('region'));
+       } else {
+           return redirect('home');
+       }
+    }
+
+
 
 
 

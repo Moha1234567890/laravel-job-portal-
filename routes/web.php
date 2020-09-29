@@ -35,6 +35,7 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
     Route::post('store','JobsController@store')->name('store.job');
     Route::get('cats','JobsController@cats')->name('browse.jobs.cats');
     Route::get('cities','JobsController@cities')->name('browse.jobs.cities');
+    Route::get('city/{city}','JobsController@city')->name('browse.city.jobs');
     Route::get('category/{name}','JobsController@category')->name('browse.category.jobs');
     Route::get('show/{id}/{uid}','JobsController@show')->name('browse.one.job');
     Route::post('apply','JobsController@send')->name('apply.job');
