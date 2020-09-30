@@ -4,7 +4,7 @@
     <section class="site-section" id="next">
 <div class="container">
    <div class="row no-gutters">
-    <div class="col-md-12" style="margin-top:205px">
+    <div class="col-md-12 header-margin">
 
         @if(isset($jobs) && $jobs->count() > 0)
             @foreach($jobs as $job)

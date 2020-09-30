@@ -2,10 +2,7 @@
 
 @section('content')
 
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url({{asset('assets/images/hero_1.jpg')}}); margin-top: 102px;
-            padding-bottom: 200px;
-            padding-top: 200px;
-            margin-bottom:50px" id="home-section">
+    <section class="section-hero overlay inner-page bg-image img-show" id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">

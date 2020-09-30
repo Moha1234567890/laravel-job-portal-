@@ -3,17 +3,19 @@
 
 
 @section('content')
-    <div class="container" data-vide-bg="{{asset('assets/login-bg.mp4')}}">
-        <main class="row justify-content-center"  >
+    <section class="site-section header-margin video-render" id="next">
+
+    <div class="container" data-vide-bg="">
+        <div class="row">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="" action="{{ route('login') }} {{asset('assets/login-bg.mp4')}}">
+                        <form method="POST" class="header-margin" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="login-form">
+                            <div class="login-form header-margin">
                                 <div class="logo-login">
                                     <a href="index.html"><img style="margin:auto" src="assets/img/logo/loder.png" alt=""></a>
                                 </div>
@@ -76,8 +78,11 @@
                     </div>
                 </div>
             </div>
-        </main>
+         </div>
+        </div>
     </div>
+
+    </section>
 @endsection
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="site-section services-section  block__62849" style="margin-top: 152px;" id="next-section">
+    <section class="site-section services-section  block__62849 header-margin"  id="next-section">
         <div class="container">
 
             <div class="row">

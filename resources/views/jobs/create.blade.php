@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="container">
-        <div class="card card-default" style="margin-top:205px">
+        <div class="card card-default header-margin">
             <div class="card-header">
                 Post a job
 

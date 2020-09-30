@@ -1,0 +1,18 @@
+
+
+.header-margin {
+    margin-top:205px
+}
+
+.img-show {
+    background-image: url('../../assets/images/hero_1.jpg');
+    margin-top: 102px;
+    padding-bottom: 200px;
+    padding-top: 200px;
+    margin-bottom:50px
+}
+
+.video-render {
+    background-image: url('../../assets/images/hero_1.jpg');
+
+}
