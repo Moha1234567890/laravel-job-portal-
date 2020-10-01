@@ -41,7 +41,7 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
     Route::post('apply','JobsController@send')->name('apply.job');
     Route::post('save','JobsController@save')->name('save.job');
     Route::get('delete/{job_id}','JobsController@delete')->name('delete.job');
-    //Route::get('fuck/{id}/{user_id}','JobsController@show')->name('save.job');
+    Route::get('search','JobsController@search')->name('search');
 
 
 

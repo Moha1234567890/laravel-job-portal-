@@ -200,6 +200,18 @@ class JobsController extends Controller
        }
     }
 
+    public function search(Request $request) {
+
+        $search = $request->get('keyword');
+
+        $getJobs = Category::select('name')->where('name','like','%'.$search.'%');
+
+
+        return print_r($getJobs);
+
+        //return view('home', compact('getJobs'));
+    }
+
 
 
 

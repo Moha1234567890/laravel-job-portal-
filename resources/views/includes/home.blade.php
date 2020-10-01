@@ -16,9 +16,9 @@
                     </div>
                     <div class="col-xl-11 col-lg-12">
                         <!--Hero form -->
-                        <form action="#" class="search-box">
+                        <form action="{{route('search')}}" method="GET" class="search-box">
                             <div class="input-form">
-                                <input type="text" name="keywords" placeholder="Job title or keywords">
+                                <input type="text" name="keyword" placeholder="Job title or keywords">
                                 <!-- icon -->
                                 <div class="icon">
                                     <i class="fas fa-pencil-alt"></i>
@@ -33,22 +33,32 @@
                             </div>
                             <div class="select-form">
                                 <div class="select-itms">
-                                    <select name="select" id="select1">
+                                    <select name="selectCate" id="select1">
                                         <option value="">Category</option>
-                                        <option value="">Catagories One</option>
-                                        <option value="">Catagories Two</option>
-                                        <option value="">Catagories Three</option>
-                                        <option value="">Catagories Four</option>
+                                        <option value="markting">markting</option>
+                                        <option value="development">development</option>
+                                        <option value="arts">arts</option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="search-form">
-                                <a href="#"><i class="fas fa-search"></i> Search</a>
+                                <button class="btn btn-success" type="submit">search</button>
+
                             </div>
                         </form>
                     </div>
+
                     <div class="col-lg-12">
                         <div class="popular-search text-center pt-30">
+                            <?php
+                                if(isset($getJobs)) {
+                                    foreach ($getJobs as $getJob) {
+                                        print_r($getJob->jobtitle);
+                                    }
+                                }
+
+                            ?>
                             <ul>
                                 <li><p>Popular search:</p></li>
                                 <li><a href="#">#User experience designer</a></li>
