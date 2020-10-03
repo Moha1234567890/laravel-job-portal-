@@ -34,7 +34,7 @@
                             <div class="select-form">
                                 <div class="select-itms">
                                     <select name="selectCate" id="select1">
-                                        <option value="">Category</option>
+
                                         <option value="markting">markting</option>
                                         <option value="development">development</option>
                                         <option value="arts">arts</option>
@@ -51,14 +51,7 @@
 
                     <div class="col-lg-12">
                         <div class="popular-search text-center pt-30">
-                            <?php
-                                if(isset($getJobs)) {
-                                    foreach ($getJobs as $getJob) {
-                                        print_r($getJob->jobtitle);
-                                    }
-                                }
 
-                            ?>
                             <ul>
                                 <li><p>Popular search:</p></li>
                                 <li><a href="#">#User experience designer</a></li>

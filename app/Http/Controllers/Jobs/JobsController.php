@@ -202,15 +202,26 @@ class JobsController extends Controller
 
     public function search(Request $request) {
 
-        $search = $request->get('keyword');
+        $keyword = $request->get('keyword');
 
-        $getJobs = Category::select('name')->where('name','like','%'.$search.'%');
+        $state = $request->get('state');
+
+        $selectCate = $request->get('selectCate');
+
+        $getJobs = Job::select()->where(function($q) use($keyword, $state, $selectCate) {
+            $q->where('jobtitle', 'like', "{$keyword}")
+                ->orWhere('region', 'like', "{$state}")
+                ->orWhere('jobcategory', 'like', "{$selectCate}");
+
+        })->paginate(3);
 
 
-        return print_r($getJobs);
 
-        //return view('home', compact('getJobs'));
+
+        return view('jobs.search', compact('getJobs'));
     }
+
+
 
 
 
