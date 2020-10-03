@@ -17,6 +17,12 @@ use App\Models\Job;
 
 class JobsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
 
        // $jobs = Job::select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at' );
@@ -52,45 +58,12 @@ class JobsController extends Controller
     public function show($id, $uid) {
 
 
-
-
-
         $job = Job::find($id);
-
-
-
-
-
-
-
-
-
 
         //$job =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->get();
        $jobx =  SavedJob::with('jobs')->from('savedjobs')->where('user_id', $uid)->get();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        return view('jobs.show', compact('jobx', 'job'));
-
-
-
-
-
 
 
     }
@@ -115,12 +88,6 @@ class JobsController extends Controller
         if($mail)
             session()->flash('success','you appled to this job');
             return redirect()->route('browse.one.job', ['id' => $id]);
-
-
-
-
-
-
 
 
 
@@ -179,8 +146,6 @@ class JobsController extends Controller
 
 
     public function cities() {
-
-
 
 
        $cities = Job::select('region')->distinct()->get();
