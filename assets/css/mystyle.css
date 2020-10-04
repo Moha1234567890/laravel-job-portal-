@@ -16,3 +16,7 @@
     background-image: url('../../assets/images/hero_1.jpg');
 
 }
+
+.dropdown-item {
+    padding: 8px 20px;
+}
