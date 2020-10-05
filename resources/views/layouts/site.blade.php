@@ -100,6 +100,7 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{asset('assets/js/plugins.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
+<script src="{{asset('assets/js/script.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
 
 

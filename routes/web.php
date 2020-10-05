@@ -47,3 +47,10 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
 
 
 });
+
+Route::group(['prefix' =>'user', 'namespace' => 'users'], function() {
+
+
+    Route::get('/{id}', 'UsersController@profile')->name('profile');
+    Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
+});

@@ -1,0 +1,138 @@
+@extends('layouts.site')
+
+@section('content')
+    <section class="site-section" id="next">
+
+                <div class="container bootstrap snippet">
+
+                    <div class="row">
+                        <div class="col-md-3 header-margin"><!--left col-->
+
+
+
+
+
+
+
+
+                            <ul class="list-group">
+                                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+                            </ul>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Social Media</div>
+                                <div class="panel-body">
+                                    <div class="footer-social">
+                                        <a href="{{$user->twitter}}"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{$user->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{$user->linkedin}}"><i class="fab fa-linkedin"></i></a>
+                                        <a href="{{$user->link}}"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--/col-3-->
+                        <div class="col-sm-9 header-margin">
+
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home">
+                                    <hr>
+                                    <form class="form" action="{{route('profile.update', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group">
+
+                                            <div class="form-group text-center">
+                                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                                                <label for="first_name"><h4>Picture</h4></label>
+                                                <input type="file" class="form-control form-control-lg" name="pic">
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <label for="first_name"><h4>Name</h4></label>
+                                                <input type="text" value="{{$user->name}}" class="form-control form-control-lg" name="name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <label for="mobile"><h4>Mobile</h4></label>
+                                                <input type="text" value="{{$user->mobile}}" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Email</h4></label>
+                                                <input type="email" value="{{$user->email}}" class="form-control form-control-lg" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Location</h4></label>
+                                                <input type="text" value="{{$user->location}}" name="location" class="form-control form-control-lg" id="location" placeholder="somewhere" title="enter a location">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Facebook</h4></label>
+                                                <input type="text" value="{{$user->facebook}}" name="facebook" class="form-control form-control-lg" id="location" placeholder="Facebook" title="enter a location">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Twitter</h4></label>
+                                                <input type="text" value="{{$user->twitter}}" name="twitter" class="form-control form-control-lg" id="location" placeholder="Twitter" title="enter a location">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Linkedin</h4></label>
+                                                <input type="text" value="{{$user->linkedin}}" name="linkedin" class="form-control form-control-lg" id="location" placeholder="Linkedin" title="enter a location">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                                <label for="email"><h4>Website</h4></label>
+                                                <input type="text" value="{{$user->link}}" name="website" class="form-control form-control-lg" id="location" placeholder="Website" title="enter a location">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <br>
+                                                <button class="btn btn-lg btn-success" type="submit">Save</button>
+                                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <hr>
+
+                                </div>
+                    </div><!--/col-9-->
+                </div><!--/row-->
+                    </div>
+                </div>
+
+
+    </section>
+
+@endsection
+
+

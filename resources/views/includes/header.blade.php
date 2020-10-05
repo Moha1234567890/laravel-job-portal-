@@ -49,10 +49,15 @@
                                                     </a>
 
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                        <a style="background-color: #3A76FF;" class="dropdown-item" href="{{ route('logout') }}"
+                                                        <a style="background-color: #3A76FF;padding: 8px 20px; " class="dropdown-item" href="{{ route('logout') }}"
                                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                             {{ __('Logout') }}
+                                                        </a>
+
+                                                        <a style="background-color: #3A76FF;padding: 8px 20px;" class="dropdown-item" href="{{ route('profile', Auth::user()->id) }}"
+                                                           >
+                                                            {{ __('profile') }}
                                                         </a>
 
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
