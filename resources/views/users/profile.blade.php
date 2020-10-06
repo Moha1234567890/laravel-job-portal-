@@ -8,6 +8,41 @@
                     <div class="row">
                         <div class="col-md-3 header-margin"><!--left col-->
 
+                            <form class="form" action="{{route('profile.update.image', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group text-center">
+
+                                    <img src="{{asset('storage/app/public/'.$user->image)}}" class="w-100 h-70">
+                                    <label for="first_name"><h4>Profile Picture</h4></label>
+
+                                    <input type="file" class="text-center center-block file-upload d-block mb-3" name="image">
+                                    @error('image')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+
+
+                                </div>
+
+                                <div class="form-group text-center">
+
+                                    <label for="first_name"><h4>my cv</h4></label>
+
+
+
+                                    <input type="file" class="text-center center-block file-upload d-block mb-3" name="cv">
+                                    @error('cv')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-success" type="submit">Save</button>
+                                </div>
+
+                            </form>
+
 
 
 
@@ -46,11 +81,9 @@
                                         @csrf
                                         <div class="form-group">
 
-                                            <div class="form-group text-center">
-                                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                                <label for="first_name"><h4>Picture</h4></label>
-                                                <input type="file" class="form-control form-control-lg" name="pic">
-                                            </div>
+
+
+
 
                                             <div class="col-xs-6">
                                                 <label for="first_name"><h4>Name</h4></label>
@@ -109,10 +142,17 @@
 
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Website</h4></label>
-                                                <input type="text" value="{{$user->link}}" name="website" class="form-control form-control-lg" id="location" placeholder="Website" title="enter a location">
+                                                <input type="text" value="{{$user->link}}" name="link" class="form-control form-control-lg" id="location" placeholder="Website" title="enter a location">
                                             </div>
                                         </div>
-                                        
+                                        <div class="form-group">
+
+                                            <div class="col-xs-6">
+                                               <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>Download my CV</a>
+                                            </div>
+                                        </div>
+
+
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <br>

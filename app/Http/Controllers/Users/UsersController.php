@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UsersRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,10 +41,45 @@ class UsersController extends Controller
 
 
         $x = $y->update([
-            'pic' =>  $request->image->store('images','public')
+
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'location' => $request->location,
+            'facebook' => $request->facebook,
+            'linkedin' => $request->linkedin,
+            'link' => $request->link,
+            'twitter' => $request->twitter
+
         ]);
 
-        return dd($request->all());
+
+
+
+
+
+
+
+    }
+
+    public function updateImage(UsersRequest $request, $id) {
+
+        $y = User::find($id);
+
+
+
+        $x = $y->update([
+
+            'image' =>  $request->image->store('images','public'),
+            'cv' => $request->cv->store('cvs','public')
+
+        ]);
+
+
+
+
+
+
 
 
     }
