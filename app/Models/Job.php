@@ -27,6 +27,8 @@ class Job extends Model
         'edu',
         'ben',
         'companyname',
+        'user_id',
+
         'website',
         'linkedin',
         'created_at',

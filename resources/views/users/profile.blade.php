@@ -8,6 +8,7 @@
                     <div class="row">
                         <div class="col-md-3 header-margin"><!--left col-->
 
+
                             <form class="form" action="{{route('profile.update.image', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group text-center">
@@ -45,28 +46,37 @@
 
 
 
-
-
-
-
-
                             <ul class="list-group">
                                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong> posted jobs</strong></span> 125</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>applyed to jobs</strong></span> 13</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
                             </ul>
 
-                            <div class="panel panel-default">
+                            <div class="panel panel-default d-block mt-4">
                                 <div class="panel-heading">Social Media</div>
                                 <div class="panel-body">
-                                    <div class="footer-social">
-                                        <a href="{{$user->twitter}}"><i class="fab fa-twitter"></i></a>
-                                        <a href="{{$user->facebook}}"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="{{$user->linkedin}}"><i class="fab fa-linkedin"></i></a>
-                                        <a href="{{$user->link}}"><i class="fas fa-link"></i></a>
-                                    </div>
+
+                                         <div class="footer-social">
+                                            @if(!$user->twitter == '')
+
+                                              <a href="{{$user->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                            @endif
+                                            @if(!$user->facebook == '')
+
+                                                    <a href="{{$user->facebook}}"  target="_blank"><i class="fab fa-facebook"></i></a>
+                                            @endif
+                                            @if(!$user->linkedin == '')
+
+                                                    <a href="{{$user->linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                            @endif
+                                            @if(!$user->link == '')
+
+                                                    <a href="{{$user->link}}" target="_blank"><i class="fas fa-link"></i></a>
+                                            @endif
+                                        </div>
+
                                 </div>
                             </div>
 
@@ -74,8 +84,13 @@
                         <div class="col-sm-9 header-margin">
 
 
-                            <div class="tab-content">
+                            <div class="tab-content ">
                                 <div class="tab-pane active" id="home">
+                                    @if(Session::has('success'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                    @endif
                                     <hr>
                                     <form class="form" action="{{route('profile.update', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
                                         @csrf
@@ -88,6 +103,9 @@
                                             <div class="col-xs-6">
                                                 <label for="first_name"><h4>Name</h4></label>
                                                 <input type="text" value="{{$user->name}}" class="form-control form-control-lg" name="name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                                @error('name')
+                                                <span class="text-danger">{{$message}} </span>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -99,6 +117,9 @@
                                             <div class="col-xs-6">
                                                 <label for="mobile"><h4>Mobile</h4></label>
                                                 <input type="text" value="{{$user->mobile}}" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                                @error('mobile')
+                                                <span class="text-danger">{{$message}} </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -106,6 +127,9 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Email</h4></label>
                                                 <input type="email" value="{{$user->email}}" class="form-control form-control-lg" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                                @error('email')
+                                                <span class="text-danger">{{$message}} </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -113,6 +137,9 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Location</h4></label>
                                                 <input type="text" value="{{$user->location}}" name="location" class="form-control form-control-lg" id="location" placeholder="somewhere" title="enter a location">
+                                                @error('location')
+                                                <span class="text-danger">{{$message}} </span>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -121,6 +148,7 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Facebook</h4></label>
                                                 <input type="text" value="{{$user->facebook}}" name="facebook" class="form-control form-control-lg" id="location" placeholder="Facebook" title="enter a location">
+
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -128,6 +156,7 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Twitter</h4></label>
                                                 <input type="text" value="{{$user->twitter}}" name="twitter" class="form-control form-control-lg" id="location" placeholder="Twitter" title="enter a location">
+
                                             </div>
                                         </div>
 
@@ -136,6 +165,8 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Linkedin</h4></label>
                                                 <input type="text" value="{{$user->linkedin}}" name="linkedin" class="form-control form-control-lg" id="location" placeholder="Linkedin" title="enter a location">
+
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -143,6 +174,7 @@
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Website</h4></label>
                                                 <input type="text" value="{{$user->link}}" name="link" class="form-control form-control-lg" id="location" placeholder="Website" title="enter a location">
+
                                             </div>
                                         </div>
                                         <div class="form-group">

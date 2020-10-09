@@ -34,24 +34,24 @@ class UsersController extends Controller
     }
 
 
-    public function update(Request $request, $id) {
+    public function update(UsersRequest $request, $id) {
 
         $y = User::find($id);
 
+        if($y) {
+            $x = $y->update(
 
+                $request->all()
 
-        $x = $y->update([
+            );
 
-            'name' => $request->name,
-            'email' => $request->email,
-            'mobile' => $request->mobile,
-            'location' => $request->location,
-            'facebook' => $request->facebook,
-            'linkedin' => $request->linkedin,
-            'link' => $request->link,
-            'twitter' => $request->twitter
+            return redirect()->back()->with(['success' => 'updated']);
+        }
 
-        ]);
+        else {
+             return redirect()->back('home');
+        }
+
 
 
 
@@ -68,12 +68,17 @@ class UsersController extends Controller
 
 
 
-        $x = $y->update([
+        if($y)
+            $x = $y->update([
 
             'image' =>  $request->image->store('images','public'),
             'cv' => $request->cv->store('cvs','public')
 
-        ]);
+         ]);
+        else
+            return redirect()->route('home');
+
+
 
 
 

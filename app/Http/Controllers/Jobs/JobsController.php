@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
-use App\User;
+
 use App\Models\SavedJob;
 
 use App\Models\Job;
@@ -25,7 +25,6 @@ class JobsController extends Controller
 
     public function index() {
 
-       // $jobs = Job::select('id', 'email', 'jobtitle', 'location', 'region', 'jobtype', 'jobcategory', 'jobdesc', 'companyname', 'website', 'linkedin', 'created_at' );
 
         return view('jobs.index')->with('jobs', Job::all());
 
@@ -45,25 +44,35 @@ class JobsController extends Controller
         $job = Job::create($request->all());
 
         if ($job) {
-            session()->flash('success', 'created');
-
-            return redirect(route('home'));
+            return redirect()->back()->with(['success' => 'created']);
 
         } else {
-            session()->flash('error', 'smth wrong');
+            return redirect()->back()->with(['error' => 'something wrong']);
+
         }
     }
 
 
-    public function show($id, $uid) {
+    public function show($id) {
 
 
         $job = Job::find($id);
 
-        //$job =  Job::with('savedJobs')->where('id', $id)->select('id','jobtitle','email')->get();
-       $jobx =  SavedJob::with('jobs')->from('savedjobs')->where('user_id', $uid)->get();
+       $jobx =  SavedJob::with('jobs')->where('job_id', $id)->whereHas('jobs', function ($q) {
 
-       return view('jobs.show', compact('jobx', 'job'));
+           $q->select('user_id', 'job_id','id');
+
+       })->get()->first();
+
+       if($job)
+           return view('jobs.show', compact('jobx', 'job'));
+
+       else
+           abort('404');
+
+
+
+
 
 
     }
@@ -100,12 +109,10 @@ class JobsController extends Controller
             'job_id' => $request->job_id,
             'user_id' => $request->user_id,
 
-
-
-
         ]);
 
-        echo 'done';
+        return redirect()->route('browse.one.job', $request->job_id);
+
 
 
 
@@ -114,11 +121,19 @@ class JobsController extends Controller
 
     public function delete($job_id) {
 
-       $job_del = SavedJob::where('id', $job_id);
+       $job_del = SavedJob::where('job_id', $job_id);
 
-        $job_del->delete();
+        $delete = $job_del->delete();
 
-        return redirect(route('browse.jobs'));
+        if($delete) {
+            return redirect()->route('browse.one.job', $job_id);
+
+        } else {
+            return abort('404');
+
+        }
+
+
 
     }
 
@@ -135,7 +150,7 @@ class JobsController extends Controller
 
 
 
-        $category = Job::with('getCategory')->where('jobcategory', $name)->get();
+        $category = Job::with('getCategory')->where('jobcategory', $name)->paginate(3);
 
         if($category) {
             return view('jobs.category', compact('category'));
@@ -156,7 +171,7 @@ class JobsController extends Controller
 
     public function city($city) {
 
-        $region = Job::select()->where('region', $city)->get();
+        $region = Job::select()->where('region', $city)->paginate(3);
 
        if($region) {
            return view('jobs.city', compact('region'));
@@ -185,18 +200,6 @@ class JobsController extends Controller
 
         return view('jobs.search', compact('getJobs'));
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

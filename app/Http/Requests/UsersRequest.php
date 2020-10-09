@@ -24,14 +24,21 @@ class UsersRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required'
+            'name' => 'required|max:30',
+            'email' => 'required|max:30',
+            'mobile' => 'required|max:20',
+            'location' => 'required|max:20',
+
+            'image' => 'required',
+            'cv' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'this field is required',
+            'required' => 'this field is required'
+
 
 
 

@@ -2990,7 +2990,7 @@ hr {
 
 /* line 923, C:/Users/HP/Desktop/July-HTML/287.Job_board/Job_board_Template/assets/scss/_common.scss */
 .footer-padding {
-  padding-top: 305px;
+  padding-top: 500px;
   padding-bottom: 13px;
 }
 
@@ -5246,7 +5246,7 @@ hr {
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   /* line 1, C:/Users/HP/Desktop/July-HTML/287.Job_board/Job_board_Template/assets/scss/_footer.scss */
   .footer-wrappper {
-    padding: 0;
+    margin-top: 526px;
   }
 }
 
@@ -5774,14 +5774,14 @@ hr {
 /* line 9, C:/Users/HP/Desktop/July-HTML/287.Job_board/Job_board_Template/assets/scss/_login.scss */
 .login-form {
   position: absolute;
-  top: 50%;
+  top: 103%;
   left: 50%;
   width: 480px;
   padding: 90px 45px 60px 45px;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 @media (max-width: 575px) {

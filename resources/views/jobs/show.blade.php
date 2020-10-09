@@ -31,7 +31,7 @@
                             <div>
                                 <span class="ml-0 mr-2 mb-2"><span class="fa fa-briefcase fa-1x mr-2"></span>{{$job->companyname}}</span>
                                 <span class="m-2"><span class="fa fa-map-marker  fa-1x mr-2"></span>{{$job->location}},{{$job->region}}</span>
-                                <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span class="text-primary">{{$job->jobtype}}</span></span>
+                                <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span>{{$job->jobtype}}</span></span>
                             </div>
                         </div>
                     </div>
@@ -47,76 +47,21 @@
 
                                 <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
 
-                               @if($jobx == [])
-                                    <button class="btn btn-success" type="submit">save</button>
+
+
+                                @if(isset($jobx->job_id))
+                                    @if($jobx->job_id == $job->id)
+
+                                                <a href="{{route('delete.job', $job->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+
+
+
+                                    @endif
                                 @else
-
-                                    @foreach($jobx as $jobs)
-
+                                        <button class="btn btn-success" type="submit">save</button>
 
 
-
-                                        @switch($jobs->user_id)
-                                            @case($jobs->job_id == $job->id)
-                                            <a href="{{route('delete.job', $jobs->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
-                                            @break
-
-                                            @case(empty(isset($jobs->id)))
-
-                                            <button class="btn btn-success" type="submit">save</button>
-
-
-                                            @break
-
-
-
-                                            @default
-
-
-
-
-                                        @endswitch
-                                    @endforeach
-                                 @endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                @endif
 
                             </form>
 
@@ -160,7 +105,7 @@
                     </div>
 
                     <div class="mb-5 form-group">
-                        @if($job->email === Auth::user()->email)
+                        @if($job->user_id == Auth::user()->id)
                             <h3>you created this job</h3>
                         @else
                             <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">

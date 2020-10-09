@@ -5,21 +5,10 @@
 @section('content')
 
 
-    <!-- header end -->
-  <!--  <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Preloader Start-->
 
 
-    <main class="login-body" data-vide-bg="assets/img/login-bg.mp4">
+
+    <main class="login-body">
         <!-- Login Admin -->
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -27,7 +16,7 @@
             <div class="login-form">
                 <!-- logo-login -->
                 <div class="logo-login">
-                    <a href="index.html"><img src="assets/img/logo/loder.png" alt=""></a>
+                    <a href="{{route('home')}}"><img src="assets/img/logo/loder.png" alt=""></a>
                 </div>
                 <h2>Login Here</h2>
                 <div class="form-input">

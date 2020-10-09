@@ -13,7 +13,7 @@
                             <div class="alert alert-primary text-center text-capitalize bg-primary" role="alert">
 
                                 <a href="{{route('browse.city.jobs', $city->region)}}" class=" text-light nounderline text-decoration-none">
-                                    <i class="fa fa-bookmark">
+                                    <i class="fa fa-map-marker">
                                         {{$city->region}}
                                     </i>
                                 </a>

@@ -5,7 +5,7 @@
     <section class="site-section" id="next">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-12 header-margin" style="">
+                <div class="col-md-12 header-margin">
 
                     @if(isset($category) && $category->count() > 0)
                         @foreach($category as $job)
@@ -14,7 +14,7 @@
 
                                     <div class="job-listing-logo">
 
-                                        <a href="{{route('browse.one.job', ['id' => $job->id, 'uid' => Auth::user()->id])}}"> <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="Image" class="img-thumbnail mw-100" style="width: 150px; height: 150px;"></a>
+                                        <a href="{{route('browse.one.job',$job->id)}}"> <img src="{{asset('assets/images/job_logo_4.jpg')}}" alt="Image" class="img-thumbnail mw-100 category-img"></a>
                                     </div>
 
                                     <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -42,6 +42,8 @@
 
                         @endforeach
                     @endif
+
+                        {!!  $category -> links() !!}
                 </div>
             </div>
         </div>

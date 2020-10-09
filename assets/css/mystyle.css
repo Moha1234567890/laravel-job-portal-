@@ -12,11 +12,25 @@
     margin-bottom:50px
 }
 
-.video-render {
-    background-image: url('../../assets/images/hero_1.jpg');
 
-}
+
 
 .main-header .main-menu ul li a {
     padding: 8px 20px;
+
+}
+
+.category-img {
+    width: 150px;
+    height: 150px;
+}
+
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+    margin: 5px;
+}
+
+.footer-wrappper {
+    padding: 41px;
 }

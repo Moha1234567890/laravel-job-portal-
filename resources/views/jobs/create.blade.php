@@ -4,14 +4,35 @@
 @section('content')
 
     <div class="container">
+
         <div class="card card-default header-margin">
-            <div class="card-header">
+            @if(Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+
+
+            @if(Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{Session::get('error')}}
+                    </div>
+            @endif
+
+                <div class="card-header">
+
                 Post a job
 
             </div>
             <div class="card-body">
                 <form action="{{route('store.job')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    <div class="form-group">
+
+                        <input type="hidden" class="form-control form-control-lg" name="userIdb " aria-describedby="emailHelp" value="{{Auth::user()->id}}">
+
+                    </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email: </label>
@@ -134,7 +155,7 @@
 
                         <label for="exampleInputEmail1">Job description: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="jobdesc" id ="x" placeholder="enter description" rows="6">
+                        <input type="text" class="form-control form-control-lg" name="jobdesc" id ="" placeholder="enter description" rows="6">
                         @error('jobdesc')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -146,7 +167,7 @@
 
                         <label for="exampleInputEmail1">resposibialty: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="respon" id ="y" placeholder="enter resposibialties" rows="6"
+                        <input type="text" class="form-control form-control-lg" name="respon" id ="" placeholder="enter resposibialties" rows="6"
                                value="">
                         @error('respon')
                         <span class="text-danger">{{$message}} </span>
@@ -159,7 +180,7 @@
 
                         <label for="exampleInputEmail1">Education: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="edu" id ="z" placeholder="enter resposibialties" rows="6">
+                        <input type="text" class="form-control form-control-lg" name="edu" id ="" placeholder="enter resposibialties" rows="6">
                         @error('edu')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -171,7 +192,7 @@
 
                         <label for="exampleInputEmail1">Benfites: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="ben" id ="t" placeholder="enter benfites" rows="6">
+                        <input type="text" class="form-control form-control-lg" name="ben" id ="" placeholder="enter benfites" rows="6">
                         @error('ben')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
