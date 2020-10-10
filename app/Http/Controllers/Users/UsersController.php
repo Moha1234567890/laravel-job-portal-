@@ -89,9 +89,9 @@ class UsersController extends Controller
 
     }
 
-    public function savedJobs($id) {
+    public function savedJobs($saved_id) {
 
-        $y = User::find($id);
+        $id = User::find($saved_id);
 
 
 

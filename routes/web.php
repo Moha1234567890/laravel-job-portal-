@@ -57,7 +57,7 @@ Route::group(['prefix' =>'user', 'namespace' => 'users'], function() {
     Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
     Route::post('profile-image/{id}', 'UsersController@updateImage')->name('profile.update.image');
 
-    Route::get('/{id}', 'UsersController@savedJobs')->name('saved.jobs');
+    Route::get('/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
 
 
 
