@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -41,7 +42,28 @@ class JobsController extends Controller
     public function store(JobsRequest $request) {
 
 
-        $job = Job::create($request->all());
+        $job = Job::create([
+            'user_id' => $request->user_id,
+            'email' => $request->email,
+            'jobtitle' => $request->jobtitle,
+            'location' => $request->location,
+            'region' => $request->region,
+            'jobtype' => $request->jobtype,
+            'vacancy' => $request->vacancy,
+            'gender' => $request->gender,
+            'edu' => $request->edu,
+
+            'ex' => $request->ex,
+            'sal' => $request->sal,
+            'jobdesc' => $request->jobdesc,
+            'respon' => $request->respon,
+            'ben' => $request->ben,
+            'jobcategory' => $request->jobcategory,
+            'companyname' => $request->companyname,
+            'website' => $request->website,
+            'linkedin' => $request->linkedin,
+            'image' =>  $request->image->store('logos','public')
+        ]);
 
         if ($job) {
             return redirect()->back()->with(['success' => 'created']);
@@ -72,12 +94,10 @@ class JobsController extends Controller
 
 
 
-
-
-
     }
 
     public function send(Request $request) {
+
         $data = [
             'id' => $request->id,
             'to' => $request->to,
@@ -200,6 +220,20 @@ class JobsController extends Controller
 
         return view('jobs.search', compact('getJobs'));
     }
+
+    public function jobTitle($job_title) {
+
+
+
+       $getJobsTitle = Job::select()->where('jobtitle', $job_title)->paginate(3);
+
+
+
+        return view('jobs.jobTitle', compact('getJobsTitle'));
+    }
+
+
+
 
 
 

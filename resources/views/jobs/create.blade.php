@@ -30,7 +30,7 @@
 
                     <div class="form-group">
 
-                        <input type="hidden" class="form-control form-control-lg" name="userIdb " aria-describedby="emailHelp" value="{{Auth::user()->id}}">
+                        <input type="hidden" class="form-control form-control-lg" name="user_id" aria-describedby="emailHelp" value="{{Auth::user()->id}}">
 
                     </div>
 
@@ -155,7 +155,7 @@
 
                         <label for="exampleInputEmail1">Job description: </label>
 
-                        <input type="text" class="form-control form-control-lg" name="jobdesc" id ="" placeholder="enter description" rows="6">
+                        <input type="hidden" class="form-control form-control-lg" name="jobdesc" id ="x" placeholder="enter description" rows="6">
                         @error('jobdesc')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -167,8 +167,8 @@
 
                         <label for="exampleInputEmail1">resposibialty: </label>
 
-                        <input type="text" class="form-control form-control-lg" name="respon" id ="" placeholder="enter resposibialties" rows="6"
-                               value="">
+                        <input type="hidden" class="form-control form-control-lg" name="respon" id ="y" placeholder="enter resposibialties" rows="6"
+                              >
                         @error('respon')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -180,7 +180,7 @@
 
                         <label for="exampleInputEmail1">Education: </label>
 
-                        <input type="text" class="form-control form-control-lg" name="edu" id ="" placeholder="enter resposibialties" rows="6">
+                        <input type="hidden" class="form-control form-control-lg" name="edu" id ="z" placeholder="enter resposibialties" rows="6">
                         @error('edu')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -192,7 +192,7 @@
 
                         <label for="exampleInputEmail1">Benfites: </label>
 
-                        <input type="text" class="form-control form-control-lg" name="ben" id ="" placeholder="enter benfites" rows="6">
+                        <input type="hidden" class="form-control form-control-lg" name="ben" id ="t" placeholder="enter benfites" rows="6">
                         @error('ben')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -207,6 +207,18 @@
                     <h2>Company Details</h2>
 
                     <hr>
+                    <div class="form-group text-center">
+
+                        <label for="exampleInputEmail1" class="pull-left">Company logo: </label>
+                        <br>
+
+                        <input type="file" class="text-center center-block file-upload form-control form-control-lg" name="image">
+                        @error('image')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+
+
+                    </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Company name: </label>

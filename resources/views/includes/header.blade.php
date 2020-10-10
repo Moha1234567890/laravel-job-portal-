@@ -40,7 +40,7 @@
                                                         <a class="dropdown-item text-primary" href="{{route('browse.jobs.cats')}}">Category</a>
                                                         <a class="dropdown-item text-primary" href="{{route('browse.jobs.cities')}}">City</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item text-primary" href="#">Something else here</a>
+                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">your job title</a>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item dropdown">
@@ -52,6 +52,11 @@
                                                         <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >
                                                             {{ __('profile') }}
+                                                        </a>
+
+                                                        <a  class="dropdown-item text-primary" href="{{ route('saved.jobs', Auth::user()->id) }}"
+                                                        >
+                                                            {{ __('saved jobs') }}
                                                         </a>
                                                         <a  class="dropdown-item text-primary" href="{{ route('logout') }}"
                                                            onclick="event.preventDefault();

@@ -35,10 +35,14 @@ class JobsRequest extends FormRequest
             'jobdesc'      => 'required',
             'respon'       => 'required',
             'ben'          => 'required',
+            'user_id'      => 'required',
 
             'edu'          => 'required',
             'jobcategory'  => 'required',
-            'jobdesc'      => 'required|string|max:800|min:100',
+            'gender'       => 'required',
+            'image'       => 'required',
+
+
             'companyname'  => 'required|string|max:100',
             'website'      => 'required|string|max:100',
             'linkedin'     => 'required|string|max:100'

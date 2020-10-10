@@ -123,6 +123,15 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <label for="mobile"><h4>Job title</h4></label>
+                                                <input type="text" value="{{$user->job_title}}" class="form-control form-control-lg" name="job_title" id="mobile" placeholder="enter job title" title="enter your job title if any.">
+                                                @error('mobile')
+                                                <span class="text-danger">{{$message}} </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
 
                                             <div class="col-xs-6">
                                                 <label for="email"><h4>Email</h4></label>

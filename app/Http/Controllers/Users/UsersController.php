@@ -34,7 +34,7 @@ class UsersController extends Controller
     }
 
 
-    public function update(UsersRequest $request, $id) {
+    public function update(Request $request, $id) {
 
         $y = User::find($id);
 
@@ -62,7 +62,7 @@ class UsersController extends Controller
 
     }
 
-    public function updateImage(UsersRequest $request, $id) {
+    public function updateImage(Request $request, $id) {
 
         $y = User::find($id);
 
@@ -88,6 +88,26 @@ class UsersController extends Controller
 
 
     }
+
+    public function savedJobs($id) {
+
+        $y = User::find($id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 
 
 

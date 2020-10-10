@@ -13,7 +13,7 @@
 
                         <div class="job-listing-logo">
                             {{--fix url bug--}}
-                            <a href="{{route('browse.one.job', $job->id)}}"> <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="Image" class="img-thumbnail mw-100 category-img" ></a>
+                            <a href="{{route('browse.one.job', $job->id)}}"> <img src="{{asset('storage/app/public/'.$job->image)}}" alt="Image" class="img-thumbnail mw-100 category-img w-100 h-70" ></a>
                         </div>
 
                         <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">

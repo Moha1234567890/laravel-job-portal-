@@ -6,14 +6,14 @@
    <div class="row no-gutters">
     <div class="col-md-12 header-margin">
 
-        @if(isset($jobs) && $jobs->count() > 0)
-            @foreach($jobs as $job)
+        @if(isset($getJobsTitle) && $getJobsTitle->count() > 0)
+            @foreach($getJobsTitle as $job)
                 <ul class="job-listings mb-5">
                     <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 
                         <div class="job-listing-logo">
                             {{--fix url bug--}}
-                            <a href="{{route('browse.one.job', ['id' => $job->id, 'uid' => Auth::user()->id])}}"> <img src="{{asset('storage/app/public/'.$job->image)}}" alt="Image" class="img-thumbnail mw-100 category-img w-100 h-70"></a>
+                            <a href="{{route('browse.one.job', $job->id)}}"> <img src="{{asset('storage/app/public/'.$job->image)}}" alt="Image" class="img-thumbnail mw-100 category-img w-100 h-70" ></a>
                         </div>
 
                         <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -39,11 +39,13 @@
 
             @endforeach
         @endif
+
+            {!!  $getJobsTitle -> links() !!}
     </div>
    </div>
 </div>
     </section>
 
-    @endsection
+@endsection
 
 

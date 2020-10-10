@@ -28,6 +28,7 @@ class Job extends Model
         'ben',
         'companyname',
         'user_id',
+        'image',
 
         'website',
         'linkedin',
