@@ -29,7 +29,6 @@ class Job extends Model
         'companyname',
         'user_id',
         'image',
-
         'website',
         'linkedin',
         'created_at',

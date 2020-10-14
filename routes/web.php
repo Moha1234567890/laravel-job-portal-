@@ -53,11 +53,11 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
 Route::group(['prefix' =>'user', 'namespace' => 'users'], function() {
 
 
-    Route::get('/{id}', 'UsersController@profile')->name('profile');
+    Route::get('/update/{id}', 'UsersController@profile')->name('profile');
     Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
     Route::post('profile-image/{id}', 'UsersController@updateImage')->name('profile.update.image');
 
-    Route::get('/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
+    Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
 
 
 

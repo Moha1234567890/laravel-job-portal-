@@ -14,6 +14,12 @@ class SavedJob extends Model
         'id',
         'user_id',
         'job_id',
+        'pic',
+        'job_title',
+        'company_name',
+        'location',
+        'region',
+        'job_type',
         'created_at',
         'updated_at'
 

@@ -36,14 +36,14 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email: </label>
-                        <input type="text" class="form-control form-control-lg" name="email" aria-describedby="emailHelp" placeholder="enter job" value="">
+                        <input type="text" class="form-control form-control-lg" name="email" aria-describedby="emailHelp" placeholder="enter email">
                         @error('email')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Job title: </label>
-                        <input type="text" class="form-control form-control-lg" name="jobtitle" aria-describedby="emailHelp" placeholder="enter job title" value="">
+                        <input type="text" class="form-control form-control-lg" name="jobtitle" aria-describedby="emailHelp" placeholder="enter job title">
                         @error('jobtitle')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">location: </label>
-                        <input type="text" class="form-control form-control-lg" name="location" aria-describedby="emailHelp" placeholder="enter location" value="">
+                        <input type="text" class="form-control form-control-lg" name="location" aria-describedby="emailHelp" placeholder="enter location">
                         @error('location')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -107,7 +107,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">vacancy: </label>
-                        <input type="text" class="form-control form-control-lg" name="vacancy"  placeholder="enter number of vacances">
+                        <input type="text" class="form-control form-control-lg" name="vacancy"  placeholder="enter number of vacancies">
                         @error('vacancy')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -222,7 +222,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Company name: </label>
-                        <input type="text" class="form-control form-control-lg" name="companyname" aria-describedby="emailHelp" placeholder="enter name" value="">
+                        <input type="text" class="form-control form-control-lg" name="companyname" aria-describedby="emailHelp" placeholder="enter name">
                         @error('companyname')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -230,7 +230,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Website: </label>
-                        <input type="text" class="form-control form-control-lg" name="website" aria-describedby="emailHelp" placeholder="enter website" value="">
+                        <input type="text" class="form-control form-control-lg" name="website" aria-describedby="emailHelp" placeholder="enter website">
                         @error('website')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -238,7 +238,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">linkdin: </label>
-                        <input type="text" class="form-control form-control-lg" name="linkedin" aria-describedby="emailHelp" placeholder="enter linkedin" value="">
+                        <input type="text" class="form-control form-control-lg" name="linkedin" aria-describedby="emailHelp" placeholder="enter linkedin">
                         @error('linkedin')
                         <span class="text-danger">{{$message}} </span>
                         @enderror

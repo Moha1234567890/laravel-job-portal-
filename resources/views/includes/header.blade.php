@@ -40,7 +40,12 @@
                                                         <a class="dropdown-item text-primary" href="{{route('browse.jobs.cats')}}">Category</a>
                                                         <a class="dropdown-item text-primary" href="{{route('browse.jobs.cities')}}">City</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">your job title</a>
+                                                        @if(!Auth::user()->job_title == null)
+                                                          <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">your job title</a>
+                                                        @else
+                                                            <a class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}">update your profile</a>
+                                                        @endif
+
                                                     </div>
                                                 </li>
                                                 <li class="nav-item dropdown">
@@ -54,7 +59,7 @@
                                                             {{ __('profile') }}
                                                         </a>
 
-                                                        <a  class="dropdown-item text-primary" href="{{ route('saved.jobs', Auth::user()->id) }}"
+                                                        <a  class="dropdown-item text-primary" href="{{route('saved.jobs', Auth::user()->id)}}"
                                                         >
                                                             {{ __('saved jobs') }}
                                                         </a>
@@ -63,8 +68,6 @@
                                                      document.getElementById('logout-form').submit();">
                                                             {{ __('Logout') }}
                                                         </a>
-
-
 
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                             @csrf

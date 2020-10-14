@@ -17,4 +17,6 @@ $(document).ready(function() {
     $(".file-upload").on('change', function(){
         readURL(this);
     });
+
+
 });

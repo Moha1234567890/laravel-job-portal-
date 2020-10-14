@@ -35,7 +35,7 @@
                                 <div class="select-itms">
                                     <select name="selectCate" id="select1">
 
-                                        <option value="markting">markting</option>
+                                        <option value="marketing">marketing</option>
                                         <option value="development">development</option>
                                         <option value="arts">arts</option>
 

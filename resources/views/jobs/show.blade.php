@@ -23,8 +23,11 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="d-flex align-items-center">
-                        <div class="border p-2 d-inline-block mr-3 rounded">
-                            <img src="{{asset('assets/images/job_logo_5.jpg')}}" alt="Image">
+                        <div class="alert alert-success" id="success_msg" style="display: none;">
+                            done
+                        </div>
+                        <div class=" d-inline-block mr-3 rounded">
+                            <img src="{{asset('storage/app/public/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
                         </div>
                         <div>
                             <h2>{{$job->jobtitle}}</h2>
@@ -39,29 +42,43 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">
-                            <form class="form-group" method="post" action="{{route('save.job')}}">
+                            <form class="form-group" method="post" id="save_form" action="{{route('save.job')}}">
                                 @csrf
 
-                                <input  type="hidden" class="form-control form-control-lg" name="user_id" value="{{Auth::user()->id}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="user_id" name="user_id" value="{{Auth::user()->id}}">
 
 
-                                <input  type="hidden" class="form-control form-control-lg" name="job_id" value="{{$job->id}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="job_id" name="job_id" value="{{$job->id}}">
 
+                                <input  type="hidden" class="form-control form-control-lg" id="pic" name="pic" value="{{$job->image}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="job_title" name="job_title" value="{{$job->jobtitle}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="company_name" name="company_name" value="{{$job->companyname}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="location" name="location" value="{{$job->location}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
+                                <input  type="hidden" class="form-control form-control-lg" id="job_type" name="job_type" value="{{$job->jobtype}}">
 
 
                                 @if(isset($jobx->job_id))
                                     @if($jobx->job_id == $job->id)
 
-                                                <a href="{{route('delete.job', $job->id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                        @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
+                                            <a href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
 
+                                        @else
+                                            @if($jobx->user_id !== Auth::user()->id)
+                                                <a href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+
+                                            @endif
+
+                                        @endif
 
 
                                     @endif
                                 @else
-                                        <button class="btn btn-success" type="submit">save</button>
-
+                                        <button class="btn btn-success" id="save" type="submit">save</button>
 
                                 @endif
+
 
                             </form>
 
@@ -128,9 +145,6 @@
                                </div>
 
 
-
-
-
                                 <br>
                                 <br>
 
@@ -151,13 +165,7 @@
                         @endif
                     </div>
 
-
-
                 </div>
-
-
-
-
 
                 <div class="col-lg-4">
                     <div class="bg-light p-3 border rounded mb-4">
@@ -170,8 +178,27 @@
                             <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$job->location}}</li>
                             <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$job->sal}}k</li>
                             <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
-                            <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
                         </ul>
+                    </div>
+
+                    <div class="bg-light p-3 border rounded d-block mb-4">
+                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job info</h3>
+
+                        @if(!$job_counter == null)
+
+                            <ul class="list-unstyled pl-3 mb-0">
+                                <li class="mb-2"><strong class="text-black">Number of Applications:</strong> ({{$job_counter}})</li>
+
+                            </ul>
+
+                        @else
+                            <ul class="list-unstyled pl-3 mb-0">
+                                <li class="mb-2"><strong class="text-black">No Applications Yet for This Job</strong></li>
+
+                            </ul>
+
+                        @endif
+
                     </div>
 
                     <div class="bg-light p-3 border rounded">
@@ -180,7 +207,7 @@
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href=""><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+
                         </div>
                     </div>
 
@@ -194,6 +221,5 @@
 
 
 @endsection
-
 
 

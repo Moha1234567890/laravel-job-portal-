@@ -178,6 +178,7 @@
                                             </div>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
 
                                             <div class="col-xs-6">
@@ -188,9 +189,17 @@
                                         </div>
                                         <div class="form-group">
 
-                                            <div class="col-xs-6">
-                                               <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>Download my CV</a>
-                                            </div>
+                                            @if(!$user->cv == null)
+
+                                                <div class="col-xs-6">
+                                                   <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>Download my CV</a>
+                                                </div>
+                                            @else
+                                                <div class="col-xs-6">
+                                                    <h3>if you uploaded your cv it will show up here</h3>
+                                                </div>
+                                            @endif
+
                                         </div>
 
 

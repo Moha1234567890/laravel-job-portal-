@@ -36,10 +36,10 @@ class UsersController extends Controller
 
     public function update(Request $request, $id) {
 
-        $y = User::find($id);
+        $user = User::find($id);
 
-        if($y) {
-            $x = $y->update(
+        if($user) {
+            $updateuser = $user->update(
 
                 $request->all()
 
@@ -55,24 +55,17 @@ class UsersController extends Controller
 
 
 
-
-
-
-
-
     }
 
     public function updateImage(Request $request, $id) {
 
         $y = User::find($id);
 
-
-
         if($y)
             $x = $y->update([
 
             'image' =>  $request->image->store('images','public'),
-            'cv' => $request->cv->store('cvs','public')
+            'cv'    => $request->cv->store('cvs','public')
 
          ]);
         else
@@ -80,31 +73,14 @@ class UsersController extends Controller
 
 
 
-
-
-
-
-
-
-
     }
 
     public function savedJobs($saved_id) {
 
-        $id = User::find($saved_id);
+        $saved_jobs = SavedJob::select()->where('user_id', $saved_id)->paginate(3);
 
 
-
-
-
-
-
-
-
-
-
-
-
+        return view('jobs.savedJobs', compact('saved_jobs'));
 
     }
 

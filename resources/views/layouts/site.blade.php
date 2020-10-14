@@ -44,7 +44,7 @@
 @include('includes.header')
 
 
-<main>
+<main class="main">
 
     @yield('content')
 
@@ -59,6 +59,7 @@
 </div>
 
 <!-- JS here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
 
 <script src="{{asset('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 <!-- Jquery, Popper, Bootstrap -->
@@ -101,7 +102,7 @@
 <script src="{{asset('assets/js/plugins.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
+
 
 
 </body>

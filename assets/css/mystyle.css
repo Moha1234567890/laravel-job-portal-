@@ -9,7 +9,21 @@
     margin-top: 102px;
     padding-bottom: 200px;
     padding-top: 200px;
-    margin-bottom:50px
+    margin-bottom:50px;
+    z-index: 1;
+
+
+}
+
+.section-hero.overlay:before, .section-hero.overlay-2:before {
+    z-index: 0;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -59px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -34,3 +48,14 @@
 .footer-wrappper {
     padding: 41px;
 }
+
+
+/*.footer-padding {
+    padding-top:500px;
+    padding-bottom: 13px;
+}
+
+main.main {
+    margin-bottom: -300px;
+}*/
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Email;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,26 +44,25 @@ class JobsController extends Controller
 
 
         $job = Job::create([
-            'user_id' => $request->user_id,
-            'email' => $request->email,
-            'jobtitle' => $request->jobtitle,
-            'location' => $request->location,
-            'region' => $request->region,
-            'jobtype' => $request->jobtype,
-            'vacancy' => $request->vacancy,
-            'gender' => $request->gender,
-            'edu' => $request->edu,
-
-            'ex' => $request->ex,
-            'sal' => $request->sal,
-            'jobdesc' => $request->jobdesc,
-            'respon' => $request->respon,
-            'ben' => $request->ben,
+            'user_id'     => $request->user_id,
+            'email'       => $request->email,
+            'jobtitle'    => $request->jobtitle,
+            'location'    => $request->location,
+            'region'      => $request->region,
+            'jobtype'     => $request->jobtype,
+            'vacancy'     => $request->vacancy,
+            'gender'      => $request->gender,
+            'edu'         => $request->edu,
+            'ex'          => $request->ex,
+            'sal'         => $request->sal,
+            'jobdesc'     => $request->jobdesc,
+            'respon'      => $request->respon,
+            'ben'         => $request->ben,
             'jobcategory' => $request->jobcategory,
             'companyname' => $request->companyname,
-            'website' => $request->website,
-            'linkedin' => $request->linkedin,
-            'image' =>  $request->image->store('logos','public')
+            'website'     => $request->website,
+            'linkedin'    => $request->linkedin,
+            'image'       =>  $request->image->store('logos','public')
         ]);
 
         if ($job) {
@@ -80,17 +80,21 @@ class JobsController extends Controller
 
         $job = Job::find($id);
 
+        $job_counter = Email::where( 'job_id_email', $id)->count();
+
        $jobx =  SavedJob::with('jobs')->where('job_id', $id)->whereHas('jobs', function ($q) {
 
            $q->select('user_id', 'job_id','id');
 
-       })->get()->first();
+       })->where('user_id', Auth::user()->id)->get()->first();
 
-       if($job)
-           return view('jobs.show', compact('jobx', 'job'));
+
+
+       if($id)
+           return view('jobs.show', compact('jobx', 'job','job_counter'));
 
        else
-           abort('404');
+           return abort('404');
 
 
 
@@ -99,13 +103,23 @@ class JobsController extends Controller
     public function send(Request $request) {
 
         $data = [
-            'id' => $request->id,
-            'to' => $request->to,
-            'from' => $request->from,
+            'id'      => $request->id,
+            'to'      => $request->to,
+            'from'    => $request->from,
             'subject' => $request->subject,
-            'image' => $request->file('image'),
+            'image'   => $request->file('image')
 
         ];
+
+       Email::create([
+            'job_id_email' => $data['id'],
+            'to_user'      => $data['to'],
+            'from_user'    => $data['from']
+
+
+        ]);
+
+
 
         $to = $data['to'];
         $id = $data['id'];
@@ -115,7 +129,7 @@ class JobsController extends Controller
 
 
         if($mail)
-            session()->flash('success','you appled to this job');
+
             return redirect()->route('browse.one.job', ['id' => $id]);
 
 
@@ -126,8 +140,14 @@ class JobsController extends Controller
 
         SavedJob::create([
 
-            'job_id' => $request->job_id,
-            'user_id' => $request->user_id,
+            'job_id'       => $request->job_id,
+            'user_id'      => $request->user_id,
+            'pic'          => $request->pic,
+            'job_title'    => $request->job_title,
+            'company_name' => $request->company_name,
+            'location'     => $request->location,
+            'region'       => $request->region,
+            'job_type'     => $request->job_type
 
         ]);
 
@@ -139,14 +159,14 @@ class JobsController extends Controller
 
     }
 
-    public function delete($job_id) {
+    public function delete($id) {
 
-       $job_del = SavedJob::where('job_id', $job_id);
+       $job_del = SavedJob::where('job_id', $id)->where('user_id',Auth::user()->id);
 
         $delete = $job_del->delete();
 
         if($delete) {
-            return redirect()->route('browse.one.job', $job_id);
+            return redirect()->route('browse.one.job', $id);
 
         } else {
             return abort('404');
@@ -167,8 +187,6 @@ class JobsController extends Controller
 
 
     public function category($name) {
-
-
 
         $category = Job::with('getCategory')->where('jobcategory', $name)->paginate(3);
 
@@ -210,15 +228,19 @@ class JobsController extends Controller
 
         $getJobs = Job::select()->where(function($q) use($keyword, $state, $selectCate) {
             $q->where('jobtitle', 'like', "{$keyword}")
-                ->orWhere('region', 'like', "{$state}")
-                ->orWhere('jobcategory', 'like', "{$selectCate}");
+                ->where('region', 'like', "{$state}")
+                ->where('jobcategory', 'like', "{$selectCate}");
 
         })->paginate(3);
 
+        $getJobs_counter = $getJobs->count();
 
 
 
-        return view('jobs.search', compact('getJobs'));
+
+
+
+        return view('jobs.search', compact('getJobs', 'getJobs_counter'));
     }
 
     public function jobTitle($job_title) {
