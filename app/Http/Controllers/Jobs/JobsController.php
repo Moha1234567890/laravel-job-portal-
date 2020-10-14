@@ -138,7 +138,7 @@ class JobsController extends Controller
 
     public function save(Request $request) {
 
-        SavedJob::create([
+        $savIt = SavedJob::create([
 
             'job_id'       => $request->job_id,
             'user_id'      => $request->user_id,
@@ -151,8 +151,7 @@ class JobsController extends Controller
 
         ]);
 
-        return redirect()->route('browse.one.job', $request->job_id);
-
+        //return $savIt;
 
 
 

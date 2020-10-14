@@ -42,7 +42,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">
-                            <form class="form-group" method="post" id="save_form" action="{{route('save.job')}}">
+                            <form class="form-group" method="post" id="save_form" action="{{route('save.job')}}" enctype="multipart/form-data">
                                 @csrf
 
                                 <input  type="hidden" class="form-control form-control-lg" id="user_id" name="user_id" value="{{Auth::user()->id}}">
@@ -221,5 +221,55 @@
 
 
 @endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+
+            $(document).on('click', '#save', function (e) {
+                e.preventDefault();
+
+
+                $('#user_id').text('');
+                $('#job_id').text('');
+                $('#pic').text('');
+                $('#job_title').text('');
+                $('#company_name').text('');
+                $('#location').text('');
+                $('#region').text('');
+                $('#job_type').text('');
+
+                var formData = new FormData($('#save_form')[0]);
+
+                $.ajax({
+                    type: 'post',
+                    enctype: 'multipart/form-data',
+                    url: "{{route('save.job')}}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (data) {
+
+                        if (data.status == true) {
+                            $('#success_msg').show();
+                        }
+
+
+                    }, error: function (reject) {
+                        var response = $.parseJSON(reject.responseText);
+                        $.each(response.errors, function (key, val) {
+                            $("#" + key + "_error").text(val[0]);
+                        });
+                    }
+                });
+            });
+
+        });
+
+
+    </script>
+@stop
+
 
 
