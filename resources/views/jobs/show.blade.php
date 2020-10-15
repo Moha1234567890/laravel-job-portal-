@@ -23,9 +23,7 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="d-flex align-items-center">
-                        <div class="alert alert-success" id="success_msg" style="display: none;">
-                            done
-                        </div>
+
                         <div class=" d-inline-block mr-3 rounded">
                             <img src="{{asset('storage/app/public/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
                         </div>
@@ -57,16 +55,19 @@
                                 <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
                                 <input  type="hidden" class="form-control form-control-lg" id="job_type" name="job_type" value="{{$job->jobtype}}">
 
-
+                                <h3 id="success_msg" style="display: none;">
+                                    saved
+                                </h3>
                                 @if(isset($jobx->job_id))
+
                                     @if($jobx->job_id == $job->id)
 
                                         @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
-                                            <a href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                            <a  href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
 
                                         @else
                                             @if($jobx->user_id !== Auth::user()->id)
-                                                <a href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                                <a  href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
 
                                             @endif
 
@@ -122,24 +123,28 @@
                     </div>
 
                     <div class="mb-5 form-group">
+                        <div id="job_msg" class="alert alert-success" style="display:none" role="alert">
+                            application sent!
+
+                        </div>
                         @if($job->user_id == Auth::user()->id)
                             <h3>you created this job</h3>
                         @else
-                            <form action="{{route('apply.job')}}" class="form-group" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('apply.job')}}" id="save_mail" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
-                                <input  type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
-                                <input  type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
+                                <input id="from" type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
+                                <input id="to" type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
+                                <input  id="id" type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
 
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
+                                    <input id="subject" type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
 
 
 
                                 </div>
                                <div class="from-group">
-                                   <input type="file" name="image" class="form-control form-control-lg">
+                                   <input id="image" type="file" name="image" class="form-control form-control-lg">
 
 
                                </div>
@@ -151,7 +156,7 @@
                                 <div class="row">
 
                                     <div class="col-3 form-group">
-                                        <button class="btn btn-success" type="submit">apply</button>
+                                        <button id="saveMail" class="btn btn-success" type="submit">apply</button>
                                     </div>
                                     <div class="col-3 form-group">
 
@@ -187,7 +192,10 @@
                         @if(!$job_counter == null)
 
                             <ul class="list-unstyled pl-3 mb-0">
-                                <li class="mb-2"><strong class="text-black">Number of Applications:</strong> ({{$job_counter}})</li>
+                                <li class="mb-2"><strong class="text-black">Number of Applications:</strong><p id="job_counter">
+
+
+                                       </p></li>
 
                             </ul>
 
@@ -224,7 +232,12 @@
 
 @section('scripts')
     <script>
+
         $(document).ready(function() {
+
+            x
+
+
 
             $(document).on('click', '#save', function (e) {
                 e.preventDefault();
@@ -238,6 +251,9 @@
                 $('#location').text('');
                 $('#region').text('');
                 $('#job_type').text('');
+                $('#success_msg').toggle();
+                $('#save').hide();
+
 
                 var formData = new FormData($('#save_form')[0]);
 
@@ -252,7 +268,7 @@
                     success: function (data) {
 
                         if (data.status == true) {
-                            $('#success_msg').show();
+
                         }
 
 
@@ -264,6 +280,66 @@
                     }
                 });
             });
+
+
+
+            $(document).on('click', '#saveMail', function (e) {
+                e.preventDefault();
+
+
+                $('#to').text('');
+                $('#from').text('');
+                $('#id').text('');
+                $('#image').text('');
+                $('#subject').text('');
+                $('#job_msg').toggle('');
+
+
+
+                var formData = new FormData($('#save_mail')[0]);
+
+                $.ajax({
+                    type: 'post',
+                    enctype: 'multipart/form-data',
+                    url: "{{route('apply.job')}}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (data) {
+
+                        if (data.status == true) {
+
+                        }
+
+
+                    }, error: function (reject) {
+                        var response = $.parseJSON(reject.responseText);
+                        $.each(response.errors, function (key, val) {
+                            $("#" + key + "_error").text(val[0]);
+                        });
+                    }
+
+
+
+
+                });
+
+
+
+
+
+
+
+            });
+
+
+
+
+
+
+
+
 
         });
 
