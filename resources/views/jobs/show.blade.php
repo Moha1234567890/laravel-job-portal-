@@ -14,15 +14,25 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
 
+
     <section class="site-section">
         <div class="container">
+            <div class="alert alert-success" style="display:none;" role="alert" id="success_msg">
+                Saved
+            </div>
+
+            <div class="alert alert-success" style="display:none;" role="alert" id="delete_msg">
+                Unsaved
+            </div>
             <div class="row align-items-center mb-5">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="d-flex align-items-center">
+
 
                         <div class=" d-inline-block mr-3 rounded">
                             <img src="{{asset('storage/app/public/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
@@ -55,10 +65,14 @@
                                 <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
                                 <input  type="hidden" class="form-control form-control-lg" id="job_type" name="job_type" value="{{$job->jobtype}}">
 
-                                <h3 id="success_msg" style="display: none;">
-                                    saved
-                                </h3>
-                                @if(isset($jobx->job_id))
+                               <div id="suck">
+
+
+
+
+                               </div>
+
+                            @if(isset($jobx->job_id))
 
                                     @if($jobx->job_id == $job->id)
 
@@ -235,7 +249,7 @@
 
         $(document).ready(function() {
 
-            x
+
 
 
 
@@ -251,8 +265,17 @@
                 $('#location').text('');
                 $('#region').text('');
                 $('#job_type').text('');
-                $('#success_msg').toggle();
-                $('#save').hide();
+                $('#success_msg').show();
+                $('#delete_msg').hide();
+                $('#save').toggle();
+
+
+                var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}",
+                    class:"btn btn-block btn-primary btn-md delete_btn", fuck_id:"{{$job->id}}", fuck2_id: "{{Auth::user()->id}}"
+                }).text("Saved");
+
+                $("#suck").append(something);
+
 
 
                 var formData = new FormData($('#save_form')[0]);
@@ -268,6 +291,7 @@
                     success: function (data) {
 
                         if (data.status == true) {
+
 
                         }
 
@@ -293,6 +317,12 @@
                 $('#image').text('');
                 $('#subject').text('');
                 $('#job_msg').toggle('');
+
+
+
+
+
+
 
 
 
@@ -334,6 +364,40 @@
             });
 
 
+            $(document).on('click', '.delete_btn', function (e) {
+                e.preventDefault();
+
+                var fuck_id =  $(this).attr('fuck_id');
+                var fuck2_id =  $(this).attr('fuck2_id');
+
+                $('#delete_msg').show();
+                $('#success_msg').hide();
+                $('.delete_btn').hide();
+                $('#save').show();
+
+
+                $.ajax({
+                    type: 'get',
+                    url: "{{url('job/delete/'. $job->id)}}",
+                    data: {
+                        '_token': "{{csrf_token()}}",
+                        'id' :fuck_id,
+                        'user_id' :fuck2_id,
+
+                    },
+                    success: function (data) {
+
+                        if(data.status == true){
+
+                        }
+                        $('.offerRow'+data.id).remove();
+                    }, error: function (reject) {
+
+                    }
+                });
+            });
+
+
 
 
 
@@ -342,6 +406,9 @@
 
 
         });
+
+
+
 
 
     </script>

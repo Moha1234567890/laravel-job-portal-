@@ -163,14 +163,8 @@ class JobsController extends Controller
        $job_del = SavedJob::where('job_id', $id)->where('user_id',Auth::user()->id);
 
         $delete = $job_del->delete();
+       // return $delete;
 
-        if($delete) {
-            return redirect()->route('browse.one.job', $id);
-
-        } else {
-            return abort('404');
-
-        }
 
 
 
