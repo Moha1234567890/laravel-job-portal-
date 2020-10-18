@@ -206,20 +206,24 @@
                         @if(!$job_counter == null)
 
                             <ul class="list-unstyled pl-3 mb-0">
-                                <li class="mb-2"><strong class="text-black">Number of Applications:</strong><p id="job_counter">
-
-
-                                       </p></li>
+                                <li id="fuck_counter" value="{{$job_counter}}" class="mb-2"><strong class="text-black">Number of Applications:</strong>
+                                    {{$job_counter}}
+                                </li>
 
                             </ul>
 
                         @else
+
                             <ul class="list-unstyled pl-3 mb-0">
                                 <li class="mb-2"><strong class="text-black">No Applications Yet for This Job</strong></li>
 
                             </ul>
 
                         @endif
+
+                    </div>
+
+                    <div id="var_counter">
 
                     </div>
 
@@ -319,13 +323,6 @@
                 $('#job_msg').toggle('');
 
 
-
-
-
-
-
-
-
                 var formData = new FormData($('#save_mail')[0]);
 
                 $.ajax({
@@ -374,6 +371,7 @@
                 $('#success_msg').hide();
                 $('.delete_btn').hide();
                 $('#save').show();
+                $('a#delete_btn').remove();
 
 
                 $.ajax({
@@ -396,7 +394,6 @@
                     }
                 });
             });
-
 
 
 

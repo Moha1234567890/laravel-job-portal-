@@ -40,7 +40,7 @@ class JobsController extends Controller
     }
 
 
-    public function store(JobsRequest $request) {
+    public function store(Request  $request) {
 
 
         $job = Job::create([
@@ -62,16 +62,12 @@ class JobsController extends Controller
             'companyname' => $request->companyname,
             'website'     => $request->website,
             'linkedin'    => $request->linkedin,
-            'image'       =>  $request->image->store('logos','public')
+            'image'       => trim($request->image)
         ]);
 
-        if ($job) {
-            return redirect()->back()->with(['success' => 'created']);
+       // return $job;
 
-        } else {
-            return redirect()->back()->with(['error' => 'something wrong']);
 
-        }
     }
 
 
