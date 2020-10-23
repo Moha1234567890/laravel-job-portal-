@@ -223,9 +223,8 @@
 
                     </div>
 
-                    <div id="var_counter">
 
-                    </div>
+
 
                     <div class="bg-light p-3 border rounded">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
@@ -235,6 +234,13 @@
                             <a href=""><i class="fab fa-linkedin"></i></a>
 
                         </div>
+                    </div>
+
+                    <div id="load_it">
+
+                        {{$job_counter}}
+
+
                     </div>
 
                 </div>
@@ -251,7 +257,16 @@
 @section('scripts')
     <script>
 
+
+
+
         $(document).ready(function() {
+
+           /* $('#load_it').location.reload('{{url('job/show/'. $job->id)}}');
+
+            loadCounter();*/
+
+
 
 
 
@@ -396,6 +411,20 @@
             });
 
 
+           /* function loadCounter() {
+
+                setTimeout(function() {
+                    $('#load_it').fadeOut('slow').location.reload('{{url('job/show/'. $job->id)}}').fadeIn('slow');
+
+                }, 200000);
+            }*/
+
+
+
+
+
+
+
 
 
 
@@ -403,6 +432,15 @@
 
 
         });
+
+
+
+
+
+
+
+
+
 
 
 

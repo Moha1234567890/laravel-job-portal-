@@ -40,7 +40,7 @@ class JobsController extends Controller
     }
 
 
-    public function store(Request  $request) {
+    public function store(Request $request) {
 
 
         $job = Job::create([
@@ -62,10 +62,14 @@ class JobsController extends Controller
             'companyname' => $request->companyname,
             'website'     => $request->website,
             'linkedin'    => $request->linkedin,
-            'image'       => trim($request->image)
+            'image'       =>  $request->image->store('company_logos', 'public')
         ]);
 
-       // return $job;
+        if($job)
+            return view('jobs.create');
+
+        else
+            return abort('404');
 
 
     }

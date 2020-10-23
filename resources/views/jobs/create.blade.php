@@ -26,7 +26,7 @@
             </div>
             <div class="card-body">
                 <form id="save_form_job" action="{{route('store.job')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                    {{ csrf_field() }}
 
                     <div class="form-group">
 
@@ -155,11 +155,11 @@
 
                         <label for="exampleInputEmail1">Job description: </label>
 
-                        <input type="hidden" class="form-control form-control-lg"  name="jobdesc" id ="x" placeholder="enter description" rows="6">
+                        <input type="hidden" class="form-control form-control-lg"  name="jobdesc" id="x" placeholder="enter description" rows="6">
                         @error('jobdesc')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
-                        <trix-editor input="x"></trix-editor>
+                        <trix-editor id="fuck_1" input="x"></trix-editor>
 
                     </div>
 
@@ -167,12 +167,12 @@
 
                         <label for="exampleInputEmail1">resposibialty: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="respon" id ="y" placeholder="enter resposibialties" rows="6"
+                        <input type="hidden" class="form-control form-control-lg" name="respon" id="y" placeholder="enter resposibialties" rows="6"
                               >
                         @error('respon')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
-                        <trix-editor input="y"></trix-editor>
+                        <trix-editor id="fuck_2"  input="y"></trix-editor>
 
                     </div>
 
@@ -180,11 +180,11 @@
 
                         <label for="exampleInputEmail1">Education: </label>
 
-                        <input type="hidden"  class="form-control form-control-lg" name="edu" id ="z" placeholder="enter resposibialties" rows="6">
+                        <input type="hidden"  class="form-control form-control-lg" name="edu" id="z" placeholder="enter resposibialties" rows="6">
                         @error('edu')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
-                        <trix-editor input="z"></trix-editor>
+                        <trix-editor id="fuck_3"  input="z"></trix-editor>
 
                     </div>
 
@@ -192,11 +192,11 @@
 
                         <label for="exampleInputEmail1">Benfites: </label>
 
-                        <input type="hidden" class="form-control form-control-lg" name="ben" id ="t" placeholder="enter benfites" rows="6">
+                        <input type="hidden" class="form-control form-control-lg" name="ben" id="t" placeholder="enter benfites" rows="6">
                         @error('ben')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
-                        <trix-editor input="t"></trix-editor>
+                        <trix-editor id="fuck_4"  input="t"></trix-editor>
 
                     </div>
 
@@ -212,7 +212,7 @@
                         <label for="exampleInputEmail1" class="pull-left">Company logo: </label>
                         <br>
 
-                        <input type="text" id="image" class=" file-upload form-control form-control-lg" name="image">
+                        <input type="file" class="text-center center-block file-upload d-block mb-3" id="image" name="image">
                         @error('image')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
@@ -265,81 +265,6 @@
 @section('scripts')
 
     <script>
-
-    $(document).ready(function(){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-
-
-        $(document).on('click', '#save_job', function (e) {
-        e.preventDefault();
-
-
-        $('#user_id').text('');
-        $('#email').text('');
-        $('#job_title').text('');
-        $('#location').text('');
-        $('#region').text('');
-        $('#job_type').text('');
-        $('#job_category').text('');
-        $('#vacancy').text('');
-        $('#sal').text('');
-        $('#ex').text('');
-        $('#gender').text('');
-        $('#x').text('');
-        $('#y').text('');
-        $('#t').text('');
-        $('#z').text('');
-        $('#company_name').text('');
-        $('#website').text('');
-        $('#linkedin').text('');
-        $('#image').text('');
-
-        /*$('#ex').show();
-        $('#delete_msg').hide();
-        $('#save').toggle();*/
-
-
-
-
-
-
-        var formData = new FormData($('#save_form_job')[0]);
-
-        $.ajax({
-
-
-        type: 'post',
-        enctype: 'multipart/form-data',
-        url: "{{route('store.job')}}",
-        data: formData,
-        processData: false,
-        contentType: false,
-        cache: false,
-        success: function (data) {
-
-        if (data.status == true) {
-
-            return data;
-
-
-        }
-
-
-        }, error: function (reject) {
-        var response = $.parseJSON(reject.responseText);
-        $.each(response.errors, function (key, val) {
-        $("#" + key + "_error").text(val[0]);
-        });
-        }
-        });
-        });
-
-    });
 
     </script>
 
