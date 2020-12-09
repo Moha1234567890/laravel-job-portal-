@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="site-section" id="next">
-        <div class="container">
+        <div class="container" id="suck">
             <div class="row no-gutters">
                 <div class="col-md-12 header-margin">
 
@@ -20,7 +20,7 @@
 
                                     <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                                         <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                            <h2>{{$job->job_title}}</h2>
+                                            <h2 id="job_title">{{$job->job_title}}</h2>
                                             <strong>{{$job->company_name}}</strong>
                                         </div>
                                         <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
@@ -61,3 +61,46 @@
 
 
 
+@section('scripts')
+
+
+    <script>
+
+        $(document).ready(function() {
+
+            var title = $("#job_title").val();
+
+
+
+
+            $.ajax({
+            type: 'get', //THIS NEEDS TO BE GET
+             enctype: 'multipart/form-data',
+            url: "{{url('user/saved-jobs/'. 7)}}",
+            processData: false,
+            contentType: false,
+            cache: false,
+
+            success: function (data) {
+                //console.log(data);
+                //$('#suck').html(data);
+
+                    //container.html(''); //clears container for new data
+
+                        var something = $('<div/>').attr({ name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}"
+
+                        }).text(title);
+                        console.log(data);
+                        $("#suck").append(something);
+
+
+
+
+            },error:function(){
+            console.log('fuck');
+            }
+            });
+
+        });
+    </script>
+@stop

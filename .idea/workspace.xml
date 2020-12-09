@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e5b8d30-37eb-447c-ae8a-ee1c6bd10fce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jobs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jobs/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,50 +21,7 @@
     <favorites_list name="jobs" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobs/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1171">
-              <caret line="268" column="10" lean-forward="true" selection-start-line="268" selection-start-column="10" selection-end-line="268" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobs/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="303" column="51" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
-              <folding>
-                <element signature="e#45#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/UsersController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-              <folding>
-                <element signature="e#46#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,11 +33,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>suck</find>
-      <find>var_counter</find>
-      <find>fuck_counter</find>
-      <find>save</find>
-      <find>submit</find>
       <find>user_id</find>
       <find>email</find>
       <find>job_title</find>
@@ -108,6 +58,11 @@
       <find>csrf</find>
       <find>image</find>
       <find>usercont</find>
+      <find>Saved</find>
+      <find>conatiner</find>
+      <find>container</find>
+      <find>offerRow</find>
+      <find>suck</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\jobs</dir>
@@ -159,7 +114,6 @@
         <option value="$PROJECT_DIR$/assets/js/script.js" />
         <option value="$PROJECT_DIR$/assets/css/mystyle.css" />
         <option value="$PROJECT_DIR$/resources/views/includes/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jobs/city.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/home.blade.php" />
@@ -170,6 +124,7 @@
         <option value="$PROJECT_DIR$/resources/views/jobs/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php" />
         <option value="$PROJECT_DIR$/resources/views/jobs/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php" />
       </list>
     </option>
   </component>
@@ -291,139 +246,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/jobs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chat" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -543,17 +373,18 @@
       <workItem from="1603016653703" duration="4746000" />
       <workItem from="1603035213342" duration="4831000" />
       <workItem from="1603447613300" duration="5408000" />
+      <workItem from="1604695292926" duration="5421000" />
+      <workItem from="1607339085787" duration="42000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362218000" />
+    <option name="totallyTimeSpent" value="367681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.2771739" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.29347825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5009242" side_tool="true" weight="0.2228261" />
@@ -781,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/jobs/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -823,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="43" column="71" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -844,26 +661,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="303" column="51" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="51" />
+        <state relative-caret-position="8040">
+          <caret line="268" column="10" selection-start-line="268" selection-start-column="10" selection-end-line="268" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/UsersController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/savedJobs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="267">
+          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobs/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="262" column="38" selection-start-line="262" selection-start-column="38" selection-end-line="262" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Jobs/JobsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="393">
           <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
@@ -871,10 +699,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobs/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1171">
-          <caret line="268" column="10" lean-forward="true" selection-start-line="268" selection-start-column="10" selection-end-line="268" selection-end-column="10" />
+        <state relative-caret-position="393">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

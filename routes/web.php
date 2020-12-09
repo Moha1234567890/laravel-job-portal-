@@ -50,7 +50,7 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
 
 });
 
-Route::group(['prefix' =>'user', 'namespace' => 'users'], function() {
+Route::group(['prefix' =>'user', 'namespace' => 'users', 'middleware' => 'CheckForUrl'], function() {
 
 
     Route::get('/update/{id}', 'UsersController@profile')->name('profile');
