@@ -55,7 +55,8 @@ class JobsController extends Controller
             'edu'         => $request->edu,
             'ex'          => $request->ex,
             'sal'         => $request->sal,
-            'jobdesc'     => $request->jobdesc,
+            'sal'         => $request->sal,
+            'counter_apps'     => 0,
             'respon'      => $request->respon,
             'ben'         => $request->ben,
             'jobcategory' => $request->jobcategory,
@@ -118,6 +119,7 @@ class JobsController extends Controller
 
 
         ]);
+
 
 
 

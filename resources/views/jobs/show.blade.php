@@ -236,12 +236,6 @@
                         </div>
                     </div>
 
-                    <div id="load_it">
-
-                        {{$job_counter}}
-
-
-                    </div>
 
                 </div>
 
@@ -262,9 +256,8 @@
 
         $(document).ready(function() {
 
-           /* $('#load_it').location.reload('{{url('job/show/'. $job->id)}}');
 
-            loadCounter();*/
+
 
 
 
@@ -274,6 +267,10 @@
 
             $(document).on('click', '#save', function (e) {
                 e.preventDefault();
+
+
+
+
 
 
                 $('#user_id').text('');
@@ -340,6 +337,8 @@
 
                 var formData = new FormData($('#save_mail')[0]);
 
+
+
                 $.ajax({
                     type: 'post',
                     enctype: 'multipart/form-data',
@@ -351,6 +350,7 @@
                     success: function (data) {
 
                         if (data.status == true) {
+
 
                         }
 
@@ -411,13 +411,7 @@
             });
 
 
-           /* function loadCounter() {
 
-                setTimeout(function() {
-                    $('#load_it').fadeOut('slow').location.reload('{{url('job/show/'. $job->id)}}').fadeIn('slow');
-
-                }, 200000);
-            }*/
 
 
 

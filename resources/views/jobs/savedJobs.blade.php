@@ -66,7 +66,7 @@
 
     <script>
 
-        $(document).ready(function() {
+        /*$(document).ready(function() {
 
             var title = $("#job_title").val();
 
@@ -76,7 +76,7 @@
             $.ajax({
             type: 'get', //THIS NEEDS TO BE GET
              enctype: 'multipart/form-data',
-            url: "{{url('user/saved-jobs/'. 7)}}",
+            url: "",
             processData: false,
             contentType: false,
             cache: false,
@@ -87,7 +87,7 @@
 
                     //container.html(''); //clears container for new data
 
-                        var something = $('<div/>').attr({ name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}"
+                        var something = $('<div/>').attr({ name:"saved", id:"delete_btn", value:'Saved', href:""
 
                         }).text(title);
                         console.log(data);
@@ -101,6 +101,6 @@
             }
             });
 
-        });
+        }); */
     </script>
 @stop
