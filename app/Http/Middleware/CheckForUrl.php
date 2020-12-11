@@ -21,16 +21,30 @@ class CheckForUrl
         if($request->route('id') ) {
         $user = User::find($request->route('id'));
 
-        //$saved_id = User::find($request->route('saved_id'));
+
 
 
 
             
         if ( $user['id'] !=  auth()->user()->id) {
-            //echo $user;
-            
+
             return redirect('/');
          }
+        }
+
+        if($request->route('saved_id') ) {
+            $user = User::find($request->route('saved_id'));
+
+
+
+
+
+
+            if ( $user['id'] !=  auth()->user()->id) {
+                //echo $user;
+
+                return redirect('/');
+            }
         }
 
          

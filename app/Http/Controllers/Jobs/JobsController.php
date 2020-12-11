@@ -101,6 +101,15 @@ class JobsController extends Controller
 
     }
 
+    public function loadCounter($id) {
+        $job_counter = Email::where( 'job_id_email', $id)->count();
+
+
+
+        return $job_counter;
+
+    }
+
     public function send(Request $request) {
 
         $data = [

@@ -206,7 +206,8 @@
                         @if(!$job_counter == null)
 
                             <ul class="list-unstyled pl-3 mb-0">
-                                <li id="fuck_counter" value="{{$job_counter}}" class="mb-2"><strong class="text-black">Number of Applications:</strong>
+
+                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
                                     {{$job_counter}}
                                 </li>
 
@@ -222,6 +223,8 @@
                         @endif
 
                     </div>
+
+
 
 
 
@@ -257,20 +260,19 @@
         $(document).ready(function() {
 
 
+            function myFunction() {
+                setInterval(function(){
+                    $("#load_it").load("{{route('load.counter', $job->id)}}");
 
+                }, 300);
 
+            }
 
-
-
-
+            myFunction();
 
 
             $(document).on('click', '#save', function (e) {
                 e.preventDefault();
-
-
-
-
 
 
                 $('#user_id').text('');
