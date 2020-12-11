@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 
@@ -28,8 +29,9 @@ class CheckForUrl
             
         if ( $user['id'] !=  auth()->user()->id) {
 
-            return redirect('/');
-         }
+            return redirect()->route('profile', ['id' => Auth::user()->id]);
+
+        }
         }
 
         if($request->route('saved_id') ) {
@@ -43,7 +45,8 @@ class CheckForUrl
             if ( $user['id'] !=  auth()->user()->id) {
                 //echo $user;
 
-                return redirect('/');
+                return redirect()->route('saved.jobs', ['saved_id' => Auth::user()->id]);
+
             }
         }
 

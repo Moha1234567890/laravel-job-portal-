@@ -209,6 +209,7 @@
 
                                 <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
                                     {{$job_counter}}
+
                                 </li>
 
                             </ul>
@@ -262,9 +263,9 @@
 
             function myFunction() {
                 setInterval(function(){
-                    $("#load_it").load("{{route('load.counter', $job->id)}}");
+                    $("#load_it").load("{{url('job/loadcounter/'. $job->id)}}");
 
-                }, 300);
+                }, 3000);
 
             }
 

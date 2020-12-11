@@ -42,7 +42,7 @@ Route::group([ 'prefix' => 'job', 'namespace' => 'jobs'], function(){
     Route::get('city/{city}','JobsController@city')->name('browse.city.jobs');
     Route::get('category/{name}','JobsController@category')->name('browse.category.jobs');
     Route::get('show/{id}','JobsController@show')->name('browse.one.job');
-    Route::get('loadcounter/{id}','JobsController@loadCounter')->name('load.counter')->middleware('StopAccessLoad');
+    Route::get('loadcounter/{id}','JobsController@loadCounter')->name('load.counter');
     Route::post('apply','JobsController@send')->name('apply.job');
     Route::post('save','JobsController@save')->name('save.job');
     Route::get('delete/{job_id}','JobsController@delete')->name('delete.job');

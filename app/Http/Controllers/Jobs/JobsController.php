@@ -56,7 +56,7 @@ class JobsController extends Controller
             'ex'          => $request->ex,
             'sal'         => $request->sal,
             'sal'         => $request->sal,
-            'counter_apps'     => 0,
+            'jobdesc'     => $request->jobdesc,
             'respon'      => $request->respon,
             'ben'         => $request->ben,
             'jobcategory' => $request->jobcategory,
@@ -106,7 +106,7 @@ class JobsController extends Controller
 
 
 
-        return $job_counter;
+        echo $job_counter;
 
     }
 
@@ -162,7 +162,7 @@ class JobsController extends Controller
 
         ]);
 
-        //return $savIt;
+
 
 
 
@@ -174,7 +174,7 @@ class JobsController extends Controller
        $job_del = SavedJob::where('job_id', $id)->where('user_id',Auth::user()->id);
 
         $delete = $job_del->delete();
-       // return $delete;
+
 
 
 
