@@ -207,7 +207,7 @@
 
                             <ul class="list-unstyled pl-3 mb-0">
 
-                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
+                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block num_of_apps">
                                     {{$job_counter}}
 
                                 </li>
@@ -217,7 +217,7 @@
                         @else
 
                             <ul class="list-unstyled pl-3 mb-0">
-                                <li class="mb-2"><strong class="text-black">No Applications Yet for This Job</strong></li>
+                                <li id="load_it" class="mb-2 no_apps"><strong class="text-black">No Applications for this job</strong></li>
 
                             </ul>
 
@@ -264,6 +264,8 @@
             function myFunction() {
                 setInterval(function(){
                     $("#load_it").load("{{url('job/loadcounter/'. $job->id)}}");
+                    $('.no_apps').hide();
+                    $('.num_of_apps').show();
 
                 }, 3000);
 
