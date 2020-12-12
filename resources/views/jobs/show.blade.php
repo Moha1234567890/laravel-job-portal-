@@ -203,7 +203,7 @@
                     <div class="bg-light p-3 border rounded d-block mb-4">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job info</h3>
 
-                        @if(!$job_counter == null)
+
 
                             <ul class="list-unstyled pl-3 mb-0">
 
@@ -212,16 +212,11 @@
 
                                 </li>
 
-                            </ul>
 
-                        @else
-
-                            <ul class="list-unstyled pl-3 mb-0">
-                                <li id="load_it" class="mb-2 no_apps"><strong class="text-black">No Applications for this job</strong></li>
 
                             </ul>
 
-                        @endif
+
 
                     </div>
 
@@ -263,9 +258,11 @@
 
             function myFunction() {
                 setInterval(function(){
+
                     $("#load_it").load("{{url('job/loadcounter/'. $job->id)}}");
-                    $('.no_apps').hide();
-                    $('.num_of_apps').show();
+
+
+
 
                 }, 3000);
 
@@ -276,6 +273,8 @@
 
             $(document).on('click', '#save', function (e) {
                 e.preventDefault();
+
+
 
 
                 $('#user_id').text('');
