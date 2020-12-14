@@ -84,6 +84,16 @@ class UsersController extends Controller
 
     }
 
+    public function loadedJobs($saved_id) {
+
+        $saved_jobs = SavedJob::select()->where('user_id', $saved_id)->paginate(3);
+
+
+       foreach ($saved_jobs as $job) {
+          return $job;
+        }
+    }
+
 
 
 

@@ -5,8 +5,7 @@
     <section class="site-section" id="next">
         <div class="container" id="suck">
             <div class="row no-gutters">
-                <div class="col-md-12 header-margin">
-
+                <div class="col-md-12 header-margin" id="">
                     @if(isset($saved_jobs) && $saved_jobs->count() > 0)
                         @foreach($saved_jobs as $job)
                             <ul class="job-listings mb-5">
@@ -45,9 +44,71 @@
                     @endif
 
                     {!! $saved_jobs->links() !!}
-
-
                 </div>
+
+            </div>
+
+            <div id="get_it">
+
+            </div>
+
+            <div >
+
             </div>
         </div>
     </section>
+
+
+@section('scripts')
+    <script>
+
+
+
+
+        $(document).ready(function() {
+
+
+            var activities = [
+                ['Work', 9],
+                ['Eat', 1],
+                ['Commute', 2],
+                ['Play Game', 1],
+                ['Sleep', 7]
+            ];
+
+
+
+
+
+
+
+            function myFunction() {
+                setInterval(function(){
+
+                   var x = $("#load_it").load("{{url('user/loaded-jobs/'. 5)}}");
+                    console.log(x);
+
+
+                    $.each (x, function (key ) {
+
+                        //$('#get_it').append(x[key]);
+                        //console.log(x[key]);
+
+                        //console.log(data);
+                    });
+
+
+                }, 3000);
+
+            }
+
+            myFunction();
+
+            });
+
+
+
+
+
+    </script>
+@stop

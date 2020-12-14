@@ -207,7 +207,7 @@
 
                             <ul class="list-unstyled pl-3 mb-0">
 
-                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block num_of_apps">
+                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
                                     {{$job_counter}}
 
                                 </li>
