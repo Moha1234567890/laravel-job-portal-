@@ -42,5 +42,8 @@ Route::group(['namespace'=>'admins', 'middleware'=>'guest:admin'], function() {
 
 
 
+
+
 });
 
+Route::post('logout-admins', 'auth\LoginController@logoutAdmin')->name('logout.admins');

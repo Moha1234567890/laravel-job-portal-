@@ -9,6 +9,11 @@ use App\Http\Requests\LoginRequest;
 class AdminsController extends Controller
 {
 
+    public function __construct()
+    {
+        //$this->middleware('AuthAdminsAgain');
+    }
+
 
 
     public function login() {

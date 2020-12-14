@@ -30,7 +30,12 @@
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="mr-1">{{Auth::guard('admin')->user()->name}}
+                <span class="mr-1">
+                    @if(isset(Auth::guard('admin')->user()->name))
+                        <p>hell</p>
+                    @else
+                        {{Auth::guard('admin')->user()->name}}
+                    @endif
                   <span
                       class="user-name text-bold-700 text-color-red"> </span>
                 </span>
@@ -40,10 +45,10 @@
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
                                     class="ft-user"></i> تعديل الملف الشحصي </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="dropdown-item" href="{{ route('logout.admins') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="ft-power"></i> تسجيل
                                 الخروج </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('logout.admins') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>

@@ -22,8 +22,12 @@ class AuthAdmins
             if (Request::is('admin/*'))
                 return route('admin.login');
 
+//                if (!$request->expectsJson())
+//                return route('admin.login');
             else
-                return $next($request);
+
+                //return route('admin.login');
+               return $next($request);
 
 
 
