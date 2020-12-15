@@ -1,66 +1,53 @@
-@extends('layouts.login')
-@section('title','الدخول')
+@extends('layouts.loginadmin')
+
 @section('content')
-    <section class="flexbox-container">
-        <div class="col-12 d-flex align-items-center justify-content-center">
-            <div class="col-md-4 col-10 box-shadow-2 p-0">
-                <div class="card border-grey border-lighten-3 m-0">
-                    <div class="card-header border-0">
-                        <div class="card-title text-center">
-                            <div class="p-1">
-                                <img src="{{asset('assets/front/images/logo.png')}}" alt="LOGO"/>
-
-                            </div>
+    <section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <section class="login-content">
+        <div class="logo">
+            <h1>Vali</h1>
+        </div>
+        <div class="login-box">
+            <form class="login-form" method="post" action="{{route('admin.login')}}">
+                @csrf
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+                <div class="form-group">
+                    <label class="control-label">EMAIL</label>
+                    <input name="email" class="form-control" type="text" placeholder="Email" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">PASSWORD</label>
+                    <input name="password" class="form-control" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <div class="utility">
+                        <div class="animated-checkbox">
+                            <label>
+                                <input type="checkbox"><span class="label-text">Stay Signed in</span>
+                            </label>
                         </div>
-                        <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                            <span>الدخول للوحة التحكم </span>
-                        </h6>
-                    </div>
-
-                    <div class="card-content">
-                        <div class="card-body">
-                            <form class="form-horizontal form-simple" action="{{route('admin.login')}}" method="post"
-                                  novalidate>
-                                @csrf
-                                <fieldset class="form-group position-relative has-icon-left mb-0">
-                                    <input type="text" name="email" class="form-control form-control-lg input-lg"
-                                           value="{{old('email')}}" id="email" placeholder="أدخل البريد الالكتروني ">
-                                    <div class="form-control-position">
-                                        <i class="ft-user"></i>
-                                    </div>
-                                    @error('email')
-                                    <span class="text-danger">{{$message}}</span>
-                                    @enderror
-
-                                </fieldset>
-                                <fieldset class="form-group position-relative has-icon-left">
-                                    <input type="password" name="password" class="form-control form-control-lg input-lg"
-                                           id="user-password"
-                                           placeholder="أدخل كلمة المرور">
-                                    <div class="form-control-position">
-                                        <i class="la la-key"></i>
-                                    </div>
-                                    @error('password')
-                                    <span class="text-danger">{{$message}}</span>
-                                    @enderror
-                                </fieldset>
-                                <div class="form-group row">
-                                    <div class="col-md-6 col-12 text-center text-md-left">
-                                        <fieldset>
-                                            <input type="checkbox" name="remember_me" id="remember-me"
-                                                   class="chk-remember">
-                                            <label for="remember-me">تذكر دخولي</label>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i>
-                                    دخول
-                                </button>
-                            </form>
-                        </div>
+                        <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
                     </div>
                 </div>
-            </div>
+                <div class="form-group btn-container">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+                </div>
+            </form>
+            <form class="forget-form" action="">
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
+                <div class="form-group">
+                    <label class="control-label">EMAIL</label>
+                    <input class="form-control" type="text" placeholder="Email">
+                </div>
+                <div class="form-group btn-container">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+                </div>
+                <div class="form-group mt-3">
+                    <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Back to Login</a></p>
+                </div>
+            </form>
         </div>
     </section>
+
 @endsection

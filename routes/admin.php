@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
-Route::group(['namespace'=>'admins', 'middleware'=>'AuthAdmins'], function() {
 
-    Route::get('/', 'DashboardController@redirect')->name('admin.dashboard');
+
+//
+Auth::routes();
+Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
+
+    Route::get('/', 'DashboardController@redirect')->name('admins.auth.dashboard');
 
 
 

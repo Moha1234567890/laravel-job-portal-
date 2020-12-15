@@ -9,10 +9,10 @@ use App\Http\Requests\LoginRequest;
 class AdminsController extends Controller
 {
 
-    public function __construct()
-    {
-        //$this->middleware('AuthAdminsAgain');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('RedirectIfAuthenticated');
+//    }
 
 
 
@@ -27,7 +27,7 @@ class AdminsController extends Controller
 
         if (auth()->guard('admin')->attempt(['email' => $request->input("email"), 'password' => $request->input("password")], $remember_me)) {
             // notify()->success('تم الدخول بنجاح  ');
-            return redirect() -> route('admin.dashboard');
+            return redirect() -> route('admins.auth.dashboard');
         }
         // notify()->error('خطا في البيانات  برجاء المجاولة مجدا ');
         return redirect()->back()->with(['error' => 'هناك خطا بالبيانات']);

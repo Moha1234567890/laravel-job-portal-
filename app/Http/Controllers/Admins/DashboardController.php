@@ -8,11 +8,15 @@ use App\Http\Requests\LoginRequest;
 class DashboardController extends Controller
 {
 
+//    public function __construct()
+//    {
+//        $this->middleware('RedirectIfAuthenticated');
+//    }
 
 
     public function redirect() {
 
-        return view('admins.dashboard');
+        return view('admins.auth.dashboard');
     }
 
 
