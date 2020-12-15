@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 
 
@@ -17,7 +17,7 @@
 
                             <div class="login-form header-margin">
                                 <div class="logo-login">
-                                    <a href="index.html"><img style="margin:auto" src="assets/img/logo/loder.png" alt=""></a>
+                                    <a href="{{route('home')}}"><img style="margin:auto" src="assets/img/logo/loder.png" alt=""></a>
                                 </div>
 
                                 <div class="form-group row form-input">
