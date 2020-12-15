@@ -35,7 +35,7 @@
 
 
                         <div class=" d-inline-block mr-3 rounded">
-                            <img src="{{asset('storage/app/public/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
+                            <img src="{{url('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
                         </div>
                         <div>
                             <h2>{{$job->jobtitle}}</h2>

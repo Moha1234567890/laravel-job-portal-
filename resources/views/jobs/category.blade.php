@@ -15,7 +15,7 @@
                                     <div class="job-listing-logo">
 
 
-                                        <a href="{{route('browse.one.job',$job->id)}}"> <img src="{{asset('storage/app/public/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
+                                        <a href="{{route('browse.one.job',$job->id)}}"> <img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
                                     </div>
 
                                     <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
