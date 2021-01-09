@@ -59,6 +59,11 @@
                                                             {{ __('profile') }}
                                                         </a>
 
+                                                        <a  class="dropdown-item text-primary" href="{{ route('profile.update.image.get', Auth::user()->id) }}"
+                                                        >
+                                                            {{ __('update image') }}
+                                                        </a>
+
                                                         <a  class="dropdown-item text-primary" href="{{route('saved.jobs', Auth::user()->id)}}"
                                                         >
                                                             {{ __('saved jobs') }}

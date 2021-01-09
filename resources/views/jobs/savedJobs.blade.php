@@ -3,23 +3,23 @@
 @section('content')
 
     <section class="site-section" id="next">
-        <div class="container" id="suck">
+        <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-12 header-margin" id="">
+                <div class="col-md-12 header-margin">
+
                     @if(isset($saved_jobs) && $saved_jobs->count() > 0)
                         @foreach($saved_jobs as $job)
                             <ul class="job-listings mb-5">
                                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 
                                     <div class="job-listing-logo">
-
-
-                                        <a href="{{route('browse.one.job', $job->job_id)}}"> <img src="{{asset('storage/'. $job->pic)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
+                                        {{--fix url bug--}}
+                                        <a href="{{route('browse.one.job', $job->job_id)}}"> <img src="{{asset('storage/'.$job->pic)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img" ></a>
                                     </div>
 
                                     <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                                         <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                            <h2 id="job_title">{{$job->job_title}}</h2>
+                                            <h2>{{$job->job_title}}</h2>
                                             <strong>{{$job->company_name}}</strong>
                                         </div>
                                         <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
@@ -32,83 +32,25 @@
 
                                 </li>
 
-
                             </ul>
 
-                        @endforeach
 
-                    @else
-                        <div class="alert alert-danger">
-                            You Have Not Saved Any Jobs Yet
-                        </div>
+
+                        @endforeach
                     @endif
 
-                    {!! $saved_jobs->links() !!}
+                    {!!  $saved_jobs -> links() !!}
                 </div>
-
-            </div>
-
-            <div id="get_it">
-
-            </div>
-
-            <div >
-
             </div>
         </div>
     </section>
 
 
-@section('scripts')
-    <script>
 
 
 
 
-        $(document).ready(function() {
-
-
-            var activities = [
-                ['Work', 9],
-                ['Eat', 1],
-                ['Commute', 2],
-                ['Play Game', 1],
-                ['Sleep', 7]
-            ];
+@endsection
 
 
 
-
-
-
-
-            function myFunction() {
-                setInterval(function(){
-
-                   var x = $("#load_it").load("{{url('user/loaded-jobs/'. 5)}}");
-                    console.log(x);
-
-
-                    $.each (x, function (key ) {
-
-                        //$('#get_it').append(x[key]);
-                        //console.log(x[key]);
-
-                        //console.log(data);
-                    });
-
-
-                }, 3000);
-
-            }
-
-            myFunction();
-
-            });
-
-
-
-
-
-    </script>
-@stop

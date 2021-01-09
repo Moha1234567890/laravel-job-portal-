@@ -12,6 +12,7 @@ use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
 use App\Models\SavedJob;
+use App\Models\Email;
 
 use App\Models\Job;
 
@@ -30,11 +31,15 @@ class UsersController extends Controller
 
         $user = User::find($id);
 
-        return view('users.profile', compact('user'));
+        $applyedJobs = Email::select('from_user', Auth::user()->email)->count();
+
+        $createdJobs = Job::select($id)->where('user_id', $id)->count();
+
+        return view('users.profile', compact('user' , 'createdJobs', 'applyedJobs'));
     }
 
 
-    public function update(Request $request, $id) {
+    public function update(UsersRequest $request, $id) {
 
         $user = User::find($id);
 
@@ -57,23 +62,68 @@ class UsersController extends Controller
 
     }
 
-    public function updateImage(Request $request, $id) {
+    public function updateImageGet($saved_id) {
+
+        $user = User::find($saved_id);
+
+        return view('users.image', compact('user'));
+    }
+
+    public function updateCv(Request $request, $id) {
 
         $y = User::find($id);
 
+        Request()->validate([
+
+            'cv' => 'required|file|mimes:pdf,doc,txt|max:2048',
+
+
+        ]);
+
+
         if($y)
-            $x = $y->update([
+            $y->update([
 
-            'image' =>  $request->image->store('images','public'),
-            'cv'    => $request->cv->store('cvs','public')
+                'cv' =>  $request->cv->store('cvs','public'),
 
-         ]);
-        else
-            return redirect()->route('home');
+            ]);
+
+        return redirect()->route('profile', ['id' => Auth::user()->id]);
+
+
 
 
 
     }
+
+    public function updateImage(Request $request, $id) {
+
+        $y = User::find($id);
+
+        Request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+
+        ]);
+
+
+        if($y)
+             $y->update([
+
+            'image' =>  $request->image->store('images','public'),
+
+         ]);
+
+        return redirect()->route('profile', ['id' => Auth::user()->id]);
+
+
+
+
+
+    }
+
+
 
     public function savedJobs($saved_id) {
 
@@ -83,32 +133,6 @@ class UsersController extends Controller
         return view('jobs.savedJobs', compact('saved_jobs'));
 
     }
-
-    public function loadedJobs($saved_id) {
-
-        $saved_jobs = SavedJob::select()->where('user_id', $saved_id)->paginate(3);
-
-
-       foreach ($saved_jobs as $job) {
-          return $job;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

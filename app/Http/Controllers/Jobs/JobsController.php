@@ -42,6 +42,36 @@ class JobsController extends Controller
 
     public function store(Request $request) {
 
+        Request()->validate([
+
+            'image'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'email'        => 'required|string|max:100',
+            'jobtitle'     => 'required|string|max:100',
+            'location'     => 'required|string|max:100',
+            'region'       => 'required|string|max:100',
+            'jobtype'      => 'required',
+            'vacancy'      => 'required',
+            'ex'           => 'required',
+            'sal'          => 'required',
+            'jobdesc'      => 'required|max:900',
+            'respon'       => 'required|max:900',
+            'ben'          => 'required|max:900',
+            'user_id'      => 'required',
+
+            'edu'          => 'required|max:900',
+            'jobcategory'  => 'required',
+            'gender'       => 'required',
+
+
+
+            'companyname'  => 'required|string',
+            'website'      => 'required|string',
+            'linkedin'     => 'required|string'
+
+
+
+        ]);
+
 
         $job = Job::create([
             'user_id'     => $request->user_id,
@@ -66,8 +96,10 @@ class JobsController extends Controller
             'image'       =>  $request->image->store('company_logos', 'public')
         ]);
 
+
+
         if($job)
-            return view('jobs.create');
+            return redirect()->back()->with(['success' => 'created']);
 
         else
             return abort('404');
@@ -121,6 +153,17 @@ class JobsController extends Controller
 
         ];
 
+        Request()->validate([
+
+            'image' => 'required|file|mimes:pdf,doc,txt|max:2048',
+
+
+        ]);
+
+
+
+
+
        Email::create([
             'job_id_email' => $data['id'],
             'to_user'      => $data['to'],
@@ -128,6 +171,8 @@ class JobsController extends Controller
 
 
         ]);
+
+
 
 
 
@@ -149,6 +194,8 @@ class JobsController extends Controller
 
     public function save(Request $request) {
 
+
+
         $savIt = SavedJob::create([
 
             'job_id'       => $request->job_id,
@@ -161,6 +208,8 @@ class JobsController extends Controller
             'job_type'     => $request->job_type
 
         ]);
+
+
 
 
 

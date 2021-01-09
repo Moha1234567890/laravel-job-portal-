@@ -9,7 +9,7 @@
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
-                        <a class="text-primary" href="">Jobs</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">Jobs</a> <span class="mx-2 slash">/</span>
                         <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
                     </div>
                 </div>
@@ -98,9 +98,7 @@
                             </form>
 
                         </div>
-                        <div class="col-6">
-                            <a href="#" class="btn btn-block btn-primary btn-md">Apply</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -109,7 +107,8 @@
                 <div class="col-lg-8">
                     <div class="mb-5">
                         <figure class="mb-5"><img src="{{asset('assets/images/job_single_img_1.jpg')}}" alt="Image" class="img-fluid rounded"></figure>
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-pencil fa-2x mr-3"></span>Job Description</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-anchor fa-2x mr-3"></span>Job Description</h3>
+
                         <p>{{strip_tags($job->jobdesc)}})</p>
 
                     </div>
@@ -130,9 +129,9 @@
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-apple fa-2x mr-3"></span>Other Benifits</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-bell fa-2x mr-3"></span>Other Benifits</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            {{strip_tags($job->ben)}}
+                            <li class="d-flex align-items-start mb-2"> {{strip_tags($job->ben)}} </li>
                         </ul>
                     </div>
 
@@ -228,9 +227,12 @@
                     <div class="bg-light p-3 border rounded">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
                         <div class="footer-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin"></i></a>
+                            <a href="{{url('http://twitter.com/share?url='. Request::url())}}"  target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="{{url('https://www.facebook.com/sharer/sharer.php?u='. Request::url())}}"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{url('https://www.linkedin.com/shareArticle?mini=true&url='. Request::url())}}"  target="_blank" ><i class="fab fa-linkedin"></i></a>
+
+
+
 
                         </div>
                     </div>

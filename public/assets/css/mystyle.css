@@ -6,10 +6,10 @@
 
 .img-show {
     background-image: url('../../assets/images/hero_1.jpg');
-    margin-top: 102px;
-    padding-bottom: 200px;
+    margin-top: 80px;
+    padding-bottom: 350px;
     padding-top: 200px;
-    margin-bottom:50px;
+    margin-bottom:90px;
     z-index: 1;
 
 
@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: -59px;
+    bottom: -70px;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,6 +47,7 @@
 
 .footer-wrappper {
     padding: 41px;
+    margin-top: -350px;
 }
 
 
@@ -59,3 +60,6 @@ main.main {
     margin-bottom: -300px;
 }*/
 
+.job-listings  {
+    border: 1px solid grey;
+}

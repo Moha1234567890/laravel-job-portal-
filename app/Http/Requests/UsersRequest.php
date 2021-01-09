@@ -27,10 +27,14 @@ class UsersRequest extends FormRequest
             'name' => 'required|max:30',
             'email' => 'required|max:30',
             'mobile' => 'required|max:20',
-            'location' => 'required|max:20',
 
-            'image' => 'required',
-            'cv' => 'required'
+
+
+
+
+
+
+
         ];
     }
 
