@@ -6,6 +6,18 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-12 header-margin">
+                    @if(!$saved_jobs_counter == null)
+
+                        <div class="bg-light p-3 border rounded d-block mb-4">
+
+                            <ul class="list-unstyled pl-3 mb-0">
+
+                                <li class="mb-2"><strong class="text-black">Number of Saved Jobs:</strong> <span class="pull-right">({{$saved_jobs_counter}})</span></li>
+
+                            </ul>
+
+                        </div>
+                    @endif
 
                     @if(isset($saved_jobs) && $saved_jobs->count() > 0)
                         @foreach($saved_jobs as $job)
@@ -37,6 +49,11 @@
 
 
                         @endforeach
+                    @else
+                        <div class="alert alert-danger">
+                            you have not saved any jobs yet
+                        </div>
+
                     @endif
 
                     {!!  $saved_jobs -> links() !!}

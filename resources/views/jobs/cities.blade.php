@@ -9,15 +9,17 @@
 
                 @if(@isset($cities) && $cities->count() > 0)
                       @foreach($cities as $city)
-                        <div class="col-md-4" >
-                            <div class="alert alert-primary text-center text-capitalize bg-primary" role="alert">
 
-                                <a href="{{route('browse.city.jobs', $city->region)}}" class=" text-light nounderline text-decoration-none">
-                                    <i class="fa fa-map-marker">
-                                        {{$city->region}}
-                                    </i>
-                                </a>
-                            </div>
+
+                        <div class="col-md-4 mb-5 mt-3">
+
+                            <a href="{{route('browse.city.jobs',$city->region)}}" class="text-center d-block">
+                                <span class="fa fa-map-marker fa-2x text-primary"  ><span class="icon-magnet d-block"></span></span>
+                                <h3>{{$city->region}}</h3>
+                                <p>Continually brand virtual best practices with customer directed opportunities. Intrinsicly synergize top-line.</p>
+
+                            </a>
+
                         </div>
 
                       @endforeach

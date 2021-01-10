@@ -57,13 +57,9 @@ class JobsController extends Controller
             'respon'       => 'required|max:900',
             'ben'          => 'required|max:900',
             'user_id'      => 'required',
-
             'edu'          => 'required|max:900',
             'jobcategory'  => 'required',
             'gender'       => 'required',
-
-
-
             'companyname'  => 'required|string',
             'website'      => 'required|string',
             'linkedin'     => 'required|string'
@@ -111,7 +107,7 @@ class JobsController extends Controller
     public function show($id) {
 
 
-        $job = Job::find($id);
+        $job = Job::findOrFail($id);
 
         $job_counter = Email::where( 'job_id_email', $id)->count();
 
@@ -144,6 +140,14 @@ class JobsController extends Controller
 
     public function send(Request $request) {
 
+        Request()->validate([
+
+            'image' => 'required|file|mimes:pdf,doc,txt|max:2048',
+
+
+        ]);
+
+
         $data = [
             'id'      => $request->id,
             'to'      => $request->to,
@@ -153,12 +157,13 @@ class JobsController extends Controller
 
         ];
 
-        Request()->validate([
+//        Request()->validate([
+//
+//            'cv' => 'required|file|mimes:pdf,doc,txt|max:2048',
+//
+//
+//        ]);
 
-            'image' => 'required|file|mimes:pdf,doc,txt|max:2048',
-
-
-        ]);
 
 
 

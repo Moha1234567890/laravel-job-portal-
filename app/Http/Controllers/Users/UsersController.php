@@ -29,7 +29,7 @@ class UsersController extends Controller
 
     public function profile($id) {
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         $applyedJobs = Email::select('from_user', Auth::user()->email)->count();
 
@@ -41,7 +41,7 @@ class UsersController extends Controller
 
     public function update(UsersRequest $request, $id) {
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         if($user) {
             $updateuser = $user->update(
@@ -64,14 +64,14 @@ class UsersController extends Controller
 
     public function updateImageGet($saved_id) {
 
-        $user = User::find($saved_id);
+        $user = User::findOrFail($saved_id);
 
         return view('users.image', compact('user'));
     }
 
     public function updateCv(Request $request, $id) {
 
-        $y = User::find($id);
+        $y = User::findOrFail($id);
 
         Request()->validate([
 
@@ -98,7 +98,7 @@ class UsersController extends Controller
 
     public function updateImage(Request $request, $id) {
 
-        $y = User::find($id);
+        $y = User::findOrFail($id);
 
         Request()->validate([
 
@@ -128,9 +128,10 @@ class UsersController extends Controller
     public function savedJobs($saved_id) {
 
         $saved_jobs = SavedJob::select()->where('user_id', $saved_id)->paginate(3);
+        $saved_jobs_counter = SavedJob::select()->where('user_id', $saved_id)->count();
 
 
-        return view('jobs.savedJobs', compact('saved_jobs'));
+        return view('jobs.savedJobs', compact('saved_jobs', 'saved_jobs_counter'));
 
     }
 

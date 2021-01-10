@@ -10,7 +10,7 @@ class DashboardController extends Controller
 
 //    public function __construct()
 //    {
-//        $this->middleware('RedirectIfAuthenticated');
+//        $this->middleware('auth');
 //    }
 
 

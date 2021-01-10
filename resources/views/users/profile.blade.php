@@ -45,8 +45,7 @@
                                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong> posted jobs</strong></span>{{$createdJobs}}</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong>applyed to jobs</strong></span> {{$applyedJobs}}</li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+
                             </ul>
 
                             <div class="panel panel-default d-block mt-4">

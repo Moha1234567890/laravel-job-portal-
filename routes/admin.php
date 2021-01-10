@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //
-Auth::routes();
+//Auth::routes();
 Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
 
     Route::get('/', 'DashboardController@redirect')->name('admins.dashboard');

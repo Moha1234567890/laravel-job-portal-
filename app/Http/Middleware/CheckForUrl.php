@@ -24,14 +24,19 @@ class CheckForUrl
 
 
 
+            if(isset($user['id'])) {
+                if ( $user['id'] !=  auth()->user()->id) {
+
+                    return redirect()->route('profile', ['id' => Auth::user()->id]);
+
+                }
+            }else {
+                return abort('404');
+
+            }
 
 
-            
-        if ( $user['id'] !=  auth()->user()->id) {
 
-            return redirect()->route('profile', ['id' => Auth::user()->id]);
-
-        }
         }
 
         if($request->route('saved_id') ) {
@@ -39,15 +44,20 @@ class CheckForUrl
 
 
 
+            if(isset($user['id'])) {
+                if ( $user['id'] !=  auth()->user()->id) {
+                    //echo $user;
 
+                    return redirect()->route('saved.jobs', ['saved_id' => Auth::user()->id]);
 
-
-            if ( $user['id'] !=  auth()->user()->id) {
-                //echo $user;
-
-                return redirect()->route('saved.jobs', ['saved_id' => Auth::user()->id]);
+                }
+            }else {
+                return abort('404');
 
             }
+
+
+
         }
 
          

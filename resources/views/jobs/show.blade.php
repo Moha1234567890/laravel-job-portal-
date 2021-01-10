@@ -77,18 +77,23 @@
                                     @if($jobx->job_id == $job->id)
 
                                         @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
-                                            <a  href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                            <a  id="delete_btn" fuck_id="19" fuck2_id="7" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+
 
                                         @else
                                             @if($jobx->user_id !== Auth::user()->id)
-                                                <a  href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md">saved</a>
+                                                <a  id="delete_btn" fuck_id="19" fuck2_id="7" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
 
                                             @endif
+
+
 
                                         @endif
 
 
+
                                     @endif
+
                                 @else
                                         <button class="btn btn-success" id="save" type="submit">save</button>
 
@@ -138,6 +143,10 @@
                     <div class="mb-5 form-group">
                         <div id="job_msg" class="alert alert-success" style="display:none" role="alert">
                             application sent!
+
+                        </div>
+                        <div id="job_msg_error" class="alert alert-danger" style="display:none" role="alert">
+                           one of the fileds are missing or file extension not supported
 
                         </div>
                         @if($job->user_id == Auth::user()->id)
@@ -258,6 +267,8 @@
         $(document).ready(function() {
 
 
+
+
             function myFunction() {
                 setInterval(function(){
 
@@ -290,6 +301,9 @@
                 $('#success_msg').show();
                 $('#delete_msg').hide();
                 $('#save').toggle();
+                $('button#save').remove();
+
+
 
 
                 var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}",
@@ -297,6 +311,10 @@
                 }).text("Saved");
 
                 $("#suck").append(something);
+
+
+
+                $('#show').show();
 
 
 
@@ -338,7 +356,13 @@
                 $('#id').text('');
                 $('#image').text('');
                 $('#subject').text('');
-                $('#job_msg').toggle('');
+
+
+                if($('#image').val() == '' || $('#subject').val() == '') {
+                   $('#job_msg_error').show().fadeOut(5000);
+                } else {
+                    $('#job_msg').toggle().fadeOut(4000);
+                }
 
 
                 var formData = new FormData($('#save_mail')[0]);
@@ -385,14 +409,21 @@
             $(document).on('click', '.delete_btn', function (e) {
                 e.preventDefault();
 
+                var something_2 = $('<button/>').attr({ type: "submit", name:"save", id:"save", value:'Save',
+                    class:"btn btn-success",
+                }).text("Save");
+
+                $("#suck").append(something_2);
+
                 var fuck_id =  $(this).attr('fuck_id');
                 var fuck2_id =  $(this).attr('fuck2_id');
 
                 $('#delete_msg').show();
                 $('#success_msg').hide();
                 $('.delete_btn').hide();
-                $('#save').show();
+
                 $('a#delete_btn').remove();
+
 
 
                 $.ajax({
