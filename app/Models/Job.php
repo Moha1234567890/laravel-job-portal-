@@ -28,6 +28,7 @@ class Job extends Model
         'respon',
         'edu',
         'ben',
+        'status',
         'companyname',
         'user_id',
         'image',

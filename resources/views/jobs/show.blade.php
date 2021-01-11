@@ -77,12 +77,12 @@
                                     @if($jobx->job_id == $job->id)
 
                                         @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
-                                            <a  id="delete_btn" fuck_id="19" fuck2_id="7" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+                                            <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
 
 
                                         @else
                                             @if($jobx->user_id !== Auth::user()->id)
-                                                <a  id="delete_btn" fuck_id="19" fuck2_id="7" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+                                                <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
 
                                             @endif
 

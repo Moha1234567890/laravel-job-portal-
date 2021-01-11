@@ -20,6 +20,19 @@ Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
 
     Route::get('/', 'DashboardController@redirect')->name('admins.dashboard');
 
+    Route::get('/create-admins', 'AdminsController@getCreate')->name('create.admins');
+    Route::post('/create-admins', 'AdminsController@storeAdmins')->name('store.admins');
+
+    Route::get('/show-admins', 'AdminsController@showAdmins')->name('show.admins');
+
+    Route::get('/show-jobs', 'AdminsController@showJobs')->name('latest.jobs');
+    Route::post('/update-jobs/{job_id}', 'AdminsController@updateJobs')->name('update.jobs.admins');
+
+    Route::get('delete-jobs/{job_id}','AdminsController@deleteJobs')->name('delete.jobs.admins');
+
+
+
+
 
 
 
