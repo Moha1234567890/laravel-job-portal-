@@ -113,8 +113,8 @@ class AdminsController extends Controller
 
         $delete = $job_id->delete();
 
-        if($delete)
-            return redirect()->route('latest.jobs');
+//        if($delete)
+//            return redirect()->route('latest.jobs');
     }
 
 

@@ -23,7 +23,7 @@
                     @if(isset($jobs) && $jobs->count() > 0)
                         @foreach($jobs as $job)
                             <ul class="job-listings mb-5">
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center jobRow">
 
                                     <div class="job-listing-logo">
 
@@ -34,7 +34,7 @@
 
                                         <form class="form-update" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
                                             {{ csrf_field() }}
-                                        <div class="d-none job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 
                                             Status: <input type="text" class="form-control form-control-lg" value="{{$job->status}}" name="status">
                                         </div>
@@ -44,8 +44,10 @@
                                         </form>
 
                                         <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0 form-update">
-                                            <a class="btn btn-danger" href="{{route('delete.jobs.admins', $job->id)}}">delete</a>
+                                            <a status="{{$job->status}}" job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger" href="{{route('delete.jobs.admins', $job->id)}}">delete</a>
                                         </div>
+
+                                        <div id="delete_msg" class="d-none">done</div>
 
                                     </div>
 
@@ -71,3 +73,65 @@
 
 
 @endsection
+
+
+@section('scripts')
+
+    <script>
+
+        $(document).ready(function() {
+
+
+
+            $(document).on('click', '#delete_btn', function (e) {
+                e.preventDefault();
+
+                // var something_2 = $('<button/>').attr({ type: "submit", name:"save", id:"save", value:'Save',
+                //     class:"btn btn-success",
+                // }).text("Save");
+                //
+                // $("#suck").append(something_2);
+
+                var status =  $(this).attr('status');
+                var job_id =  $(this).attr('job_id');
+                //var status_off =  $(this).attr('fuck2_id');
+
+
+                // $('#success_msg').hide();
+                // $('.delete_btn').hide();
+
+
+
+
+
+
+
+                $.ajax({
+                    type: 'get',
+                    url: "{{url('admin/delete-jobs/'. $job->id)}}",
+                    data: {
+                        '_token': "{{csrf_token()}}",
+                        'status' :status,
+                        'id': job_id,
+
+
+                    },
+                    success: function (data) {
+
+                        if(data.status == true){
+                            $('#delete_msg').show();
+
+
+
+
+                        }
+                       $('.jobRow'+data.id).remove();
+                    }, error: function (reject) {
+
+                    }
+                });
+            });
+
+        })
+    </script>
+@stop
