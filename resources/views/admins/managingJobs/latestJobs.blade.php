@@ -18,14 +18,30 @@
                             </ul>
 
                         </div>
+                      @else
+                        <div  class="bg-light p-3 border rounded d-block mb-4">
+                            <ul class="list-unstyled pl-3 mb-0">
+
+                                <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
+
+                            </ul>
+
+
+                        </div>
+
                     @endif
 
-                    @if(isset($jobs) && $jobs->count() > 0)
-                        @foreach($jobs as $job)
-                            <ul class="job-listings mb-5">
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center jobRow">
+                    <div id="job_msg_delete" class="alert alert-success" style="display:none">
+                        job deleted successfully
 
-                                    <div class="job-listing-logo">
+                    </div>
+
+                    @if( isset($jobs) ? $jobs : 'Default'  && $jobs->count() > 0)
+                        @foreach($jobs as $job)
+                            <ul class="job-listings mb-5" >
+                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" id="jobRow{{$job->id}}">
+
+                                    <div class="job-listing-logo"  >
 
                                         <a href=""> <img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img-admin" ></a>
                                     </div>
@@ -44,10 +60,11 @@
                                         </form>
 
                                         <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0 form-update">
-                                            <a status="{{$job->status}}" job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger" href="{{route('delete.jobs.admins', $job->id)}}">delete</a>
+                                            <a job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger">delete</a>
+
                                         </div>
 
-                                        <div id="delete_msg" class="d-none">done</div>
+
 
                                     </div>
 
@@ -60,7 +77,7 @@
                         @endforeach
                     @else
                         <div class="alert alert-danger">
-                            you have not saved any jobs yet
+                           no jobs yet
                         </div>
 
                     @endif
@@ -92,8 +109,17 @@
                 //
                 // $("#suck").append(something_2);
 
-                var status =  $(this).attr('status');
+                //var status =  $(this).attr('status');
                 var job_id =  $(this).attr('job_id');
+
+
+
+
+
+                $('#jobRow'+job_id).remove();
+                $('#job_msg_delete').show().fadeOut(5000);
+
+
                 //var status_off =  $(this).attr('fuck2_id');
 
 
@@ -107,25 +133,27 @@
 
 
                 $.ajax({
-                    type: 'get',
-                    url: "{{url('admin/delete-jobs/'. $job->id)}}",
+                    type: 'post',
+                    url: "{{route('delete.jobs.admins')}}",
                     data: {
                         '_token': "{{csrf_token()}}",
-                        'status' :status,
+
                         'id': job_id,
 
 
                     },
+
                     success: function (data) {
 
                         if(data.status == true){
-                            $('#delete_msg').show();
+
 
 
 
 
                         }
-                       $('.jobRow'+data.id).remove();
+                        $('#jobRow'+data.id).remove();
+
                     }, error: function (reject) {
 
                     }

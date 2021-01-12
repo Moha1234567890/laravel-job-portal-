@@ -107,11 +107,11 @@ class AdminsController extends Controller
 
     }
 
-    public function deleteJobs($job_id) {
+    public function deleteJobs(Request $request) {
 
-        $job_id = Job::where('id', $job_id);
+        $job_id = Job::findOrFail($request->id);
 
-        $delete = $job_id->delete();
+        $job_id->delete();
 
 //        if($delete)
 //            return redirect()->route('latest.jobs');

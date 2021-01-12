@@ -145,7 +145,7 @@
                             application sent!
 
                         </div>
-                        <div id="job_msg_error" class="alert alert-danger" style="display:none" role="alert">
+                        <div id="job_msg_error" class="alert alert-danger"  role="alert">
                            one of the fileds are missing or file extension not supported
 
                         </div>
@@ -440,7 +440,7 @@
                         if(data.status == true){
 
                         }
-                        $('.offerRow'+data.id).remove();
+
                     }, error: function (reject) {
 
                     }
