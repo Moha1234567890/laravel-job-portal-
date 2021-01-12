@@ -3,90 +3,105 @@
 
 @section('content')
 
-    <section class="site-section" id="next">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-md-12 header-margin header-margin-admin">
-                  @if(!$unverifiedJobs == null)
-
-                        <div class="bg-light p-3 border rounded d-block mb-4">
-
-                            <ul class="list-unstyled pl-3 mb-0">
-
-                                <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
-
-                            </ul>
-
-                        </div>
-                      @else
-                        <div  class="bg-light p-3 border rounded d-block mb-4">
-                            <ul class="list-unstyled pl-3 mb-0">
-
-                                <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
-
-                            </ul>
 
 
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 header-margin header-margin-admin">
+                @if(!$unverifiedJobs == null)
 
-                    @endif
+                    <div class="bg-light p-3 border rounded d-block mb-4">
 
-                    <div id="job_msg_delete" class="alert alert-success" style="display:none">
-                        job deleted successfully
+                        <ul class="list-unstyled pl-3 mb-0">
+
+                            <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
+
+                        </ul>
+
+                    </div>
+                @else
+                    <div  class="bg-light p-3 border rounded d-block mb-4">
+                        <ul class="list-unstyled pl-3 mb-0">
+
+                            <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
+
+                        </ul>
+
 
                     </div>
 
-                    @if( isset($jobs) ? $jobs : 'Default'  && $jobs->count() > 0)
-                        @foreach($jobs as $job)
-                            <ul class="job-listings mb-5" >
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" id="jobRow{{$job->id}}">
+                @endif
 
-                                    <div class="job-listing-logo"  >
+                <div id="job_msg_delete" class="alert alert-success" style="display:none">
+                    job deleted successfully
 
-                                        <a href=""> <img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img-admin" ></a>
-                                    </div>
+                </div>
 
-                                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                <div class="col-md-12">
+                <div class="tile">
+                    <h3 class="tile-title">Responsive Table</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
 
-                                        <form class="form-update" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
-                                            {{ csrf_field() }}
+                            <tr>
+
+                                <th>Company Pic</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if( isset($jobs) && $jobs->count() > 0)
+                                @foreach($jobs as $job)
+                            <tr id="jobRow{{$job->id}}">
+
+                                <td><img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70  category-img-admin" ></td>
+                                <td>
+                                    <form class="form-update" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
+                                        {{ csrf_field() }}
                                         <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 
-                                            Status: <input type="text" class="form-control form-control-lg" value="{{$job->status}}" name="status">
+                                            <input type="text" class="form-control form-control-lg d-block mb-3 mt-5" value="{{$job->status}}" name="status">
                                         </div>
-                                            <div class="form-group">
-                                                <button class="btn btn-success" type="submit">edit</button>
-                                            </div>
-                                        </form>
-
-                                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0 form-update">
-                                            <a job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger">delete</a>
+                                        <div class="form-group">
 
                                         </div>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger margin-form">delete</a>
+                                </td>
+
+
+                            </tr>
+                            @endforeach
+                            @else
+                                <div class="alert alert-danger">
+                                    no jobs yet
+                                </div>
+
+                            @endif
 
 
 
-                                    </div>
 
-                                </li>
-
-                            </ul>
+                            </tbody>
 
 
 
-                        @endforeach
-                    @else
-                        <div class="alert alert-danger">
-                           no jobs yet
-                        </div>
+                        </table>
 
-                    @endif
+                        {!!  $jobs -> links() !!}
 
-                    {!!  $jobs -> links() !!}
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+
+
 
 
 @endsection

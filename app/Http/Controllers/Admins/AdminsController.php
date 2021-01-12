@@ -99,7 +99,7 @@ class AdminsController extends Controller
         $job_id = Job::findOrFail($job_id);
 
         $update_jobs = $job_id->update([
-            'status' => 1
+            'status' => $request->status
         ]);
 
         if($update_jobs)

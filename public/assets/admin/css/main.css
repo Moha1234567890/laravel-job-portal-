@@ -16753,10 +16753,15 @@ be a descendant of the grid when it is being dragged.
 
 
 .form-update {
-  margin-left: 200px
+  margin-left: 100px
 }
 
 
 .form-down {
     margin-top:40px
+}
+
+
+.margin-form {
+  margin-top: 64px;
 }
