@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admins;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
@@ -116,6 +117,42 @@ class AdminsController extends Controller
 //        if($delete)
 //            return redirect()->route('latest.jobs');
     }
+
+
+    public function getCreateCats() {
+
+
+        return view('admins.managingCats.createCats');
+    }
+
+    public function storeCats(Request $request) {
+
+//        Request()->validate([
+//
+//            'name'        => 'required|string|max:100',
+//            'font'        => 'required|string|max:100',
+//            'cat_desc'     => 'required|string|max:100',
+//
+//        ]);
+
+
+        $createCate = Category::create([
+            'name'     => $request->name,
+            'font'       => trim($request->font),
+            'cat_desc'    => $request->desc,
+
+        ]);
+
+
+
+        if($createCate)
+            return redirect()->back()->with(['success' => 'created']);
+
+        else
+            return abort('404');
+    }
+
+
 
 
 }

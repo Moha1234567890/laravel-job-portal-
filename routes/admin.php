@@ -32,6 +32,14 @@ Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
 
 
 
+    Route::get('/create-cats', 'AdminsController@getCreateCats')->name('create.cats.admins');
+    Route::post('/create-cats', 'AdminsController@storeCats')->name('store.cats.admins');
+
+
+
+
+
+
 
 
 

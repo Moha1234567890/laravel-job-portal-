@@ -238,15 +238,15 @@ class JobsController extends Controller
     public function cats() {
 
 
-
-        return view('jobs.cats')->with('cats', Category::all());
+        $cats = Category::select()->get();
+        return view('jobs.cats', compact('cats', $cats));
 
     }
 
 
     public function category($name) {
 
-        $category = Job::with('getCategory')->where('jobcategory', $name)->paginate(3);
+        $category = Job::with('getCategory')->where('jobcategory', $name)->where('status', 1)->paginate(3);
 
         if($category) {
             return view('jobs.category', compact('category'));
@@ -267,7 +267,7 @@ class JobsController extends Controller
 
     public function city($city) {
 
-        $region = Job::select()->where('region', $city)->paginate(3);
+        $region = Job::select()->where('region', $city)->where('status', 1)->paginate(3);
 
        if($region) {
            return view('jobs.city', compact('region'));
@@ -305,7 +305,7 @@ class JobsController extends Controller
 
 
 
-       $getJobsTitle = Job::select()->where('jobtitle', $job_title)->paginate(3);
+       $getJobsTitle = Job::select()->where('jobtitle', $job_title)->where('status', 1)->paginate(3);
 
 
 
