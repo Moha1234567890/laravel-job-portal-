@@ -30,10 +30,12 @@
 @include('admins.includes.header')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('admins.includes.sidebar')
-
+<main class="app-content">
+    <div class="app-title">
 @yield('content')
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    </div>
+</main>
 @yield('scripts')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('admins.includes.footer')

@@ -145,8 +145,10 @@
                             application sent!
 
                         </div>
-                        <div id="job_msg_error" class="alert alert-danger"  role="alert">
-                           one of the fileds are missing or file extension not supported
+
+
+                        <div id="job_msg_error" class="alert alert-danger"  style="display: none"role="alert">
+                           one or all the fileds are missing or file extension not supported: supported ones pdf, docx, doc
 
                         </div>
                         @if($job->user_id == Auth::user()->id)
@@ -155,6 +157,7 @@
                             <form action="{{route('apply.job')}}" id="save_mail" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input id="from" type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
+
                                 <input id="to" type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
                                 <input  id="id" type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
 
@@ -166,7 +169,8 @@
 
                                 </div>
                                <div class="from-group">
-                                   <input id="image" type="file" name="image" class="form-control form-control-lg">
+                                   <input id="image" value="" type="file" name="image" class="form-control form-control-lg">
+
 
 
                                </div>
@@ -298,7 +302,7 @@
                 $('#location').text('');
                 $('#region').text('');
                 $('#job_type').text('');
-                $('#success_msg').show();
+                $('#success_msg').show().fadeOut(5000);
                 $('#delete_msg').hide();
                 $('#save').toggle();
                 $('button#save').remove();
@@ -314,7 +318,7 @@
 
 
 
-                $('#show').show();
+              ///  $('#show').show();
 
 
 
@@ -354,11 +358,22 @@
                 $('#to').text('');
                 $('#from').text('');
                 $('#id').text('');
-                $('#image').text('');
-                $('#subject').text('');
+
+
+
 
 
                 if($('#image').val() == '' || $('#subject').val() == '') {
+
+                   // $('#image').val('');
+
+                    var fileExtension = ['doc', 'pdf', 'txt'];
+
+                    if($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                        $('#image').val('');
+                        $('#job_msg_error').show().fadeOut(5000);
+                    }
+
                    $('#job_msg_error').show().fadeOut(5000);
                 } else {
                     $('#job_msg').toggle().fadeOut(4000);
@@ -381,14 +396,17 @@
 
                         if (data.status == true) {
 
+                            console.log('fuck');
+
 
                         }
 
 
-                    }, error: function (reject) {
-                        var response = $.parseJSON(reject.responseText);
-                        $.each(response.errors, function (key, val) {
-                            $("#" + key + "_error").text(val[0]);
+                    }, error: function (jqXhr, json, errorThrown) {
+                        var errors = jqXhr.responseJSON;
+                        var errorsHtml = '';
+                        $.each(errors['errors'], function (index, value) {
+                            errorsHtml += '<ul class="list-group"><li class="list-group-item alert alert-danger">' + value + '</li></ul>';
                         });
                     }
 
