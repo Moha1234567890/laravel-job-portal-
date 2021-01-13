@@ -372,11 +372,12 @@
                     if($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
                         $('#image').val('');
                         $('#job_msg_error').show().fadeOut(5000);
+                        //alert('no');
                     }
 
-                   $('#job_msg_error').show().fadeOut(5000);
+                  // $('#job_msg_error').show().fadeOut(5000);
                 } else {
-                    $('#job_msg').toggle().fadeOut(4000);
+                   // $('#job_msg').toggle().fadeOut(4000);
                 }
 
 

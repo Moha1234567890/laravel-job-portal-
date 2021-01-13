@@ -142,7 +142,7 @@ class JobsController extends Controller
 
         Request()->validate([
 
-            'image' => 'required|file|mimes:pdf,doc,txt|max:5048',
+            'image' => 'required|file|mimes:pdf,doc,txt|max:2048',
             'subject' => 'required',
 
 
