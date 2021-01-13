@@ -15,6 +15,7 @@ class Category extends Model
         'name',
         'font',
         'cat_desc',
+        'status',
         'created_at',
         'updated_at'
     ];

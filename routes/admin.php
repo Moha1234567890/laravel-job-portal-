@@ -34,6 +34,12 @@ Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
 
     Route::get('/create-cats', 'AdminsController@getCreateCats')->name('create.cats.admins');
     Route::post('/create-cats', 'AdminsController@storeCats')->name('store.cats.admins');
+    Route::get('/show-cats', 'AdminsController@showCats')->name('show.cats.admins');
+    Route::post('delete-cats','AdminsController@deleteCats')->name('delete.cats.admins');
+    Route::post('/update-cats/{cat_id}', 'AdminsController@updateCats')->name('update.cats.admins');
+
+
+
 
 
 

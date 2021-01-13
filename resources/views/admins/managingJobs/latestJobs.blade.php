@@ -62,7 +62,7 @@
                                         {{ csrf_field() }}
                                         <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 
-                                            <input type="text" class="form-control form-control-lg d-block mb-3 mt-5" value="{{$job->status}}" name="status">
+                                            <input type="text" class="input-margin form-control form-control-lg d-block mb-3 mt-5" value="{{$job->status}}" name="status">
                                         </div>
                                         <div class="form-group">
 

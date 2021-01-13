@@ -95,7 +95,7 @@ class JobsController extends Controller
 
 
         if($job)
-            return redirect()->back()->with(['success' => 'created']);
+            return redirect()->back()->with(['success' => 'admins will get back to verifiy you job']);
 
         else
             return abort('404');

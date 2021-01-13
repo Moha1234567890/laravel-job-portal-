@@ -127,13 +127,14 @@ class AdminsController extends Controller
 
     public function storeCats(Request $request) {
 
-//        Request()->validate([
-//
-//            'name'        => 'required|string|max:100',
-//            'font'        => 'required|string|max:100',
-//            'cat_desc'     => 'required|string|max:100',
-//
-//        ]);
+        Request()->validate([
+
+            'name'        => 'required|string|max:100',
+            'font'        => 'required|string|max:100',
+            'cat_desc'     => 'required|string|max:100',
+
+
+        ]);
 
 
         $createCate = Category::create([
@@ -151,6 +152,41 @@ class AdminsController extends Controller
         else
             return abort('404');
     }
+
+
+    public function showCats() {
+
+        $showCatspag = Category::paginate(3);
+
+        $unverifiedCats = Category::select('status')->where('status', 0)->count();
+
+
+        //$showCats = Category::all();
+        return view('admins.managingCats.showCats', compact('showCatspag', 'unverifiedCats'));
+
+    }
+
+    public function deleteCats(Request $request) {
+
+        $cat_id = Category::findOrFail($request->id);
+
+        $cat_id->delete();
+
+
+    }
+
+    public function updateCats(Request $request, $cat_id) {
+        $cat_id = Category::findOrFail($cat_id);
+
+        $update_cats = $cat_id->update([
+            'status' => $request->status
+        ]);
+
+        if($update_cats)
+            return redirect()->back()->with(['success' => 'updated']);
+
+    }
+
 
 
 
