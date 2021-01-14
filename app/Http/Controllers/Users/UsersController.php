@@ -74,8 +74,10 @@ class UsersController extends Controller
         $y = User::findOrFail($id);
 
         Request()->validate([
+            'document.*' => 'required|file|mimes:doc,docx,pdf|max:204800',
 
-            'cv' => 'required|file|mimes:pdf,doc,txt|max:2048',
+
+            'cv' => 'required|file|mimes:pdf|max:204800',
 
 
         ]);

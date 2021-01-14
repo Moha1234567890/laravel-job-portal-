@@ -89,9 +89,10 @@
 
                         <select class="form-control" name="jobcategory" id="job_category">
                             <optgroup label="Choose job category">
-                                <option value="developemnt">developemnt</option>
-                                <option value="arts">arts</option>
-                                <option value="marketing">marketing</option>
+                                @foreach($getAllCats as $getAllCat)
+                                <option value="{{$getAllCat->name}}">{{$getAllCat->name}}</option>
+                               @endforeach
+
                             </optgroup>
 
                         </select>

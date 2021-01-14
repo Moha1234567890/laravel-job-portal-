@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Admin;
 use App\Http\Requests\LoginRequest;
@@ -127,20 +128,22 @@ class AdminsController extends Controller
 
     public function storeCats(Request $request) {
 
-        Request()->validate([
-
-            'name'        => 'required|string|max:100',
-            'font'        => 'required|string|max:100',
-            'cat_desc'     => 'required|string|max:100',
-
-
-        ]);
+//        Request()->validate([
+//
+//            'name'        => 'required|string|max:100',
+//            'font'        => 'required|string|max:100',
+//            'cat_desc'     => 'required|string|max:100',
+//            'status'      => 'required'
+//
+//
+//        ]);
 
 
         $createCate = Category::create([
             'name'     => $request->name,
             'font'       => trim($request->font),
             'cat_desc'    => $request->desc,
+            'status' => 0,
 
         ]);
 
@@ -156,13 +159,26 @@ class AdminsController extends Controller
 
     public function showCats() {
 
-        $showCatspag = Category::paginate(3);
+
+        $categories =  DB::table('categories')
+            ->leftJoin('jobs', 'categories.name', '=', 'jobs.jobcategory')
+            ->select('categories.name as name','jobs.jobcategory','categories.id as id','categories.font as font','categories.cat_desc as cat_desc', 'categories.status as status', DB::raw("count(jobs.jobcategory) as count"))
+
+            ->groupBy('categories.name')
+
+            ->get();
+
+        //return $categories;
+
+
+
+        //$showCatspag = Category::paginate(3);
 
         $unverifiedCats = Category::select('status')->where('status', 0)->count();
 
 
         //$showCats = Category::all();
-        return view('admins.managingCats.showCats', compact('showCatspag', 'unverifiedCats'));
+        return view('admins.managingCats.showCats', compact( 'unverifiedCats','categories'));
 
     }
 

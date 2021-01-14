@@ -23,8 +23,6 @@ class Job extends Model
         'ex',
         'sal',
         'gender',
-
-
         'respon',
         'edu',
         'ben',

@@ -32,11 +32,11 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Font</label>
-                                <input class="form-control" type="text" name="font" placeholder="Enter email address">
+                                <input class="form-control" type="text" name="font" placeholder="Enter name">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                <textarea class="form-control" rows="4" name="desc" placeholder="Enter your address"></textarea>
+                                <textarea class="form-control" rows="4" name="desc" placeholder="Enter description"></textarea>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit">Create</button>&nbsp;&nbsp;&nbsp;
@@ -49,5 +49,6 @@
             </div>
         </div>
 
+    </div>
     </div>
 @endsection

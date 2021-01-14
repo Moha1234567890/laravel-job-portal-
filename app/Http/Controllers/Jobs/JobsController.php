@@ -36,7 +36,9 @@ class JobsController extends Controller
 
     public function create() {
 
-       return  view('jobs.create');
+        $getAllCats = Category::select('name')->where('status',1)->get();
+
+       return  view('jobs.create', compact('getAllCats'));
     }
 
 
@@ -141,8 +143,10 @@ class JobsController extends Controller
     public function send(Request $request) {
 
         Request()->validate([
+            'document.*' => 'required|file|mimes:doc,docx,pdf|max:204800',
 
-            'image' => 'required|file|mimes:pdf,doc,txt|max:2048',
+
+            'image' => 'required|file|mimes:pdf|max:204800',
             'subject' => 'required',
 
 

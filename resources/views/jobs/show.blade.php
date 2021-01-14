@@ -169,7 +169,7 @@
 
                                 </div>
                                <div class="from-group">
-                                   <input id="image" value="" type="file" name="image" class="form-control form-control-lg">
+                                   <input id="image" value="" type="file" name="image" class="form-control form-control-lg" accept="application/pdf">
 
 
 
