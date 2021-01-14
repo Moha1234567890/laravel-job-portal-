@@ -33,10 +33,14 @@
 <main class="app-content">
     <div class="app-title">
 @yield('content')
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </div>
 </main>
 @yield('scripts')
+   <script type="text/javascript" src="{{asset('assets/admin/js/plugins/chart.js')}}"></script>
+
+@yield('charts')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('admins.includes.footer')
 

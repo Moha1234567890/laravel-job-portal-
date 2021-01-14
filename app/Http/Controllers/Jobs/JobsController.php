@@ -269,7 +269,7 @@ class JobsController extends Controller
     public function cats() {
 
 
-        $cats = Category::select()->get();
+        $cats = Category::select()->where('status', 1)->get();
         return view('jobs.cats', compact('cats', $cats));
 
     }
