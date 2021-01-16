@@ -38,9 +38,14 @@
     </div>
 </main>
 @yield('scripts')
-   <script type="text/javascript" src="{{asset('assets/admin/js/plugins/chart.js')}}"></script>
+
+
+<script type="text/javascript" src="{{asset('assets/admin/js/plugins/chart.js')}}"></script>
+
 
 @yield('charts')
+
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('admins.includes.footer')
 

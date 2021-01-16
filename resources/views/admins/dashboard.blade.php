@@ -48,59 +48,45 @@
                 </div>
             </div>
         </div>
-            <div class="d-none">
-            @foreach($job_dates as $job_date) {
-                <p class='d-none'> {{$job_date}} </p>
 
-            }
-            @endforeach
             </div>
         <div class="row">
+
             <div class="col-md-6">
                 <div class="tile">
-                    <h3 class="tile-title">Jobs Created</h3>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="tile">
-                    <h3 class="tile-title">Support Requests</h3>
+                    <h3 class="tile-title">Jobs</h3>
                     <div class="embed-responsive embed-responsive-16by9">
                         <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
                     </div>
                 </div>
             </div>
+
+
+            <div class="col-md-6">
+                    <div class="tile">
+                        <h3 class="tile-title">Other Stats</h3>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <canvas class="embed-responsive-item" id="doughnutChartDemo"></canvas>
+                        </div>
+                    </div>
+            </div>
         </div>
+
+
+
+
+
+
 
     @endsection
 
 @section('charts')
     <script>
-        var dates = [];
-
-        dates.push('{{$job_date->created_at->format('M')}}');
-
-        var data = {
 
 
-            labels: [dates],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [{{$jobsCount}}]
-                }
 
-            ]
-        };
-        var pdata = [
+
+        var pie = [
             {
                 value:  '{{$jobsCountver}}',
                 color: "#46BFBD",
@@ -113,12 +99,38 @@
                 highlight: "#FF5A5E",
                 label: "unverified jobs"
             }
-        ]
+        ];
+        var doughnut = [
 
-        var ctxl = $("#lineChartDemo").get(0).getContext("2d");
-        var lineChart = new Chart(ctxl).Line(data);
+            {
+                value: '{{$num_saved_jobs}}',
+                color: "#46BFBD",
+                highlight: "#5AD3D1",
+                label: "Saved Jobs"
+            },
+            {
+                value: '{{$num_apps}}',
+                color: "#FDB45C",
+                highlight: "#FFC870",
+                label: "Applications Submitted"
+            }
+        ];
+
+
+
+
+
 
         var ctxp = $("#pieChartDemo").get(0).getContext("2d");
-        var pieChart = new Chart(ctxp).Pie(pdata);
+        var pieChart = new Chart(ctxp).Pie(pie);
+
+        var ctxd = $("#doughnutChartDemo").get(0).getContext("2d");
+        var doughnutChart = new Chart(ctxd).Doughnut(doughnut);
+
+
+
+
+
     </script>
     @endsection
+

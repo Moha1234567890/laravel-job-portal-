@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container">
-        <div class="card card-default header-margin">
+        <div class="card card-default">
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     {{ Session::get('success') }}
@@ -20,7 +20,7 @@
             @endif
         </div>
         <div class="row">
-            <div class="col-md-12 header-margin header-margin-admin">
+            <div class="col-md-12 header-margin">
                 @if(!$unverifiedCats == null)
 
                     <div class="bg-light p-3 border rounded d-block mb-4">

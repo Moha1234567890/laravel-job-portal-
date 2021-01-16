@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Job;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -11,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +26,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('includes.home');
+        $randomJobs = Job::all()->take(3);
+
+
+        $getAllCats = Category::select('name')->where('status',1)->get();
+
+
+        //return $getAllCats;
+
+
+
+
+
+      //
+        return view('includes.home', compact('randomJobs'));
+    }
+
+    public function contact() {
+        $getAllCats = Category::select('name')->where('status',1)->get();
+        return view('jobs.contact', compact('getAllCats'));
+
     }
 }

@@ -5,7 +5,7 @@
 @section('content')
 
  <div class="container">
-<div class="header-margin-admin">
+<div class="">
             <table class="table">
                 <thead>
                 <tr>

@@ -5,7 +5,7 @@
 
     <div class="container">
 
-        <div class="card card-default header-margin-admin">
+        <div class="card card-default">
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     {{ Session::get('success') }}
@@ -46,7 +46,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Password: </label>
-                        <input type="text" class="form-control form-control-lg" name="password" aria-describedby="emailHelp" placeholder="enter password">
+                        <input type="password" class="form-control form-control-lg" name="password" aria-describedby="emailHelp" placeholder="enter password">
                         @error('password')
                         <span class="text-danger">{{$message}} </span>
                         @enderror

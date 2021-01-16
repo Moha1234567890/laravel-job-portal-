@@ -5,7 +5,7 @@
 
     <div class="container">
 
-        <div class="card card-default header-margin-admin">
+        <div class="card card-default">
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     {{ Session::get('success') }}

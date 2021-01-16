@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admins;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Category;
+use App\Models\Email;
 use App\Models\Job;
+use App\Models\SavedJob;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +24,7 @@ class DashboardController extends Controller
 
         $date_from = date('Y-m-01 h:i:s');
         $date_to = date('Y-m-d h:i:s',strtotime(' +1 month'));
-        //$date_to = date('Y-m-d h:i:s');
+
 
 
         $usersCount = User::select()->count();
@@ -34,17 +36,24 @@ class DashboardController extends Controller
 
         $job_dates = Job::all();
 
-//        foreach($job_dates as $job_date) {
-//            return
-//        }
+        $num_apps = Email::select()->count();
+        $num_saved_jobs = SavedJob::select()->count();
 
-        //$date = date('F Y',  strtotime('first day of +1 month'));
+        $result = Job::select('jobtitle','created_at')->get();
+        //$data = array();
 
-        //$date = date('F Y');
+            //$row;
+
+            //return $result;
 
 
-        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver', 'job_dates','date_to' ));
+
+
+
+        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver', 'job_dates','date_to','num_apps','num_saved_jobs','result'));
     }
+
+
 
 
 }

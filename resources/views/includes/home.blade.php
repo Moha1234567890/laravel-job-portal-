@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
-<main>
+
     <!-- Hero Area Start-->
     <div class="slider-area">
         <div class="single-slider slider-height d-flex align-items-center">
@@ -38,7 +38,6 @@
                                         <option value="marketing">marketing</option>
                                         <option value="development">development</option>
                                         <option value="arts">arts</option>
-
                                     </select>
                                 </div>
                             </div>
@@ -50,17 +49,17 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <div class="popular-search text-center pt-30">
+{{--                        <div class="popular-search text-center pt-30">--}}
 
-                            <ul>
-                                <li><p>Popular search:</p></li>
-                                <li><a href="#">#User experience designer</a></li>
-                                <li><a href="#">#Marketing</a></li>
-                                <li><a href="#">#Programmer</a></li>
-                                <li><a href="#">#Finance</a></li>
-                                <li><a href="#">#UI designer</a></li>
-                            </ul>
-                        </div>
+{{--                            <ul>--}}
+{{--                                <li><p>Popular search:</p></li>--}}
+{{--                                <li><a href="#">#User experience designer</a></li>--}}
+{{--                                <li><a href="#">#Marketing</a></li>--}}
+{{--                                <li><a href="#">#Programmer</a></li>--}}
+{{--                                <li><a href="#">#Finance</a></li>--}}
+{{--                                <li><a href="#">#UI designer</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -114,79 +113,52 @@
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services1.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services2.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services3.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services4.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services5.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services">
-                        <div class="services-ion">
-                            <img src="{{asset('assets/img/icon/services6.svg')}}" alt="">
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="#">Design & creatives</a></h5>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="more-btn">Browse Job</a>
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                <div>
+
+                    @if(isset($randomJobs) && $randomJobs->count() > 0)
+                        @foreach($randomJobs as $job)
+                            <ul class="job-listings mb-5">
+                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+
+                                    <div class="job-listing-logo">
+
+                                        <a href="{{route('browse.one.job', $job->id)}}"> <img src="{{asset('storage/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
+                                    </div>
+
+                                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                            <h2>{{$job->jobtitle}}</h2>
+                                            <strong>{{$job->companyname}}</strong>
+                                        </div>
+                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                            <span class="icon-room"></span> {{$job->location}}, {{$job->region}}
+                                        </div>
+                                        <div class="job-listing-meta">
+                                            <span class=" {{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+
+
+
+
+                            </ul>
+
+
+
+                        @endforeach
+
+                      @else
+                        <div>none</div>
+                    @endif
+
+
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Our Services End -->
@@ -423,5 +395,5 @@
         </div>
     </section>
     <!-- Want To work End -->
-</main>
+
 @endsection

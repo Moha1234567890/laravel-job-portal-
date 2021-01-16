@@ -128,22 +128,22 @@ class AdminsController extends Controller
 
     public function storeCats(Request $request) {
 
-//        Request()->validate([
-//
-//            'name'        => 'required|string|max:100',
-//            'font'        => 'required|string|max:100',
-//            'cat_desc'     => 'required|string|max:100',
-//            'status'      => 'required'
-//
-//
-//        ]);
+        Request()->validate([
+
+            'name'        => 'required|string|max:100',
+            'font'        => 'required|string|max:100',
+            'desc'    => 'required|string|max:300',
+
+
+
+        ]);
 
 
         $createCate = Category::create([
             'name'     => $request->name,
-            'font'       => trim($request->font),
+            'font'       => $request->font,
             'cat_desc'    => $request->desc,
-            'status' => 0,
+
 
         ]);
 
