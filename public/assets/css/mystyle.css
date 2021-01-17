@@ -63,3 +63,8 @@ main.main {
 .job-listings  {
     border: 1px solid #eee;
 }
+
+.cats-margin {
+    margin: -16px;
+    margin-top: 4px;
+}

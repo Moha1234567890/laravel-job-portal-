@@ -23,7 +23,9 @@
                                 <div class="icon">
                                     <i class="fas fa-pencil-alt"></i>
                                 </div>
+
                             </div>
+
                             <div class="input-form2">
                                 <input type="text"  name="state" placeholder="Where?">
                                 <!-- icon -->
@@ -35,9 +37,10 @@
                                 <div class="select-itms">
                                     <select name="selectCate" id="select1">
 
-                                        <option value="marketing">marketing</option>
-                                        <option value="development">development</option>
-                                        <option value="arts">arts</option>
+                                        @foreach($getAllCats as $getAllCat)
+
+                                          <option value="{{$getAllCat->name}}">{{$getAllCat->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -46,20 +49,31 @@
 
                             </div>
                         </form>
+                        @error('keyword')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+
+                        @error('state')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+
+                        @error('selectCate')
+                        <span class="text-danger">{{$message}} </span>
+                        @enderror
+
+
                     </div>
 
                     <div class="col-lg-12">
-{{--                        <div class="popular-search text-center pt-30">--}}
+                        <div class="popular-search text-center pt-30">
 
-{{--                            <ul>--}}
-{{--                                <li><p>Popular search:</p></li>--}}
-{{--                                <li><a href="#">#User experience designer</a></li>--}}
-{{--                                <li><a href="#">#Marketing</a></li>--}}
-{{--                                <li><a href="#">#Programmer</a></li>--}}
-{{--                                <li><a href="#">#Finance</a></li>--}}
-{{--                                <li><a href="#">#UI designer</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
+                            <ul>
+                                <li><p>Popular search:</p></li>
+                                @foreach($getSeaches as $getSearch)
+                                <li><a href="{{route('browse.jobs.jobtitle', $getSearch->keyword)}}">#{{$getSearch->keyword}}</a></li>
+                               @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,7 +196,7 @@
                 </div>
                 <div class="about-more">
                     <p class="mb-45 pera-bottom">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying.</p>
-                    <a href="#" class="btn">Browse Talents</a>
+{{--                    <a href="#" class="btn">Browse Talents</a>--}}
                 </div>
             </div>
         </div>
@@ -201,199 +215,157 @@
                     </div>
                 </div>
             </div>
-            <div class="top-job-slider">
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn1.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
+            <div class="container">
+                <div class="col-md-12">
+                    @if(isset($randomTopJobs) && $randomTopJobs->count() > 0)
+                        @foreach($randomTopJobs as $job)
+                            <ul class="job-listings mb-5">
+                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+
+                                    <div class="job-listing-logo">
+
+                                        <a href="{{route('browse.one.job', $job->id)}}"> <img src="{{asset('storage/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
+                                    </div>
+
+                                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                            <h2>{{$job->jobtitle}}</h2>
+                                            <strong>{{$job->companyname}}</strong>
+                                        </div>
+                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                            <span class="icon-room"></span> {{$job->location}}, {{$job->region}}
+                                        </div>
+                                        <div class="job-listing-meta">
+                                            <span class=" {{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+
+
+
+
+                            </ul>
+
+
+
+                        @endforeach
+
+                    @else
+                        <div>none</div>
+                    @endif
                 </div>
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn2.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
-                </div>
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn3.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
-                </div>
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn4.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
-                </div>
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn5.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
-                </div>
-                <!-- Single -->
-                <div class="single-top-jobs">
-                    <div class="services-ion">
-                        <img src="{{asset('assets/img/icon/jon-iocn2.svg')}}" alt="">
-                    </div>
-                    <div class="services-cap">
-                        <h5><a href="#">Design & creatives</a></h5>
-                        <p>The automated process starts as soon as your clothes go into.</p>
-                        <a href="#" class="btn">Apply Now</a>
-                    </div>
-                    <div class="stickers">
-                        <span>Remote</span>
-                    </div>
-                </div>
+
             </div>
+
         </div>
     </section>
     <!-- Top Jobs End -->
     <!--? job Post Start -->
-    <section class="job-post  pt-top section-bg2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 ">
-                    <div class="single-features mb-40 pt-60">
-                        <div class="job-post-banner">
-                            <img src="{{asset('assets/img/gallery/job-pos-banner1.png')}}" alt="">
-                        </div>
-                        <div class="features-caption">
-                            <h3>Post a job</h3>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="border-btn">Post a Job</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 ">
-                    <div class="single-features  single-features2 mb-40 pt-60">
-                        <div class="job-post-banner">
-                            <img src="{{asset('assets/img/gallery/job-pos-banner2.png')}}" alt="">
-                        </div>
-                        <div class="features-caption">
-                            <h3>Browse for job</h3>
-                            <p>The automated process starts as soon as your clothes go into.</p>
-                            <a href="#" class="border-btn">Browse Job</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="job-post  pt-top section-bg2">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-6 ">--}}
+{{--                    <div class="single-features mb-40 pt-60">--}}
+{{--                        <div class="job-post-banner">--}}
+{{--                            <img src="{{asset('assets/img/gallery/job-pos-banner1.png')}}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="features-caption">--}}
+{{--                            <h3>Post a job</h3>--}}
+{{--                            <p>The automated process starts as soon as your clothes go into.</p>--}}
+{{--                            <a href="#" class="border-btn">Post a Job</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6 ">--}}
+{{--                    <div class="single-features  single-features2 mb-40 pt-60">--}}
+{{--                        <div class="job-post-banner">--}}
+{{--                            <img src="{{asset('assets/img/gallery/job-pos-banner2.png')}}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="features-caption">--}}
+{{--                            <h3>Browse for job</h3>--}}
+{{--                            <p>The automated process starts as soon as your clothes go into.</p>--}}
+{{--                            <a href="#" class="border-btn">Browse Job</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- job Post End -->
-    <!--? Testimonial Area Start -->
-    <section class="about-area2 testimonial-area fix">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class=" col-lg-6 col-md-9 col-sm-9">
-                    <div class="about-caption">
-                        <!-- Testimonial Start -->
-                        <div class="h1-testimonial-active dot-style">
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                <div class="testimonial-caption">
-                                    <img src="{{asset('assets/img/icon/quotes-sign.png')}}" alt="" class="quotes-sign">
-                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>
-                                </div>
-                                <!-- founder -->
-                                <div class="testimonial-founder d-flex align-items-center">
-                                    <div class="founder-img">
-                                        <img src="{{asset('assets/img/icon/Homepage_testi.png')}}" alt="">
-                                    </div>
-                                    <div class="founder-text">
-                                        <span>Robart Brown</span>
-                                        <p>Creative designer at Colorlib</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                <div class="testimonial-caption">
-                                    <img src="{{asset('assets/img/icon/quotes-sign.png')}}" alt="" class="quotes-sign">
-                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>
-                                </div>
-                                <!-- founder -->
-                                <div class="testimonial-founder d-flex align-items-center">
-                                    <div class="founder-img">
-                                        <img src="{{asset('assets/img/icon/Homepage_testi.png')}}" alt="">
-                                    </div>
-                                    <div class="founder-text">
-                                        <span>Robart Brown</span>
-                                        <p>Creative designer at Colorlib</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial End -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- about-img -->
-        <div class="about-img2 pt-20">
-            <img src="{{asset('assets/img/gallery/testimonail.png')}}" alt="">
-        </div>
-    </section>
+{{--    <!--? Testimonial Area Start -->--}}
+{{--    <section class="about-area2 testimonial-area fix">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row align-items-center">--}}
+{{--                <div class=" col-lg-6 col-md-9 col-sm-9">--}}
+{{--                    <div class="about-caption">--}}
+{{--                        <!-- Testimonial Start -->--}}
+{{--                        <div class="h1-testimonial-active dot-style">--}}
+{{--                            <!-- Single Testimonial -->--}}
+{{--                            <div class="single-testimonial">--}}
+{{--                                <div class="testimonial-caption">--}}
+{{--                                    <img src="{{asset('assets/img/icon/quotes-sign.png')}}" alt="" class="quotes-sign">--}}
+{{--                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>--}}
+{{--                                </div>--}}
+{{--                                <!-- founder -->--}}
+{{--                                <div class="testimonial-founder d-flex align-items-center">--}}
+{{--                                    <div class="founder-img">--}}
+{{--                                        <img src="{{asset('assets/img/icon/Homepage_testi.png')}}" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="founder-text">--}}
+{{--                                        <span>Robart Brown</span>--}}
+{{--                                        <p>Creative designer at Colorlib</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <!-- Single Testimonial -->--}}
+{{--                            <div class="single-testimonial">--}}
+{{--                                <div class="testimonial-caption">--}}
+{{--                                    <img src="{{asset('assets/img/icon/quotes-sign.png')}}" alt="" class="quotes-sign">--}}
+{{--                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>--}}
+{{--                                </div>--}}
+{{--                                <!-- founder -->--}}
+{{--                                <div class="testimonial-founder d-flex align-items-center">--}}
+{{--                                    <div class="founder-img">--}}
+{{--                                        <img src="{{asset('assets/img/icon/Homepage_testi.png')}}" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="founder-text">--}}
+{{--                                        <span>Robart Brown</span>--}}
+{{--                                        <p>Creative designer at Colorlib</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Testimonial End -->--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- about-img -->--}}
+{{--        <div class="about-img2 pt-20">--}}
+{{--            <img src="{{asset('assets/img/gallery/testimonail.png')}}" alt="">--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!--? Testimonial Area End -->
     <!--? Want To work 01-->
-    <section class="wantToWork-area">
-        <div class="container">
-            <div class="wants-wrapper w-padding2">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-xl-7 col-lg-9 col-md-8">
-                        <div class="wantToWork-caption wantToWork-caption2">
-                            <h2>Start finding your dream job</h2>
-                            <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes placeholder text commonly used.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 ">
-                        <a href="#" class="btn f-right wantToWork-btn">Browse Job</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="wantToWork-area">--}}
+{{--        <div class="container">--}}
+{{--            <div class="wants-wrapper w-padding2">--}}
+{{--                <div class="row align-items-center justify-content-between">--}}
+{{--                    <div class="col-xl-7 col-lg-9 col-md-8">--}}
+{{--                        <div class="wantToWork-caption wantToWork-caption2">--}}
+{{--                            <h2>Start finding your dream job</h2>--}}
+{{--                            <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes placeholder text commonly used.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-xl-2 col-lg-3 ">--}}
+{{--                        <a href="#" class="btn f-right wantToWork-btn">Browse Job</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- Want To work End -->
 
 @endsection

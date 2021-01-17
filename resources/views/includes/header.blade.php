@@ -18,14 +18,14 @@
                                     <nav>
                                         <ul id="navigation">
                                             @guest
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="categori.html">Categories</a></li>
+                                            <li><a href="{{route('home')}}">Home</a></li>
+                                            <li><a href="{{route('browse.jobs.cats')}}">Categories</a></li>
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
                                                     <li><a href="{{url('contact')}}">contact</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog_details.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
+{{--                                                    <li><a href="blog.html">Blog</a></li>--}}
+{{--                                                    <li><a href="blog_details.html">Blog Details</a></li>--}}
+{{--                                                    <li><a href="elements.html">Element</a></li>--}}
                                                 </ul>
                                             </li>
                                                 @if (Route::has('register'))

@@ -131,8 +131,8 @@ class AdminsController extends Controller
         Request()->validate([
 
             'name'        => 'required|string|max:100',
-            'font'        => 'required|string|max:100',
-            'desc'    => 'required|string|max:300',
+            'font'        => 'required|string|max:114|min:100',
+            'desc'        => 'required|string|max:300',
 
 
 

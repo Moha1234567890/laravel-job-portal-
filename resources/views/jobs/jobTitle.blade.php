@@ -38,6 +38,10 @@
                 </ul>
 
             @endforeach
+        @else
+            <div class="alert alert-danger">
+                We have no records of this job title yet
+            </div>
         @endif
 
             {!!  $getJobsTitle -> links() !!}

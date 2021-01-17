@@ -9,7 +9,10 @@
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
+                        @if(!Auth::check() == null)
                         <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">Jobs</a> <span class="mx-2 slash">/</span>
+                        @endif
+
                         <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
                     </div>
                 </div>
@@ -50,57 +53,59 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">
-                            <form class="form-group" method="post" id="save_form" action="{{route('save.job')}}" enctype="multipart/form-data">
-                                @csrf
+                            @if(!Auth::check() == null)
+                                    <form class="form-group" method="post" id="save_form" action="{{route('save.job')}}" enctype="multipart/form-data">
+                                        @csrf
 
-                                <input  type="hidden" class="form-control form-control-lg" id="user_id" name="user_id" value="{{Auth::user()->id}}">
-
-
-                                <input  type="hidden" class="form-control form-control-lg" id="job_id" name="job_id" value="{{$job->id}}">
-
-                                <input  type="hidden" class="form-control form-control-lg" id="pic" name="pic" value="{{$job->image}}">
-                                <input  type="hidden" class="form-control form-control-lg" id="job_title" name="job_title" value="{{$job->jobtitle}}">
-                                <input  type="hidden" class="form-control form-control-lg" id="company_name" name="company_name" value="{{$job->companyname}}">
-                                <input  type="hidden" class="form-control form-control-lg" id="location" name="location" value="{{$job->location}}">
-                                <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
-                                <input  type="hidden" class="form-control form-control-lg" id="job_type" name="job_type" value="{{$job->jobtype}}">
-
-                               <div id="suck">
+                                        <input  type="hidden" class="form-control form-control-lg" id="user_id" name="user_id" value="{{Auth::user()->id}}">
 
 
+                                        <input  type="hidden" class="form-control form-control-lg" id="job_id" name="job_id" value="{{$job->id}}">
+
+                                        <input  type="hidden" class="form-control form-control-lg" id="pic" name="pic" value="{{$job->image}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="job_title" name="job_title" value="{{$job->jobtitle}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="company_name" name="company_name" value="{{$job->companyname}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="location" name="location" value="{{$job->location}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="job_type" name="job_type" value="{{$job->jobtype}}">
+
+                                       <div id="suck">
 
 
-                               </div>
-
-                            @if(isset($jobx->job_id))
-
-                                    @if($jobx->job_id == $job->id)
-
-                                        @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
-                                            <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
 
 
-                                        @else
-                                            @if($jobx->user_id !== Auth::user()->id)
-                                                <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+                                       </div>
+
+                                    @if(isset($jobx->job_id))
+
+                                            @if($jobx->job_id == $job->id)
+
+                                                @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
+                                                    <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+
+
+                                                @else
+                                                    @if($jobx->user_id !== Auth::user()->id)
+                                                        <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+
+                                                    @endif
+
+
+
+                                                @endif
+
+
 
                                             @endif
 
-
+                                        @else
+                                                <button class="btn btn-success" id="save" type="submit">save</button>
 
                                         @endif
 
 
-
-                                    @endif
-
-                                @else
-                                        <button class="btn btn-success" id="save" type="submit">save</button>
-
-                                @endif
-
-
-                            </form>
+                                    </form>
+                            @endif
 
                         </div>
 
@@ -151,13 +156,21 @@
                            one or all the fileds are missing or file extension not supported: supported ones pdf, docx, doc
 
                         </div>
-                        @if($job->user_id == Auth::user()->id)
-                            <h3>you created this job</h3>
-                        @else
-                            <form action="{{route('apply.job')}}" id="save_mail" class="form-group" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input id="from" type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
+                        @if(!Auth::check() == null)
+                            @if($job->user_id == Auth::user()->id)
+                                <h3>you created this job</h3>
+                            @else
 
+                        @endif
+
+                                <p class="d-none" id="user-id" value="{{Auth::user()->id}}"></p>
+
+
+                                <form action="{{route('apply.job')}}" id="save_mail" class="form-group" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                    @if(!Auth::check() == null)
+                                        <input id="from" type="hidden"  class="form-control form-control-lg" name="from" value="{{Auth::user()->email}}">
+                                   @endif
                                 <input id="to" type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
                                 <input  id="id" type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
 
@@ -182,7 +195,12 @@
                                 <div class="row">
 
                                     <div class="col-3 form-group">
+                                        @if(!Auth::check() == null)
                                         <button id="saveMail" class="btn btn-success" type="submit">apply</button>
+                                        @else
+                                            <h3>you cannot apply for this job you have to be a member</h3>
+
+                                        @endif
                                     </div>
                                     <div class="col-3 form-group">
 
@@ -193,7 +211,9 @@
 
 
                             </form>
-                        @endif
+
+                          @endif
+
                     </div>
 
                 </div>
@@ -210,6 +230,25 @@
                             <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$job->sal}}k</li>
                             <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
                         </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="bg-light p-4 border rounded mb-4 cats-margin">
+                            <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Categories</h3>
+
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item  pl-3">
+                                    @foreach($categories as $cat)
+
+                                        <a class="nav-link text-dark" href="{{route('browse.jobs.cats', $cat->name)}}">
+                                            <span class="fa fa-{{$cat->font}} fa-1x text-primary"  ><span class="icon-magnet d-block"></span></span>
+                                            <strong class="text-black">{{$cat->name}} </strong>:        ({{$cat->count}})</a>
+
+                                    @endforeach
+                                </li>
+
+                            </ul>
+
+                        </div>
                     </div>
 
                     <div class="bg-light p-3 border rounded d-block mb-4">
@@ -231,6 +270,8 @@
 
 
                     </div>
+
+
 
 
 
@@ -307,12 +348,18 @@
                 $('#save').toggle();
                 $('button#save').remove();
 
+                var user_id = $('#user-id').val();
+
+                //alert(user_id);
+
+                    var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}",
+                        class:"btn btn-block btn-primary btn-md delete_btn", fuck_id:"{{$job->id}}", fuck2_id: user_id
+                    }).text("Saved");
 
 
 
-                var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}",
-                    class:"btn btn-block btn-primary btn-md delete_btn", fuck_id:"{{$job->id}}", fuck2_id: "{{Auth::user()->id}}"
-                }).text("Saved");
+
+
 
                 $("#suck").append(something);
 

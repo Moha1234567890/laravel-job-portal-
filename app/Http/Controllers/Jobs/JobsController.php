@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SearchRequest;
 use App\Models\Category;
 use App\Models\Email;
+use App\Models\Search;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
@@ -108,24 +111,46 @@ class JobsController extends Controller
 
     public function show($id) {
 
+        $categories =  DB::table('categories')
+            ->leftJoin('jobs', 'categories.name', '=', 'jobs.jobcategory')
+            ->select('categories.status','categories.name as name','jobs.jobcategory','categories.id as id','categories.font as font', DB::raw("count(jobs.jobcategory) as count"))
+            ->where('categories.status', '=', 1)
+
+            ->groupBy('categories.name')
+
+            ->get();
+
+
 
         $job = Job::findOrFail($id);
 
         $job_counter = Email::where( 'job_id_email', $id)->count();
 
-       $jobx =  SavedJob::with('jobs')->where('job_id', $id)->whereHas('jobs', function ($q) {
+       if(!Auth::check() == null) {
+           $jobx =  SavedJob::with('jobs')->where('job_id', $id)->whereHas('jobs', function ($q) {
 
-           $q->select('user_id', 'job_id','id');
+               $q->select('user_id', 'job_id','id');
 
-       })->where('user_id', Auth::user()->id)->get()->first();
+           })->where('user_id', Auth::user()->id)->get()->first();
+           if(!isset($jobx)) {
+               return view('jobs.show', compact( 'categories','job','job_counter'));
+
+           }
+
+       }
 
 
 
-       if($id)
-           return view('jobs.show', compact('jobx', 'job','job_counter'));
 
-       else
-           return abort('404');
+    else {
+        return view('jobs.show', compact( 'categories', 'job','job_counter'));
+
+    }
+
+
+
+
+
 
 
 
@@ -311,7 +336,14 @@ class JobsController extends Controller
        }
     }
 
-    public function search(Request $request) {
+    public function search(SearchRequest $request) {
+
+        Search::create([
+
+            'keyword'       => $request->keyword,
+
+
+        ]);
 
         $keyword = $request->get('keyword');
 
