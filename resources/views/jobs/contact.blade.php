@@ -83,7 +83,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">msg: </label>
+                                    <label for="exampleInputEmail1">Message: </label>
                                     <input type="text" class="form-control form-control-lg" id="job_title" name="msg" aria-describedby="emailHelp" placeholder="enter job title">
                                     @error('msg')
                                     <span class="text-danger">{{$message}} </span>
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="btn btn-success" id="save_job" type="submit">Add</button>
+                                    <button class="btn btn-success" id="save_job" type="submit">Send</button>
                                 </div>
                             </form>
                     </div>

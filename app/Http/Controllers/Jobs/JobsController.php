@@ -135,6 +135,9 @@ class JobsController extends Controller
            if(!isset($jobx)) {
                return view('jobs.show', compact( 'categories','job','job_counter'));
 
+           }else {
+               return view('jobs.show', compact( 'categories','job','job_counter'));
+
            }
 
        }

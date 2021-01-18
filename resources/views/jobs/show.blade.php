@@ -8,9 +8,9 @@
                 <div class="col-md-7">
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
-                        <a class="text-primary" href="{{route('home')}}">Home</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="{{route('home')}}">{{__('messages.home')}}</a> <span class="mx-2 slash">/</span>
                         @if(!Auth::check() == null)
-                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">Jobs</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
                         @endif
 
                         <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
@@ -99,7 +99,7 @@
                                             @endif
 
                                         @else
-                                                <button class="btn btn-success" id="save" type="submit">save</button>
+                                                <button class="btn btn-success" id="save" type="submit">{{__('messages.save')}}</button>
 
                                         @endif
 
