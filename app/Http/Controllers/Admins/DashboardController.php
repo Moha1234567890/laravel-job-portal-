@@ -40,11 +40,7 @@ class DashboardController extends Controller
         $num_saved_jobs = SavedJob::select()->count();
 
         $result = Job::select('jobtitle','created_at')->get();
-        //$data = array();
 
-            //$row;
-
-            //return $result;
 
 
 

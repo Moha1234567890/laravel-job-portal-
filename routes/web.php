@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','HomeController@index');
+//Route::get('/footer','HomeController@footer');
 
 
 
 
 
-Route::get('/contact', function () {
-    return view('jobs.contact');
-});
+Route::get('contact','HomeController@contact')->name('contact');
+Route::post('create-contact','HomeController@storeContact')->name('store');
+
 
 Auth::routes();
 

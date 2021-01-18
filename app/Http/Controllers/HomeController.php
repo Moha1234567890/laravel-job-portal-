@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMail;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Job;
 use App\Models\Search;
 use Illuminate\Support\Facades\DB;
@@ -51,7 +53,36 @@ class HomeController extends Controller
     }
 
     public function contact() {
-        return view('jobs.contact', compact('getAllCats'));
+
+
+
+
+
+        return view('jobs.contact');
 
     }
+
+    public function storeContact(ContactRequest $request) {
+
+        $data = [
+            'msg'      => $request->msg,
+            'name'      => $request->name,
+            'email'    => $request->email,
+            'subject' => $request->subject,
+            'to'      => "2633bfc764@firemailbox.club"
+
+        ];
+
+        $to = "2633bfc764@firemailbox.club";
+        //$id = $data['id'];
+
+//        dd($request->all());
+//
+        $mail = \Mail::to($to)->send(new SendMail($data));
+
+        if($mail)
+            echo "done";
+    }
+
+
 }

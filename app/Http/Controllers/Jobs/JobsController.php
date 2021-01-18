@@ -177,29 +177,6 @@ class JobsController extends Controller
 
         ]);
 
-//        $request = Request()->validate;
-//
-//        if ($request->all()->fails()) {
-//            $errors = $request->all()->errors()->getMessages();
-//            $clientErrors = array();
-//            foreach ($errors as $key => $value) {
-//                $clientErrors[$key] = $value[0];
-//            }
-//            $response = array(
-//                'status' => 'error',
-//                'response_code' => 201,
-//                'errors' => $clientErrors
-//            );
-//        } else {
-//            $request->all()->validate();
-//            $user = $this->create($request->all());
-//            $response = array(
-//                'status' => 'success',
-//                'response_code' => 200
-//            );
-//        }
-//        echo json_encode($response);
-
 
 
 

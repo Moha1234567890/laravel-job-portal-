@@ -47,7 +47,7 @@
 
 .footer-wrappper {
     padding: 41px;
-    margin-top: -350px;
+    margin-top:-230px;
 }
 
 
@@ -67,4 +67,8 @@ main.main {
 .cats-margin {
     margin: -16px;
     margin-top: 4px;
+}
+
+.main {
+    margin-bottom: -498px;
 }

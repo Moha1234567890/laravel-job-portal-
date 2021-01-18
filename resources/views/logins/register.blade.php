@@ -8,12 +8,12 @@
 
 
 
-    <main class="login-body" >
+    <main class="login-body ">
         <!-- Login Admin -->
-        <form method="POST" action="{{ route('register') }}">
+        <form class='main' method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div class="login-form" >
+            <div class="login-form main" >
                 <!-- logo-login -->
                 <div class="logo-login">
                     <a href="{{route('home')}}"><img src="assets/img/logo/loder.png" alt=""></a>

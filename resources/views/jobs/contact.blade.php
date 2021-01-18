@@ -69,36 +69,48 @@
                     <div class="col-12">
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
-                    <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
-                                    </div>
+                    <div class="col-8">
+                            <form id="save_form_job" action="{{route('store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email: </label>
+                                    <input type="text" class="form-control form-control-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="enter email">
+                                    @error('email')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">msg: </label>
+                                    <input type="text" class="form-control form-control-lg" id="job_title" name="msg" aria-describedby="emailHelp" placeholder="enter job title">
+                                    @error('msg')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                                    </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">name: </label>
+                                    <input type="text" class="form-control form-control-lg" id="location" name="name" aria-describedby="emailHelp" placeholder="enter location">
+                                    @error('name')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">subject: </label>
+                                    <input type="text" class="form-control form-control-lg" id="location" name="subject" aria-describedby="emailHelp" placeholder="enter location">
+                                    @error('subject')
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
                                 </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
-                            </div>
-                        </form>
+
+                                <div class="form-group">
+                                    <button class="btn btn-success" id="save_job" type="submit">Add</button>
+                                </div>
+                            </form>
                     </div>
-                    <div class="col-lg-3 offset-lg-1">
+                        <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-home"></i></span>
                             <div class="media-body">
@@ -126,57 +138,57 @@
         </section>
         <!-- Contact Area End -->
         <!-- Want To work 02-->
-        <section class="wantToWork-area">
-            <div class="container">
-                <div class="wants-wrapper w-padding2">
-                    <div class="row justify-content-between">
-                        <div class="col-xl-8 col-lg-8 col-md-7">
-                            <div class="wantToWork-caption wantToWork-caption2">
-                                <img src="assets/img/logo/logo2_footer.png" alt="" class="mb-20">
-                                <p>Users and submit their own items. You can create different packages and by connecting with your
-                                    PayPal or Stripe account charge users for registration to your directory portal.</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-5">
-                            <div class="footer-social f-right sm-left">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="wantToWork-area">--}}
+{{--            <div class="container">--}}
+{{--                <div class="wants-wrapper w-padding2">--}}
+{{--                    <div class="row justify-content-between">--}}
+{{--                        <div class="col-xl-8 col-lg-8 col-md-7">--}}
+{{--                            <div class="wantToWork-caption wantToWork-caption2">--}}
+{{--                                <img src="assets/img/logo/logo2_footer.png" alt="" class="mb-20">--}}
+{{--                                <p>Users and submit their own items. You can create different packages and by connecting with your--}}
+{{--                                    PayPal or Stripe account charge users for registration to your directory portal.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-4 col-lg-4 col-md-5">--}}
+{{--                            <div class="footer-social f-right sm-left">--}}
+{{--                                <a href="#"><i class="fab fa-twitter"></i></a>--}}
+{{--                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                                <a href="#"><i class="fab fa-pinterest-p"></i></a>--}}
+{{--                                <a href="#"><i class="fab fa-instagram"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
         <!-- Want To work End -->
         <!-- Want To work 01-->
-        <section class="wantToWork-area">
-            <div class="container">
-                <div class="wants-wrapper">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-xl-7 col-lg-9 col-md-8">
-                            <div class="wantToWork-caption wantToWork-caption2">
-                                <div class="main-menu2">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="explore.html">Explore</a></li>
-                                            <li><a href="pages.html">Pages</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-md-4">
-                            <a href="#" class="btn f-right sm-left">Add Listing</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="wantToWork-area">--}}
+{{--            <div class="container">--}}
+{{--                <div class="wants-wrapper">--}}
+{{--                    <div class="row align-items-center justify-content-between">--}}
+{{--                        <div class="col-xl-7 col-lg-9 col-md-8">--}}
+{{--                            <div class="wantToWork-caption wantToWork-caption2">--}}
+{{--                                <div class="main-menu2">--}}
+{{--                                    <nav>--}}
+{{--                                        <ul>--}}
+{{--                                            <li><a href="index.html">Home</a></li>--}}
+{{--                                            <li><a href="explore.html">Explore</a></li>--}}
+{{--                                            <li><a href="pages.html">Pages</a></li>--}}
+{{--                                            <li><a href="blog.html">Blog</a></li>--}}
+{{--                                            <li><a href="contact.html">Contact</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </nav>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-2 col-lg-3 col-md-4">--}}
+{{--                            <a href="#" class="btn f-right sm-left">Add Listing</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
         <!-- Want To work End -->
     </main>>
 

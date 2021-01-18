@@ -7,8 +7,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-3 col-lg-5 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
+                        <div class="single-footer-caption ">
+                            <div class="single-footer-caption" style="margin-top: 326px;">
                                 <!-- logo -->
                                 <div class="footer-logo mb-25">
                                     <a href="index.html"><img src="{{asset('assets/img/logo/logo2_footer.png')}}" alt=""></a>
@@ -27,40 +27,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Top categories</h4>
-                                <ul>
-                                    <li><a href="#">Design & creatives</a></li>
-                                    <li><a href="#">Telecommunication</a></li>
-                                    <li><a href="#">Restaurant</a></li>
-                                    <li><a href="#">Programing</a></li>
-                                    <li><a href="#">Architecture</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>For employer</h4>
-                                <ul>
-                                    <li><a href="#">Design & creatives</a></li>
-                                    <li><a href="#">Telecommunication</a></li>
-                                    <li><a href="#">Restaurant</a></li>
-                                    <li><a href="#">Programing</a></li>
-                                    <li><a href="#">Architecture</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                      </div>
+{{--                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">--}}
+{{--                        <div class="single-footer-caption mb-50">--}}
+{{--                            <div class="footer-tittle">--}}
+{{--                                <h4>Top categories</h4>--}}
+{{--                                <ul>--}}
 
-                    </div>
-                </div>
-            </div>
-        </div>
+
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">--}}
+{{--                        <div class="single-footer-caption mb-50">--}}
+{{--                            <div class="footer-tittle">--}}
+{{--                                <h4>For employer</h4>--}}
+{{--                                <ul>--}}
+{{--                                    <li><a href="#">Design & creatives</a></li>--}}
+{{--                                    <li><a href="#">Telecommunication</a></li>--}}
+{{--                                    <li><a href="#">Restaurant</a></li>--}}
+{{--                                    <li><a href="#">Programing</a></li>--}}
+{{--                                    <li><a href="#">Architecture</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                      </div>--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <!-- footer-bottom area -->
         <div class="footer-bottom-area">
             <div class="container">

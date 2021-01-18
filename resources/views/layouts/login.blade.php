@@ -47,10 +47,10 @@
       data-open="click" data-menu="vertical-menu" data-col="1-column">
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <div class="app-content content">
-    <div class="content-wrapper">
+    <div class="content-wrapper ">
         <div class="content-header row">
         </div>
-        <div class="content-body">
+        <div class="content-body ">
             @yield('content')
         </div>
     </div>

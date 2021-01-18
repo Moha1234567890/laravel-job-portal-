@@ -8,7 +8,7 @@
 
 
 
-    <main class="login-body">
+    <main class="login-body main">
         <!-- Login Admin -->
         <form method="POST" action="{{ route('login') }}">
             @csrf

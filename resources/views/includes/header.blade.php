@@ -22,7 +22,7 @@
                                             <li><a href="{{route('browse.jobs.cats')}}">Categories</a></li>
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{url('contact')}}">contact</a></li>
+                                                    <li><a href="{{route('contact')}}">contact</a></li>
 {{--                                                    <li><a href="blog.html">Blog</a></li>--}}
 {{--                                                    <li><a href="blog_details.html">Blog Details</a></li>--}}
 {{--                                                    <li><a href="elements.html">Element</a></li>--}}
