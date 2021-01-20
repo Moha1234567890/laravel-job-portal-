@@ -10,14 +10,14 @@
                     <div class="col-xl-8 col-lg-9">
                         <!-- Hero Caption -->
                         <div class="hero__caption">
-                            <h1>Find your dream job.</h1>
+                            <h1>{{__('messages.Find your dream job.')}}</h1>
                             <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.</p>
                         </div>
                     </div>
                     <div class="col-xl-11 col-lg-12">
                         <!--Hero form -->
                         <form action="{{route('search')}}" method="GET" class="search-box">
-                            <div class="input-form">
+                            <div class="input-form2 input-form3">
                                 <input type="text" name="keyword" placeholder="Job title or keywords">
                                 <!-- icon -->
                                 <div class="icon">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <button class="btn btn-success" type="submit">perform  search</button>
+                                <button class="btn btn-success btn-height" type="submit">perform  search</button>
 
                             </div>
                         </form>

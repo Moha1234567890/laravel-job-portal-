@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/mystyle.css')}}">
 
 </head>
-<body>
+<body dir="{{LaravelLocalization::getCurrentLocaleDirection()}}">
 <!-- ? Preloader Start -->
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -46,7 +46,7 @@
 @include('includes.header')
 
 
-<main class="main">
+<main class="main" >
 
     @yield('content')
 

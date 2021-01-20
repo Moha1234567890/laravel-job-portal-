@@ -72,3 +72,11 @@ main.main {
 .main {
     margin-bottom: -498px;
 }
+
+.input-form3 {
+    border-radius: 4px 33px 33px 5px;
+}
+
+.btn-height {
+    height: 63px;
+}

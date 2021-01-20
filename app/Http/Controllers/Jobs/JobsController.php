@@ -133,10 +133,10 @@ class JobsController extends Controller
 
            })->where('user_id', Auth::user()->id)->get()->first();
            if(!isset($jobx)) {
-               return view('jobs.show', compact( 'categories','job','job_counter'));
+               return view('jobs.show', compact( 'jobx', 'categories','job','job_counter'));
 
            }else {
-               return view('jobs.show', compact( 'categories','job','job_counter'));
+               return view('jobs.show', compact( 'jobx', 'categories','job','job_counter'));
 
            }
 

@@ -5,12 +5,12 @@
     <section class="section-hero overlay inner-page bg-image img-show" id="home-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-3">
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
                     <div class="custom-breadcrumbs">
                         <a class="text-primary" href="{{route('home')}}">{{__('messages.home')}}</a> <span class="mx-2 slash">/</span>
                         @if(!Auth::check() == null)
-                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}" align="{{__('messages.align')}}" style="{{__('messages.align')}} == 'right' ? margin-left: 25px; : margin-left: 25px;">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
                         @endif
 
                         <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
@@ -20,7 +20,6 @@
 
         </div>
     </section>
-
 
 
     <section class="site-section">
@@ -81,7 +80,7 @@
                                             @if($jobx->job_id == $job->id)
 
                                                 @if($jobx->user_id == Auth::user()->id AND $jobx->job_id == $job->id)
-                                                    <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn">saved</a>
+                                                    <a  id="delete_btn" fuck_id="{{$job->id}}" fuck2_id="{{Auth::user()->id}}" href="{{route('delete.job', $jobx->job_id)}}" class="btn btn-block btn-primary btn-md delete_btn" align="{{__('messages.align')}}">{{__('messages.saved')}}</a>
 
 
                                                 @else
@@ -99,7 +98,7 @@
                                             @endif
 
                                         @else
-                                                <button class="btn btn-success" id="save" type="submit">{{__('messages.save')}}</button>
+                                                <button class="btn btn-success" id="save" align="{{ __('messages.align') }}" type="submit">{{__('messages.save')}}</button>
 
                                         @endif
 
@@ -114,36 +113,37 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8" >
                     <div class="mb-5">
                         <figure class="mb-5"><img src="{{asset('assets/images/job_single_img_1.jpg')}}" alt="Image" class="img-fluid rounded"></figure>
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-anchor fa-2x mr-3"></span>Job Description</h3>
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-anchor fa-2x m-3"></span>{{__('messages.Job Description')}}</h3>
 
-                        <p>{{strip_tags($job->jobdesc)}})</p>
+                        <p align="{{ __('messages.align') }}">{{strip_tags($job->jobdesc)}})</p>
 
                     </div>
                     <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-rocket fa-2x mr-3"></span>Responsibilities</h3>
-                        <ul class="list-unstyled m-0 p-0">
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-rocket fa-2x m-3"></span>{{__('messages.Responsibilities')}}</h3>
+                        <ul  align="{{ __('messages.align') }}" class="list-unstyled m-0 p-0">
                             {{strip_tags($job->respon)}}
 
                         </ul>
                     </div>
 
-                    <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center  mb-4 text-primary"><span class="fa fa-book fa-2x mr-3"></span>Education + Experience</h3>
-                        <ul class="list-unstyled m-0 p-0">
-                           <li class="d-flex align-items-start mb-2"> {{strip_tags($job->edu)}} </li>
+                    <div class="mb-5" >
+                        <h3 class="h5 d-flex align-items-center  mb-4 text-primary"><span class="fa fa-book fa-2x m-3"></span>{{__('messages.Education + Experience')}}</h3>
+                        <ul  class="list-unstyled m-0 p-0">
+                           <li align="{{ __('messages.align') }}" class="d-flex align-items-start mb-2"> {{strip_tags($job->edu)}} </li>
 
                         </ul>
                     </div>
 
-                    <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-bell fa-2x mr-3"></span>Other Benifits</h3>
+                    <div class="mb-5" >
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="fa fa-bell fa-2x m-3"></span>{{__('messages.Other Benifits')}}</h3>
                         <ul class="list-unstyled m-0 p-0">
-                            <li class="d-flex align-items-start mb-2"> {{strip_tags($job->ben)}} </li>
+                            <li class="d-flex align-items-start mb-2" align="{{ __('messages.align') }}"> {{strip_tags($job->ben)}} </li>
                         </ul>
                     </div>
+
 
                     <div class="mb-5 form-group">
                         <div id="job_msg" class="alert alert-success" style="display:none" role="alert">
@@ -153,18 +153,14 @@
 
 
                         <div id="job_msg_error" class="alert alert-danger"  style="display: none"role="alert">
-                           one or all the fileds are missing or file extension not supported: supported ones pdf, docx, doc
+                           one or all the fields are missing or file extension not supported: supported ones pdf, docx, doc
 
                         </div>
-                        @if(!Auth::check() == null)
-                            @if($job->user_id == Auth::user()->id)
-                                <h3>you created this job</h3>
-                            @else
 
-                        @endif
+                        @if(!Auth::check() == null)
 
                                 <p class="d-none" id="user-id" value="{{Auth::user()->id}}"></p>
-
+                        @endif
 
                                 <form action="{{route('apply.job')}}" id="save_mail" class="form-group" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -174,35 +170,48 @@
                                 <input id="to" type="hidden" class="form-control form-control-lg" name="to" value="{{$job->email}}">
                                 <input  id="id" type="hidden" class="form-control form-control-lg" name="id" value="{{$job->id}}">
 
-
-                                <div class="form-group">
-                                    <input id="subject" type="text" class="form-control form-control-lg" name="subject" placeholder="why are you suitable for this job">
-
-
-
-                                </div>
-                               <div class="from-group">
-                                   <input id="image" value="" type="file" name="image" class="form-control form-control-lg" accept="application/pdf">
-
-
-
-                               </div>
-
-
-                                <br>
-                                <br>
-
-                                <div class="row">
-
-                                    <div class="col-3 form-group">
+                                    <div class="form-group">
                                         @if(!Auth::check() == null)
-                                        <button id="saveMail" class="btn btn-success" type="submit">apply</button>
-                                        @else
-                                            <h3>you cannot apply for this job you have to be a member</h3>
+
+                                           <input id="subject" type="text" class="form-control form-control-lg {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" name="subject" placeholder="{{__('messages.why are you suitable for this job')}}" >
 
                                         @endif
+
                                     </div>
-                                    <div class="col-3 form-group">
+
+                                    <div class="from-group">
+                                        @if(!Auth::check() == null)
+
+                                            <input id="image" value="" type="file" name="image" class="form-control form-control-lg {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" accept="application/pdf" {{Auth::user()->id == $job->user_id ? 'disabled ' : '' }}>
+
+                                        @endif
+
+                                   </div>
+                                    @if(!Auth::check() == null)
+
+                                        @if (Auth::user()->id == $job->user_id)
+                                            <h3>{{__('messages.you created this job')}}</h3>
+                                        @endif
+                                    @else
+                                        <h3>{{__('messages.register to apply for jobs')}}</h3>
+                                    @endif
+
+
+                                    <br>
+                                    <br>
+
+                                    <div class="row">
+
+
+
+                                            <div class="col-3 form-group">
+                                            @if(!Auth::check() == null)
+
+                                                <button id="saveMail" class="btn btn-success {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" type="submit" >{{__('messages.apply')}}</button>
+                                            @endif
+                                        </div>
+
+                                            <div class="col-3 form-group">
 
 
                                     </div>
@@ -212,7 +221,7 @@
 
                             </form>
 
-                          @endif
+{{--                        @endif--}}
 
                     </div>
 
@@ -220,28 +229,28 @@
 
                 <div class="col-lg-4">
                     <div class="bg-light p-3 border rounded mb-4">
-                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
+                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 " align="{{ __('messages.align') }}">{{ __('messages.jobS') }}</h3>
                         <ul class="list-unstyled pl-3 mb-0">
-                            <li class="mb-2"><strong class="text-black">Published on:</strong> {{$job->created_at}}</li>
-                            <li class="mb-2"><strong class="text-black">vacancy:</strong> {{$job->vacancy}}</li>
-                            <li class="mb-2"><strong class="text-black">Employment Status:</strong> {{$job->jobtype}}</li>
-                            <li class="mb-2"><strong class="text-black">Experience:</strong> {{$job->ex}} year(s)</li>
-                            <li class="mb-2"><strong class="text-black">Job Location:</strong> {{$job->location}}</li>
-                            <li class="mb-2"><strong class="text-black">Salary:</strong> ${{$job->sal}}k</li>
-                            <li class="mb-2"><strong class="text-black">Gender:</strong> {{$job->gender}}</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Published on')}}:</strong> {{$job->created_at}}</li>
+                            <li class="mb-2"   align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.vacancy')}}:</strong> {{$job->vacancy}}</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Employment Status')}}:</strong> {{$job->jobtype}}</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Experience')}}:</strong> {{$job->ex}} {{__('messages.years')}}</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Job Location')}}:</strong> {{$job->location}}</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Salary')}}:</strong> ${{$job->sal}}k</li>
+                            <li class="mb-2"  align="{{__('messages.align')}}"><strong class="text-black">{{__('messages.Gender')}}:</strong> {{$job->gender}}</li>
                         </ul>
                     </div>
                     <div class="col-lg-12">
                         <div class="bg-light p-4 border rounded mb-4 cats-margin">
-                            <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Categories</h3>
+                            <h3 class="text-primary  mt-3 h5 pl-3 mb-3" align="{{__('messages.align')}}">{{__('messages.Categories')}}</h3>
 
                             <ul class="navbar-nav m-auto">
-                                <li class="nav-item  pl-3">
+                                <li class="nav-item  pl-3" align="{{__('messages.align')}}">
                                     @foreach($categories as $cat)
 
-                                        <a class="nav-link text-dark" href="{{route('browse.jobs.cats', $cat->name)}}">
-                                            <span class="fa fa-{{$cat->font}} fa-1x text-primary"  ><span class="icon-magnet d-block"></span></span>
-                                            <strong class="text-black">{{$cat->name}} </strong>:        ({{$cat->count}})</a>
+                                        <a class="nav-link text-dark" align="{{__('messages.align')}}" href="{{route('browse.jobs.cats', $cat->name)}}">
+                                            <span align="{{__('messages.align')}}" class="fa fa-{{$cat->font}} fa-1x text-primary"  ><span class="icon-magnet d-block"></span></span>
+                                            <p align="{{__('messages.align')}}" class="d-inline-block"><strong class="text-black" >{{$cat->name}} </strong>:</p>       ({{$cat->count}})</a>
 
                                     @endforeach
                                 </li>
@@ -252,13 +261,13 @@
                     </div>
 
                     <div class="bg-light p-3 border rounded d-block mb-4">
-                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job info</h3>
+                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 " align="{{__('messages.align')}}">{{__('messages.Job info')}}</h3>
 
 
 
-                            <ul class="list-unstyled pl-3 mb-0">
+                            <ul class="list-unstyled pl-3 mb-0" align="{{__('messages.align')}}">
 
-                                <strong class="text-black">Number of Applications:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
+                                <strong class="text-black" >{{__('messages.number of apps')}}:</strong> <li id="load_it" value="{{$job_counter}}" class="mb-2 d-inline-block">
                                     {{$job_counter}}
 
                                 </li>
@@ -278,12 +287,12 @@
 
 
 
-                    <div class="bg-light p-3 border rounded">
-                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
+                    <div class="bg-light p-3 border rounded" align="{{__('messages.align')}}">
+                        <h3 class="text-primary  mt-3 h5 pl-3 mb-3 " align="{{__('messages.align')}}">{{__('messages.Share')}}</h3>
                         <div class="footer-social">
-                            <a href="{{url('http://twitter.com/share?url='. Request::url())}}"  target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="{{url('https://www.facebook.com/sharer/sharer.php?u='. Request::url())}}"  target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="{{url('https://www.linkedin.com/shareArticle?mini=true&url='. Request::url())}}"  target="_blank" ><i class="fab fa-linkedin"></i></a>
+                            <a href="{{url('http://twitter.com/share?url='. Request::url())}}"  target="_blank"><i align="{{__('messages.align')}}" class="fab fa-twitter"></i></a>
+                            <a href="{{url('https://www.facebook.com/sharer/sharer.php?u='. Request::url())}}"  target="_blank"><i align="{{__('messages.align')}}" class="fab fa-facebook-f"></i></a>
+                            <a href="{{url('https://www.linkedin.com/shareArticle?mini=true&url='. Request::url())}}"  target="_blank" ><i align="{{__('messages.align')}}" class="fab fa-linkedin"></i></a>
 
 
 
@@ -312,7 +321,11 @@
         $(document).ready(function() {
 
 
-
+            $(function() {
+                $("#labelfile").click(function() {
+                    $("#imageupl").trigger('click');
+                });
+            })
 
             function myFunction() {
                 setInterval(function(){
@@ -352,9 +365,9 @@
 
                 //alert(user_id);
 
-                    var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'Saved', href:"{{url('job/delete', $job->id)}}",
+                    var something = $('<a/>').attr({ type: "button", name:"saved", id:"delete_btn", value:'{{__('messages.save')}}', href:"{{url('job/delete', $job->id)}}",
                         class:"btn btn-block btn-primary btn-md delete_btn", fuck_id:"{{$job->id}}", fuck2_id: user_id
-                    }).text("Saved");
+                    }).text("{{__('messages.saved')}}");
 
 
 
@@ -477,7 +490,7 @@
 
                 var something_2 = $('<button/>').attr({ type: "submit", name:"save", id:"save", value:'Save',
                     class:"btn btn-success",
-                }).text("Save");
+                }).text("{{__('messages.save')}}");
 
                 $("#suck").append(something_2);
 

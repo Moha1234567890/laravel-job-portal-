@@ -10,9 +10,9 @@
 
                         <div class="bg-light p-3 border rounded d-block mb-4">
 
-                            <ul class="list-unstyled pl-3 mb-0">
+                            <ul class="list-unstyled pl-3 mb-0" align="{{__('messages.align')}}">
 
-                                <li class="mb-2"><strong class="text-black">Number of Saved Jobs:</strong> <span class="pull-right">({{$saved_jobs_counter}})</span></li>
+                                <li class="mb-2"><strong class="text-black ">{{__('messages.Number of Saved Jobs')}}</strong>     <span align="{{__('messages.align')}} == right ? left : right">: ({{$saved_jobs_counter}})</span></li>
 
                             </ul>
 

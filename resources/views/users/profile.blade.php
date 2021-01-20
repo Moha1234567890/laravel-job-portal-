@@ -21,7 +21,7 @@
 
                                 <div class="form-group text-center">
 
-                                    <label for="first_name"><h4>my cv</h4></label>
+                                    <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
 
 
 
@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="btn btn-lg btn-success" type="submit">Save</button>
+                                    <button class="btn btn-lg btn-success" type="submit">{{__('messages.Update')}}</button>
                                 </div>
 
                             </form>
@@ -42,14 +42,14 @@
 
 
                             <ul class="list-group">
-                                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong> posted jobs</strong></span>{{$createdJobs}}</li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>applyed to jobs</strong></span> {{$applyedJobs}}</li>
+                                <li class="list-group-item text-muted">{{__('messages.Activity')}} <i class="fa fa-dashboard fa-1x"></i></li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>{{__('messages. posted jobs')}}</strong></span>{{$createdJobs}}</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong>{{__('messages.applyed to jobs')}}</strong></span> {{$applyedJobs}}</li>
 
                             </ul>
 
                             <div class="panel panel-default d-block mt-4">
-                                <div class="panel-heading">Social Media</div>
+                                <div class="panel-heading">{{__('messages.Social Media')}}</div>
                                 <div class="panel-body">
 
                                          <div class="footer-social">
@@ -94,9 +94,9 @@
 
 
 
-                                            <div class="col-xs-6">
-                                                <label for="first_name"><h4>Name</h4></label>
-                                                <input type="text" value="{{$user->name}}" class="form-control form-control-lg" name="name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                            <div class="col-xs-6" align="{{__('messages.align')}}">
+                                                <label for="first_name"><h4>{{__('messages.Name')}}</h4></label>
+                                                <input type="text" value="{{$user->name}}" class="form-control form-control-lg" name="name" id="first_name" placeholder="{{__('messages.Name')}}" title="enter your first name if any.">
                                                 @error('name')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror
@@ -107,100 +107,100 @@
 
 
 
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-6">
-                                                <label for="mobile"><h4>Mobile</h4></label>
-                                                <input type="text" value="{{$user->mobile}}" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                                <label for="mobile"><h4>{{__('messages.Mobile')}}</h4></label>
+                                                <input type="text" value="{{$user->mobile}}" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="{{__('messages.Mobile')}}" title="enter your mobile number if any.">
                                                 @error('mobile')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-6">
-                                                <label for="mobile"><h4>Job title</h4></label>
-                                                <input type="text" value="{{$user->job_title}}" class="form-control form-control-lg" name="job_title" id="mobile" placeholder="enter job title" title="enter your job title if any.">
+                                                <label for="mobile"><h4>{{__('messages.Job title')}}</h4></label>
+                                                <input type="text" value="{{$user->job_title}}" class="form-control form-control-lg" name="job_title" id="mobile" placeholder="{{__('messages.Mobile')}}" title="enter your job title if any.">
                                                 @error('mobile')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Email</h4></label>
-                                                <input type="email" value="{{$user->email}}" class="form-control form-control-lg" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                                <label for="email"><h4>{{__('messages.Email')}}</h4></label>
+                                                <input type="email" value="{{$user->email}}" class="form-control form-control-lg" name="email" id="email" placeholder="{{__('messages.Email')}}" title="enter your email.">
                                                 @error('email')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Location</h4></label>
-                                                <input type="text" value="{{$user->location}}" name="location" class="form-control form-control-lg" id="location" placeholder="somewhere" title="enter a location">
+                                                <label for="email"><h4>{{__('messages.based_location')}}</h4></label>
+                                                <input type="text" value="{{$user->location}}" name="location" class="form-control form-control-lg" id="location" placeholder="{{__('messages.based_location')}}" title="enter a location">
                                                 @error('location')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Facebook</h4></label>
-                                                <input type="text" value="{{$user->facebook}}" name="facebook" class="form-control form-control-lg" id="location" placeholder="Facebook" title="enter a location">
+                                                <label for="email"><h4>{{__('messages.Facebook')}}</h4></label>
+                                                <input type="text" value="{{$user->facebook}}" name="facebook" class="form-control form-control-lg" id="location" placeholder="{{__('messages.Facebook')}}" title="enter a location">
 
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Twitter</h4></label>
-                                                <input type="text" value="{{$user->twitter}}" name="twitter" class="form-control form-control-lg" id="location" placeholder="Twitter" title="enter a location">
+                                                <label for="email"><h4>{{__('messages.Twitter')}}</h4></label>
+                                                <input type="text" value="{{$user->twitter}}" name="twitter" class="form-control form-control-lg" id="location" placeholder="{{__('messages.Twitter')}}" title="enter a location">
 
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Linkedin</h4></label>
-                                                <input type="text" value="{{$user->linkedin}}" name="linkedin" class="form-control form-control-lg" id="location" placeholder="Linkedin" title="enter a location">
+                                                <label for="email"><h4>{{__('messages.linkedin')}}</h4></label>
+                                                <input type="text" value="{{$user->linkedin}}" name="linkedin" class="form-control form-control-lg" id="location" placeholder="{{__('messages.linkedin')}}" title="enter a location">
 
                                             </div>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             <div class="col-xs-6">
-                                                <label for="email"><h4>Website</h4></label>
-                                                <input type="text" value="{{$user->link}}" name="link" class="form-control form-control-lg" id="location" placeholder="Website" title="enter a location">
+                                                <label for="email"><h4>{{__('messages.Website')}}</h4></label>
+                                                <input type="text" value="{{$user->link}}" name="link" class="form-control form-control-lg" id="location" placeholder="{{__('messages.Website')}}" title="enter a location">
 
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
 
                                             @if(!$user->cv == null)
 
                                                 <div class="col-xs-6">
-                                                   <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>Download my CV</a>
+                                                   <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>{{__('messages.Download my CV')}}</a>
                                                 </div>
                                             @else
                                                 <div class="col-xs-6">
-                                                    <h3>if you uploaded your cv it will show up here</h3>
+                                                    <h3>{{__('messages.if you uploaded your cv it will show up here')}}</h3>
                                                 </div>
                                             @endif
 
                                         </div>
 
 
-                                        <div class="form-group">
+                                        <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-12">
                                                 <br>
-                                                <button class="btn btn-lg btn-success" type="submit">Save</button>
+                                                <button class="btn btn-lg btn-success" type="submit">{{__('messages.save')}}</button>
 
                                             </div>
                                         </div>

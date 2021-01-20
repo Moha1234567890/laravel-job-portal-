@@ -9,9 +9,9 @@
 
                 <div class="bg-light p-3 border rounded d-block mb-4">
 
-                        <ul class="list-unstyled pl-3 mb-0">
+                        <ul class="list-unstyled pl-3 mb-0" align="{{__('messages.align')}}">
 
-                               <li class="mb-2"><strong class="text-black">Number of Searches:</strong> <span class="pull-right">({{$getJobs_counter}})</span></li>
+                               <li class="mb-2"><strong class="text-black">{{__('messages.Number of Searches')}}:</strong> <span align="{{__('messages.align')}} == right ? left : right">({{$getJobs_counter}})</span></li>
 
                         </ul>
 
@@ -48,8 +48,9 @@
 
                     @endforeach
               @else
-                    <div class="alert alert-danger">
-                       We have no records of this search
+                    <div class="alert alert-danger" align="{{__('messages.align')}}">
+                        {{__('messages.We have no records of this search')}}
+
                     </div>
               @endif
 

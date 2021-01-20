@@ -13,24 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','HomeController@index');
 //Route::get('/footer','HomeController@footer');
 
 
 
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function() {
+    Route::get('/','HomeController@index');
+
+    Route::get('contact','HomeController@contact')->name('contact');
+    Route::post('contact','HomeController@storeContact')->name('store');
+    Auth::routes();
 
 
-Route::get('contact','HomeController@contact')->name('contact');
-Route::post('contact','HomeController@storeContact')->name('store');
 
 
-Auth::routes();
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-$subjects = [
-    'job',
-];
+
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
@@ -38,6 +39,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     Route::group(['prefix' => 'job'], function() {
 
+        Route::get('create','JobsController@create')->name('create.job');
         Route::post('create','JobsController@store')->name('store.job');
         Route::get('cats','JobsController@cats')->name('browse.jobs.cats');
         Route::get('cities','JobsController@cities')->name('browse.jobs.cities');
@@ -58,22 +60,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 });
 
 
-Route::group(['prefix' =>'user', 'namespace' => 'users', 'middleware' => 'CheckForUrl'], function() {
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl' ], 'namespace' => 'users',], function() {
+
+    Route::group(['prefix' => 'user'], function() {
+
+        Route::get('/update/{id}', 'UsersController@profile')->name('profile');
+        Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
+        Route::post('profile-update-cv/{id}', 'UsersController@updateCv')->name('profile.update.cv');
+        Route::get('profile-image-update/{id}', 'UsersController@updateImageGet')->name('profile.update.image.get');
+
+        Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image');
+
+        Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
 
 
-    Route::get('/update/{id}', 'UsersController@profile')->name('profile');
-    Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
-    Route::post('profile-update-cv/{id}', 'UsersController@updateCv')->name('profile.update.cv');
-    Route::get('profile-image-update/{id}', 'UsersController@updateImageGet')->name('profile.update.image.get');
-
-    Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image');
-
-    Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
-
-
-
-
-
+    });
 
 
 });

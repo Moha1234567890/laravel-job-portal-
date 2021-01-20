@@ -16,12 +16,12 @@
             <div class="login-form">
                 <!-- logo-login -->
                 <div class="logo-login">
-                    <a href="{{route('home')}}"><img src="assets/img/logo/loder.png" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{asset('assets/img/logo/loder.png')}}" alt=""></a>
                 </div>
-                <h2>Login Here</h2>
-                <div class="form-input">
-                    <label for="name">Email</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <h2>{{__('messages.Log in')}}</h2>
+                <div class="form-input" align="{{__('messages.align')}}">
+                    <label for="name">{{__('messages.EmailP')}}</label>
+                    <input id="email" placeholder="{{__('messages.EmailP')}}" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -29,9 +29,9 @@
                                     </span>
                     @enderror
                 </div>
-                <div class="form-input">
-                    <label for="name">Password</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <div class="form-input" align="{{__('messages.align')}}">
+                    <label for="name">{{__('messages.Password')}}</label>
+                    <input id="password" type="password" placeholder="{{__('messages.Password')}}" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -40,18 +40,20 @@
                     @enderror
                 </div>
                 <div class="form-input pt-30">
-                    <input type="submit" name="submit" value="login">
+                    <input type="submit" name="submit" value="{{__('messages.Log in')}}">
                 </div>
 
                 <!-- Forget Password -->
 
                 @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
+{{--                    <a class="btn btn-link" href="{{ route('password.request') }}">--}}
+{{--                        {{ __('Forgot Your Password?') }}--}}
+{{--                    </a>--}}
+
             @endif
+                <a href="{{route('register')}}" class="registration">{{__('messages.Registration')}}</a>
+
                 <!-- Forget Password -->
-                <a href="{{url('register')}}" class="registration">Registration</a>
             </div>
         </form>
         <!-- /end login form -->

@@ -18,32 +18,49 @@
                                     <nav>
                                         <ul id="navigation">
                                             @guest
-                                            <li><a href="{{route('home')}}">Home</a></li>
-                                            <li><a href="{{route('browse.jobs.cats')}}">Categories</a></li>
-                                            <li><a href="#">Pages</a>
+                                            <li><a href="{{route('home')}}">{{__('messages.Home')}}</a></li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        {{__('messages.Languages')}}
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+
+                                                            <a class="dropdown-item text-primary" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                                {{ $properties['native'] }}
+                                                            </a>
+
+                                                        @endforeach
+                                                    </div>
+                                                </li>
+
+
+                                                <li><a href="{{route('browse.jobs.cats')}}">{{__('messages.Categories')}}</a></li>
+                                            <li><a href="#">{{__('messages.Pages')}}</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{route('contact')}}">contact</a></li>
+                                                    <li><a href="{{route('contact')}}">{{__('messages.contact')}}</a></li>
 {{--                                                    <li><a href="blog.html">Blog</a></li>--}}
 {{--                                                    <li><a href="blog_details.html">Blog Details</a></li>--}}
 {{--                                                    <li><a href="elements.html">Element</a></li>--}}
                                                 </ul>
                                             </li>
                                                 @if (Route::has('register'))
-                                                   <li><a href="{{url('login')}}">Log in</a></li>
+                                                   <li><a href="{{url('login')}}">{{__('messages.Log in')}}</a></li>
                                                 @endif
                                             @else
                                                 <li class="nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Browse Jobs by
+                                                          {{__('messages. Browse Jobs by')}}
                                                     </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.cats')}}">Category</a>
-                                                        <a class="dropdown-item text-primary" href="{{route('browse.jobs.cities')}}">City</a>
+                                                    <div class="dropdown-menu" align="{{__('messages.align')}} == right ? pull-left : pull-right" aria-labelledby="navbarDropdown">
+                                                        <a class="dropdown-item text-primary" align="{{__('messages.align')}} == right ? pull-left : pull-right" href="{{route('browse.jobs.cats')}}">{{__('messages.Category')}}</a>
+                                                        <a class="dropdown-item text-primary" align="{{__('messages.align')}}" href="{{route('browse.jobs.cities')}}">{{__('messages.City')}}</a>
                                                         <div class="dropdown-divider"></div>
                                                         @if(!Auth::user()->job_title == null)
-                                                          <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">your job title</a>
+                                                          <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">{{__('messages.your job title')}}</a>
                                                         @else
-                                                            <a class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}">update your profile</a>
+                                                            <a class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}">{{__('messages.update your profile')}}</a>
                                                         @endif
 
                                                     </div>
@@ -51,7 +68,7 @@
 
                                                 <li class="nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Langs
+                                                       {{__('messages.Languages')}}
                                                     </a>
                                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -75,22 +92,22 @@
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                                         <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >
-                                                            {{ __('profile') }}
+                                                            {{ __('messages.profile') }}
                                                         </a>
 
                                                         <a  class="dropdown-item text-primary" href="{{ route('profile.update.image.get', Auth::user()->id) }}"
                                                         >
-                                                            {{ __('update image') }}
+                                                            {{ __('messages.update image') }}
                                                         </a>
 
                                                         <a  class="dropdown-item text-primary" href="{{route('saved.jobs', Auth::user()->id)}}"
                                                         >
-                                                            {{ __('saved jobs') }}
+                                                            {{ __('messages.saved jobs') }}
                                                         </a>
                                                         <a  class="dropdown-item text-primary" href="{{ route('logout') }}"
                                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                            {{ __('Logout') }}
+                                                            {{ __('messages.Logout') }}
                                                         </a>
 
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -104,7 +121,7 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-65">
-                                    <a href="{{url('job/create')}}" class="border-btn">Post a Job</a>
+                                    <a href="{{route('create.job')}}" class="border-btn">{{__('messages.Post a Job')}}</a>
                                 </div>
                                 @endguest
                             </div>
