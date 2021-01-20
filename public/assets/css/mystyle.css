@@ -77,6 +77,14 @@ main.main {
     border-radius: 4px 33px 33px 5px;
 }
 
+.input-form4 {
+    border-radius: 33px 4px 5px 33px;
+
+}
 .btn-height {
     height: 63px;
+}
+
+.search-box {
+    border: 1px solid rgba(255, 255, 255, 0.16);
 }

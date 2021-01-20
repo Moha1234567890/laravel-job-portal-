@@ -11,14 +11,15 @@
                         <!-- Hero Caption -->
                         <div class="hero__caption">
                             <h1>{{__('messages.Find your dream job.')}}</h1>
-                            <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.</p>
+                            <p>{{__('messages.The automated')}}</p>
                         </div>
                     </div>
                     <div class="col-xl-11 col-lg-12">
                         <!--Hero form -->
                         <form action="{{route('search')}}" method="GET" class="search-box">
-                            <div class="input-form2 input-form3">
-                                <input type="text" name="keyword" placeholder="Job title or keywords">
+                            <div class="input-form2 input-form3 {{__('messages.align')}} == right ? input-form4 : input-form3"
+                            >
+                                <input type="text" name="keyword" placeholder="{{__('messages.Job title or keywords')}}">
                                 <!-- icon -->
                                 <div class="icon">
                                     <i class="fas fa-pencil-alt"></i>
@@ -27,13 +28,13 @@
                             </div>
 
                             <div class="input-form2">
-                                <input type="text"  name="state" placeholder="Where?">
+                                <input type="text"  name="state" placeholder="{{__('messages.Where?')}}">
                                 <!-- icon -->
                                 <div class="icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                             </div>
-                            <div class="select-form">
+                            <div class="select-form pull-{{__('messages.align')}}">
                                 <div class="select-itms">
                                     <select name="selectCate" id="select1">
 
@@ -45,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <button class="btn btn-success btn-height" type="submit">perform  search</button>
+                                <button class="btn btn-success btn-height" type="submit">{{__('messages.perform  search')}}</button>
 
                             </div>
                         </form>
@@ -68,7 +69,7 @@
                         <div class="popular-search text-center pt-30">
 
                             <ul>
-                                <li><p>Popular search:</p></li>
+                                <li><p>{{__('messages.Popular search')}}:</p></li>
                                 @foreach($getSeaches as $getSearch)
                                 <li><a href="{{route('browse.jobs.jobtitle', $getSearch->keyword)}}">#{{$getSearch->keyword}}</a></li>
                                @endforeach
@@ -120,9 +121,8 @@
                 <div class="col-xl-8 col-lg-8">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
-                        <h2>Browse from over <span style="color:#367FFF ;"> 2000+</span> jobs</h2>
-                        <p>The automated process starts as soon as your clothes go into the machine. The outcome is
-                            gleaming clothes. Placeholder text commonly used.</p>
+                        <h2>{{__('messages.Browse from over')}} <span style="color:#367FFF ;"> 2000+</span> {{__('messages.jobs')}}</h2>
+                        <p>{{__('messages.The automated')}}</p>
                     </div>
                 </div>
             </div>
@@ -191,11 +191,11 @@
         <div class="about-details">
             <div class="right-caption">
                 <!-- Section Tittle -->
-                <div class="section-tittle mb-20">
-                    <h2>Want to hire perfect person?</h2>
+                <div align="{{__('messages.align')}}" class="section-tittle mb-20">
+                    <h2>{{__('messages.Want to hire perfect person?')}}</h2>
                 </div>
                 <div class="about-more">
-                    <p class="mb-45 pera-bottom">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying.</p>
+                    <p class="mb-45 pera-bottom">{{__('messages.The automated')}}</p>
 {{--                    <a href="#" class="btn">Browse Talents</a>--}}
                 </div>
             </div>
@@ -209,9 +209,8 @@
                 <div class="col-xl-4 col-lg-7 col-md-9">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
-                        <h2>Browse top jobs</h2>
-                        <p>The automated process starts as soon as your clothes go into the machine. The outcome is
-                            gleaming clothes. Placeholder text commonly used.</p>
+                        <h2>{{__('messages.Browse top jobs')}}</h2>
+                        <p>{{__('messages.The automated')}}</p>
                     </div>
                 </div>
             </div>

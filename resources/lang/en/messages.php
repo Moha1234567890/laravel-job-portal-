@@ -123,7 +123,15 @@ return [
     //home
 
      'Find your dream job.' => 'Find your dream job.',
-
+    'The automated' => 'The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.',
+    'Job title or keywords' => 'Job title or keywords',
+    'Where?' => 'Where?',
+    'perform  search' => 'perform  search',
+    'Popular search' => 'Popular search',
+    'Browse from over' => 'Browse from over',
+    'jobs' => 'jobs',
+    'Want to hire perfect person?' => 'Want to hire perfect person?',
+    'Browse top jobs' => 'Browse top jobs',
 
 
 ];
