@@ -71,7 +71,7 @@
                         <label for="exampleFormControlSelect1">{{__('messages.Employment Status')}}: </label>
                         <br>
                         <div class="pull-{{__('messages.align')}}">
-                        <select class="form-control pull-{{__('messages.align')}}"  name="jobtype" id="job_type">
+                        <select class="form-control"  name="jobtype" id="job_type">
                             <option value="full time">{{__('messages.full time')}}</option>
                             <option value="part time">{{__('messages.part time')}}</option>
 
@@ -84,12 +84,13 @@
                     </div>
                     <br>
 
-                    <div class="form-group" align="{{__('messages.align')}}">
+                    <div class="form-group pull-{{__('messages.align')}}" align="{{__('messages.align')}}">
                         <label for="exampleFormControlSelect1">{{__('messages.job category')}}: </label>
                         <br>
 
 
                         <select class="form-control" name="jobcategory" align="{{__('messages.align')}}" id="job_category">
+
                             <optgroup label="Choose job category">
                                 @foreach($getAllCats as $getAllCat)
                                 <option value="{{$getAllCat->name}}" class="pull-{{__('messages.align')}}">{{$getAllCat->name}}</option>
@@ -100,12 +101,14 @@
                         </select>
                         <br>
 
+
                         @error('jobcategory')
                         <span class="text-danger">{{$message}} </span>
                         @enderror
                     </div>
 
                     <br>
+                    <br><br><br>
 
 
                     <div class="form-group" align="{{__('messages.align')}}">
@@ -133,11 +136,10 @@
                     </div>
 
                     <div class="form-group pull-{{__('messages.align')}}">
-                        <label for="exampleFormControlSelect1">{{__('messages.Gender')}}: </label>
+                        <label for="exampleFormControlSelect1" class="">{{__('messages.Gender')}}: </label>
                         <br>
 
-
-                        <select class="form-control" name="gender" id="gender">
+                        <select class="form-control pull-{{__('messages.align')}}"" name="gender" id="gender">
                             <optgroup label="{{__('messages.Choose job category')}}">
                                 <option value="male">{{__('messages.male')}}</option>
                                 <option value="female">{{__('messages.female')}}</option>
@@ -213,9 +215,9 @@
                     <h2 align="{{__('messages.align')}}">{{__('messages.Company Details')}}</h2>
 
                     <hr>
-                    <div class="form-group text-center" align="{{__('messages.align')}}">
+                    <div class="form-group text-center pull-{{__('messages.align')}}" align="">
 
-                        <label for="exampleInputEmail1" >{{__('messages.Company logo')}}: </label>
+                        <label class="pull-{{__('messages.align')}}" for="exampleInputEmail1" align="">{{__('messages.Company logo')}}: </label>
                         <br>
 
                         <input type="file" class="text-center center-block file-upload d-block mb-3" id="image" name="image">
@@ -225,6 +227,10 @@
 
 
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
                     <div class="form-group" align="{{__('messages.align')}}">
                         <label for="exampleInputEmail1">{{__('messages.Company name')}}: </label>

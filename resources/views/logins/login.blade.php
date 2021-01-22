@@ -13,7 +13,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div class="login-form">
+            <div class="login-form top-login">
                 <!-- logo-login -->
                 <div class="logo-login">
                     <a href="{{route('home')}}"><img src="{{asset('assets/img/logo/loder.png')}}" alt=""></a>

@@ -133,5 +133,17 @@ return [
     'Want to hire perfect person?' => 'Want to hire perfect person?',
     'Browse top jobs' => 'Browse top jobs',
 
+    //jobs/contact
+
+    'About Us' => 'About Us',
+    'Message' => 'Message',
+    'Subject' => 'Subject',
+    'Send' => 'Send',
+    'Buttonwood, California.' => 'Buttonwood, California.',
+    'Rosemead, CA 91770' => 'Rosemead, CA 91770',
+    'Mon to Fri 9am to 6pm' => 'Mon to Fri 9am to 6pm',
+    'Get in Touch' => 'Get in Touch',
+    'Send us your query anytime!' => 'Send us your query anytime!',
+
 
 ];

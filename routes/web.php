@@ -39,7 +39,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     Route::group(['prefix' => 'job'], function() {
 
-        Route::get('create','JobsController@create')->name('create.job');
+        Route::get('create','JobsController@create')->name('create.job')->middleware('auth');
         Route::post('create','JobsController@store')->name('store.job');
         Route::get('cats','JobsController@cats')->name('browse.jobs.cats');
         Route::get('cities','JobsController@cities')->name('browse.jobs.cities');

@@ -4,11 +4,11 @@
         <div class="main-header ">
             <div class="header-bottom  header-sticky">
                 <div class="container-fluid">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center" style="height:100px">
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="{{url('home')}}"><img src="{{asset('assets/img/logo/logo.png')}}" alt=""></a>
+                                <a href="{{route('home')}}"><img src="{{asset('assets/img/logo/logo.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">

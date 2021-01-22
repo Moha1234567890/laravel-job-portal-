@@ -14,7 +14,7 @@
                         <div class="col-xl-8 col-lg-9">
                             <!-- Hero Caption -->
                             <div class="hero__caption hero__caption2">
-                                <h1>About Us</h1>
+                                <h1 align="{{__('messages.align')}}">{{__('messages.About Us')}}</h1>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Get in Touch</h2>
+                        <h2 align="{{__('messages.align')}}" class="contact-title">{{__('messages.Get in Touch')}}</h2>
                     </div>
                     <div class="col-8">
                             <form id="save_form_job" action="{{route('store')}}" method="POST" enctype="multipart/form-data">
@@ -75,61 +75,61 @@
 
 
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email: </label>
-                                    <input type="text" class="form-control form-control-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="enter email">
+                                <div class="form-group" align="{{__('messages.align')}}">
+                                    <label for="exampleInputEmail1">{{__('messages.EmailP')}}: </label>
+                                    <input type="text" class="form-control form-control-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="{{__('messages.EmailP')}}">
                                     @error('email')
                                     <span class="text-danger">{{$message}} </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Message: </label>
-                                    <input type="text" class="form-control form-control-lg" id="job_title" name="msg" aria-describedby="emailHelp" placeholder="enter job title">
+                                <div class="form-group" align="{{__('messages.align')}}">
+                                    <label for="exampleInputEmail1">{{__('messages.Message')}}: </label>
+                                    <input type="text" class="form-control form-control-lg" id="job_title" name="msg" aria-describedby="emailHelp" placeholder="{{__('messages.Message')}}">
                                     @error('msg')
                                     <span class="text-danger">{{$message}} </span>
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">name: </label>
-                                    <input type="text" class="form-control form-control-lg" id="location" name="name" aria-describedby="emailHelp" placeholder="enter location">
+                                <div class="form-group" align="{{__('messages.align')}}">
+                                    <label for="exampleInputEmail1">{{__('messages.Name')}}: </label>
+                                    <input type="text" class="form-control form-control-lg" id="location" name="name" aria-describedby="emailHelp" placeholder="{{__('messages.Name')}}">
                                     @error('name')
                                     <span class="text-danger">{{$message}} </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">subject: </label>
-                                    <input type="text" class="form-control form-control-lg" id="location" name="subject" aria-describedby="emailHelp" placeholder="enter location">
+                                <div class="form-group" align="{{__('messages.align')}}">
+                                    <label for="exampleInputEmail1">{{__('messages.Subject')}}: </label>
+                                    <input type="text" class="form-control form-control-lg" id="location" name="subject" aria-describedby="emailHelp" placeholder="{{__('messages.Subject')}}">
                                     @error('subject')
                                     <span class="text-danger">{{$message}} </span>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="btn btn-success" id="save_job" type="submit">Send</button>
+                                    <button class="btn btn-success" id="save_job" type="submit">{{__('messages.Send')}}</button>
                                 </div>
                             </form>
                     </div>
                         <div class="col-lg-3 offset-lg-1">
-                        <div class="media contact-info">
+                        <div class="media contact-info" align="{{__('messages.align')}}">
                             <span class="contact-info__icon"><i class="ti-home"></i></span>
                             <div class="media-body">
-                                <h3>Buttonwood, California.</h3>
-                                <p>Rosemead, CA 91770</p>
+                                <h3>{{__('messages.Buttonwood, California.')}}</h3>
+                                <p>{{__('messages.Rosemead, CA 91770')}}</p>
                             </div>
                         </div>
-                        <div class="media contact-info">
+                        <div class="media contact-info" align="{{__('messages.align')}}">
                             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                             <div class="media-body">
                                 <h3>+1 253 565 2365</h3>
-                                <p>Mon to Fri 9am to 6pm</p>
+                                <p>{{__('messages.Mon to Fri 9am to 6pm')}}</p>
                             </div>
                         </div>
-                        <div class="media contact-info">
+                        <div class="media contact-info" align="{{__('messages.align')}}">
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
                                 <h3>support@colorlib.com</h3>
-                                <p>Send us your query anytime!</p>
+                                <p>{{__('messages.Send us your query anytime!')}}</p>
                             </div>
                         </div>
                     </div>

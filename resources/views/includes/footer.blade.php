@@ -7,15 +7,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-3 col-lg-5 col-md-4 col-sm-6">
-                        <div class="single-footer-caption ">
+                        <div class="single-footer-caption">
                             <div align="{{__('messages.align')}}"   class="single-footer-caption" style="margin-top: 326px;">
                                 <!-- logo -->
                                 <div class="footer-logo mb-25">
-                                    <a href="{{route('home')}}"><img src="{{asset('assets/img/logo/logo2_footer.png')}}" alt=""></a>
+                                    <a href="{{route('home')}}"><img class="img-padding" src="{{asset('assets/img/logo/logo2_footer.png')}}" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p >{{__('messages.The automated')}}</p>
+                                        <p>{{__('messages.The automated')}}</p>
                                     </div>
                                 </div>
                                 <!-- social -->

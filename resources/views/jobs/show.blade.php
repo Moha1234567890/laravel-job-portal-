@@ -6,9 +6,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
+                    @if(!Auth::check() == null)
+
                     <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
+                    @endif
                     <div class="custom-breadcrumbs">
-                        <a class="text-primary" href="{{route('home')}}">{{__('messages.home')}}</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary" href="{{route('home')}}">{{__('messages.Home')}}</a> <span class="mx-2 slash">/</span>
                         @if(!Auth::check() == null)
                         <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}" align="{{__('messages.align')}}" style="{{__('messages.align')}} == 'right' ? margin-left: 25px; : margin-left: 25px;">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
                         @endif
@@ -193,7 +196,7 @@
                                             <h3>{{__('messages.you created this job')}}</h3>
                                         @endif
                                     @else
-                                        <h3>{{__('messages.register to apply for jobs')}}</h3>
+                                        <h3 align="{{__('messages.align')}}">{{__('messages.register to apply for jobs')}}</h3>
                                     @endif
 
 

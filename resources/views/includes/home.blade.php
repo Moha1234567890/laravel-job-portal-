@@ -17,8 +17,7 @@
                     <div class="col-xl-11 col-lg-12">
                         <!--Hero form -->
                         <form action="{{route('search')}}" method="GET" class="search-box">
-                            <div class="input-form2 input-form3 {{__('messages.align')}} == right ? input-form4 : input-form3"
-                            >
+                            <div class="input-form2">
                                 <input type="text" name="keyword" placeholder="{{__('messages.Job title or keywords')}}">
                                 <!-- icon -->
                                 <div class="icon">
@@ -66,12 +65,12 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <div class="popular-search text-center pt-30">
+                        <div class="popular-search text-center pt-30" align="{{__('messages.align')}}">
 
                             <ul>
                                 <li><p>{{__('messages.Popular search')}}:</p></li>
                                 @foreach($getSeaches as $getSearch)
-                                <li><a href="{{route('browse.jobs.jobtitle', $getSearch->keyword)}}">#{{$getSearch->keyword}}</a></li>
+                                <li><a href="{{route('browse.jobs.jobtitle', $getSearch->keyword)}}">{{$getSearch->keyword}}</a></li>
                                @endforeach
                             </ul>
                         </div>

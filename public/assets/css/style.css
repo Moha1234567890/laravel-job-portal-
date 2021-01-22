@@ -3783,7 +3783,7 @@ hr {
 
 /* line 140, C:/Users/HP/Desktop/July-HTML/287.Job_board/Job_board_Template/assets/scss/_h1-hero.scss */
 .slider-area form.search-box, .slider-area2 form.search-box {
-  border: 10px solid rgba(255, 255, 255, 0.16);
+ /* border: 10px solid rgba(255, 255, 255, 0.16); */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

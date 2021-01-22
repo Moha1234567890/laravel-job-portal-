@@ -70,7 +70,7 @@ main.main {
 }
 
 .main {
-    margin-bottom: -498px;
+    margin-bottom: 127px;
 }
 
 .input-form3 {
@@ -83,8 +83,51 @@ main.main {
 }
 .btn-height {
     height: 63px;
+    border-radius: 0;
 }
 
 .search-box {
     border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer-area .footer-pera p {
+    padding: 0px;
+}
+
+/*.nice-select form-control {*/
+/*    margin-top: 34px;*/
+/*    margin-right: -38px;*/
+/*}*/
+
+.footer-bottom-area .footer-copy-right p {
+    position: absolute;
+    top: 866px;
+    width: 671px;
+    padding-bottom:50px;
+}
+
+.img-padding {
+    padding-top: 270px;
+}
+
+footer {
+    margin-top: -895px;
+}
+.top-login {
+    top:88%;
+}
+
+.custom-breadcrumbs {
+    padding-top: 94px;
+
+}
+
+/*.align-items-center {*/
+/*    height:99px;*/
+
+
+/*}*/
+
+.footer-copy-right text-center {
+    position: relative;
 }
