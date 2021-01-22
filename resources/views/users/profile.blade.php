@@ -8,48 +8,50 @@
                     <div class="row">
                         <div class="col-md-3 header-margin"><!--left col-->
 
+                            <div class="card" style="margin-bottom: 30px; ">
 
-                            <form class="form" action="{{route('profile.update.cv', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group text-center">
+                                <form class="form" action="{{route('profile.update.cv', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group text-center">
 
-                                    <img src="{{asset('storage/'.$user->image)}}" class="w-100 h-70">
-
-
-
-                                </div>
-
-                                <div class="form-group text-center">
-
-                                    <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
+                                        <img src="{{asset('storage/'.$user->image)}}" class="w-100 h-70">
 
 
 
-                                    <input type="file" class="text-center center-block file-upload d-block mb-3" name="cv">
-                                    @error('cv')
-                                    <span class="text-danger">{{$message}} </span>
-                                    @enderror
+                                    </div>
 
+                                    <div class="form-group text-center">
 
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="btn btn-lg btn-success" type="submit">{{__('messages.Update')}}</button>
-                                </div>
-
-                            </form>
+                                        <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
 
 
 
-                            <ul class="list-group">
-                                <li class="list-group-item text-muted">{{__('messages.Activity')}} <i class="fa fa-dashboard fa-1x"></i></li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>{{__('messages. posted jobs')}}</strong></span>{{$createdJobs}}</li>
-                                <li class="list-group-item text-right"><span class="pull-left"><strong>{{__('messages.applyed to jobs')}}</strong></span> {{$applyedJobs}}</li>
+                                        <input type="file" class="text-center center-block file-upload d-block mb-3 margin-f-all" name="cv">
+                                        @error('cv')
+                                        <span class="text-danger">{{$message}} </span>
+                                        @enderror
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button class="btn btn-lg btn-success text-center margin-f-all" type="submit">{{__('messages.Update')}}</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+
+                            <ul class="list-group ">
+                                <li class="list-group-item pull-{{__('messages.align')}}" align="{{__('messages.align')}}">{{__('messages.Activity')}} <i class="fa fa-dashboard fa-1x"></i></li>
+                                <li class="list-group-item pull-{{__('messages.align')}}"><span class="pull-{{__('messages.align')}}"><strong>{{__('messages. posted jobs')}}: </strong></span>{{$createdJobs}}</li>
+                                <li class="list-group-item pull-{{__('messages.align')}}"><span class="pull-{{__('messages.align')}}"><strong>{{__('messages.applyed to jobs')}}: </strong></span> {{$applyedJobs}}</li>
 
                             </ul>
 
                             <div class="panel panel-default d-block mt-4">
-                                <div class="panel-heading">{{__('messages.Social Media')}}</div>
+                                <div class="panel-heading pull-{{__('messages.align')}}">{{__('messages.Social Media')}}</div>
                                 <div class="panel-body">
 
                                          <div class="footer-social">

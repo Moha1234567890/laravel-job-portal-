@@ -131,3 +131,7 @@ footer {
 .footer-copy-right text-center {
     position: relative;
 }
+
+.margin-f-all {
+    margin-left: 88px;
+}
