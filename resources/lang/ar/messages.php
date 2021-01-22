@@ -37,6 +37,7 @@ return [
     'why are you suitable for this job' => 'لما انت مناسب لهده الوظيفه؟',
     'no file' => 'لم يتم اختيار اي ملفات',
     'register to apply for jobs' => 'سجل لكي تقدم علي وظائف',
+    'you applyed to this job' => 'لقد تقدمت لهده الوظيفه من قبل',
 
     //start create
     'Post a job' => 'ادخل وظيفه',
@@ -117,7 +118,7 @@ return [
     'perform  search' => 'بـــــــــــــــــــــــحث',
     'Popular search' => 'الاعلي بحثا',
     'Browse from over' => 'تصفح اكثر من ',
-    'jobs' => 'وظيفه',
+    'Jobs' => 'وظيفه',
     'Want to hire perfect person?' => 'تريد توظيف الشخص المناسب؟',
     'Browse top jobs' => 'تصفح الوظائف الاعلي رواجا',
 

@@ -8,15 +8,17 @@
                 <div class="col-md-3">
                     @if(!Auth::check() == null)
 
-                    <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>
+{{--                    <h1 class="text-primary font-weight-bold">{{$job->jobtitle}}</h1>--}}
                     @endif
                     <div class="custom-breadcrumbs">
-                        <a class="text-primary" href="{{route('home')}}">{{__('messages.Home')}}</a> <span class="mx-2 slash">/</span>
+                        <a class="text-primary font-size" href="{{route('home')}}">{{__('messages.Home')}}</a> <span class="mx-2 slash">/</span>
                         @if(!Auth::check() == null)
-                        <a class="text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}" align="{{__('messages.align')}}" style="{{__('messages.align')}} == 'right' ? margin-left: 25px; : margin-left: 25px;">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
+                            @if(!Auth::user()->job_title == null)
+                                    <a class="text-primary font-size" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}" align="{{__('messages.align')}}" style="{{__('messages.align')}} == 'right' ? margin-left: 25px; : margin-left: 25px;">{{__('messages.jobs')}}</a> <span class="mx-2 slash">/</span>
+                                @endif
                         @endif
 
-                        <span class="text-white"><strong>{{$job->jobtitle}}</strong></span>
+                        <span class="text-white font-size d-inline w-20"><strong>{{strtoupper($job->jobtitle)}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -175,18 +177,21 @@
 
                                     <div class="form-group">
                                         @if(!Auth::check() == null)
+                                            @if($checkSubmit == 0)
 
-                                           <input id="subject" type="text" class="form-control form-control-lg {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" name="subject" placeholder="{{__('messages.why are you suitable for this job')}}" >
-
+                                                   <input id="subject" type="text" class="form-control form-control-lg {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" name="subject" placeholder="{{__('messages.why are you suitable for this job')}}" >
+                                             @endif
                                         @endif
 
                                     </div>
 
                                     <div class="from-group">
                                         @if(!Auth::check() == null)
+                                            @if($checkSubmit == null)
+
 
                                             <input id="image" value="" type="file" name="image" class="form-control form-control-lg {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" accept="application/pdf" {{Auth::user()->id == $job->user_id ? 'disabled ' : '' }}>
-
+                                            @endif
                                         @endif
 
                                    </div>
@@ -209,8 +214,13 @@
 
                                             <div class="col-3 form-group">
                                             @if(!Auth::check() == null)
+                                                    @if($checkSubmit == null)
 
-                                                <button id="saveMail" class="btn btn-success {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" type="submit" >{{__('messages.apply')}}</button>
+                                                            <button id="saveMail" class="btn btn-success {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" type="submit" >{{__('messages.apply')}}</button>
+                                                    @else
+                                                        <h3 align="{{__('messages.align')}}">{{__('messages.you applyed to this job')}}</h3>
+
+                                                    @endif
                                             @endif
                                         </div>
 
@@ -423,6 +433,7 @@
                 $('#id').text('');
 
 
+                // $('#subject').hide();
 
 
 
@@ -460,7 +471,6 @@
 
                         if (data.status == true) {
 
-                            console.log('fuck');
 
 
                         }

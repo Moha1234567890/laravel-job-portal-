@@ -7,7 +7,7 @@
 .img-show {
     background-image: url('../../assets/images/hero_1.jpg');
     margin-top: 80px;
-    padding-bottom: 350px;
+    padding-bottom: 300px;
     padding-top: 200px;
     margin-bottom:90px;
     z-index: 1;
@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: -70px;
+    bottom: -80px;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -134,4 +134,12 @@ footer {
 
 .margin-f-all {
     margin-left: 88px;
+}
+
+.section-hero.overlay:before, .section-hero.overlay-2:before.section-hero.overlay:before, .section-hero.overlay-2:before {
+    bottom: -125px;
+}
+
+.font-size {
+    font-size: 19px;
 }

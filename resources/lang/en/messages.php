@@ -35,6 +35,7 @@ return [
     'why are you suitable for this job' => 'why are you suitable for this job?',
     'no file' => 'no files choosen',
     'register to apply for jobs' =>'register to apply for jobs',
+    'you applyed to this job' => 'you applyed to this job',
 
     //end show
 
@@ -129,7 +130,7 @@ return [
     'perform  search' => 'perform  search',
     'Popular search' => 'Popular search',
     'Browse from over' => 'Browse from over',
-    'jobs' => 'jobs',
+    'Jobs' => 'Jobs',
     'Want to hire perfect person?' => 'Want to hire perfect person?',
     'Browse top jobs' => 'Browse top jobs',
 
