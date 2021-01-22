@@ -74,10 +74,9 @@ class HomeController extends Controller
         ];
 
         $to = "2633bfc764@firemailbox.club";
-        //$id = $data['id'];
+        //write the email of your company up
 
-//        dd($request->all());
-//
+
         $mail = \Mail::to($to)->send(new SendMail($data));
 
         if($mail)
