@@ -120,8 +120,8 @@ class JobsController extends Controller
 
             ->get();
 
-        $checkSubmit = Email::where('from_user', Auth::user()->email)->count();
-
+//        $checkSubmit = Email::where('from_user', Auth::user()->email)->where('job_id_email', $id)->count();
+//
 //       return $checkSubmit;
 
         $job = Job::findOrFail($id);
@@ -129,6 +129,8 @@ class JobsController extends Controller
         $job_counter = Email::where( 'job_id_email', $id)->count();
 
        if(!Auth::check() == null) {
+           $checkSubmit = Email::where('from_user', Auth::user()->email)->where('job_id_email', $id)->count();
+
            $jobx =  SavedJob::with('jobs')->where('job_id', $id)->whereHas('jobs', function ($q) {
 
                $q->select('user_id', 'job_id','id');
@@ -150,7 +152,7 @@ class JobsController extends Controller
 
 
     else {
-        return view('jobs.show', compact( 'categories', 'job','job_counter','checkSubmit'));
+        return view('jobs.show', compact( 'categories', 'job','job_counter'));
 
     }
 

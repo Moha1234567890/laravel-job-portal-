@@ -143,3 +143,15 @@ footer {
 .font-size {
     font-size: 19px;
 }
+
+.width-header {
+    width:290px;
+}
+
+.hover-eff:hover {
+
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    transition:.6s ease;
+
+
+}

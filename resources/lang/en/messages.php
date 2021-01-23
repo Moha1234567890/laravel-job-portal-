@@ -128,7 +128,7 @@ return [
     'Job title or keywords' => 'Job title or keywords',
     'Where?' => 'Where?',
     'perform  search' => 'perform  search',
-    'Popular search' => 'Popular search',
+    'Popular search' => 'Popular Searches',
     'Browse from over' => 'Browse from over',
     'Jobs' => 'Jobs',
     'Want to hire perfect person?' => 'Want to hire perfect person?',

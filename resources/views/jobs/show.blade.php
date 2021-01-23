@@ -152,7 +152,7 @@
 
                     <div class="mb-5 form-group">
                         <div id="job_msg" class="alert alert-success" style="display:none" role="alert">
-                            application sent!
+                            application sent! you applyed to this job
 
                         </div>
 
@@ -218,7 +218,7 @@
 
                                                             <button id="saveMail" class="btn btn-success {{Auth::user()->id == $job->user_id ? 'd-none ' : '' }}" type="submit" >{{__('messages.apply')}}</button>
                                                     @else
-                                                        <h3 align="{{__('messages.align')}}">{{__('messages.you applyed to this job')}}</h3>
+                                                        <h3 class="width-header" align="{{__('messages.align')}}">{{__('messages.you applyed to this job')}}</h3>
 
                                                     @endif
                                             @endif
@@ -433,13 +433,13 @@
                 $('#id').text('');
 
 
-                // $('#subject').hide();
 
 
 
                 if($('#image').val() == '' || $('#subject').val() == '') {
 
                    // $('#image').val('');
+
 
                     var fileExtension = ['doc', 'pdf', 'txt'];
 
@@ -451,7 +451,11 @@
 
                   // $('#job_msg_error').show().fadeOut(5000);
                 } else {
-                   // $('#job_msg').toggle().fadeOut(4000);
+                    $('#subject').hide();
+                    $('#image').hide();
+                    $('#saveMail').hide();
+                    $('#job_msg').show().fadeOut(4000);
+
                 }
 
 

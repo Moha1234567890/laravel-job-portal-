@@ -21,7 +21,7 @@
 
                     @if(isset($saved_jobs) && $saved_jobs->count() > 0)
                         @foreach($saved_jobs as $job)
-                            <ul class="job-listings mb-5">
+                            <ul class="job-listings mb-5 hover-eff">
                                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 
                                     <div class="job-listing-logo">

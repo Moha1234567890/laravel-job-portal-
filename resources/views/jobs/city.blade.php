@@ -9,8 +9,8 @@
 
                     @if(isset($region) && $region->count() > 0)
                         @foreach($region as $job)
-                            <ul class="job-listings mb-5">
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                            <ul class="job-listings mb-5 hover-eff">
+                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center ">
 
                                     <div class="job-listing-logo">
 

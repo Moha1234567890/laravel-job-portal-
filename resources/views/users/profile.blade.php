@@ -20,13 +20,13 @@
 
                                     </div>
 
-                                    <div class="form-group text-center">
+                                    <div class="form-group text-center" >
 
                                         <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
 
 
 
-                                        <input type="file" class="text-center center-block file-upload d-block mb-3 margin-f-all" name="cv">
+                                        <input type="file"  class="text-center center-block file-upload d-block mb-3 margin-f-all" name="cv">
                                         @error('cv')
                                         <span class="text-danger">{{$message}} </span>
                                         @enderror
@@ -52,7 +52,8 @@
 
                             <div class="panel panel-default d-block mt-4">
                                 <div class="panel-heading pull-{{__('messages.align')}}">{{__('messages.Social Media')}}</div>
-                                <div class="panel-body">
+                                <div class="panel-body " align="{{__('messages.align')}}">
+                                    <br>
 
                                          <div class="footer-social">
                                             @if(!$user->twitter == '')
@@ -121,7 +122,7 @@
                                         <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-6">
                                                 <label for="mobile"><h4>{{__('messages.Job title')}}</h4></label>
-                                                <input type="text" value="{{$user->job_title}}" class="form-control form-control-lg" name="job_title" id="mobile" placeholder="{{__('messages.Mobile')}}" title="enter your job title if any.">
+                                                <input type="text" value="{{$user->job_title}}" class="form-control form-control-lg" name="job_title" id="mobile" placeholder="{{__('messages.Job title')}}" title="enter your job title if any.">
                                                 @error('mobile')
                                                 <span class="text-danger">{{$message}} </span>
                                                 @enderror

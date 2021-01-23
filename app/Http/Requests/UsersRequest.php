@@ -26,7 +26,7 @@ class UsersRequest extends FormRequest
         return [
             'name' => 'required|max:30',
             'email' => 'required|max:30',
-            'mobile' => 'required|max:20',
+//            'mobile' => 'required|max:20',
 
 
 

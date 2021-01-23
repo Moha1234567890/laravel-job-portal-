@@ -131,7 +131,7 @@
 
                     @if(isset($randomJobs) && $randomJobs->count() > 0)
                         @foreach($randomJobs as $job)
-                            <ul class="job-listings mb-5">
+                            <ul class="job-listings mb-5 hover-eff">
                                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 
                                     <div class="job-listing-logo">
@@ -217,7 +217,7 @@
                 <div class="col-md-12">
                     @if(isset($randomTopJobs) && $randomTopJobs->count() > 0)
                         @foreach($randomTopJobs as $job)
-                            <ul class="job-listings mb-5">
+                            <ul class="job-listings mb-5 hover-eff">
                                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 
                                     <div class="job-listing-logo">
