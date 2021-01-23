@@ -74,7 +74,7 @@
                                                 <tr id="catRow{{$showCat->id}}">
 
                                                     <td>
-                                                        <span class="fa fa-{{$showCat->font}} fa-2x text-primary"  ><span class="icon-magnet d-block"></span></span>
+                                                        <span class="fa fa-{{$showCat->font}} fa-2x text-primary"><span class="icon-magnet d-block"></span></span>
                                                     </td>
                                                     <td>{{$showCat->name}}</td>
 
@@ -90,7 +90,7 @@
                                                     </td>
                                                     <td>{{$showCat->count}}</td>
                                                     <td>
-                                                        <a role="button" cat_id="{{$showCat->id}}" id="delete_btn" class="btn btn-danger">delete</a>
+                                                        <a  cat_id="{{$showCat->id}}" id="delete_btn" class="btn btn-danger">delete</a>
                                                     </td>
 
 
@@ -108,6 +108,7 @@
 
 
                                 </tbody>
+                                {!!  $showCatspag -> links() !!}
 
 
 
@@ -125,72 +126,46 @@
 
 @section('scripts')
 
-            <script>
+ <script>
 
             $(document).ready(function() {
 
 
 
-            $(document).on('click', '#delete_btn', function (e) {
-            e.preventDefault();
-
-            // var something_2 = $('<button/>').attr({ type: "submit", name:"save", id:"save", value:'Save',
-            //     class:"btn btn-success",
-            // }).text("Save");
-            //
-            // $("#suck").append(something_2);
-
-            //var status =  $(this).attr('status');
-            var cat_id =  $(this).attr('cat_id');
+                $(document).on('click', '#delete_btn', function (e) {
+                   e.preventDefault();
 
 
+                var cat_id =  $(this).attr('cat_id');
 
+                $('#catRow'+cat_id).remove();
+                $('#cat_msg_delete').show().fadeOut(5000);
 
+                    $.ajax({
+                    type: 'post',
+                    url: "{{route('delete.cats.admins')}}",
+                    data: {
+                    '_token': "{{csrf_token()}}",
+                    'id': cat_id,
+                    },
 
-            $('#catRow'+cat_id).remove();
-            $('#cat_msg_delete').show().fadeOut(5000);
+                    success: function (data) {
 
-
-            //var status_off =  $(this).attr('fuck2_id');
-
-
-            // $('#success_msg').hide();
-            // $('.delete_btn').hide();
+                    if(data.status == true){
 
 
 
 
 
+                    }
+                     $('#jobRow'+data.id).remove();
 
+                    }, error: function (reject) {
 
-            $.ajax({
-            type: 'post',
-            url: "{{route('delete.cats.admins')}}",
-            data: {
-            '_token': "{{csrf_token()}}",
+                    }
+                    });
+                    });
 
-            'id': cat_id,
-
-
-            },
-
-            success: function (data) {
-
-            if(data.status == true){
-
-
-
-
-
-            }
-            //   $('#jobRow'+data.id).remove();
-
-            }, error: function (reject) {
-
-            }
             });
-            });
-
-            })
-            </script>
+ </script>
 @stop

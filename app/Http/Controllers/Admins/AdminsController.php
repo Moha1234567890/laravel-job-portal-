@@ -130,8 +130,8 @@ class AdminsController extends Controller
 
         Request()->validate([
 
-            'name'        => 'required|string|max:100',
-            'font'        => 'required|string|max:114|min:100',
+            'name'        => 'required|string|max:100|unique:categories,name',
+            'font'        => 'required|string|max:100',
             'desc'        => 'required|string|max:300',
 
 
@@ -172,21 +172,26 @@ class AdminsController extends Controller
 
 
 
-        //$showCatspag = Category::paginate(3);
+
+        $showCatspag = Category::paginate(3);
 
         $unverifiedCats = Category::select('status')->where('status', 0)->count();
 
 
         //$showCats = Category::all();
-        return view('admins.managingCats.showCats', compact( 'unverifiedCats','categories'));
+        return view('admins.managingCats.showCats', compact( 'unverifiedCats','categories', 'showCatspag'));
 
     }
 
     public function deleteCats(Request $request) {
 
+
+
         $cat_id = Category::findOrFail($request->id);
 
         $cat_id->delete();
+
+//        return "done";
 
 
     }
