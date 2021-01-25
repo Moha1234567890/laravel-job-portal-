@@ -108,11 +108,12 @@
 
 
                                 </tbody>
-                                {!!  $showCatspag -> links() !!}
 
 
 
                             </table>
+{{--                            {!!  $showCatspag -> links() !!}--}}
+{{----}}
 
                         </div>
                     </div>

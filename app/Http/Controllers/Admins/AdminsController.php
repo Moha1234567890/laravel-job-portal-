@@ -165,7 +165,6 @@ class AdminsController extends Controller
             ->select('categories.name as name','jobs.jobcategory','categories.id as id','categories.font as font','categories.cat_desc as cat_desc', 'categories.status as status', DB::raw("count(jobs.jobcategory) as count"))
 
             ->groupBy('categories.name')
-
             ->get();
 
         //return $categories;
@@ -173,7 +172,7 @@ class AdminsController extends Controller
 
 
 
-        $showCatspag = Category::paginate(3);
+        $showCatspag = Category::paginate(2);
 
         $unverifiedCats = Category::select('status')->where('status', 0)->count();
 

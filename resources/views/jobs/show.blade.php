@@ -261,7 +261,7 @@
                                 <li class="nav-item  pl-3" align="{{__('messages.align')}}">
                                     @foreach($categories as $cat)
 
-                                        <a class="nav-link text-dark" align="{{__('messages.align')}}" href="{{route('browse.jobs.cats', $cat->name)}}">
+                                        <a class="nav-link text-dark" align="{{__('messages.align')}}" href="{{route('browse.category.jobs', $cat->name)}}">
                                             <span align="{{__('messages.align')}}" class="fa fa-{{$cat->font}} fa-1x text-primary"  ><span class="icon-magnet d-block"></span></span>
                                             <p align="{{__('messages.align')}}" class="d-inline-block"><strong class="text-black" >{{$cat->name}} </strong>:</p>       ({{$cat->count}})</a>
 

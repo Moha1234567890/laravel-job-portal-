@@ -6,7 +6,7 @@
     </section>
     <section class="login-content">
         <div class="logo">
-            <h1>Vali</h1>
+            <h1>Admin Area</h1>
         </div>
         <div class="login-box">
             <form class="login-form" method="post" action="{{route('admin.login')}}">
@@ -15,10 +15,21 @@
                 <div class="form-group">
                     <label class="control-label">EMAIL</label>
                     <input name="email" class="form-control" type="text" placeholder="Email" autofocus>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="control-label">PASSWORD</label>
                     <input name="password" class="form-control" type="password" placeholder="Password">
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                 </div>
                 <div class="form-group">
                     <div class="utility">
