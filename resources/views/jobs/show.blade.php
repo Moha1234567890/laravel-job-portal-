@@ -45,8 +45,12 @@
                             <img src="{{url('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img">
                         </div>
                         <div>
-                            <h2>{{$job->jobtitle}}</h2>
-                            <div>
+
+                            <h2 style="margin-{{__('messages.align')}}: 13px;" class="pull-{{__('messages.align')}}">{{$job->jobtitle}}</h2>
+                            <br>
+                            <br>
+                            <div style="margin-{{__('messages.align')}}: 3px;">
+
                                 <span class="ml-0 mr-2 mb-2"><span class="fa fa-briefcase fa-1x mr-2"></span>{{$job->companyname}}</span>
                                 <span class="m-2"><span class="fa fa-map-marker  fa-1x mr-2"></span>{{$job->location}},{{$job->region}}</span>
                                 <span class="m-2"><span class="fa fa-clock fa-1x mr-2"></span><span>{{$job->jobtype}}</span></span>

@@ -16769,3 +16769,13 @@ be a descendant of the grid when it is being dragged.
 .input-margin{
   margin-left:-101px
 }
+
+.margin-option {
+  margin-left: -103px;
+  width: 50%;
+}
+
+.info-margin {
+  margin-top: -62px;
+  margin-left: 55px;
+}

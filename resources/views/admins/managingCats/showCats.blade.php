@@ -81,10 +81,30 @@
                                                     <td>
                                                         <form class="form-update" action="{{route('update.cats.admins', $showCat->id)}}" method="POST">
                                                             {{ csrf_field() }}
-                                                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 
-                                                                <input type="text" class="input-margin form-control form-control-lg d-block mb-3" value="{{$showCat->status}}" name="status">
-                                                            </div>
+                                                            <select class="form-control margin-option" name="status">
+
+                                                                    <optgroup label="Choose Status">
+                                                                        @if (isset($showCat->status) && $showCat->status  == 0)
+
+                                                                            <option value="{{0}}" selected>Unactivated</option>
+                                                                            <option value="{{1}}">activated</option>
+                                                                        @else
+
+                                                                                <option value="{{0}}">Unactivated</option>
+                                                                                <option value="{{1}}" selected>activated</option>
+                                                                        @endif
+
+
+                                                                    </optgroup>
+
+
+                                                            </select>
+
+
+
+                                                            <button class="btn btn-info info-margin" type="submit">update</button>
+
 
                                                         </form>
                                                     </td>

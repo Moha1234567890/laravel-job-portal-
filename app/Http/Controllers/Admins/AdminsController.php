@@ -202,6 +202,8 @@ class AdminsController extends Controller
             'status' => $request->status
         ]);
 
+        //dd($request->status);
+
         if($update_cats)
             return redirect()->back()->with(['success' => 'updated']);
 

@@ -139,7 +139,7 @@
                         <label for="exampleFormControlSelect1" class="">{{__('messages.Gender')}}: </label>
                         <br>
 
-                        <select class="form-control pull-{{__('messages.align')}}"" name="gender" id="gender">
+                        <select class="form-control pull-{{__('messages.align')}}" name="gender" id="gender">
                             <optgroup label="{{__('messages.Choose job category')}}">
                                 <option value="male">{{__('messages.male')}}</option>
                                 <option value="female">{{__('messages.female')}}</option>

@@ -1,5 +1,8 @@
 
+body {
+    overflow: hidden;
 
+}
 .header-margin {
     margin-top:205px
 }
@@ -156,3 +159,4 @@ footer {
 
 
 }
+
