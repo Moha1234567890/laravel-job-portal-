@@ -41,12 +41,38 @@ class DashboardController extends Controller
 
         $result = Job::select('jobtitle','created_at')->get();
 
+        $arr_job = [];
+        foreach($job_dates as $job_date) {
+            array_push($arr_job, $job_date->id);
+        }
+
+        $datajob = [
+            'jobtitle' => $arr_job
+        ];
 
 
 
 
+        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver', 'job_dates','date_to','num_apps','num_saved_jobs','result','datajob'));
+    }
 
-        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver', 'job_dates','date_to','num_apps','num_saved_jobs','result'));
+    public function fetchData() {
+
+        $job_dates = Job::all();
+
+        $arr_job = [];
+        $arr_id = [];
+        foreach($job_dates as $job_date) {
+            array_push($arr_job, $job_date->jobtitle);
+            array_push($arr_id, $job_date->id);
+        }
+
+        $datajob = [
+            'jobtitle' => $arr_job,
+            'ids' => $arr_id
+        ];
+
+        return response()->json($datajob);
     }
 
 

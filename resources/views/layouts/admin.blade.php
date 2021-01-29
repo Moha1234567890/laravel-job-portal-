@@ -40,7 +40,8 @@
 @yield('scripts')
 
 
-<script type="text/javascript" src="{{asset('assets/admin/js/plugins/chart.js')}}"></script>
+{{--<script type="text/javascript" src="{{asset('assets/admin/js/plugins/chart.js')}}"></script>--}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" integrity="" crossorigin="anonymous"></script>
 
 
 @yield('charts')

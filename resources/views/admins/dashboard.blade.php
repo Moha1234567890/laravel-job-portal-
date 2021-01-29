@@ -50,30 +50,24 @@
         </div>
 
             </div>
+
+
         <div class="row">
 
+
+           <div class="col-md-6">
+                <div id="chart-container">
+                    <canvas width="204px" height="105px" id="graphCanvas"></canvas>
+                </div>
+           </div>
             <div class="col-md-6">
-                <div class="tile">
-                    <h3 class="tile-title">Jobs</h3>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
-                    </div>
+                <div id="chart-container">
+
+            <canvas id="myChart3"></canvas>
                 </div>
             </div>
 
-
-            <div class="col-md-6">
-                    <div class="tile">
-                        <h3 class="tile-title">Other Stats</h3>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <canvas class="embed-responsive-item" id="doughnutChartDemo"></canvas>
-                        </div>
-                    </div>
-            </div>
         </div>
-
-
-
 
 
 
@@ -86,51 +80,89 @@
 
 
 
-        var pie = [
-            {
-                value:  '{{$jobsCountver}}',
-                color: "#46BFBD",
-                highlight: "#5AD3D1",
-                label: "verified jobs"
-            },
-            {
-                value: '{{$jobsCountunver}}',
-                color:"#F7464A",
-                highlight: "#FF5A5E",
-                label: "unverified jobs"
-            }
-        ];
-        var doughnut = [
-
-            {
-                value: '{{$num_saved_jobs}}',
-                color: "#46BFBD",
-                highlight: "#5AD3D1",
-                label: "Saved Jobs"
-            },
-            {
-                value: '{{$num_apps}}',
-                color: "#FDB45C",
-                highlight: "#FFC870",
-                label: "Applications Submitted"
-            }
-        ];
 
 
 
 
 
+            $(document).ready(function () {
+            $.ajax({
+                url: "{{route('admins.dashboard.fetch')}}",
 
-        var ctxp = $("#pieChartDemo").get(0).getContext("2d");
-        var pieChart = new Chart(ctxp).Pie(pie);
+                success: function (res) {
+                    var jobTitles = res.jobtitle;
+                    var ids = res.ids;
 
-        var ctxd = $("#doughnutChartDemo").get(0).getContext("2d");
-        var doughnutChart = new Chart(ctxd).Doughnut(doughnut);
+                    console.log(res);
+
+                    var chartdata = {
+                        labels: jobTitles,
+                        datasets: [
+                            {
+                                label: 'Student Marks',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                barPercentage: '2px',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: ids
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#graphCanvas");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'bar',
+                        data: chartdata
+                    });
+                }
+            })
+        })
+
+            var myChart3 = document.getElementById('myChart3');
+            var myChart3 = new Chart(myChart3, {
+                type: 'pie',
+                data: {
+                    labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [6, 8, 5, 2, 3],
+                        backgroundColor: [
+                            '#ff6384',
+                            '#4bc0c0',
+                            '#ffcd56',
+                            '#c9cbcf',
+                            '#36a2eb',
+                        ]
+                    }]
+                },
+                options: {
+
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
     </script>
-    @endsection
+@endsection
 
