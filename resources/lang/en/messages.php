@@ -147,4 +147,8 @@ return [
     'Send us your query anytime!' => 'Send us your query anytime!',
 
 
+    //not spicified
+
+    "We have no records of this yet" => "We have no records of this yet",
+
 ];

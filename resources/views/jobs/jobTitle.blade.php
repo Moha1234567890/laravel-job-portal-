@@ -39,11 +39,11 @@
 
             @endforeach
         @else
-            <div class="alert alert-danger">
-                We have no records of this job title yet
+            <div class="alert alert-danger" align="{{__('messages.align')}}">
+                {{__('messages.We have no records of this yet')}}
+
             </div>
         @endif
-
             {!!  $getJobsTitle -> links() !!}
     </div>
    </div>

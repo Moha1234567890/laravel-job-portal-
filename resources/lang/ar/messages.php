@@ -137,6 +137,11 @@ return [
 
 
 
+    //not spicfied
+
+    "We have no records of this yet" => "ليس لدينا بيانات  هنا حاليا",
+
+
 
 
 

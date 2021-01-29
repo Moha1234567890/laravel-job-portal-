@@ -41,6 +41,11 @@
 
 
                         @endforeach
+                    @else
+                        <div class="alert alert-danger" align="{{__('messages.align')}}">
+                            {{__('messages.We have no records of this yet')}}
+
+                        </div>
                     @endif
 
                         {!!  $region -> links() !!}

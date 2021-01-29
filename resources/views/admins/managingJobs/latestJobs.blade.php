@@ -6,6 +6,21 @@
 
 
     <div class="container">
+        <div class="card card-default">
+            @if(Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+
+
+            @if(Session::has('error'))
+                <div class="alert alert-danger">
+                    {{Session::get('error')}}
+                </div>
+            @endif
+        </div>
+
         <div class="row">
             <div class="col-md-12 header-margin header-margin-admin">
                 @if(!$unverifiedJobs == null)
@@ -58,15 +73,29 @@
 
                                 <td><img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70  category-img-admin" ></td>
                                 <td>
-                                    <form class="form-update" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
+                                    <form class="form-update-job" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
                                         {{ csrf_field() }}
-                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                        <select class="form-control margin-option-job" name="status">
 
-                                            <input type="text" class="input-margin form-control form-control-lg d-block mb-3 mt-5" value="{{$job->status}}" name="status">
-                                        </div>
-                                        <div class="form-group">
+                                            <optgroup label="Choose Status">
+                                                @if (isset($job->status) && $job->status  == 0)
 
-                                        </div>
+                                                    <option value="{{0}}" selected>unactivated</option>
+                                                    <option value="{{1}}">activated</option>
+                                                @else
+
+                                                    <option value="{{0}}">unactivated</option>
+                                                    <option value="{{1}}" selected>activated</option>
+                                                @endif
+
+
+                                            </optgroup>
+
+
+                                        </select>
+
+                                        <button class="btn btn-info info-margin-job" type="submit">update</button>
+
                                     </form>
                                 </td>
                                 <td>

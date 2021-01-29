@@ -105,7 +105,7 @@ class AdminsController extends Controller
         ]);
 
         if($update_jobs)
-            return redirect()->route('latest.jobs');
+            return redirect()->back()->with(['success' => 'updated']);
 
     }
 

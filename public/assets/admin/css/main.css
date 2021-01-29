@@ -16779,3 +16779,20 @@ be a descendant of the grid when it is being dragged.
   margin-top: -62px;
   margin-left: 55px;
 }
+
+.margin-option-job {
+  margin-left: -101px;
+  width: 50%;
+}
+
+.info-margin-job {
+  margin-top: -59px;
+  margin-left: 139px;
+}
+
+.form-update-job {
+  margin-left: 103px;
+  margin-top: 59px;
+}
+
+
