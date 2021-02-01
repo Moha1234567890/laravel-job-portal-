@@ -10,7 +10,7 @@
 
 
     <div class="container">
-        
+
         <div class="card card-default">
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
@@ -88,9 +88,9 @@
                                                     <option value="{{0}}" selected>unactivated</option>
                                                     <option value="{{1}}">activated</option>
                                                 @else
+                                                    <option value="{{1}}" selected>activated</option>
 
                                                     <option value="{{0}}">unactivated</option>
-                                                    <option value="{{1}}" selected>activated</option>
                                                 @endif
 
 

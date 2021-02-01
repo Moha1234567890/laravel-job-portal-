@@ -93,9 +93,10 @@
                                                                             <option value="{{0}}" selected>Unactivated</option>
                                                                             <option value="{{1}}">activated</option>
                                                                         @else
+                                                                            <option value="{{1}}" selected>activated</option>
 
-                                                                                <option value="{{0}}">Unactivated</option>
-                                                                                <option value="{{1}}" selected>activated</option>
+
+                                                                            <option value="{{0}}">Unactivated</option>
                                                                         @endif
 
 
