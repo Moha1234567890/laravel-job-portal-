@@ -90,22 +90,22 @@
                 url: "{{route('admins.dashboard.fetch')}}",
 
                 success: function (res) {
-                    var jobTitles = res.jobtitle;
-                    var ids = res.ids;
+                    var jobMonth = res.month;
+                    var count = res.count;
 
                     console.log(res);
 
                     var chartdata = {
-                        labels: jobTitles,
+                        labels: jobMonth,
                         datasets: [
                             {
-                                label: 'Student Marks',
+                                label: 'Number of Jobs this Month',
                                 backgroundColor: '#49e2ff',
                                 borderColor: '#46d5f1',
                                 barPercentage: '2px',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
-                                data: ids
+                                data: count
                             }
                         ]
                     };
@@ -124,16 +124,16 @@
             var myChart3 = new Chart(myChart3, {
                 type: 'pie',
                 data: {
-                    labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
+                    labels: ['Applications Submitted', 'Saved Jobs', 'Unverified Jobs', 'Verified Jobs'],
                     datasets: [{
                         label: '# of Votes',
-                        data: [6, 8, 5, 2, 3],
+                        data: ['{{$num_apps}}', {{$num_saved_jobs}}, {{$jobsCountunver}}, {{$jobsCountver}}],
                         backgroundColor: [
                             '#ff6384',
                             '#4bc0c0',
                             '#ffcd56',
-                            '#c9cbcf',
                             '#36a2eb',
+
                         ]
                     }]
                 },

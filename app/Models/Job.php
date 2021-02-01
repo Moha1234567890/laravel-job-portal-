@@ -32,6 +32,7 @@ class Job extends Model
         'image',
         'website',
         'linkedin',
+        'month',
         'created_at',
         'updated_at'
     ];

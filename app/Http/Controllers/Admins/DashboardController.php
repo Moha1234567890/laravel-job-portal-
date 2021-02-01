@@ -11,6 +11,8 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\DB;
+
 class DashboardController extends Controller
 {
 
@@ -22,54 +24,49 @@ class DashboardController extends Controller
 
     public function redirect() {
 
-        $date_from = date('Y-m-01 h:i:s');
-        $date_to = date('Y-m-d h:i:s',strtotime(' +1 month'));
 
 
+        $catsCount = Category::select()->count();
 
         $usersCount = User::select()->count();
         $adminsCount = Admin::select()->count();
-        $jobsCount = Job::select()->whereBetween('created_at', [$date_from, $date_to])->count();
-        $jobsCountunver = Job::select()->where('status', 0)->count();
-        $jobsCountver = Job::select()->where('status', 1)->count();
-        $catsCount = Category::select()->count();
-
-        $job_dates = Job::all();
-
+        $jobsCount = Job::select()->count();
         $num_apps = Email::select()->count();
         $num_saved_jobs = SavedJob::select()->count();
-
-        $result = Job::select('jobtitle','created_at')->get();
-
-        $arr_job = [];
-        foreach($job_dates as $job_date) {
-            array_push($arr_job, $job_date->id);
-        }
-
-        $datajob = [
-            'jobtitle' => $arr_job
-        ];
+        $jobsCountunver = Job::select()->where('status', 0)->count();
+        $jobsCountver = Job::select()->where('status', 1)->count();
 
 
 
 
-        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver', 'job_dates','date_to','num_apps','num_saved_jobs','result','datajob'));
+
+
+        return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver','num_apps','num_saved_jobs'));
     }
 
     public function fetchData() {
 
-        $job_dates = Job::all();
+        
+        $chartJobs = DB::table('jobs')
+            ->select('id','jobtitle','month', DB::raw("count(month) as count"))
+            ->orderBy('id', 'asc')
 
-        $arr_job = [];
-        $arr_id = [];
-        foreach($job_dates as $job_date) {
-            array_push($arr_job, $job_date->jobtitle);
-            array_push($arr_id, $job_date->id);
+            ->groupBy('month')
+
+            ->get();
+
+
+
+        $arr_month = [];
+        $arr_count = [];
+        foreach($chartJobs as $chartJob) {
+            array_push($arr_month, $chartJob->month);
+            array_push($arr_count, $chartJob->count);
         }
 
         $datajob = [
-            'jobtitle' => $arr_job,
-            'ids' => $arr_id
+            'month' => $arr_month,
+            'count' => $arr_count
         ];
 
         return response()->json($datajob);

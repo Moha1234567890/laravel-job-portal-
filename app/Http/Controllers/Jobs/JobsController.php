@@ -94,7 +94,8 @@ class JobsController extends Controller
             'companyname' => $request->companyname,
             'website'     => $request->website,
             'linkedin'    => $request->linkedin,
-            'image'       =>  $request->image->store('company_logos', 'public')
+            'image'       =>  $request->image->store('company_logos', 'public'),
+            'month'       => date('M')
         ]);
 
 
