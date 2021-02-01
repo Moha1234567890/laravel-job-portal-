@@ -2,8 +2,7 @@
 
 
 @section('title')
-    Dashboard@section('title')
-    Create Categories
+    Admin Area
 @endsection
 
 

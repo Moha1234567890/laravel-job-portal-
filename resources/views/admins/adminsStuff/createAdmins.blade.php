@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    Create New Admins
+
+    @endsection
 
 @section('content')
 

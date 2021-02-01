@@ -1,5 +1,10 @@
 @extends('layouts.loginadmin')
 
+@section('title')
+    Login
+
+@endsection
+
 @section('content')
     <section class="material-half-bg">
         <div class="cover"></div>

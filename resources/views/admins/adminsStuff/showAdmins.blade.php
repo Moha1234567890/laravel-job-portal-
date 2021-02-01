@@ -1,7 +1,10 @@
 
 @extends('layouts.admin')
 
+@section('title')
+    All Admins
 
+@endsection
 @section('content')
 
  <div class="container">
