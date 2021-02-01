@@ -1,5 +1,9 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Browse Jobs by Categories
+@endsection
 @section('content')
 
     <section class="site-section services-section  block__62849 header-margin"  id="next-section">

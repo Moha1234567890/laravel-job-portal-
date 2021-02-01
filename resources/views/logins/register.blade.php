@@ -1,6 +1,9 @@
 @extends('layouts.site')
 
 
+@section('title')
+    Register
+@endsection
 
 @section('content')
 

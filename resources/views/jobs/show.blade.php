@@ -1,5 +1,10 @@
 @extends('layouts.site')
 
+
+@section('title')
+
+    {{ $job  ? ucwords($job->jobtitle) : "" }}
+@endsection
 @section('content')
 
     <section class="section-hero overlay inner-page bg-image img-show" id="home-section">

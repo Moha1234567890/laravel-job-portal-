@@ -1,5 +1,11 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Update your Image
+
+
+@endsection
 @section('content')
     <section class="site-section" id="next">
 
@@ -8,7 +14,7 @@
             <div class="row">
                 <div class="col-md-3 header-margin text-center"><!--left col-->
 
-                    <div class="card" style="margin-bottom: 30px; ">
+                    <div class="card card-margin">
 
                         <form class="form" action="{{route('profile.update.image', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
                             @csrf

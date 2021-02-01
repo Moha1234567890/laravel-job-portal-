@@ -1,6 +1,8 @@
 @extends('layouts.site')
 
-
+@section('title')
+    Post a Job
+@endsection
 @section('content')
 
     <div class="container">

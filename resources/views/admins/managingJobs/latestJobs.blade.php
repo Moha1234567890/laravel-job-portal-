@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 
+@section('title')
+    Latest Jobs
+@endsection
+
 @section('content')
 
 

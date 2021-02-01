@@ -46,7 +46,7 @@ class DashboardController extends Controller
 
     public function fetchData() {
 
-        
+
         $chartJobs = DB::table('jobs')
             ->select('id','jobtitle','month', DB::raw("count(month) as count"))
             ->orderBy('id', 'asc')

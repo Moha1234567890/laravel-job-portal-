@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 
+
+@section('title')
+    Dashboard@section('title')
+    Create Categories
+@endsection
+
+
 @section('content')
 
 

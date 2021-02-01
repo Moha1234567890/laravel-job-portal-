@@ -1,6 +1,8 @@
 @extends('layouts.site')
 
-
+@section('title')
+    Contact
+@endsection
 @section('content')
 
 

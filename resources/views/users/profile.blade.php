@@ -1,5 +1,11 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Update your Profile
+
+
+@endsection
 @section('content')
     <section class="site-section" id="next">
 

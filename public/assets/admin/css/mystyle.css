@@ -1,0 +1,58 @@
+.header-margin-admin {
+    padding-top: 120px;
+}
+
+.category-img-admin {
+    width: 150px;
+    height: 150px;
+
+}
+
+
+.job-listings  {
+    border: 1px solid #eee;
+}
+
+
+.form-update {
+    margin-left: 100px
+}
+
+
+.form-down {
+    margin-top:40px
+}
+
+
+.margin-form {
+    margin-top: 59px;
+}
+
+.input-margin{
+    margin-left:-101px
+}
+
+.margin-option {
+    margin-left: -103px;
+    width: 60%;
+}
+
+.info-margin {
+    margin-top: -62px;
+    margin-left: 70px;
+}
+
+.margin-option-job {
+    margin-left: -101px;
+    width: 50%;
+}
+
+.info-margin-job {
+    margin-top: -59px;
+    margin-left: 139px;
+}
+
+.form-update-job {
+    margin-left: 103px;
+    margin-top: 59px;
+}

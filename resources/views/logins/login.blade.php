@@ -1,6 +1,9 @@
 @extends('layouts.site')
 
 
+@section('title')
+    Login
+@endsection
 
 @section('content')
 

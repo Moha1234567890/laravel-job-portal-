@@ -1,5 +1,10 @@
 @extends('layouts.site')
 
+
+@section('title')
+    {{ $url  ? ucwords($url)  : "City" }}
+
+@endsection
 @section('content')
 
     <section class="site-section" id="next">

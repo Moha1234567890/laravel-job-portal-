@@ -244,7 +244,10 @@ class JobsController extends Controller
 
     }
 
-    public function save(Request $request) {
+    public function save(
+
+
+        $request) {
 
 
 
@@ -291,12 +294,15 @@ class JobsController extends Controller
     }
 
 
-    public function category($name) {
+    public function category($name, Request $requestt) {
 
         $category = Job::with('getCategory')->where('jobcategory', $name)->where('status', 1)->paginate(3);
+        $url  = url()->current();
+        $url = substr($url , 38);
 
         if($category) {
-            return view('jobs.category', compact('category'));
+
+            return view('jobs.category', compact('category', 'url'));
         } else {
             return redirect('home');
         }
@@ -315,9 +321,10 @@ class JobsController extends Controller
     public function city($city) {
 
         $region = Job::select()->where('region', $city)->where('status', 1)->paginate(3);
-
+        $url  = url()->current();
+        $url = substr($url , 34);
        if($region) {
-           return view('jobs.city', compact('region'));
+           return view('jobs.city', compact('region', 'url'));
        } else {
            return redirect('home');
        }

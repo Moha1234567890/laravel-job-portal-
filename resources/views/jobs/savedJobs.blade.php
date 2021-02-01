@@ -1,5 +1,9 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Your Saved Jobs
+@endsection
 @section('content')
 
     <section class="site-section" id="next">

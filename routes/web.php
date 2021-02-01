@@ -64,7 +64,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     Route::group(['prefix' => 'user'], function() {
 
-        Route::get('/update/{id}', 'UsersController@profile')->name('profile');
+        Route::get('/profile-update/{id}', 'UsersController@profile')->name('profile');
         Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
         Route::post('profile-update-cv/{id}', 'UsersController@updateCv')->name('profile.update.cv');
         Route::get('profile-image-update/{id}', 'UsersController@updateImageGet')->name('profile.update.image.get');

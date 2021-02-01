@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
-    <title>Job board | Template</title>
+    <title>@yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 

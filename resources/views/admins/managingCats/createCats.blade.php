@@ -1,6 +1,10 @@
 
 @extends('layouts.admin')
 
+@section('title')
+    Create Categories
+@endsection
+
 @section('content')
 
     <div class="container">

@@ -1,5 +1,9 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Search Results
+@endsection
 @section('content')
     <section class="site-section" id="next">
         <div class="container">

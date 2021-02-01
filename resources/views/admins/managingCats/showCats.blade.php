@@ -1,6 +1,9 @@
 
 @extends('layouts.admin')
 
+@section('title')
+    Show All Categories
+@endsection
 
 @section('content')
 

@@ -1,14 +1,20 @@
 @extends('layouts.site')
 
+@section('title')
+    {{ $url  ? ucwords($url) : "Category" }}
+
+@endsection
+
 @section('content')
 
     <section class="site-section" id="next">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-12 header-margin">
-
                     @if(isset($category) && $category->count() > 0)
+
                         @foreach($category as $job)
+
                             <ul class="job-listings mb-5 hover-eff">
                                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 

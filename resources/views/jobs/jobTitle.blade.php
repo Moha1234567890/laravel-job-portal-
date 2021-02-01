@@ -1,5 +1,9 @@
 @extends('layouts.site')
 
+
+@section('title')
+    Browse Jobs by Job Title
+@endsection
 @section('content')
     <section class="site-section" id="next">
 <div class="container">
