@@ -34,6 +34,7 @@
 @include('admins.includes.sidebar')
 <main class="app-content">
     <div class="app-title">
+        @include('admins.includes.adminArea')
 @yield('content')
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
