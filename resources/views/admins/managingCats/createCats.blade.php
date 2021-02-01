@@ -33,14 +33,23 @@
                             <div class="form-group">
                                 <label class="control-label">Name</label>
                                 <input class="form-control" type="text" name="name" placeholder="Enter full name">
+                                @error('name')
+                                <span class="text-danger">{{$message}} </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Font</label>
-                                <input class="form-control" type="text" name="font" placeholder="Enter name">
+                                <input class="form-control" type="text" name="font" placeholder="Enter font">
+                                @error('font')
+                                <span class="text-danger">{{$message}} </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Description</label>
                                 <textarea class="form-control" rows="4" name="desc" placeholder="Enter description"></textarea>
+                                @error('desc')
+                                <span class="text-danger">{{$message}} </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit">Create</button>&nbsp;&nbsp;&nbsp;

@@ -48,8 +48,8 @@ class DashboardController extends Controller
 
 
         $chartJobs = DB::table('jobs')
-            ->select('id','jobtitle','month', DB::raw("count(month) as count"))
-            ->orderBy('id', 'asc')
+            ->select('id','month', DB::raw("count(month) as count"))
+            ->orderBy('id', 'des')
 
             ->groupBy('month')
 
