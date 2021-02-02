@@ -48,17 +48,9 @@
             </div>
 
         <div class="row">
-            <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
-                <div class="card shade ">
-                    <div class="card-body">
-                        <h5 class="card-title">Bar Chart</h5>
-
-                        <hr>
-                        <canvas id="myChart"></canvas>
-                        <hr class="hr-dashed">
-                        <p class="text-center c-danger">Example of bar chart</p>
-                    </div>
-
+            <div class="col-md-12">
+                <div id="chart-container">
+                    <canvas width="204px" height="105px" id="graphCanvas"></canvas>
                 </div>
             </div>
         </div>
@@ -69,7 +61,7 @@
 
            <div class="col-md-6">
                 <div id="chart-container">
-                    <canvas width="204px" height="105px" id="graphCanvas"></canvas>
+                    <canvas width="204px" height="105px" id="graphCanvas2"></canvas>
                 </div>
            </div>
             <div class="col-md-6">
@@ -99,34 +91,34 @@
                     var jobs = res.jobs;
                     var apps = res.apps;
 
-                    console.log(res);
+                   // console.log(res);
 
-                    var myChart = document.getElementById('myChart');
-                    var myChart = new Chart(myChart, {
+                    var chartdata = {
+                        labels: jobs,
+                        datasets: [
+                            {
+                                label: 'Number of Applications',
+                                backgroundColor: '#DC3545',
+                                borderColor: '#DC3545',
+                                barPercentage: '2px',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: apps
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#graphCanvas2");
+
+                    var barGraph = new Chart(graphTarget, {
                         type: 'bar',
-                        data: {
-                            labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
-                            datasets: [{
-                                label: '# of Votes',
-                                data: [6, 8, 5, 2, 3],
-                                backgroundColor: [
-                                    '#ff6384',
-                                    '#4bc0c0',
-                                    '#ffcd56',
-                                    '#c9cbcf',
-                                    '#36a2eb',
-                                ]
-                            }]
-                        },
-                        options: {
-
-                        }
+                        data: chartdata
                     });
 
 
                 }
             })
-        })
+        });
 
 
 
@@ -140,7 +132,7 @@
                     var jobMonth = res.month;
                     var count = res.count;
 
-                    console.log(res);
+                 //   console.log(res);
 
                     var chartdata = {
                         labels: jobMonth,
