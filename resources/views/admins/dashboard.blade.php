@@ -47,6 +47,22 @@
 
             </div>
 
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
+                <div class="card shade ">
+                    <div class="card-body">
+                        <h5 class="card-title">Bar Chart</h5>
+
+                        <hr>
+                        <canvas id="myChart"></canvas>
+                        <hr class="hr-dashed">
+                        <p class="text-center c-danger">Example of bar chart</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
         <div class="row">
 
@@ -75,13 +91,48 @@
 
 
 
+        $(document).ready(function () {
+            $.ajax({
+                url: "{{route('admins.dashboard.fetch.jobs.apps')}}",
+
+                success: function (res) {
+                    var jobs = res.jobs;
+                    var apps = res.apps;
+
+                    console.log(res);
+
+                    var myChart = document.getElementById('myChart');
+                    var myChart = new Chart(myChart, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [6, 8, 5, 2, 3],
+                                backgroundColor: [
+                                    '#ff6384',
+                                    '#4bc0c0',
+                                    '#ffcd56',
+                                    '#c9cbcf',
+                                    '#36a2eb',
+                                ]
+                            }]
+                        },
+                        options: {
+
+                        }
+                    });
+
+
+                }
+            })
+        })
 
 
 
 
 
-
-            $(document).ready(function () {
+        $(document).ready(function () {
             $.ajax({
                 url: "{{route('admins.dashboard.fetch')}}",
 

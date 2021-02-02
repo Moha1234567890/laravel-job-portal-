@@ -39,6 +39,9 @@ class DashboardController extends Controller
 
 
 
+       // return($categories);
+
+
 
 
         return view('admins.dashboard', compact('usersCount', 'adminsCount','jobsCount','catsCount','jobsCountunver', 'jobsCountver','num_apps','num_saved_jobs'));
@@ -49,11 +52,12 @@ class DashboardController extends Controller
 
         $chartJobs = DB::table('jobs')
             ->select('id','month', DB::raw("count(month) as count"))
-            ->orderBy('id', 'des')
+            ->orderBy('id', 'asc')
 
             ->groupBy('month')
 
             ->get();
+
 
 
 
@@ -70,6 +74,36 @@ class DashboardController extends Controller
         ];
 
         return response()->json($datajob);
+    }
+
+
+    public function fetchJobApps() {
+
+        $Num_of_app_per_jobs =  DB::table('jobs')
+            ->join('emails', 'jobs.id', '=', 'emails.job_id_email')
+            ->select('jobs.jobtitle','emails.job_id_email as job_id_email', DB::raw("count(emails.job_id_email) as count"))
+
+
+            ->groupBy('emails.job_id_email')
+
+            ->get();
+
+
+        $arr_apps= [];
+        $arr_jobs= [];
+
+        foreach($Num_of_app_per_jobs as $Num_of_app_per_job) {
+            array_push($arr_apps, $Num_of_app_per_job->count);
+            array_push($arr_jobs, $Num_of_app_per_job->jobtitle);
+        }
+
+        $apps_jobs = [
+            'apps' => $arr_apps,
+            'jobs' => $arr_jobs
+        ];
+
+
+        return response()->json($apps_jobs);
     }
 
 

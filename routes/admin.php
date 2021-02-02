@@ -20,6 +20,7 @@ Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
 
     Route::get('/', 'DashboardController@redirect')->name('admins.dashboard');
     Route::get('/fetch', 'DashboardController@fetchData')->name('admins.dashboard.fetch');
+    Route::get('/fetch-jobs-apps', 'DashboardController@fetchJobApps')->name('admins.dashboard.fetch.jobs.apps');
 
     Route::get('/create-admins', 'AdminsController@getCreate')->name('create.admins');
     Route::post('/create-admins', 'AdminsController@storeAdmins')->name('store.admins');
