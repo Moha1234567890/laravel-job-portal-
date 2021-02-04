@@ -26,7 +26,7 @@
             <div class="col-md-12 header-margin">
                 @if(!$unverifiedCats == null)
 
-                    <div class="bg-light p-3 border rounded d-block mb-4">
+                    <div class="mydiv-margin bg-light p-3 border rounded d-block mb-4">
 
                         <ul class="list-unstyled pl-3 mb-0">
 
@@ -36,7 +36,7 @@
 
                     </div>
                 @else
-                    <div  class="bg-light p-3 border rounded d-block mb-4">
+                    <div  class="mydiv-margin bg-light p-3 border rounded d-block mb-4">
                         <ul class="list-unstyled pl-3 mb-0">
 
                             <li class="mb-2"><strong class="text-black">Number of Unverified Categories:</strong> <span class="pull-right">({{$unverifiedCats}})</span></li>
@@ -114,7 +114,7 @@
                                                     </td>
                                                     <td>{{$showCat->count}}</td>
                                                     <td>
-                                                        <a  cat_id="{{$showCat->id}}" id="delete_btn" class="btn btn-danger">delete</a>
+                                                        <a  cat_id="{{$showCat->id}}" id="delete_btn" class="btn btn-danger text-white">delete</a>
                                                     </td>
 
 

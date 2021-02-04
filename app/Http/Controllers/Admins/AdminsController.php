@@ -53,7 +53,7 @@ class AdminsController extends Controller
         Request()->validate([
 
             'email'        => 'required|string|max:100',
-            'name'        => 'required|string|max:100',
+            'name'         => 'required|string|max:100',
             'password'     => 'required|string|max:100',
 
 
@@ -89,7 +89,7 @@ class AdminsController extends Controller
 
     public function showJobs() {
 
-        $jobs = Job::select()->orderBy('created_at','desc')->paginate(3);
+        $jobs = Job::select()->orderBy('id','desc')->paginate(3);
 
         $unverifiedJobs = Job::select('status')->where('status', 0)->count();
         return view('admins.managingJobs.latestJobs', compact('jobs', 'unverifiedJobs'));
@@ -140,7 +140,7 @@ class AdminsController extends Controller
 
 
         $createCate = Category::create([
-            'name'     => trim($request->name),
+            'name'     => ucwords(trim($request->name)),
             'font'       => trim($request->font),
             'cat_desc'    => trim($request->desc),
 
@@ -162,8 +162,8 @@ class AdminsController extends Controller
 
         $categories =  DB::table('categories')
             ->leftJoin('jobs', 'categories.name', '=', 'jobs.jobcategory')
-            ->select('categories.name as name','categories.created_at as created_at','jobs.jobcategory','categories.id as id','categories.font as font','categories.cat_desc as cat_desc', 'categories.status as status', DB::raw("count(jobs.jobcategory) as count"))
-            ->orderBy('created_at', 'desc')
+            ->select('categories.name as name','categories.id as id','jobs.jobcategory','categories.id as id','categories.font as font','categories.cat_desc as cat_desc', 'categories.status as status', DB::raw("count(jobs.jobcategory) as count"))
+            ->orderBy('id', 'desc')
             ->groupBy('categories.name')
             ->get();
 

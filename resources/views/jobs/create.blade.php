@@ -95,7 +95,7 @@
 
                             <optgroup label="Choose job category">
                                 @foreach($getAllCats as $getAllCat)
-                                <option value="{{$getAllCat->name}}" class="pull-{{__('messages.align')}}">{{$getAllCat->name}}</option>
+                                <option value="{{ucwords($getAllCat->name)}}" class="pull-{{__('messages.align')}}">{{ucwords($getAllCat->name)}}</option>
                                @endforeach
 
                             </optgroup>

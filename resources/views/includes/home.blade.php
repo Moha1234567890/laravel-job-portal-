@@ -1,5 +1,9 @@
 @extends('layouts.site')
 
+@section('title')
+    Home
+@endsection
+
 @section('content')
 
     <!-- Hero Area Start-->

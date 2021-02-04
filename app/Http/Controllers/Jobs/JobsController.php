@@ -90,7 +90,7 @@ class JobsController extends Controller
             'jobdesc'     => $request->jobdesc,
             'respon'      => $request->respon,
             'ben'         => $request->ben,
-            'jobcategory' => $request->jobcategory,
+            'jobcategory' => ucwords($request->jobcategory),
             'companyname' => $request->companyname,
             'website'     => $request->website,
             'linkedin'    => $request->linkedin,

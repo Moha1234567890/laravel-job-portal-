@@ -23,7 +23,7 @@
                                 @endif
                         @endif
 
-                        <span class="text-white font-size d-inline w-20"><strong>{{strtoupper($job->jobtitle)}}</strong></span>
+                        <span class="text-white font-size d-inline w-20"><strong>{{ucwords($job->jobtitle)}}</strong></span>
                     </div>
                 </div>
             </div>

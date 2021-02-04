@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Admin Area
+    Admin Main Area
 @endsection
 
 
@@ -157,7 +157,7 @@
                     });
                 }
             })
-        })
+        });
 
             var myChart3 = document.getElementById('myChart3');
             var myChart3 = new Chart(myChart3, {

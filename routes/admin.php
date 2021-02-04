@@ -40,22 +40,6 @@ Route::group(['namespace'=>'admins', 'middleware'=>'auth:admin'], function() {
     Route::post('delete-cats','AdminsController@deleteCats')->name('delete.cats.admins');
     Route::post('/update-cats/{cat_id}', 'AdminsController@updateCats')->name('update.cats.admins');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 
@@ -67,13 +51,6 @@ Route::group(['namespace'=>'admins', 'middleware'=>'guest:admin'], function() {
     Route::get('login', 'AdminsController@login')->name('get.admin.login');
 
     Route::post('login', 'AdminsController@checkLogin')->name('admin.login');
-
-
-
-
-
-
-
 
 
 });

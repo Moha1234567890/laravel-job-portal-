@@ -30,7 +30,7 @@
             <div class="col-md-12 header-margin">
                 @if(!$unverifiedJobs == null)
 
-                    <div class="bg-light p-3 border rounded d-block mb-4">
+                    <div class="bg-light p-3 border rounded d-block mb-4 mydiv-margin">
 
                         <ul class="list-unstyled pl-3 mb-0">
 
@@ -40,7 +40,7 @@
 
                     </div>
                 @else
-                    <div  class="bg-light p-3 border rounded d-block mb-4">
+                    <div  class="mydiv-margin bg-light p-3 border rounded d-block mb-4">
                         <ul class="list-unstyled pl-3 mb-0">
 
                             <li class="mb-2"><strong class="text-black">Number of Unverified Jobs:</strong> <span class="pull-right">({{$unverifiedJobs}})</span></li>
@@ -59,7 +59,7 @@
 
                 <div class="col-md-12">
                 <div class="tile">
-                    <h3 class="tile-title">Responsive Table</h3>
+                    <h3 class="tile-title">Latest Jobs</h3>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -76,7 +76,7 @@
                                 @foreach($jobs as $job)
                             <tr id="jobRow{{$job->id}}">
 
-                                <td><img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70  category-img-admin" ></td>
+                                <td><a href="{{route('browse.one.job', $job->id)}}"><img src="{{asset('storage/'.$job->image)}}" alt="Image" class="img-thumbnail w-70 h-70  category-img-admin" ></a></td>
                                 <td>
                                     <form class="form-update-job" action="{{route('update.jobs.admins', $job->id)}}" method="POST">
                                         {{ csrf_field() }}
@@ -104,7 +104,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <a job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger margin-form">delete</a>
+                                    <a job_id="{{$job->id}}" id="delete_btn" class="btn btn-danger margin-form text-white">delete</a>
                                 </td>
 
 
