@@ -51,9 +51,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Password: </label>
                         <input type="password" class="form-control form-control-lg" name="password" aria-describedby="emailHelp" placeholder="enter password">
-                        @error('password')
-                        <span class="text-danger">{{$message}} </span>
-                        @enderror
+
                     </div>
 
 

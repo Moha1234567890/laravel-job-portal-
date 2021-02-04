@@ -11,7 +11,7 @@
 
     <div class="container">
 
-        <div class="card card-default">
+        <div>
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     {{ Session::get('success') }}
