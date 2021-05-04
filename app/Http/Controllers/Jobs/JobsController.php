@@ -114,12 +114,26 @@ class JobsController extends Controller
 
         $categories =  DB::table('categories')
             ->leftJoin('jobs', 'categories.name', '=', 'jobs.jobcategory')
-            ->select('categories.status','categories.name as name','jobs.jobcategory','categories.id as id','categories.font as font', DB::raw("count(jobs.jobcategory) as count"))
-            ->where('categories.status', '=', 1)
+            ->select('jobs.status','categories.status','categories.name as name','jobs.jobcategory','categories.id as id','categories.font as font', DB::raw("count(jobs.jobcategory) as count"))
+            
+            
 
-            ->groupBy('categories.name')
+            ->where(
+                //['categories.status', '=', 1],
+                'jobs.status', '=', 1
+               
+
+                
+
+               
+            )->orWhere('categories.status','=', 0)
+            //  ->orWhere('categories.status','=', 1)
+            ->groupBy('jobs.jobcategory')
+
+
 
             ->get();
+
 
 //        $checkSubmit = Email::where('from_user', Auth::user()->email)->where('job_id_email', $id)->count();
 //
@@ -372,6 +386,10 @@ class JobsController extends Controller
 
         return view('jobs.jobTitle', compact('getJobsTitle'));
     }
+
+
+    //trying vue
+
 
 
 

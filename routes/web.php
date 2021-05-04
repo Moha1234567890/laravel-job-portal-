@@ -53,6 +53,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post('save','JobsController@save')->name('save.job');
         Route::get('delete/{job_id}','JobsController@delete')->name('delete.job');
         Route::get('search','JobsController@search')->name('search');
+       
     });
 
 
