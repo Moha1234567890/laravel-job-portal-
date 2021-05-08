@@ -103,10 +103,10 @@ main.main {
 /*}*/
 
 .footer-bottom-area .footer-copy-right p {
-    position: absolute;
+    /* position: absolute;
     top: 866px;
     width: 671px;
-    padding-bottom:50px;
+    padding-bottom:50px; */
 }
 
 .img-padding {
@@ -131,6 +131,11 @@ footer {
 
 
 /*}*/
+
+.footer-padding {
+    padding-top: 887px;
+    /* padding-bottom: 13px; */
+}
 
 .footer-copy-right text-center {
     position: relative;

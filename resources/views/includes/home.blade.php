@@ -351,23 +351,24 @@
 {{--    </section>--}}
     <!--? Testimonial Area End -->
     <!--? Want To work 01-->
-{{--    <section class="wantToWork-area">--}}
-{{--        <div class="container">--}}
-{{--            <div class="wants-wrapper w-padding2">--}}
-{{--                <div class="row align-items-center justify-content-between">--}}
-{{--                    <div class="col-xl-7 col-lg-9 col-md-8">--}}
-{{--                        <div class="wantToWork-caption wantToWork-caption2">--}}
-{{--                            <h2>Start finding your dream job</h2>--}}
-{{--                            <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes placeholder text commonly used.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-xl-2 col-lg-3 ">--}}
-{{--                        <a href="#" class="btn f-right wantToWork-btn">Browse Job</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+    <section class="wantToWork-area">
+            <div class="container">
+                <div class="wants-wrapper w-padding2">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xl-7 col-lg-9 col-md-8">
+                            <div class="wantToWork-caption wantToWork-caption2">
+                                <h2>{{__('messages.Find your dream job.')}}</h2>
+                                <p>{{__('messages.The automated')}}</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 ">
+                            <a href="#" class="btn f-right wantToWork-btn">{{__('messages.Browse Job')}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     <!-- Want To work End -->
 
 @endsection

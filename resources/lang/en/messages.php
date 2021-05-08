@@ -95,7 +95,7 @@ return [
     ' Browse Jobs by' => ' Browse Jobs by',
     'your job title' => 'your job title',
     'update your profile' => 'update your profile',
-    'contact' => 'contact',
+    'contact' => 'Contact',
     'Log in' => 'Log in',
     'City' => 'City',
     'Logout' => 'Logout',
@@ -104,6 +104,7 @@ return [
     'update image' => 'update image',
     'saved jobs' => 'saved jobs',
     'Pages' => 'Pages',
+    'Browse Job' => "Browse Job",
 
 
 
@@ -151,4 +152,16 @@ return [
 
     "We have no records of this yet" => "We have no records of this yet",
 
+    //footer
+
+    "Top_categories" => "Top categories",
+    "For employer" => "For employer",
+    "Blog" => "Blog",
+    "Jobs" => "Jobs",
+    "Company" => "Company",
+    "Privacy policy" => "Privacy policy",
+    "Terms" => "Terms",
+    "Help and support" => "Help and support",
+    "Join us" => "Join us",
+    "Main Pages" => "Main Pages"
 ];

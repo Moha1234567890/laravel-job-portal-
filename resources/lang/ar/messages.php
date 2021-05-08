@@ -142,7 +142,18 @@ return [
     "We have no records of this yet" => "ليس لدينا بيانات  هنا حاليا",
 
 
-
+     //footer
+     "Top_categories" => "التصنيفات",
+     "For employer" => "للموظفين",
+     "Blog" => "المدونه",
+     "Jobs" => "الوظائف",
+     "Company" => "الشركه",
+     "Browse Job" => "تصفح الوظائف",
+     "Privacy policy" => "السياسات",
+     "Terms" => "الشروط",
+     "Help and support" => "المساعده والدعم",
+     "Join us" => "التحق بفريقنا",
+     "Main Pages" => "الصفحات الرئيسيه",
 
 
 
