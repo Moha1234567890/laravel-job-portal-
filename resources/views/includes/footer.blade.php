@@ -1,6 +1,6 @@
 
 <footer>
-     <div class="footer-wrappper pl-100 pr-100 section-bg" data-background="assets/img/gallery/footer-bg.png">
+     <div class="footer-wrappper pl-100 pr-100 section-bg">
         <!-- Footer Start-->
         <div class="footer-area footer-padding">
             <div class="container">

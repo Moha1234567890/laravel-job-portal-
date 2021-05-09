@@ -19,20 +19,17 @@
                                         <ul id="navigation">
                                             @guest
                                             <li><a href="{{route('home')}}">{{__('messages.Home')}}</a></li>
-                                                <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        {{__('messages.Languages')}}
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+                                                    <li><a href="#">{{__('messages.Languages')}}</a>
+                                                    <ul class="submenu">
                                                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-
+                                                        <li>  
                                                             <a class="dropdown-item text-primary" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                                 {{ $properties['native'] }}
                                                             </a>
+                                                        </li>
 
-                                                        @endforeach
-                                                    </div>
+                                                      @endforeach
+                                                    </ul>
                                                 </li>
 
 
@@ -49,42 +46,75 @@
                                                    <li><a href="{{url('login')}}">{{__('messages.Log in')}}</a></li>
                                                 @endif
                                             @else
-                                                <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                          {{__('messages. Browse Jobs by')}}
-                                                    </a>
-                                                    <div class="dropdown-menu" align="{{__('messages.align')}} == right ? pull-left : pull-right" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item text-primary" align="{{__('messages.align')}} == right ? pull-left : pull-right" href="{{route('browse.jobs.cats')}}">{{__('messages.Category')}}</a>
-                                                        <a class="dropdown-item text-primary" align="{{__('messages.align')}}" href="{{route('browse.jobs.cities')}}">{{__('messages.City')}}</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        @if(!Auth::user()->job_title == null)
-                                                          <a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">{{__('messages.your job title')}}</a>
+                          
+
+                                                <li><a href="#">{{__('messages. Browse Jobs by')}}</a>
+                                                    <ul class="submenu">
+                                                        <li>     
+                                                             <a class="dropdown-item text-primary" align="{{__('messages.align')}} == right ? pull-left : pull-right" href="{{route('browse.jobs.cats')}}">{{__('messages.Category')}}</a>
+                                                        </li>
+                                                       <li>  
+                                                             <a class="dropdown-item text-primary" align="{{__('messages.align')}}" href="{{route('browse.jobs.cities')}}">{{__('messages.City')}}</a>
+                                                       </li>
+                                                       @if(!Auth::user()->job_title == null)
+                                                          <li><a class="dropdown-item text-primary" href="{{route('browse.jobs.jobtitle', Auth::user()->job_title)}}">{{__('messages.your job title')}}</a></li>
                                                         @else
-                                                            <a class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}">{{__('messages.update your profile')}}</a>
+                                                            <li><a class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}">{{__('messages.update your profile')}}</a></li>
                                                         @endif
-
-                                                    </div>
+                                                      
+                                                    </ul>
                                                 </li>
 
-                                                <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                       {{__('messages.Languages')}}
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+                                                <li><a href="{{route('home')}}">{{__('messages.Home')}}</a></li>
+                                                <li><a href="#">{{__('messages.Languages')}}</a>
+                                                <ul class="submenu">
                                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                                    <li>  
+                                                        <a class="dropdown-item text-primary" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                            {{ $properties['native'] }}
+                                                        </a>
+                                                    </li>
 
-                                                            <a class="dropdown-item text-primary" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                                {{ $properties['native'] }}
-                                                            </a>
+                                                  @endforeach
+                                                </ul>
+                                            </li>
 
-                                                    @endforeach
-                                                    </div>
+                                            <li>
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre class="dropdown-item text-primary">
+                                                {{ Auth::user()->name }}
+                                                </a>
+                                                <ul class="submenu">
+                                                   
+                                                    <li> <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
+                                                        >
+                                                            {{ __('messages.profile') }}
+                                                        </a>
+                                                    <li>  <a  class="dropdown-item text-primary" href="{{ route('profile.update.image.get', Auth::user()->id) }}"
+                                                        >
+                                                            {{ __('messages.update image') }}
+                                                        </a>
+                                                    </li>
+                                                    <li><a  class="dropdown-item text-primary" href="{{route('saved.jobs', Auth::user()->id)}}"
+                                                        >
+                                                            {{ __('messages.saved jobs') }}
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a  class="dropdown-item text-primary" href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                                            {{ __('messages.Logout') }}
+                                                        </a>
 
-                                                </li>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </li>
 
 
-                                                <li class="nav-item dropdown">
+                                                {{-- <li class="nav-item dropdown">
                                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::user()->name }}
                                                     </a>
@@ -114,7 +144,7 @@
                                                             @csrf
                                                         </form>
                                                     </div>
-                                                </li>
+                                                </li> --}}
 
                                         </ul>
                                     </nav>
