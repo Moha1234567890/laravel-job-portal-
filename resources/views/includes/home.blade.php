@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                 <div>
 
                     @if(isset($randomJobs) && $randomJobs->count() > 0)
@@ -176,7 +176,42 @@
                 </div>
             </div>
         </div>
-        </div>
+        </div> --}}
+          <div class="container">
+            <div class="row no-gutters">
+                
+
+                    <div class="col-md-12">
+                        @if(isset($randomJobs) && $randomJobs->count() > 0) 
+                        
+                            @foreach($randomJobs as $job)  
+                        <div class="single-services mb-5 hover-eff">
+                           
+                          
+                            <div class="services-ion">
+                                <a href="{{route('browse.one.job', $job->id)}}"><img src="{{asset('assets/img/icon/services1.svg')}}" class="" alt=""></a>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="{{route('browse.one.job', $job->id)}}">{{ ucwords($job->jobtitle) }}</a></h5>
+                                <strong>{{ ucwords($job->companyname) }}</strong>
+                                <p>{{ strip_tags(substr($job->jobdesc, 0, 125)) }}
+                                </p>
+                                <h2> 
+                                     <span class=" {{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
+                                </h2>
+                               
+                                {{-- <a href="#" class="more-btn">Browse Job</a> --}}
+                            </div>
+                           
+                          
+                        </div>
+                        @endforeach
+                        @endif
+                       
+                </div>
+            </div>
+          </div>
+               
     </section>
     <!-- Our Services End -->
     <!--? About Area Start-->
@@ -210,6 +245,7 @@
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
                 <div class="col-xl-4 col-lg-7 col-md-9">
+                   
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
                         <h2>{{__('messages.Browse top jobs')}}</h2>
@@ -217,49 +253,30 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="col-md-12">
-                    @if(isset($randomTopJobs) && $randomTopJobs->count() > 0)
-                        @foreach($randomTopJobs as $job)
-                            <ul class="job-listings mb-5 hover-eff">
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-
-                                    <div class="job-listing-logo">
-
-                                        <a href="{{route('browse.one.job', $job->id)}}"> <img src="{{asset('storage/'. $job->image)}}" alt="Image" class="img-thumbnail w-70 h-70 category-img"></a>
-                                    </div>
-
-                                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-                                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                            <h2>{{$job->jobtitle}}</h2>
-                                            <strong>{{$job->companyname}}</strong>
-                                        </div>
-                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                                            <span class="icon-room"></span> {{$job->location}}, {{$job->region}}
-                                        </div>
-                                        <div class="job-listing-meta">
-                                            <span class=" {{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
-                                        </div>
-                                    </div>
-
-                                </li>
-
-
-
-
-
-                            </ul>
-
-
-
-                        @endforeach
-
-                    @else
-                        <div>none</div>
-                    @endif
-                </div>
-
-            </div>
+            <div class="top-job-slider">
+                <!-- Single -->
+                @if(isset($randomTopJobs) && $randomTopJobs->count() > 0) 
+                        
+                    @foreach($randomTopJobs as $job)  
+                        <div class="single-top-jobs">
+                            <div class="services-ion">
+                                <a href="{{route('browse.one.job', $job->id)}}"><img src="{{ asset('assets/img/icon/jon-iocn1.svg') }}" alt=""></a>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="{{route('browse.one.job', $job->id)}}">{{ ucwords($job->jobtitle) }}</a></h5>
+                                <p>{{ strip_tags(substr($job->jobdesc, 0, 125)) }}</p>
+                                <a href="{{route('browse.one.job', $job->id)}}" class="btn">Apply Now</a>
+                            </div>
+                            {{-- <div class="stickers">
+                                <span class=" {{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
+                            </div> --}}
+                        </div>
+                    @endforeach
+                @endif
+            </div>    
+           
+             
+              
 
         </div>
     </section>

@@ -6,10 +6,10 @@
 @endsection
 @section('content')
 
-    <section class="site-section" id="next">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-md-12 header-margin">
+<section class="our-services" id="next">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-12 header-margin">
                     @if(!$saved_jobs_counter == null)
 
                         <div class="bg-light p-3 border rounded d-block mb-4">
@@ -23,42 +23,31 @@
                         </div>
                     @endif
 
-                    @if(isset($saved_jobs) && $saved_jobs->count() > 0)
-                        @foreach($saved_jobs as $job)
-                            <ul class="job-listings mb-5 hover-eff">
-                                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-
-                                    <div class="job-listing-logo">
-                                        {{--fix url bug--}}
-                                        <a href="{{route('browse.one.job', $job->job_id)}}"> <img src="{{asset('storage/'.$job->pic)}}" alt="Image" class="img-thumbnail w-70 h-70 d-block mr-2 category-img" ></a>
-                                    </div>
-
-                                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-                                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                            <h2>{{$job->job_title}}</h2>
-                                            <strong>{{$job->company_name}}</strong>
-                                        </div>
-                                        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                                            <span class="icon-room"></span> {{$job->location}}, {{$job->region}}
-                                        </div>
-                                        <div class="job-listing-meta">
-                                            <span class=" {{$job->job_type == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->job_type}}</span>
-                                        </div>
-                                    </div>
-
-                                </li>
-
-                            </ul>
-
-
-
-                        @endforeach
-                    @else
-                        <div class="alert alert-danger">
-                            you have not saved any jobs yet
-                        </div>
-
-                    @endif
+                    @if(isset($saved_jobs) && $saved_jobs->count() > 0) 
+                        
+                    @foreach($saved_jobs as $job)  
+                <div class="single-services mb-5 hover-eff">
+                   
+                  
+                    <div class="services-ion">
+                        <a href="{{route('browse.one.job', $job->job_id)}}"><img src="{{asset('assets/img/icon/services1.svg')}}" class="" alt=""></a>
+                    </div>
+                    <div class="services-cap">
+                        <h5><a href="{{route('browse.one.job', $job->job_id)}}">{{ ucwords($job->job_title) }}</a></h5>
+                        <strong>{{ ucwords($job->company_name) }}</strong>
+                        <p>{{ strip_tags(substr($job->job_desc, 0, 125)) }}
+                        </p>
+                        <h2> 
+                            <span class="{{$job->job_type == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->job_type}}</span>
+                        </h2>
+                       
+                        {{-- <a href="#" class="more-btn">Browse Job</a> --}}
+                    </div>
+                   
+                  
+                </div>
+                @endforeach
+                @endif
 
                     {!!  $saved_jobs -> links() !!}
                 </div>

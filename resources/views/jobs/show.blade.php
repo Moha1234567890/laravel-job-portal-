@@ -77,6 +77,7 @@
 
                                         <input  type="hidden" class="form-control form-control-lg" id="pic" name="pic" value="{{$job->image}}">
                                         <input  type="hidden" class="form-control form-control-lg" id="job_title" name="job_title" value="{{$job->jobtitle}}">
+                                        <input  type="hidden" class="form-control form-control-lg" id="job_desc" name="job_desc" value="{{$job->jobdesc}}">
                                         <input  type="hidden" class="form-control form-control-lg" id="company_name" name="company_name" value="{{$job->companyname}}">
                                         <input  type="hidden" class="form-control form-control-lg" id="location" name="location" value="{{$job->location}}">
                                         <input  type="hidden" class="form-control form-control-lg" id="region" name="region" value="{{$job->region}}">
@@ -375,6 +376,7 @@
                 $('#job_id').text('');
                 $('#pic').text('');
                 $('#job_title').text('');
+                $('#job_desc').text('');
                 $('#company_name').text('');
                 $('#location').text('');
                 $('#region').text('');

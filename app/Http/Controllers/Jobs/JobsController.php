@@ -258,10 +258,7 @@ class JobsController extends Controller
 
     }
 
-    public function save(
-
-
-        $request) {
+    public function save(Request $request) {
 
 
 
@@ -271,6 +268,7 @@ class JobsController extends Controller
             'user_id'      => $request->user_id,
             'pic'          => $request->pic,
             'job_title'    => $request->job_title,
+            'job_desc'     => $request->job_desc,
             'company_name' => $request->company_name,
             'location'     => $request->location,
             'region'       => $request->region,
