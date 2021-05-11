@@ -181,7 +181,7 @@
             <div class="row no-gutters">
                 
 
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-5">
                         @if(isset($randomJobs) && $randomJobs->count() > 0) 
                         
                             @foreach($randomJobs as $job)  
@@ -216,15 +216,15 @@
     <!-- Our Services End -->
     <!--? About Area Start-->
     <section class="about-area fix">
-        <!--Right Contents  -->
+        {{-- <!--Right Contents  --}}
         <div class="about-img">
             <div class="info-man text-center">
                 <div class="head-cap">
                     <h3>89027+</h3>
                 </div>
-                <p>Talented waiting for hire</p>
+              
             </div>
-        </div>
+        </div> 
         <!-- left Contents -->
         <div class="about-details">
             <div class="right-caption">
