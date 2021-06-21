@@ -73,6 +73,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image');
 
         Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
+        Route::get('more-info', 'UsersController@moreInfo')->name('moreinfo');
 
 
     });

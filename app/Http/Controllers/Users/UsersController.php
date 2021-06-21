@@ -137,6 +137,15 @@ class UsersController extends Controller
 
     }
 
+    public function moreInfo() {
+
+     
+
+        return view('users.beforeHome');
+
+    }
+    
+
 
 
 
