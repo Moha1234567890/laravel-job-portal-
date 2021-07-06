@@ -121,6 +121,7 @@ return [
     'Jobs' => 'وظيفه',
     'Want to hire perfect person?' => 'تريد توظيف الشخص المناسب؟',
     'Browse top jobs' => 'تصفح الوظائف الاعلي رواجا',
+    'Apply Now' => 'تصفح الوظيفه',
 
     //jobs/contact
 

@@ -134,6 +134,7 @@ return [
     'Jobs' => 'Jobs',
     'Want to hire perfect person?' => 'Want to hire perfect person?',
     'Browse top jobs' => 'Browse top jobs',
+    'Apply Now' => 'Browse',
 
     //jobs/contact
 

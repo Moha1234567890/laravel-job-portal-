@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         $randomJobs = Job::orderBy('id', 'desc')->take(3)->get();
-        $randomTopJobs = Job::orderBy('created_at', 'asc')->take(6)->get();
+        $randomTopJobs = Job::orderBy('created_at', 'asc')->take(4)->get();
 
 
         $getAllCats = Category::select('name')->where('status',1)->get();

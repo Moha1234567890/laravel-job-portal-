@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSS here -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/slicknav.css')}}">
@@ -47,7 +49,7 @@
 @include('includes.header')
 
 
-<main class="main" >
+<main class="main" id="app">
 
     @yield('content')
 
@@ -65,6 +67,7 @@
 </div>
 
 <!-- JS here -->
+<script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
 
     <script src="{{asset('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
