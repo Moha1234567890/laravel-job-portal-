@@ -164,5 +164,9 @@ return [
     "Terms" => "Terms",
     "Help and support" => "Help and support",
     "Join us" => "Join us",
-    "Main Pages" => "Main Pages"
+    "Main Pages" => "Main Pages",
+
+    //beforehome
+
+    "whatis@what.com" => "whatis@what.com",
 ];

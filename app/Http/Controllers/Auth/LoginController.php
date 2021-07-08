@@ -49,4 +49,17 @@ class LoginController extends Controller
 
         return redirect('admin/login');
     }
+
+
+    //overriding login and register pages
+
+    public function showLoginForm()
+    {
+        return view('logins.login');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('logins.register');
+    }
 }

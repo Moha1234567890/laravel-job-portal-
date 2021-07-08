@@ -18,16 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function() {
-    Route::get('/','HomeController@index');
+    Route::get('/','HomeController@index')->name('home');
 
     Route::get('contact','HomeController@contact')->name('contact');
     Route::post('contact','HomeController@storeContact')->name('store');
     Auth::routes();
 
 
+    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/register', 'Auth\LoginController@showRegistrationForm')->name('register');
 });
 
 

@@ -157,6 +157,11 @@ return [
      "Main Pages" => "الصفحات الرئيسيه",
 
 
+     //beforehome
+
+    "whatis@what.com" => "مجرد ايميل",
+
+
 
 
 

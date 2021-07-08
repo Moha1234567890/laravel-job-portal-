@@ -5,9 +5,15 @@
                 <div class="card">
                     <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-                       it's on on npm great
-                    </div>
+                    <!-- <div class="card-body">
+                      
+                    {{transalte()(   "messages.whatis@what.com" )}}
+                    </div> -->
+
+                      <h3 class="card-body">
+                      
+                       {{ transalte() }}
+                    </h3>
                 </div>
             </div>
         </div>
@@ -16,8 +22,24 @@
 
 <script>
     export default {
+
+        data() {
+            return {
+                sign: "__('messages.whatis@what.com')",
+            }
+        },
+
+
+        methods: {
+            transalte(){
+                return this.sign;
+
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
+
+
     }
 </script>
