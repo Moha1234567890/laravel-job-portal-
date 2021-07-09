@@ -160,6 +160,10 @@ return [
      //beforehome
 
     "whatis@what.com" => "مجرد ايميل",
+    "Are you" => "هل انت",
+
+    "hell" => "جحيم",
+    "hell on earth" => " ع الارض جحيم",
 
 
 

@@ -83,7 +83,8 @@
                                 </div>
                             </div>
 
-                        </div><!--/col-3-->
+                        </div><!--/col-3-->      
+
                         <div class="col-sm-9 header-margin">
 
 
@@ -214,7 +215,6 @@
                                             </div>
                                         </div>
                                     </form>
-
                                     <hr>
 
                                 </div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/mystyle.css')}}">
-
+    
 </head>
 <body dir="{{LaravelLocalization::getCurrentLocaleDirection()}}">
 <!-- ? Preloader Start -->
@@ -68,6 +68,7 @@
 
 <!-- JS here -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.3/trix.js"></script>
 
     <script src="{{asset('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
@@ -106,10 +107,15 @@
     <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('assets/js/mail-script.js')}}"></script>
     <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
-
     <!-- Jquery Plugins, main Jquery -->
     <script src="{{asset('assets/js/plugins.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script>
+    window._locale = '{{ app()->getLocale() }}';
+    window._translations = {!! cache('translations') !!};
+</script>
+
+   
     {{-- <script src="{{asset('assets/js/script.js')}}"></script> --}}
 
 

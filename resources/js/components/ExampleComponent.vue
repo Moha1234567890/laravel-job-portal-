@@ -2,19 +2,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
+               
+               
+                <h1> {{ __("messages.Post a job") }}</h1>
+                               <h1> {{ __("messages.Are you") }}</h1>
 
-                    <!-- <div class="card-body">
-                      
-                    {{transalte()(   "messages.whatis@what.com" )}}
-                    </div> -->
+                
+                <h1> {{ __("messages.hell on earth") }}</h1>
 
-                      <h3 class="card-body">
-                      
-                       {{ transalte() }}
-                    </h3>
-                </div>
             </div>
         </div>
     </div>
@@ -25,21 +20,29 @@
 
         data() {
             return {
-                sign: "__('messages.whatis@what.com')",
+                //sign: "__('messages.whatis@what.com')",
             }
         },
 
 
         methods: {
-            transalte(){
-                return this.sign;
+            // transalte(){
+            //     return this.sign;
 
-            }
+            // }
         },
         mounted() {
-            console.log('Component mounted.')
-        }
+          
+        },
+
+        created() {
+        },
+          //  
+
 
 
     }
+
+Vue.mixin(require('../trans'))
+
 </script>

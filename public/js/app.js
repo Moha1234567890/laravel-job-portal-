@@ -1925,26 +1925,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      sign: "__('messages.whatis@what.com')"
+    return {//sign: "__('messages.whatis@what.com')",
     };
   },
-  methods: {
-    transalte: function transalte() {
-      return this.sign;
-    }
+  methods: {// transalte(){
+    //     return this.sign;
+    // }
   },
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {},
+  created: function created() {} //  
+
 });
+Vue.mixin(__webpack_require__(/*! ../trans */ "./resources/js/trans.js"));
 
 /***/ }),
 
@@ -37612,19 +37606,11 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
-          _c("h3", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                  \n                   " +
-                _vm._s(_vm.transalte()) +
-                "\n                "
-            )
-          ])
-        ])
+        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.Post a job")))]),
+        _vm._v(" "),
+        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.Are you")))]),
+        _vm._v(" "),
+        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.hell on earth")))])
       ])
     ])
   ])
@@ -49798,6 +49784,72 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/VueTranslation/Translation.js":
+/*!****************************************************!*\
+  !*** ./resources/js/VueTranslation/Translation.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var translations = __webpack_require__(/*! ./translations */ "./resources/js/VueTranslation/translations.json");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  translate: function translate(key) {
+    var replacements = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var lang = document.documentElement.lang;
+    var word = translations[lang];
+    var fallback_locale = document.querySelector('meta[name="fallback_locale"]') || null;
+
+    var getAltValue = function getAltValue(object, keys) {
+      return keys.split('.').reduce(function (o, k) {
+        return (o || {})[k];
+      }, object);
+    };
+
+    var keys = key.split('.');
+
+    for (var i in keys) {
+      try {
+        word = word[keys[i]];
+
+        if (word === undefined) {
+          if (fallback_locale.content) {
+            word = getAltValue(translations[fallback_locale.content], key) || key;
+          } else {
+            word = key;
+          }
+
+          break;
+        }
+      } catch (e) {
+        word = key;
+        break;
+      }
+    }
+
+    for (var _i in replacements) {
+      word = word.replace(":".concat(_i), replacements[_i]);
+    }
+
+    return word;
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/VueTranslation/translations.json":
+/*!*******************************************************!*\
+  !*** ./resources/js/VueTranslation/translations.json ***!
+  \*******************************************************/
+/*! exports provided: ar, en, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"ar\":{\"messages\":{\"align\":\"right\",\"save\":\"حفظ\",\"Home\":\"الصفحه الرئسيه\",\"jobs\":\"الوظائف\",\"jobS\":\"ملخص الوظيفه\",\"saved\":\"حفظت\",\"Published on\":\"نشرت في\",\"vacancy\":\"عدد الوظائف\",\"Employment Status\":\"دوام\",\"Experience\":\"عدد سنوات الخبره\",\"Job Location\":\"الموقع\",\"Salary\":\"الراتب\",\"Gender\":\"الجنس\",\"years\":\"سنوات\",\"Categories\":\"التصنيفات\",\"Job info\":\"معلومات اضافيه\",\"number of apps\":\"عدد المتقدمين لهده الوظيفه\",\"Share\":\"شارك\",\"Job Description\":\"وصف الوظيفه\",\"Responsibilities\":\"المسؤليات\",\"Education + Experience\":\"الخبره + التعليم\",\"Other Benifits\":\"المميزات\",\"you created this job\":\"لا يمكنك التقديم علي هده الوظيفه فأنت من نشرها\",\"full time\":\"دوام كامل\",\"part time\":\"دوام جزئي\",\"apply\":\"تقدم علي هده الوظيفه\",\"why are you suitable for this job\":\"لما انت مناسب لهده الوظيفه؟\",\"no file\":\"لم يتم اختيار اي ملفات\",\"register to apply for jobs\":\"سجل لكي تقدم علي وظائف\",\"you applyed to this job\":\"لقد تقدمت لهده الوظيفه من قبل\",\"Post a job\":\"ادخل وظيفه\",\"Email\":\"ايميل الشركه\",\"Job title\":\"المسمي الوظيفي\",\"region\":\"المدينه\",\"job category\":\"اختر التصنيف\",\"Choose job category\":\"اختر الجنس\",\"male\":\"ذكر\",\"female\":\"انثي\",\"all\":\"ذكر او اناث\",\"Company Details\":\"تفاصيل الشركه\",\"Company logo\":\"شعار الشركه\",\"Company name\":\"اسم الشركه\",\"Website\":\"موقع الشركه\",\"linkedin\":\"لينكدأن\",\"Add\":\"اضف\",\"my cv\":\"تعديل سيرتي الداتيه\",\"Update\":\"تعديل\",\"Activity\":\"معلومات اضافيه\",\" posted jobs\":\"عدد الزظائف التي نشرتها\",\"applyed to jobs\":\"عدد الوظائف التي تقمت عليها\",\"Social Media\":\"حساباتي علي مواقع التواصل الاجتماعي\",\"Name\":\"الاسم\",\"Mobile\":\"الهاتف\",\"based_location\":\"البلد\",\"Facebook\":\"فيس بوك\",\"Twitter\":\"نويتر\",\"if you uploaded your cv it will show up here\":\"عندما تقوم بتحميل سيرتك الداتيه ستظهر هنا\",\"Download my CV\":\"تحميل السيره الداتيه\",\"Number of Saved Jobs\":\"عدد الوظائف المحفوظه\",\"We have no records of this search\":\"لا يوجد نتائج بهدا البحث حتي الان\",\"Number of Searches\":\"عدد النتائج\",\"Update Profile Picture\":\"تعديل الصوره الداتيه\",\"Post a Job\":\"اضف وظيفه\",\"Languages\":\"اللغات\",\" Browse Jobs by\":\" تصفح الوظائف بناء علي\",\"your job title\":\"المسمي الوظيفي خاصتك\",\"update your profile\":\"تعديل حسابك الشخصي\",\"contact\":\"تواصل\",\"Log in\":\"تسجيل الدخول\",\"City\":\"المدن\",\"Logout\":\"تسجيل الخروج\",\"Category\":\"التصنيفات\",\"profile\":\"الحساب الشخصي\",\"update image\":\"تعديل الصوره\",\"saved jobs\":\"الوظائف المحفوظه\",\"Pages\":\"صفحات الموقع\",\"EmailP\":\"الايميل\",\"Password\":\"الرقم السري\",\"Registration\":\"حساب جديد\",\"Confirm Password\":\"تأكيد الرقم السري\",\"Find your dream job.\":\"أحصل علي وظيفه احلامك.\",\"The automated\":\"أعلن عن وظائفك الشاغرة ووظّف أفضل الكفاءات والمهارات التي تحتاجها للعمل\\r\\nدون التقيد بمنطقة جغرافية محددة وبأقصي سرعه وسهوله.\",\"Job title or keywords\":\"المسمي الوظيفي\",\"Where?\":\"أين؟\",\"perform  search\":\"بـــــــــــــــــــــــحث\",\"Popular search\":\"الاعلي بحثا\",\"Browse from over\":\"تصفح اكثر من \",\"Jobs\":\"الوظائف\",\"Want to hire perfect person?\":\"تريد توظيف الشخص المناسب؟\",\"Browse top jobs\":\"تصفح الوظائف الاعلي رواجا\",\"Apply Now\":\"تصفح الوظيفه\",\"About Us\":\"عنا\",\"Message\":\"الرساله\",\"Subject\":\"الموضوع\",\"Send\":\"أرسل\",\"Buttonwood, California.\":\"بوتون هود, كاليفوزنيا.\",\"Rosemead, CA 91770\":\"روس ميد, 91770\",\"Mon to Fri 9am to 6pm\":\"مفتوح من 9 صباحا الي 6 مساء\",\"Get in Touch\":\"تواصل معنا\",\"Send us your query anytime!\":\"أرسل لنا أسلتلك في أي وقت!\",\"We have no records of this yet\":\"ليس لدينا بيانات  هنا حاليا\",\"Top_categories\":\"التصنيفات\",\"For employer\":\"للموظفين\",\"Blog\":\"المدونه\",\"Company\":\"الشركه\",\"Browse Job\":\"تصفح الوظائف\",\"Privacy policy\":\"السياسات\",\"Terms\":\"الشروط\",\"Help and support\":\"المساعده والدعم\",\"Join us\":\"التحق بفريقنا\",\"Main Pages\":\"الصفحات الرئيسيه\",\"whatis@what.com\":\"مجرد ايميل\",\"Are you\":\"هل انت\",\"hell\":\"جحيم\",\"hell on earth\":\" ع الارض جحيم\"}},\"en\":{\"auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"messages\":{\"align\":\"left\",\"save\":\"save\",\"Home\":\"Home\",\"jobs\":\"Jobs\",\"jobS\":\"Job Summary\",\"saved\":\"saved\",\"Published on\":\"Published on\",\"vacancy\":\"vacancy\",\"Employment Status\":\"Employment Status\",\"Experience\":\"Experience\",\"Job Location\":\"Job Location\",\"Salary\":\"Salary\",\"Gender\":\"Gender\",\"years\":\"years\",\"Categories\":\"Categories\",\"Job info\":\"Job info\",\"number of apps\":\"Number of Applications\",\"Share\":\"Share\",\"Job Description\":\"Job Description\",\"Responsibilities\":\"Responsibilities\",\"Education + Experience\":\"Education + Experience\",\"Other Benifits\":\"Other Benifits\",\"you created this job\":\"you created this job you cannot apply for it\",\"apply\":\"apply\",\"why are you suitable for this job\":\"why are you suitable for this job?\",\"no file\":\"no files choosen\",\"register to apply for jobs\":\"register to apply for jobs\",\"you applyed to this job\":\"you applyed to this job\",\"Post a job\":\" Post a job\",\"Email\":\"Email\",\"Job title\":\"Job title\",\"location\":\"location\",\"region\":\"region\",\"full time\":\"full time\",\"part time\":\"part time\",\"job category\":\"Employment Status\",\"Choose job category\":\"choose gender\",\"male\":\"male\",\"female\":\"female\",\"all\":\"all\",\"Company Details\":\"Company Details\",\"Company logo\":\"Company logo\",\"Company name\":\"Company name\",\"Website\":\"Website\",\"linkedin\":\"linkedin\",\"Add\":\"Add\",\"my cv\":\"update my cv\",\"Update\":\"Update\",\"Activity\":\"Activity\",\" posted jobs\":\" posted jobs\",\"applyed to jobs\":\"applyed to jobs\",\"Social Media\":\"Social Media\",\"Name\":\"Name\",\"Mobile\":\"Mobile\",\"based_location\":\"location\",\"Facebook\":\"Facebook\",\"Twitter\":\"Twitter\",\"Linkedin\":\"Linkedin\",\"if you uploaded your cv it will show up here\":\"if you uploaded your cv it will show up here\",\"Download my CV\":\"Download my CV\",\"Number of Saved Jobs\":\"Number of Saved Jobs\",\"We have no records of this search\":\"We have no records of this search\",\"Number of Searches\":\"Number of Searches\",\"Post a Job\":\"Post a Job\",\"Languages\":\"Languages\",\" Browse Jobs by\":\" Browse Jobs by\",\"your job title\":\"your job title\",\"update your profile\":\"update your profile\",\"contact\":\"Contact\",\"Log in\":\"Log in\",\"City\":\"City\",\"Logout\":\"Logout\",\"Category\":\"Category\",\"profile\":\"profile\",\"update image\":\"update image\",\"saved jobs\":\"saved jobs\",\"Pages\":\"Pages\",\"Browse Job\":\"Browse Job\",\"Update Profile Picture\":\"Update Profile Picture\",\"EmailP\":\"Email\",\"Password\":\"Password\",\"Registration\":\"Registration\",\"Confirm Password\":\"Confirm Password\",\"Find your dream job.\":\"Find your dream job.\",\"The automated\":\"The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.\",\"Job title or keywords\":\"Job title or keywords\",\"Where?\":\"Where?\",\"perform  search\":\"perform  search\",\"Popular search\":\"Popular Searches\",\"Browse from over\":\"Browse from over\",\"Jobs\":\"Jobs\",\"Want to hire perfect person?\":\"Want to hire perfect person?\",\"Browse top jobs\":\"Browse top jobs\",\"Apply Now\":\"Browse\",\"About Us\":\"About Us\",\"Message\":\"Message\",\"Subject\":\"Subject\",\"Send\":\"Send\",\"Buttonwood, California.\":\"Buttonwood, California.\",\"Rosemead, CA 91770\":\"Rosemead, CA 91770\",\"Mon to Fri 9am to 6pm\":\"Mon to Fri 9am to 6pm\",\"Get in Touch\":\"Get in Touch\",\"Send us your query anytime!\":\"Send us your query anytime!\",\"We have no records of this yet\":\"We have no records of this yet\",\"Top_categories\":\"Top categories\",\"For employer\":\"For employer\",\"Blog\":\"Blog\",\"Company\":\"Company\",\"Privacy policy\":\"Privacy policy\",\"Terms\":\"Terms\",\"Help and support\":\"Help and support\",\"Join us\":\"Join us\",\"Main Pages\":\"Main Pages\",\"whatis@what.com\":\"whatis@what.com\",\"Are you\":\"Are you\",\"hell\":\"hell\",\"hell on earth\":\" hell on earth\"},\"pagination\":{\"previous\":\"&laquo; Previous\",\"next\":\"Next &raquo;\"},\"passwords\":{\"reset\":\"Your password has been reset!\",\"sent\":\"We have emailed your password reset link!\",\"throttled\":\"Please wait before retrying.\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that email address.\"},\"validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"numeric\":\"The :attribute must be between :min and :max.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"string\":\"The :attribute must be between :min and :max characters.\",\"array\":\"The :attribute must have between :min and :max items.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values.\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"numeric\":\"The :attribute must be greater than :value.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"string\":\"The :attribute must be greater than :value characters.\",\"array\":\"The :attribute must have more than :value items.\"},\"gte\":{\"numeric\":\"The :attribute must be greater than or equal :value.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"string\":\"The :attribute must be greater than or equal :value characters.\",\"array\":\"The :attribute must have :value items or more.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"numeric\":\"The :attribute must be less than :value.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"string\":\"The :attribute must be less than :value characters.\",\"array\":\"The :attribute must have less than :value items.\"},\"lte\":{\"numeric\":\"The :attribute must be less than or equal :value.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"string\":\"The :attribute must be less than or equal :value characters.\",\"array\":\"The :attribute must not have more than :value items.\"},\"max\":{\"numeric\":\"The :attribute may not be greater than :max.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"string\":\"The :attribute may not be greater than :max characters.\",\"array\":\"The :attribute may not have more than :max items.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"numeric\":\"The :attribute must be at least :min.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"string\":\"The :attribute must be at least :min characters.\",\"array\":\"The :attribute must have at least :min items.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"password\":\"The password is incorrect.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"numeric\":\"The :attribute must be :size.\",\"file\":\"The :attribute must be :size kilobytes.\",\"string\":\"The :attribute must be :size characters.\",\"array\":\"The :attribute must contain :size items.\"},\"starts_with\":\"The :attribute must start with one of the following: :values.\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"attributes\":[]}}}");
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -49812,7 +49864,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //window.Vue = require('trans.js');
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -49822,7 +49875,12 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//window.Vue = require('vue');
+// If you want to add to window object
+//window.tranlate=require('./VueTranslation/Translation').default.translate;
+// If you want to use it in your vue components
 
+Vue.prototype.translate = __webpack_require__(/*! ./VueTranslation/Translation */ "./resources/js/VueTranslation/Translation.js")["default"].translate;
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -49947,6 +50005,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/trans.js":
+/*!*******************************!*\
+  !*** ./resources/js/trans.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  methods: {
+    /**
+     * Translate the given key.
+     */
+    __: function __(key, replace) {
+      var translation,
+          translationNotFound = true;
+
+      try {
+        translation = key.split('.').reduce(function (t, i) {
+          return t[i] || null;
+        }, window._translations[window._locale].php);
+
+        if (translation) {
+          translationNotFound = false;
+        }
+      } catch (e) {
+        translation = key;
+      } // if (translationNotFound) {
+      //     translation = window._translations[window._locale]['json'][key]
+      //         ? window._translations[window._locale]['json'][key]
+      //         : key
+      // }
+
+
+      if (translationNotFound) {
+        translation = window._translations && window._translations[window._locale]['json'][key.toLowerCase] ? window._translations[window._locale]['json'][key.toLowerCase] : key;
+      }
+
+      _.forEach(replace, function (value, key) {
+        translation = translation.replace(':' + key, value);
+      });
+
+      return translation;
+    }
+  }
+};
 
 /***/ }),
 

@@ -169,4 +169,8 @@ return [
     //beforehome
 
     "whatis@what.com" => "whatis@what.com",
+    "Are you" => "Are you",
+    "hell" => "hell",
+    "hell on earth" => " hell on earth",
+
 ];

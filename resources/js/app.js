@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+//window.Vue = require('trans.js');
 
 /**
  * The following block of code may be used to automatically register your
@@ -18,6 +19,13 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//window.Vue = require('vue');
+// If you want to add to window object
+//window.tranlate=require('./VueTranslation/Translation').default.translate;
+
+// If you want to use it in your vue components
+Vue.prototype.translate=require('./VueTranslation/Translation').default.translate;
+
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
