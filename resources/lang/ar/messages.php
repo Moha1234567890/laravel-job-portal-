@@ -158,13 +158,10 @@ return [
 
 
      //beforehome
-
-    "whatis@what.com" => "مجرد ايميل",
-    "Are you" => "هل انت",
-
-    "hell" => "جحيم",
-    "hell on earth" => " ع الارض جحيم",
-
+     "Type" => "النوع",
+    
+     "Desc" => "الوصف",
+     "Enter your cred" => "أدخل المزيد من المعلومات لتحصل علي افضل تجربه" 
 
 
 

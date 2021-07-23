@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
+
 use App\Models\SavedJob;
 use App\Models\Email;
 
@@ -100,7 +101,7 @@ class UsersController extends Controller
 
     public function updateImage(Request $request, $id) {
 
-        $y = User::findOrFail($id);
+        $updateImage = User::findOrFail($id);
 
         Request()->validate([
 
@@ -110,8 +111,8 @@ class UsersController extends Controller
         ]);
 
 
-        if($y)
-             $y->update([
+        if($updateImage)
+             $updateImage->update([
 
             'image' =>  $request->image->store('images','public'),
 
@@ -137,7 +138,7 @@ class UsersController extends Controller
 
     }
 
-    public function moreInfo() {
+    public function createMoreInfo() {
 
      
 
@@ -145,6 +146,22 @@ class UsersController extends Controller
 
     }
     
+    public function storeMoreInfo(Request $request, $id) {
+
+     
+
+        $moreInfo = User::findOrFail($id);
+        if($moreInfo)
+        $moreInfo->update([
+
+       'type' =>  $request->type,
+       'user_desc' =>  $request->user_desc,
+
+    ]);
+
+   return redirect()->route('home');
+
+    }
 
 
 

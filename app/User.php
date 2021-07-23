@@ -28,7 +28,9 @@ class User extends Authenticatable
         'facebook',
         'link',
         'twitter',
-        'cv'
+        'cv',
+        'type',
+        'user_desc',
 
     ];
 

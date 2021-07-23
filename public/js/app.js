@@ -1899,10 +1899,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1925,14 +1925,108 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {//sign: "__('messages.whatis@what.com')",
+    return {
+      editmode: false,
+      form: new Form({
+        type: 'company',
+        user_desc: 'xxxxx',
+        id: 26
+      })
     };
   },
-  methods: {// transalte(){
-    //     return this.sign;
-    // }
+  methods: {
+    saveData: function saveData() {
+      var _this = this;
+
+      var data = new FormData(); //console.log(FormData);
+
+      data.append('type', this.form.type);
+      data.append('user_desc', this.form.user_desc);
+      axios.post('/user/more-info', data).then(function (res) {
+        //  this.getTodos();
+        _this.form.reset();
+      })["catch"](function (error) {
+        _this.form.errors.record(error.response.data.errors);
+
+        console.log(_this.form.user_desc);
+      });
+    } //             updateTodo(e) {
+    //                 this.editmode = false;
+    //                 let data = new FormData();
+    //                 data.append('_method', 'PATCH');
+    //  data.append('desc', e.desc);
+    //                 data.append('type', e.type);
+    //                 axios.post('/user/more-info/', data)
+    //                  .then(() => {})
+    //                  .catch((error) => {
+    //                     this.form.errors.record(error.response.data.errors)
+    //                  })
+    //             },
+
   },
   mounted: function mounted() {},
   created: function created() {} //  
@@ -6380,6 +6474,112 @@ Vue.mixin(__webpack_require__(/*! ../trans */ "./resources/js/trans.js"));
 
 })));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nform[data-v-4c09bff8] {\n    width: 870px;\n    height: 570px\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -37513,6 +37713,545 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -37588,10 +38327,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37605,12 +38344,95 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.Post a job")))]),
-        _vm._v(" "),
-        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.Are you")))]),
-        _vm._v(" "),
-        _c("h1", [_vm._v(" " + _vm._s(_vm.__("messages.hell on earth")))])
+      _c("div", { staticClass: "col-md-8", attrs: { align: "" } }, [
+        _c(
+          "form",
+          {
+            staticClass: "form",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.saveData($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "form-group", attrs: { align: "" } }, [
+              _c("div", { staticClass: "col-xs-6" }, [
+                _c("label", { attrs: { for: "mobile" } }, [
+                  _c("h4", [_vm._v(_vm._s(_vm.__("messages.Desc")))])
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.user_desc,
+                      expression: "form.user_desc"
+                    }
+                  ],
+                  staticClass: "form-control form-control-lg",
+                  attrs: { id: "exampleFormControlTextarea1", rows: "3" },
+                  domProps: { value: _vm.form.user_desc },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "user_desc", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "col-xs-6" }, [
+                _c("label", { attrs: { align: "", for: "mobile" } }, [
+                  _c("h4", [_vm._v(_vm._s(_vm.__("messages.Type")))])
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.type,
+                      expression: "form.type"
+                    }
+                  ],
+                  staticClass: "form-control form-control-lg",
+                  attrs: { id: "exampleFormControlTextarea1", rows: "3" },
+                  domProps: { value: _vm.form.type },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "type", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group", attrs: { align: "" } }, [
+              _c("div", { staticClass: "col-xs-12" }, [
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-lg btn-success",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v(_vm._s(_vm.__("messages.save")))]
+                )
+              ])
+            ])
+          ]
+        )
       ])
     ])
   ])
@@ -49784,6 +50606,243 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Form.js":
+/*!******************************!*\
+  !*** ./resources/js/Form.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Errors = /*#__PURE__*/function () {
+  /**
+   * Create a new Errors instance.
+   */
+  function Errors() {
+    _classCallCheck(this, Errors);
+
+    this.errors = {};
+  }
+  /**
+   * Determine if an errors exists for the given field.
+   *
+   * @param {string} field
+   */
+
+
+  _createClass(Errors, [{
+    key: "has",
+    value: function has(field) {
+      return this.errors.hasOwnProperty(field);
+    }
+    /**
+     * Determine if we have any errors.
+     */
+
+  }, {
+    key: "any",
+    value: function any() {
+      return Object.keys(this.errors).length > 0;
+    }
+    /**
+     * Retrieve the error message for a field.
+     *
+     * @param {string} field
+     */
+
+  }, {
+    key: "get",
+    value: function get(field) {
+      if (this.errors[field]) {
+        return this.errors[field][0];
+      }
+    }
+    /**
+     * Record the new errors.
+     *
+     * @param {object} errors
+     */
+
+  }, {
+    key: "record",
+    value: function record(errors) {
+      this.errors = errors;
+    }
+    /**
+     * Clear one or all error fields.
+     *
+     * @param {string|null} field
+     */
+
+  }, {
+    key: "clear",
+    value: function clear(field) {
+      if (field) {
+        delete this.errors[field];
+        return;
+      }
+
+      this.errors = {};
+    }
+  }]);
+
+  return Errors;
+}();
+
+var Form = /*#__PURE__*/function () {
+  /**
+   * Create a new Form instance.
+   *
+   * @param {object} data
+   */
+  function Form(data) {
+    _classCallCheck(this, Form);
+
+    this.originalData = data;
+
+    for (var field in data) {
+      this[field] = data[field];
+    }
+
+    this.errors = new Errors();
+  }
+  /**
+   * Fetch all relevant data for the form.
+   */
+
+
+  _createClass(Form, [{
+    key: "data",
+    value: function data() {
+      var data = {};
+
+      for (var property in this.originalData) {
+        data[property] = this[property];
+      }
+
+      return data;
+    }
+    /**
+     * Reset the form fields.
+     */
+
+  }, {
+    key: "reset",
+    value: function reset() {
+      for (var field in this.originalData) {
+        this[field] = '';
+      }
+
+      this.errors.clear();
+    }
+    /**
+     * Send a POST request to the given URL.
+     * .
+     * @param {string} url
+     */
+
+  }, {
+    key: "post",
+    value: function post(url) {
+      return this.submit('post', url);
+    }
+    /**
+     * Send a PUT request to the given URL.
+     * .
+     * @param {string} url
+     */
+
+  }, {
+    key: "put",
+    value: function put(url) {
+      return this.submit('put', url);
+    }
+    /**
+     * Send a PATCH request to the given URL.
+     * .
+     * @param {string} url
+     */
+
+  }, {
+    key: "patch",
+    value: function patch(url) {
+      return this.submit('patch', url);
+    }
+    /**
+     * Send a DELETE request to the given URL.
+     * .
+     * @param {string} url
+     */
+
+  }, {
+    key: "delete",
+    value: function _delete(url) {
+      return this.submit('delete', url);
+    }
+    /**
+     * Submit the form.
+     *
+     * @param {string} requestType
+     * @param {string} url
+     */
+
+  }, {
+    key: "submit",
+    value: function submit(requestType, url) {
+      var _this = this;
+
+      return new Promise(function (resolve, reject) {
+        axios[requestType](url, _this.data()).then(function (response) {
+          _this.onSuccess(response.data);
+
+          resolve(response.data);
+        })["catch"](function (error) {
+          _this.onFail(error.response.data);
+
+          reject(error.response.data);
+        });
+      });
+    }
+    /**
+     * Handle a successful form submission.
+     *
+     * @param {object} data
+     */
+
+  }, {
+    key: "onSuccess",
+    value: function onSuccess(data) {
+      alert(data.message); // temporary
+
+      this.reset();
+    }
+    /**
+     * Handle a failed form submission.
+     *
+     * @param {object} errors
+     */
+
+  }, {
+    key: "onFail",
+    value: function onFail(errors) {
+      this.errors.record(errors);
+    }
+  }]);
+
+  return Form;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Form);
+
+/***/ }),
+
 /***/ "./resources/js/VueTranslation/Translation.js":
 /*!****************************************************!*\
   !*** ./resources/js/VueTranslation/Translation.js ***!
@@ -49846,7 +50905,7 @@ var translations = __webpack_require__(/*! ./translations */ "./resources/js/Vue
 /*! exports provided: ar, en, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"ar\":{\"messages\":{\"align\":\"right\",\"save\":\"حفظ\",\"Home\":\"الصفحه الرئسيه\",\"jobs\":\"الوظائف\",\"jobS\":\"ملخص الوظيفه\",\"saved\":\"حفظت\",\"Published on\":\"نشرت في\",\"vacancy\":\"عدد الوظائف\",\"Employment Status\":\"دوام\",\"Experience\":\"عدد سنوات الخبره\",\"Job Location\":\"الموقع\",\"Salary\":\"الراتب\",\"Gender\":\"الجنس\",\"years\":\"سنوات\",\"Categories\":\"التصنيفات\",\"Job info\":\"معلومات اضافيه\",\"number of apps\":\"عدد المتقدمين لهده الوظيفه\",\"Share\":\"شارك\",\"Job Description\":\"وصف الوظيفه\",\"Responsibilities\":\"المسؤليات\",\"Education + Experience\":\"الخبره + التعليم\",\"Other Benifits\":\"المميزات\",\"you created this job\":\"لا يمكنك التقديم علي هده الوظيفه فأنت من نشرها\",\"full time\":\"دوام كامل\",\"part time\":\"دوام جزئي\",\"apply\":\"تقدم علي هده الوظيفه\",\"why are you suitable for this job\":\"لما انت مناسب لهده الوظيفه؟\",\"no file\":\"لم يتم اختيار اي ملفات\",\"register to apply for jobs\":\"سجل لكي تقدم علي وظائف\",\"you applyed to this job\":\"لقد تقدمت لهده الوظيفه من قبل\",\"Post a job\":\"ادخل وظيفه\",\"Email\":\"ايميل الشركه\",\"Job title\":\"المسمي الوظيفي\",\"region\":\"المدينه\",\"job category\":\"اختر التصنيف\",\"Choose job category\":\"اختر الجنس\",\"male\":\"ذكر\",\"female\":\"انثي\",\"all\":\"ذكر او اناث\",\"Company Details\":\"تفاصيل الشركه\",\"Company logo\":\"شعار الشركه\",\"Company name\":\"اسم الشركه\",\"Website\":\"موقع الشركه\",\"linkedin\":\"لينكدأن\",\"Add\":\"اضف\",\"my cv\":\"تعديل سيرتي الداتيه\",\"Update\":\"تعديل\",\"Activity\":\"معلومات اضافيه\",\" posted jobs\":\"عدد الزظائف التي نشرتها\",\"applyed to jobs\":\"عدد الوظائف التي تقمت عليها\",\"Social Media\":\"حساباتي علي مواقع التواصل الاجتماعي\",\"Name\":\"الاسم\",\"Mobile\":\"الهاتف\",\"based_location\":\"البلد\",\"Facebook\":\"فيس بوك\",\"Twitter\":\"نويتر\",\"if you uploaded your cv it will show up here\":\"عندما تقوم بتحميل سيرتك الداتيه ستظهر هنا\",\"Download my CV\":\"تحميل السيره الداتيه\",\"Number of Saved Jobs\":\"عدد الوظائف المحفوظه\",\"We have no records of this search\":\"لا يوجد نتائج بهدا البحث حتي الان\",\"Number of Searches\":\"عدد النتائج\",\"Update Profile Picture\":\"تعديل الصوره الداتيه\",\"Post a Job\":\"اضف وظيفه\",\"Languages\":\"اللغات\",\" Browse Jobs by\":\" تصفح الوظائف بناء علي\",\"your job title\":\"المسمي الوظيفي خاصتك\",\"update your profile\":\"تعديل حسابك الشخصي\",\"contact\":\"تواصل\",\"Log in\":\"تسجيل الدخول\",\"City\":\"المدن\",\"Logout\":\"تسجيل الخروج\",\"Category\":\"التصنيفات\",\"profile\":\"الحساب الشخصي\",\"update image\":\"تعديل الصوره\",\"saved jobs\":\"الوظائف المحفوظه\",\"Pages\":\"صفحات الموقع\",\"EmailP\":\"الايميل\",\"Password\":\"الرقم السري\",\"Registration\":\"حساب جديد\",\"Confirm Password\":\"تأكيد الرقم السري\",\"Find your dream job.\":\"أحصل علي وظيفه احلامك.\",\"The automated\":\"أعلن عن وظائفك الشاغرة ووظّف أفضل الكفاءات والمهارات التي تحتاجها للعمل\\r\\nدون التقيد بمنطقة جغرافية محددة وبأقصي سرعه وسهوله.\",\"Job title or keywords\":\"المسمي الوظيفي\",\"Where?\":\"أين؟\",\"perform  search\":\"بـــــــــــــــــــــــحث\",\"Popular search\":\"الاعلي بحثا\",\"Browse from over\":\"تصفح اكثر من \",\"Jobs\":\"الوظائف\",\"Want to hire perfect person?\":\"تريد توظيف الشخص المناسب؟\",\"Browse top jobs\":\"تصفح الوظائف الاعلي رواجا\",\"Apply Now\":\"تصفح الوظيفه\",\"About Us\":\"عنا\",\"Message\":\"الرساله\",\"Subject\":\"الموضوع\",\"Send\":\"أرسل\",\"Buttonwood, California.\":\"بوتون هود, كاليفوزنيا.\",\"Rosemead, CA 91770\":\"روس ميد, 91770\",\"Mon to Fri 9am to 6pm\":\"مفتوح من 9 صباحا الي 6 مساء\",\"Get in Touch\":\"تواصل معنا\",\"Send us your query anytime!\":\"أرسل لنا أسلتلك في أي وقت!\",\"We have no records of this yet\":\"ليس لدينا بيانات  هنا حاليا\",\"Top_categories\":\"التصنيفات\",\"For employer\":\"للموظفين\",\"Blog\":\"المدونه\",\"Company\":\"الشركه\",\"Browse Job\":\"تصفح الوظائف\",\"Privacy policy\":\"السياسات\",\"Terms\":\"الشروط\",\"Help and support\":\"المساعده والدعم\",\"Join us\":\"التحق بفريقنا\",\"Main Pages\":\"الصفحات الرئيسيه\",\"whatis@what.com\":\"مجرد ايميل\",\"Are you\":\"هل انت\",\"hell\":\"جحيم\",\"hell on earth\":\" ع الارض جحيم\"}},\"en\":{\"auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"messages\":{\"align\":\"left\",\"save\":\"save\",\"Home\":\"Home\",\"jobs\":\"Jobs\",\"jobS\":\"Job Summary\",\"saved\":\"saved\",\"Published on\":\"Published on\",\"vacancy\":\"vacancy\",\"Employment Status\":\"Employment Status\",\"Experience\":\"Experience\",\"Job Location\":\"Job Location\",\"Salary\":\"Salary\",\"Gender\":\"Gender\",\"years\":\"years\",\"Categories\":\"Categories\",\"Job info\":\"Job info\",\"number of apps\":\"Number of Applications\",\"Share\":\"Share\",\"Job Description\":\"Job Description\",\"Responsibilities\":\"Responsibilities\",\"Education + Experience\":\"Education + Experience\",\"Other Benifits\":\"Other Benifits\",\"you created this job\":\"you created this job you cannot apply for it\",\"apply\":\"apply\",\"why are you suitable for this job\":\"why are you suitable for this job?\",\"no file\":\"no files choosen\",\"register to apply for jobs\":\"register to apply for jobs\",\"you applyed to this job\":\"you applyed to this job\",\"Post a job\":\" Post a job\",\"Email\":\"Email\",\"Job title\":\"Job title\",\"location\":\"location\",\"region\":\"region\",\"full time\":\"full time\",\"part time\":\"part time\",\"job category\":\"Employment Status\",\"Choose job category\":\"choose gender\",\"male\":\"male\",\"female\":\"female\",\"all\":\"all\",\"Company Details\":\"Company Details\",\"Company logo\":\"Company logo\",\"Company name\":\"Company name\",\"Website\":\"Website\",\"linkedin\":\"linkedin\",\"Add\":\"Add\",\"my cv\":\"update my cv\",\"Update\":\"Update\",\"Activity\":\"Activity\",\" posted jobs\":\" posted jobs\",\"applyed to jobs\":\"applyed to jobs\",\"Social Media\":\"Social Media\",\"Name\":\"Name\",\"Mobile\":\"Mobile\",\"based_location\":\"location\",\"Facebook\":\"Facebook\",\"Twitter\":\"Twitter\",\"Linkedin\":\"Linkedin\",\"if you uploaded your cv it will show up here\":\"if you uploaded your cv it will show up here\",\"Download my CV\":\"Download my CV\",\"Number of Saved Jobs\":\"Number of Saved Jobs\",\"We have no records of this search\":\"We have no records of this search\",\"Number of Searches\":\"Number of Searches\",\"Post a Job\":\"Post a Job\",\"Languages\":\"Languages\",\" Browse Jobs by\":\" Browse Jobs by\",\"your job title\":\"your job title\",\"update your profile\":\"update your profile\",\"contact\":\"Contact\",\"Log in\":\"Log in\",\"City\":\"City\",\"Logout\":\"Logout\",\"Category\":\"Category\",\"profile\":\"profile\",\"update image\":\"update image\",\"saved jobs\":\"saved jobs\",\"Pages\":\"Pages\",\"Browse Job\":\"Browse Job\",\"Update Profile Picture\":\"Update Profile Picture\",\"EmailP\":\"Email\",\"Password\":\"Password\",\"Registration\":\"Registration\",\"Confirm Password\":\"Confirm Password\",\"Find your dream job.\":\"Find your dream job.\",\"The automated\":\"The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.\",\"Job title or keywords\":\"Job title or keywords\",\"Where?\":\"Where?\",\"perform  search\":\"perform  search\",\"Popular search\":\"Popular Searches\",\"Browse from over\":\"Browse from over\",\"Jobs\":\"Jobs\",\"Want to hire perfect person?\":\"Want to hire perfect person?\",\"Browse top jobs\":\"Browse top jobs\",\"Apply Now\":\"Browse\",\"About Us\":\"About Us\",\"Message\":\"Message\",\"Subject\":\"Subject\",\"Send\":\"Send\",\"Buttonwood, California.\":\"Buttonwood, California.\",\"Rosemead, CA 91770\":\"Rosemead, CA 91770\",\"Mon to Fri 9am to 6pm\":\"Mon to Fri 9am to 6pm\",\"Get in Touch\":\"Get in Touch\",\"Send us your query anytime!\":\"Send us your query anytime!\",\"We have no records of this yet\":\"We have no records of this yet\",\"Top_categories\":\"Top categories\",\"For employer\":\"For employer\",\"Blog\":\"Blog\",\"Company\":\"Company\",\"Privacy policy\":\"Privacy policy\",\"Terms\":\"Terms\",\"Help and support\":\"Help and support\",\"Join us\":\"Join us\",\"Main Pages\":\"Main Pages\",\"whatis@what.com\":\"whatis@what.com\",\"Are you\":\"Are you\",\"hell\":\"hell\",\"hell on earth\":\" hell on earth\"},\"pagination\":{\"previous\":\"&laquo; Previous\",\"next\":\"Next &raquo;\"},\"passwords\":{\"reset\":\"Your password has been reset!\",\"sent\":\"We have emailed your password reset link!\",\"throttled\":\"Please wait before retrying.\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that email address.\"},\"validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"numeric\":\"The :attribute must be between :min and :max.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"string\":\"The :attribute must be between :min and :max characters.\",\"array\":\"The :attribute must have between :min and :max items.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values.\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"numeric\":\"The :attribute must be greater than :value.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"string\":\"The :attribute must be greater than :value characters.\",\"array\":\"The :attribute must have more than :value items.\"},\"gte\":{\"numeric\":\"The :attribute must be greater than or equal :value.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"string\":\"The :attribute must be greater than or equal :value characters.\",\"array\":\"The :attribute must have :value items or more.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"numeric\":\"The :attribute must be less than :value.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"string\":\"The :attribute must be less than :value characters.\",\"array\":\"The :attribute must have less than :value items.\"},\"lte\":{\"numeric\":\"The :attribute must be less than or equal :value.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"string\":\"The :attribute must be less than or equal :value characters.\",\"array\":\"The :attribute must not have more than :value items.\"},\"max\":{\"numeric\":\"The :attribute may not be greater than :max.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"string\":\"The :attribute may not be greater than :max characters.\",\"array\":\"The :attribute may not have more than :max items.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"numeric\":\"The :attribute must be at least :min.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"string\":\"The :attribute must be at least :min characters.\",\"array\":\"The :attribute must have at least :min items.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"password\":\"The password is incorrect.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"numeric\":\"The :attribute must be :size.\",\"file\":\"The :attribute must be :size kilobytes.\",\"string\":\"The :attribute must be :size characters.\",\"array\":\"The :attribute must contain :size items.\"},\"starts_with\":\"The :attribute must start with one of the following: :values.\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"attributes\":[]}}}");
+module.exports = JSON.parse("{\"ar\":{\"messages\":{\"align\":\"right\",\"save\":\"حفظ\",\"Home\":\"الصفحه الرئسيه\",\"jobs\":\"الوظائف\",\"jobS\":\"ملخص الوظيفه\",\"saved\":\"حفظت\",\"Published on\":\"نشرت في\",\"vacancy\":\"عدد الوظائف\",\"Employment Status\":\"دوام\",\"Experience\":\"عدد سنوات الخبره\",\"Job Location\":\"الموقع\",\"Salary\":\"الراتب\",\"Gender\":\"الجنس\",\"years\":\"سنوات\",\"Categories\":\"التصنيفات\",\"Job info\":\"معلومات اضافيه\",\"number of apps\":\"عدد المتقدمين لهده الوظيفه\",\"Share\":\"شارك\",\"Job Description\":\"وصف الوظيفه\",\"Responsibilities\":\"المسؤليات\",\"Education + Experience\":\"الخبره + التعليم\",\"Other Benifits\":\"المميزات\",\"you created this job\":\"لا يمكنك التقديم علي هده الوظيفه فأنت من نشرها\",\"full time\":\"دوام كامل\",\"part time\":\"دوام جزئي\",\"apply\":\"تقدم علي هده الوظيفه\",\"why are you suitable for this job\":\"لما انت مناسب لهده الوظيفه؟\",\"no file\":\"لم يتم اختيار اي ملفات\",\"register to apply for jobs\":\"سجل لكي تقدم علي وظائف\",\"you applyed to this job\":\"لقد تقدمت لهده الوظيفه من قبل\",\"Post a job\":\"ادخل وظيفه\",\"Email\":\"ايميل الشركه\",\"Job title\":\"المسمي الوظيفي\",\"region\":\"المدينه\",\"job category\":\"اختر التصنيف\",\"Choose job category\":\"اختر الجنس\",\"male\":\"ذكر\",\"female\":\"انثي\",\"all\":\"ذكر او اناث\",\"Company Details\":\"تفاصيل الشركه\",\"Company logo\":\"شعار الشركه\",\"Company name\":\"اسم الشركه\",\"Website\":\"موقع الشركه\",\"linkedin\":\"لينكدأن\",\"Add\":\"اضف\",\"my cv\":\"تعديل سيرتي الداتيه\",\"Update\":\"تعديل\",\"Activity\":\"معلومات اضافيه\",\" posted jobs\":\"عدد الزظائف التي نشرتها\",\"applyed to jobs\":\"عدد الوظائف التي تقمت عليها\",\"Social Media\":\"حساباتي علي مواقع التواصل الاجتماعي\",\"Name\":\"الاسم\",\"Mobile\":\"الهاتف\",\"based_location\":\"البلد\",\"Facebook\":\"فيس بوك\",\"Twitter\":\"نويتر\",\"if you uploaded your cv it will show up here\":\"عندما تقوم بتحميل سيرتك الداتيه ستظهر هنا\",\"Download my CV\":\"تحميل السيره الداتيه\",\"Number of Saved Jobs\":\"عدد الوظائف المحفوظه\",\"We have no records of this search\":\"لا يوجد نتائج بهدا البحث حتي الان\",\"Number of Searches\":\"عدد النتائج\",\"Update Profile Picture\":\"تعديل الصوره الداتيه\",\"Post a Job\":\"اضف وظيفه\",\"Languages\":\"اللغات\",\" Browse Jobs by\":\" تصفح الوظائف بناء علي\",\"your job title\":\"المسمي الوظيفي خاصتك\",\"update your profile\":\"تعديل حسابك الشخصي\",\"contact\":\"تواصل\",\"Log in\":\"تسجيل الدخول\",\"City\":\"المدن\",\"Logout\":\"تسجيل الخروج\",\"Category\":\"التصنيفات\",\"profile\":\"الحساب الشخصي\",\"update image\":\"تعديل الصوره\",\"saved jobs\":\"الوظائف المحفوظه\",\"Pages\":\"صفحات الموقع\",\"EmailP\":\"الايميل\",\"Password\":\"الرقم السري\",\"Registration\":\"حساب جديد\",\"Confirm Password\":\"تأكيد الرقم السري\",\"Find your dream job.\":\"أحصل علي وظيفه احلامك.\",\"The automated\":\"أعلن عن وظائفك الشاغرة ووظّف أفضل الكفاءات والمهارات التي تحتاجها للعمل\\r\\nدون التقيد بمنطقة جغرافية محددة وبأقصي سرعه وسهوله.\",\"Job title or keywords\":\"المسمي الوظيفي\",\"Where?\":\"أين؟\",\"perform  search\":\"بـــــــــــــــــــــــحث\",\"Popular search\":\"الاعلي بحثا\",\"Browse from over\":\"تصفح اكثر من \",\"Jobs\":\"الوظائف\",\"Want to hire perfect person?\":\"تريد توظيف الشخص المناسب؟\",\"Browse top jobs\":\"تصفح الوظائف الاعلي رواجا\",\"Apply Now\":\"تصفح الوظيفه\",\"About Us\":\"عنا\",\"Message\":\"الرساله\",\"Subject\":\"الموضوع\",\"Send\":\"أرسل\",\"Buttonwood, California.\":\"بوتون هود, كاليفوزنيا.\",\"Rosemead, CA 91770\":\"روس ميد, 91770\",\"Mon to Fri 9am to 6pm\":\"مفتوح من 9 صباحا الي 6 مساء\",\"Get in Touch\":\"تواصل معنا\",\"Send us your query anytime!\":\"أرسل لنا أسلتلك في أي وقت!\",\"We have no records of this yet\":\"ليس لدينا بيانات  هنا حاليا\",\"Top_categories\":\"التصنيفات\",\"For employer\":\"للموظفين\",\"Blog\":\"المدونه\",\"Company\":\"الشركه\",\"Browse Job\":\"تصفح الوظائف\",\"Privacy policy\":\"السياسات\",\"Terms\":\"الشروط\",\"Help and support\":\"المساعده والدعم\",\"Join us\":\"التحق بفريقنا\",\"Main Pages\":\"الصفحات الرئيسيه\",\"Type\":\"النوع\",\"Jobseeker\":\"باحث عن وظيفه\",\"Desc\":\"الوصف\"}},\"en\":{\"auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"messages\":{\"align\":\"left\",\"save\":\"save\",\"Home\":\"Home\",\"jobs\":\"Jobs\",\"jobS\":\"Job Summary\",\"saved\":\"saved\",\"Published on\":\"Published on\",\"vacancy\":\"vacancy\",\"Employment Status\":\"Employment Status\",\"Experience\":\"Experience\",\"Job Location\":\"Job Location\",\"Salary\":\"Salary\",\"Gender\":\"Gender\",\"years\":\"years\",\"Categories\":\"Categories\",\"Job info\":\"Job info\",\"number of apps\":\"Number of Applications\",\"Share\":\"Share\",\"Job Description\":\"Job Description\",\"Responsibilities\":\"Responsibilities\",\"Education + Experience\":\"Education + Experience\",\"Other Benifits\":\"Other Benifits\",\"you created this job\":\"you created this job you cannot apply for it\",\"apply\":\"apply\",\"why are you suitable for this job\":\"why are you suitable for this job?\",\"no file\":\"no files choosen\",\"register to apply for jobs\":\"register to apply for jobs\",\"you applyed to this job\":\"you applyed to this job\",\"Post a job\":\" Post a job\",\"Email\":\"Email\",\"Job title\":\"Job title\",\"location\":\"location\",\"region\":\"region\",\"full time\":\"full time\",\"part time\":\"part time\",\"job category\":\"Employment Status\",\"Choose job category\":\"choose gender\",\"male\":\"male\",\"female\":\"female\",\"all\":\"all\",\"Company Details\":\"Company Details\",\"Company logo\":\"Company logo\",\"Company name\":\"Company name\",\"Website\":\"Website\",\"linkedin\":\"linkedin\",\"Add\":\"Add\",\"my cv\":\"update my cv\",\"Update\":\"Update\",\"Activity\":\"Activity\",\" posted jobs\":\" posted jobs\",\"applyed to jobs\":\"applyed to jobs\",\"Social Media\":\"Social Media\",\"Name\":\"Name\",\"Mobile\":\"Mobile\",\"based_location\":\"location\",\"Facebook\":\"Facebook\",\"Twitter\":\"Twitter\",\"Linkedin\":\"Linkedin\",\"if you uploaded your cv it will show up here\":\"if you uploaded your cv it will show up here\",\"Download my CV\":\"Download my CV\",\"Number of Saved Jobs\":\"Number of Saved Jobs\",\"We have no records of this search\":\"We have no records of this search\",\"Number of Searches\":\"Number of Searches\",\"Post a Job\":\"Post a Job\",\"Languages\":\"Languages\",\" Browse Jobs by\":\" Browse Jobs by\",\"your job title\":\"your job title\",\"update your profile\":\"update your profile\",\"contact\":\"Contact\",\"Log in\":\"Log in\",\"City\":\"City\",\"Logout\":\"Logout\",\"Category\":\"Category\",\"profile\":\"profile\",\"update image\":\"update image\",\"saved jobs\":\"saved jobs\",\"Pages\":\"Pages\",\"Browse Job\":\"Browse Job\",\"Update Profile Picture\":\"Update Profile Picture\",\"EmailP\":\"Email\",\"Password\":\"Password\",\"Registration\":\"Registration\",\"Confirm Password\":\"Confirm Password\",\"Find your dream job.\":\"Find your dream job.\",\"The automated\":\"The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes. Placeholder text commonly used.\",\"Job title or keywords\":\"Job title or keywords\",\"Where?\":\"Where?\",\"perform  search\":\"perform  search\",\"Popular search\":\"Popular Searches\",\"Browse from over\":\"Browse from over\",\"Jobs\":\"Jobs\",\"Want to hire perfect person?\":\"Want to hire perfect person?\",\"Browse top jobs\":\"Browse top jobs\",\"Apply Now\":\"Browse\",\"About Us\":\"About Us\",\"Message\":\"Message\",\"Subject\":\"Subject\",\"Send\":\"Send\",\"Buttonwood, California.\":\"Buttonwood, California.\",\"Rosemead, CA 91770\":\"Rosemead, CA 91770\",\"Mon to Fri 9am to 6pm\":\"Mon to Fri 9am to 6pm\",\"Get in Touch\":\"Get in Touch\",\"Send us your query anytime!\":\"Send us your query anytime!\",\"We have no records of this yet\":\"We have no records of this yet\",\"Top_categories\":\"Top categories\",\"For employer\":\"For employer\",\"Blog\":\"Blog\",\"Company\":\"Company\",\"Privacy policy\":\"Privacy policy\",\"Terms\":\"Terms\",\"Help and support\":\"Help and support\",\"Join us\":\"Join us\",\"Main Pages\":\"Main Pages\",\"Type\":\"Type\",\"Jobseeker\":\"Jobseeker\",\"Desc\":\"Description\"},\"pagination\":{\"previous\":\"&laquo; Previous\",\"next\":\"Next &raquo;\"},\"passwords\":{\"reset\":\"Your password has been reset!\",\"sent\":\"We have emailed your password reset link!\",\"throttled\":\"Please wait before retrying.\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that email address.\"},\"validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"numeric\":\"The :attribute must be between :min and :max.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"string\":\"The :attribute must be between :min and :max characters.\",\"array\":\"The :attribute must have between :min and :max items.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values.\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"numeric\":\"The :attribute must be greater than :value.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"string\":\"The :attribute must be greater than :value characters.\",\"array\":\"The :attribute must have more than :value items.\"},\"gte\":{\"numeric\":\"The :attribute must be greater than or equal :value.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"string\":\"The :attribute must be greater than or equal :value characters.\",\"array\":\"The :attribute must have :value items or more.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"numeric\":\"The :attribute must be less than :value.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"string\":\"The :attribute must be less than :value characters.\",\"array\":\"The :attribute must have less than :value items.\"},\"lte\":{\"numeric\":\"The :attribute must be less than or equal :value.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"string\":\"The :attribute must be less than or equal :value characters.\",\"array\":\"The :attribute must not have more than :value items.\"},\"max\":{\"numeric\":\"The :attribute may not be greater than :max.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"string\":\"The :attribute may not be greater than :max characters.\",\"array\":\"The :attribute may not have more than :max items.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"numeric\":\"The :attribute must be at least :min.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"string\":\"The :attribute must be at least :min characters.\",\"array\":\"The :attribute must have at least :min items.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"password\":\"The password is incorrect.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"numeric\":\"The :attribute must be :size.\",\"file\":\"The :attribute must be :size kilobytes.\",\"string\":\"The :attribute must be :size characters.\",\"array\":\"The :attribute must contain :size items.\"},\"starts_with\":\"The :attribute must start with one of the following: :values.\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"attributes\":[]}}}");
 
 /***/ }),
 
@@ -49854,9 +50913,12 @@ module.exports = JSON.parse("{\"ar\":{\"messages\":{\"align\":\"right\",\"save\"
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form */ "./resources/js/Form.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49864,30 +50926,11 @@ module.exports = JSON.parse("{\"ar\":{\"messages\":{\"align\":\"right\",\"save\"
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //window.Vue = require('trans.js');
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-//window.Vue = require('vue');
-// If you want to add to window object
-//window.tranlate=require('./VueTranslation/Translation').default.translate;
-// If you want to use it in your vue components
-
+window.Form = _Form__WEBPACK_IMPORTED_MODULE_0__["default"];
 Vue.prototype.translate = __webpack_require__(/*! ./VueTranslation/Translation */ "./resources/js/VueTranslation/Translation.js")["default"].translate;
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+Vue.component('before-home-component', __webpack_require__(/*! ./components/BeforeHomeComponent.vue */ "./resources/js/components/BeforeHomeComponent.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });
@@ -49939,18 +50982,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
+/***/ "./resources/js/components/BeforeHomeComponent.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/BeforeHomeComponent.vue ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true& */ "./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true&");
+/* harmony import */ var _BeforeHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BeforeHomeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& */ "./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -49958,51 +51003,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _BeforeHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "4c09bff8",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
+component.options.__file = "resources/js/components/BeforeHomeComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/***/ "./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BeforeHomeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*************************************************************************************/
+/***/ "./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=style&index=0&id=4c09bff8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_style_index_0_id_4c09bff8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true& ***!
+  \****************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BeforeHomeComponent.vue?vue&type=template&id=4c09bff8&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BeforeHomeComponent_vue_vue_type_template_id_4c09bff8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -168,9 +168,11 @@ return [
 
     //beforehome
 
-    "whatis@what.com" => "whatis@what.com",
-    "Are you" => "Are you",
-    "hell" => "hell",
-    "hell on earth" => " hell on earth",
+    "Type" => "Type",
+
+   
+   "Desc" => "Description",
+   "Enter your cred" => "Enter more data to get the best results"
+
 
 ];
