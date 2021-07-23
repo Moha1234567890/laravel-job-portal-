@@ -62,7 +62,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 });
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl' ], 'namespace' => 'users',], function() {
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl', 'CheckForMoreInfo' ], 'namespace' => 'users',], function() {
 
     Route::group(['prefix' => 'user'], function() {
 
