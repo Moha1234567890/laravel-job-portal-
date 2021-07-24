@@ -1,7 +1,7 @@
 
 
 <p align="center">
-#JOBHUB: An Amazing Job Portal  
+<h1 JOBHUB: An Amazing Job Portal</h1>  
 </p>
 
 ## About Laravel
