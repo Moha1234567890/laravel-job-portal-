@@ -172,7 +172,10 @@ return [
 
    
    "Desc" => "Description",
-   "Enter your cred" => "Enter more data to get the best results"
+   "Enter your cred" => "The purpose of this page is to specfy wether you want your profile to be a jobseeker of company. if you 
+   want it to be a company specfiy so and if not you can skip this page and it will be a jobseeker and you will not be able to change this again",
+   "Skip" => "SKIP NOW", 
+
 
 
 ];

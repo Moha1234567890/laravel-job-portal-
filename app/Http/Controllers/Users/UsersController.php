@@ -45,7 +45,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         if($user) {
-            $updateuser = $user->update(
+            $user = $user->update(
 
                 $request->all()
 
@@ -57,6 +57,8 @@ class UsersController extends Controller
         else {
              return redirect()->back('home');
         }
+
+        dd($id);
 
 
 

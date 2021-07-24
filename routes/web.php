@@ -62,7 +62,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 });
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl', 'CheckForMoreInfo' ], 'namespace' => 'users',], function() {
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl'], 'namespace' => 'users',], function() {
 
     Route::group(['prefix' => 'user'], function() {
 
@@ -74,8 +74,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image');
 
         Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
-        Route::get('more-info', 'UsersController@createMoreInfo')->name('moreinfo');
-        Route::post('more-info//{id}', 'UsersController@storeMoreInfo')->name('store.more.info');
+        Route::get('more-info', 'UsersController@createMoreInfo')->name('moreinfo')->middleware('CheckForMoreInfo');
+        Route::post('more-info//{id}', 'UsersController@storeMoreInfo')->name('store.more.info')->middleware('CheckForMoreInfo');
 
 
     });

@@ -13,8 +13,8 @@
 
                     <ul class="list-unstyled pl-3 mb-0" align="{{__('messages.align')}}">
 
-                        <li class="mb-2"><strong class="text-black ">{{__('messages.Enter your cred')}}</strong></li>
-
+                        <li class="mb-2"><strong class="text-black">{{__('messages.Enter your cred')}}</strong></li>
+                   
                     </ul>
 
                 </div>
@@ -65,7 +65,7 @@
                             <br><br><br>
                             <div class="form-group" align="{{__('messages.align')}}">
                                 <div class="col-xs-6">
-                                    <label  ><h4>{{__('messages.Desc')}}</h4></label>
+                                    <label  ><h4>{{__('messages.Desc')}}: </h4></label>
                                     <textarea name="user_desc" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="12"></textarea>
                                 
                                 </div>
@@ -74,9 +74,14 @@
                             <br>
 
 
-                            <div class="form-group" align="{{__('messages.align')}}">
+                            <div class="form-group d-inline" align="{{__('messages.align')}}">
                                 <button class="btn btn-success"  type="submit">{{__('messages.Add')}}</button>
                             </div>
+                            <div class="form-group" align="{{__('messages.align')}}">
+                                <button style="float: right; top: -58px; color:#FFFFFF" class="btn btn-success"  type="submit">{{__('messages.Skip')}}</button>
+                            </div>
+
+                            
                         </form> 
                     
 

@@ -14,38 +14,47 @@
                     <div class="row">
                         <div class="col-md-3 header-margin"><!--left col-->
 
-                            <div class="card" style="margin-bottom: 30px; ">
-
-                                <form class="form" action="{{route('profile.update.cv', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="form-group text-center">
-
-                                        <img src="{{asset('storage/'.$user->image)}}" class="w-100 h-70">
+                                <div class="card" style="margin-bottom: 30px; ">
 
 
+                                
 
-                                    </div>
+                                        <form class="form" action="{{route('profile.update.cv', Auth::user()->id)}}" method="post" id="registrationForm" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group text-center">
 
-                                    <div class="form-group text-center" >
-
-                                        <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
+                                                <img src="{{asset('storage/'.$user->image)}}" class="w-100 h-70">
 
 
 
-                                        <input type="file"  class="text-center center-block file-upload d-block mb-3 margin-f-all" name="cv">
-                                        @error('cv')
-                                        <span class="text-danger">{{$message}} </span>
-                                        @enderror
+                                            </div>
+                                            @if($user->type == "Company")
+                                            
+                                            @else 
 
 
-                                    </div>
+                                                <div class="form-group text-center" >
 
-                                    <div class="form-group">
-                                        <button class="btn btn-lg btn-success text-center margin-f-all" type="submit">{{__('messages.Update')}}</button>
-                                    </div>
+                                                    <label for="first_name"><h4>{{__('messages.my cv')}}</h4></label>
 
-                                </form>
-                            </div>
+
+
+                                                    <input type="file"  class="text-center center-block file-upload d-block mb-3 margin-f-all" name="cv">
+                                                    @error('cv')
+                                                    <span class="text-danger">{{$message}} </span>
+                                                    @enderror
+
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button class="btn btn-lg btn-success text-center margin-f-all" type="submit">{{__('messages.Update')}}</button>
+                                                </div>
+                                            @endif
+
+                                        </form>
+
+                                </div>
 
 
 
@@ -191,20 +200,38 @@
 
                                             </div>
                                         </div>
+                                        {{-- <div class="form-group" align="{{__('messages.align')}}">
+                                            <div class="col-xs-6">
+                                                <label  ><h4>{{__('messages.Desc')}}: </h4></label>
+                                                <textarea value="" name="user_desc" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="5">{{$user->user_desc}}</textarea>
+                                            
+                                            </div>
+                                        </div> --}}
                                         <div class="form-group" align="{{__('messages.align')}}">
 
-                                            @if(!$user->cv == null)
+                                            @if($user->type == "Company") 
 
-                                                <div class="col-xs-6">
-                                                   <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>{{__('messages.Download my CV')}}</a>
-                                                </div>
                                             @else
-                                                <div class="col-xs-6">
-                                                    <h3>{{__('messages.if you uploaded your cv it will show up here')}}</h3>
-                                                </div>
+
+                                                @if(!$user->cv == null)
+
+                                                    <div class="col-xs-6">
+                                                    <a class="btn btn-lg btn-success" href="{{asset('storage/app/public/'.$user->cv)}}" download>{{__('messages.Download my CV')}}</a>
+                                                    </div>
+                                                @else
+                                                    @if($user->type == "Company") 
+                                                
+                                                    @else
+                                                    <div class="col-xs-6">
+                                                        <h3>{{__('messages.if you uploaded your cv it will show up here')}}</h3>
+                                                    </div>
+
+                                                    @endif
+                                                @endif
                                             @endif
 
                                         </div>
+                                   
 
 
                                         <div class="form-group" align="{{__('messages.align')}}">

@@ -23,10 +23,10 @@ class CheckForMoreInfo
 
         if($request->url('user/more-info') ) {
            // $user = ($request->route('more-info'));
-          if(!$user->user_desc == Null OR !$user->type == Null) {
+          if(!$user->user_desc == Null OR !$user->type == Null OR !$user->user_desc == '' OR !$user->type == '') {
             return redirect()->route('home');
 
-          }
+          } 
 
           
 
