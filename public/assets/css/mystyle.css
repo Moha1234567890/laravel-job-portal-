@@ -171,3 +171,23 @@ footer {
     width: 300px;
 }
 
+
+
+/* prfoile pic */
+
+
+.pic-profile {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+}
+
+.pull-above {
+    
+    padding-right: 833px;
+    padding-top: 46px;
+
+}

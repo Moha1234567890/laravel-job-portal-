@@ -77,6 +77,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::get('more-info', 'UsersController@createMoreInfo')->name('moreinfo')->middleware('CheckForMoreInfo');
         Route::post('more-info//{id}', 'UsersController@storeMoreInfo')->name('store.more.info')->middleware('CheckForMoreInfo');
 
+        Route::get('profile/{id}', 'UsersController@profileForPublic')->name('profile.for.public');
+
+
 
     });
 

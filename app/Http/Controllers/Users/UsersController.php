@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\SavedJob;
 use App\Models\Email;
@@ -32,6 +33,7 @@ class UsersController extends Controller
 
         $user = User::findOrFail($id);
 
+
         $applyedJobs = Email::select('from_user', Auth::user()->email)->count();
 
         $createdJobs = Job::select($id)->where('user_id', $id)->count();
@@ -45,7 +47,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         if($user) {
-            $user = $user->update(
+            $updateuser = $user->update(
 
                 $request->all()
 
@@ -58,7 +60,7 @@ class UsersController extends Controller
              return redirect()->back('home');
         }
 
-        dd($id);
+       // return "wtf";
 
 
 
@@ -162,6 +164,28 @@ class UsersController extends Controller
     ]);
 
    return redirect()->route('home');
+
+    }
+
+    public function profileForPublic($id) {
+        $user = User::findOrFail($id);
+        $companyJobs =  DB::table('users')
+        ->join('jobs', 'users.id', '=', 'jobs.user_id')
+        ->select('jobs.status','jobs.jobcategory', DB::raw("count(jobs.jobcategory) as count"))
+        ->where(
+            'users.type', '=', 'Company',
+            
+            
+        )->orWhere('users.id','=', $id)
+        ->groupBy('jobs.jobcategory')
+
+
+
+        ->get();
+
+        // return $companyJobs;
+
+        return view('users.publicProfile', compact('user'));
 
     }
 

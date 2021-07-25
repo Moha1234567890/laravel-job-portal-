@@ -188,7 +188,7 @@
                                                 <label for="email"><h4>{{__('messages.linkedin')}}</h4></label>
                                                 <input type="text" value="{{$user->linkedin}}" name="linkedin" class="form-control form-control-lg" id="location" placeholder="{{__('messages.linkedin')}}" title="enter a location">
 
-                                            </div>
+                                          
                                             </div>
                                         </div>
 
@@ -200,13 +200,38 @@
 
                                             </div>
                                         </div>
-                                        {{-- <div class="form-group" align="{{__('messages.align')}}">
+                                        <div class="form-group pull-{{__('messages.align')}}" align="{{__('messages.align')}}">
+                                            <label for="exampleFormControlSelect1">{{__('messages.Type')}}: </label>
+                                            <br>
+                    
+                    
+                                            <select class="form-control" name="type" align="{{__('messages.align')}}" >
+                    
+                                                <optgroup label="Choose type">
+                                                    @if($user->type == "Jobseeker")
+                                                        <option value="Jobseeker" selected="selected">Jobseeker</option>
+                                                        <option value="Company" class="pull-{{__('messages.align')}}">Company</option>
+
+                                                    @else
+                                                        <option value="Jobseeker">Jobseeker</option>
+
+                                                        <option value="Company" selected="selected" class="pull-{{__('messages.align')}}">Company</option>
+                                                    @endif
+                                                </optgroup>
+                    
+                                            </select>
+                                            <br>
+               
+                                        </div>
+                                        <br>
+                                        <br><br><br>
+                                        <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-6">
                                                 <label  ><h4>{{__('messages.Desc')}}: </h4></label>
                                                 <textarea value="" name="user_desc" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="5">{{$user->user_desc}}</textarea>
                                             
                                             </div>
-                                        </div> --}}
+                                        </div>
                                         <div class="form-group" align="{{__('messages.align')}}">
 
                                             @if($user->type == "Company") 

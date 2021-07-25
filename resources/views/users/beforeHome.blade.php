@@ -1,5 +1,10 @@
 @extends('layouts.site')
 
+@section('title')
+    More Info About You
+
+
+@endsection
 
 @section('content')
 <div class="container">
