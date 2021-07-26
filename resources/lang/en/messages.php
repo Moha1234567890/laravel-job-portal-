@@ -176,6 +176,12 @@ return [
    want it to be a company specfiy so and if not you can skip this page and it will be a jobseeker and you will not be able to change this again",
    "Skip" => "SKIP NOW", 
 
+   //profile page
+   "Gerneral Info" => "Gerneral Info",
+   "My Social Media" => "My Social Media",
+   "No CV yet" => "No CV yet"
+
+
 
 
 ];

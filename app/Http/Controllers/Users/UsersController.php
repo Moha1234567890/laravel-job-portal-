@@ -171,21 +171,19 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $companyJobs =  DB::table('users')
         ->join('jobs', 'users.id', '=', 'jobs.user_id')
-        ->select('jobs.status','jobs.jobcategory', DB::raw("count(jobs.jobcategory) as count"))
-        ->where(
-            'users.type', '=', 'Company',
-            
-            
-        )->orWhere('users.id','=', $id)
+        ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'users.location', 'users.mobile', 'users.job_title', DB::raw("count(jobs.jobcategory) as count"))
+        ->where('users.id','=', $id)
         ->groupBy('jobs.jobcategory')
+        ->limit(3)
+        ->orderBy('created_at','desc')
 
 
-
+ 
         ->get();
 
-        // return $companyJobs;
+        //return $user;
 
-        return view('users.publicProfile', compact('user'));
+       return view('users.publicProfile', compact('user','companyJobs'));
 
     }
 

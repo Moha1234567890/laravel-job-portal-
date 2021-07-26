@@ -84,10 +84,15 @@
                                                 {{ Auth::user()->name }}
                                                 </a>
                                                 <ul class="submenu">
+                                                    <li> <a  class="dropdown-item text-primary" href="{{ route('profile.for.public', Auth::user()->id) }}"
+                                                        >
+                                                            {{ __('messages.profile') }}
+                                                        </a>
+                                                    <li> 
                                                    
                                                     <li> <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >
-                                                            {{ __('messages.profile') }}
+                                                            {{ __('messages.edit profile') }}
                                                         </a>
                                                     <li>  <a  class="dropdown-item text-primary" href="{{ route('profile.update.image.get', Auth::user()->id) }}"
                                                         >
