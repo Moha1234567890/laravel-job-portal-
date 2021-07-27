@@ -127,12 +127,20 @@
                                                   </div>
                                             @endforeach
                                           @else 
-                                            <h1> you are a jobseeker</h1>
                                           @endif  
                                       @endif
+
+
                                   </div>
+
                                 </section>
-                                  </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <div align="center">
+                                        <a  class="header-margin btn btn-lg btn-success" href="{{ route('more.jobs', Auth::user()->id) }}" >{{__('messages.View more jobs of this company')}}</a>
+                                      </div>
+                                    </div>
+                                </div>
                 
                 
         </section>

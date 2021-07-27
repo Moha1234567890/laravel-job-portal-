@@ -14,7 +14,9 @@ class Email extends Model
       'id',
       'job_id_email',
       'to_user',
-      'from_user'
+      'from_user',
+      'user_id',
+      'user_name'
     ];
 
     public $timestamps = true;

@@ -92,7 +92,7 @@
                                                    
                                                     <li> <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >
-                                                            {{ __('messages.edit profile') }}
+                                                            {{ __('messages.Edit Profile') }}
                                                         </a>
                                                     <li>  <a  class="dropdown-item text-primary" href="{{ route('profile.update.image.get', Auth::user()->id) }}"
                                                         >

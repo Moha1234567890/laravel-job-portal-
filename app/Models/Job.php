@@ -53,4 +53,9 @@ class Job extends Model
     public function getCategory() {
         return $this->belongsTo('App\Models\Category','jobcategory','name');
     }
+
+    public function emails()
+    {
+        return $this->hasMany('App\Models\Email','job_id_email', 'user_id');
+    }
 }

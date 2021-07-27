@@ -171,7 +171,8 @@ return [
     "My Social Media" => "حساباتي علي مواقع التواصل الاجتماعي",
     "No CV yet" => "لا يوجد سيره ذاتيه حتي الان",
     
-   "edit profile" => "تعديل الحساب",
+   "Edit Profile" => "تعديل الحساب",
+   "View more jobs of this company" => "المزيد من الوظائف لهذه الشركه"
     
 
     

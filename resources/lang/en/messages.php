@@ -179,9 +179,9 @@ return [
    //profile page
    "Gerneral Info" => "Gerneral Info",
    "My Social Media" => "My Social Media",
-   "No CV yet" => "No CV yet"
-
-
+   "No CV yet" => "No CV yet",
+   "Edit Profile" => "edit profile",
+   "View more jobs of this company" => "View more jobs of this company",
 
 
 ];

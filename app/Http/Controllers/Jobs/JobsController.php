@@ -233,7 +233,9 @@ class JobsController extends Controller
        Email::create([
             'job_id_email' => $data['id'],
             'to_user'      => $data['to'],
-            'from_user'    => $data['from']
+            'from_user'    => $data['from'],
+            'user_id'      => Auth::user()->id,
+            'user_name'    => Auth::user()->name
 
 
         ]);
