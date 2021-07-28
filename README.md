@@ -8,24 +8,22 @@
 
 Just like any other laravel project, change the name of .env.example file to .env and change your DB and server data. then run command. 
 
----
-**NOTE**
-
-php artisan key:generate
 
 
----
+> php artisan key:generate
+
+
+
 to generate the app_key to your app
 
 And then run 
 
----
-**NOTE**
-
-php artisan serve
 
 
----
+> php artisan serve
+
+
+
 
 ## Introducing JOBHUB
 
