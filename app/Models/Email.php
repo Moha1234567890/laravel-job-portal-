@@ -21,6 +21,10 @@ class Email extends Model
 
     public $timestamps = true;
 
+    public function myJobs()
+    {
+        return $this->belongsTo('App\Models\Job', 'id');
+    } 
 
 
 }

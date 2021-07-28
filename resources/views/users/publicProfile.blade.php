@@ -116,11 +116,16 @@
                                                           <strong>{{ ucwords($job->companyname) }}</strong>
                                                           <p>{{ strip_tags(substr($job->jobdesc, 0, 125)) }}
                                                           </p>
-                                                          <h2> 
+
+                                                          <p>Number of Applicants: {{ 
+                                                          $job->count }}
+                                                          </p>
+                                                          
+                                                          <h2 > 
                                                               <span class="{{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
                                                           </h2>
                                                          
-                                                          {{-- <a href="#" class="more-btn">Browse Job</a> --}}
+                                                          {{-- <a href="#" class="more-btn">{{ $job->count }}</a> --}}
                                                       </div>
                                                      
                                                     
@@ -137,7 +142,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                       <div align="center">
-                                        <a  class="header-margin btn btn-lg btn-success" href="{{ route('more.jobs', Auth::user()->id) }}" >{{__('messages.View more jobs of this company')}}</a>
+                                        @if(isset($user) && $user->count() > 0)
+                                        <a  class="header-margin btn btn-lg btn-success" href="{{ route('more.jobs', $user->id) }}" >{{__('messages.View more jobs of this company')}}</a>
+                                        @endif
                                       </div>
                                     </div>
                                 </div>

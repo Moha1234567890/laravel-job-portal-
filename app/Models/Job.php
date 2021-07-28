@@ -56,6 +56,6 @@ class Job extends Model
 
     public function emails()
     {
-        return $this->hasMany('App\Models\Email','job_id_email', 'user_id');
+        return $this->hasMany('App\Models\Email','job_id_email');
     }
 }

@@ -200,12 +200,12 @@
 
                                             </div>
                                         </div>
-                                        <div class="form-group pull-{{__('messages.align')}}" align="{{__('messages.align')}}">
+                                        {{-- <div class="form-group pull-{{__('messages.align')}}" align="{{__('messages.align')}}">
                                             <label for="exampleFormControlSelect1">{{__('messages.Type')}}: </label>
                                             <br>
                     
                     
-                                            <select class="form-control" name="type" align="{{__('messages.align')}}" >
+                                            {{-- <select class="form-control" name="type" align="{{__('messages.align')}}" >
                     
                                                 <optgroup label="Choose type">
                                                     @if($user->type == "Jobseeker")
@@ -219,12 +219,12 @@
                                                     @endif
                                                 </optgroup>
                     
-                                            </select>
+                                            </select> 
                                             <br>
                
-                                        </div>
-                                        <br>
-                                        <br><br><br>
+                                        </div> --}}
+                                        {{-- <br>
+                                        <br><br><br> --}}
                                         <div class="form-group" align="{{__('messages.align')}}">
                                             <div class="col-xs-6">
                                                 <label  ><h4>{{__('messages.Desc')}}: </h4></label>
@@ -270,6 +270,37 @@
                                     <hr>
 
                                 </div>
+                                @if(isset($getJobs) && $getJobs->count() > 0 AND !$getJobs_counter == null )
+
+                                @foreach($getJobs as $job)  
+                                <div class="single-services mb-5 hover-eff">
+                                   
+                                  
+                                    <div class="services-ion">
+                                        <a href="{{route('browse.one.job', $job->id)}}"><img src="{{asset('assets/img/icon/services1.svg')}}" class="" alt=""></a>
+                                    </div>
+                                    <div class="services-cap">
+                                        <h5><a href="{{route('browse.one.job', $job->id)}}">{{ ucwords($job->jobtitle) }}</a></h5>
+                                        <strong>{{ ucwords($job->company_name) }}</strong>
+                                        <p>{{ strip_tags(substr($job->jobdesc, 0, 125)) }}
+                                        </p>
+                                        <h2> 
+                                            <span class="{{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>
+                                        </h2>
+                                       
+                                        
+                                    </div>
+                                   
+                                  
+                                </div>
+                                @endforeach
+                                @else
+                                      <div class="alert alert-danger" align="{{__('messages.align')}}">
+                                          {{__('messages.We have no records of this search')}}
+                  
+                                      </div>
+                                @endif
+                  
                     </div><!--/col-9-->
                 </div><!--/row-->
                     </div>
