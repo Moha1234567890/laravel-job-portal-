@@ -6,7 +6,7 @@
 
 ## Setting Up and Running
 
-Just like any other laravel project, change the name of .env.example file to .env and change your DB and server data. then run command. 
+Just like any other laravel project, change the name of .env.example file to .env and change your DB and server data, after that open phpmyadmin and then import DB file you will find it in folder in the root project named "SQL_FILE". then run command. 
 
 
 
