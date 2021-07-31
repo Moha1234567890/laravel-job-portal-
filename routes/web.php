@@ -40,8 +40,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     Route::group(['prefix' => 'job'], function() {
 
-        Route::get('create','JobsController@create')->name('create.job')->middleware('auth');
-        Route::post('create','JobsController@store')->name('store.job');
+        Route::get('create','JobsController@create')->name('create.job')->middleware('auth', 'CheckForCreate');
+        Route::post('create','JobsController@store')->name('store.job')->middleware('CheckForCreate');
         Route::get('cats','JobsController@cats')->name('browse.jobs.cats');
         Route::get('cities','JobsController@cities')->name('browse.jobs.cities');
         Route::get('job-title/{job_title}','JobsController@jobTitle')->name('browse.jobs.jobtitle');
@@ -79,6 +79,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
         Route::get('profile/{id}', 'UsersController@profileForPublic')->name('profile.for.public');
         Route::get('more-jobs/{id}', 'UsersController@moreJobs')->name('more.jobs');
+        Route::get('my-jobs/{id}', 'UsersController@myJobs')->name('my.jobs');
+
+        
 
 
 

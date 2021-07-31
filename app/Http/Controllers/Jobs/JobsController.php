@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Jobs;
+//use Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SearchRequest;

@@ -2,7 +2,10 @@
 
 
 @section('title')
-    Update your Profile
+   @if(isset($user) && $user->count() > 0)
+   {{ $user->name  }}
+
+   @endif
 
 
 @endsection
@@ -117,9 +120,7 @@
                                                           <p>{{ strip_tags(substr($job->jobdesc, 0, 125)) }}
                                                           </p>
 
-                                                          <p>Number of Applicants: {{ 
-                                                          $job->count }}
-                                                          </p>
+                                                       
                                                           
                                                           <h2 > 
                                                               <span class="{{$job->jobtype == 'full time' ? 'badge badge-success ': 'badge badge-danger'}}">{{$job->jobtype}}</span>

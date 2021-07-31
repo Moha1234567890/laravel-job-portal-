@@ -28,12 +28,10 @@ class CheckForMoreInfo
 
           } 
 
-          
-
-
-
-
-        } 
+        }
+        
+       
+      
 
       
 

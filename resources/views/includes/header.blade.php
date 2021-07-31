@@ -155,9 +155,14 @@
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-65">
-                                    <a href="{{route('create.job')}}" class="border-btn">{{__('messages.Post a Job')}}</a>
-                                </div>
+                                @if(Auth::user()->type == "Company")
+                                    <div class="header-right-btn d-none d-lg-block ml-65">
+                                        <a href="{{route('create.job')}}" class="border-btn">{{__('messages.Post a Job')}}</a>
+                                    </div>
+
+                               
+                                  
+                                @endif  
                                 @endguest
                             </div>
                         </div>

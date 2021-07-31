@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'CheckForUrl' => \App\Http\Middleware\CheckForUrl::class,
         'CheckForMoreInfo' => \App\Http\Middleware\CheckForMoreInfo::class,
+        'CheckForCreate' => \App\Http\Middleware\CheckForCreate::class,
         'StopAccessLoad' => \App\Http\Middleware\StopAccessLoad::class,
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,

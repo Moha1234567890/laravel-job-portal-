@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Users;
+//use Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UsersRequest;
@@ -12,7 +13,6 @@ use App\Http\Requests\JobsRequest;
 use App\Mail\ApplyMail;
 use App\User;
 use Illuminate\Support\Facades\DB;
-
 use App\Models\SavedJob;
 use App\Models\Email;
 
@@ -169,23 +169,14 @@ class UsersController extends Controller
 
     public function profileForPublic($id) {
         $user = User::findOrFail($id);
-        $companyJobs =  DB::table('jobs')
-        ->rightJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
-        ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
-         'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
-          DB::raw("count(emails.job_id_email) as count"))
-        ->where('jobs.user_id','=', $id)
-       
-        ->groupBy('emails.job_id_email')
-        ->orderBy('created_at','desc')
+        $companyJobs =  Job::select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
+        'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype')->where('user_id', $id)->get();
 
-        ->get();
-
-
+      
  
       
 
-        //return $user;
+        //return $companyJobs;
 
         return view('users.publicProfile', compact('user','companyJobs'));
 
@@ -225,7 +216,75 @@ class UsersController extends Controller
         // return $myJobs;
     }
 
+    public function myJobs($id) {
+        // $moreJobs =  DB::table('jobs')
+        // ->leftJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
+        // ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
+        //  'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
+        //   DB::raw("count(emails.job_id_email) as count"))
+        // ->where('jobs.user_id','=', $id)
+       
+        // ->groupBy('emails.job_id_email')
+        // ->orderBy('created_at','desc')
 
+        // ->get();
+
+        // foreach($moreJobs as $moreJob) {
+        //     if($moreJob->count == 0) {
+        //         $moreJobs =  DB::table('jobs')
+               
+        //         ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
+        //          'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype')
+        //         ->where('jobs.user_id','=', $id)
+               
+               
+        //         ->orderBy('created_at','desc')
+        
+        //         ->get();
+
+        //         return $moreJobs;
+        //     } else {
+        //         $moreJobs =  DB::table('jobs')
+        //         ->leftJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
+        //         ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
+        //          'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
+        //           DB::raw("count(emails.job_id_email) as count"))
+        //         ->where('jobs.user_id','=', $id)
+               
+        //         ->groupBy('emails.job_id_email')
+        //         ->orderBy('created_at','desc')
+        
+        //         ->get();
+
+        //         //return $moreJobs;
+
+
+                
+    
+
+                
+
+        //     }
+
+            $users = DB::table('emails as A')
+                ->join('emails as B', 'A.job_id_email', '=', 'B.job_id_email')
+                ->RightJoin('jobs', 'A.job_id_email', '=', 'jobs.id')
+                ->select('A.to_user','A.job_id_email AS job_id_email', 
+                'B.to_user','B.from_user AS from_user', 'jobs.user_id',
+                'jobs.jobtitle')
+                ->where('A.to_user', Auth::user()->email)
+                ->distinct()
+                ->get();
+     
+                return $users;
+
+           
+
+      
+        //}
+
+       
+    } 
 
 
 }
