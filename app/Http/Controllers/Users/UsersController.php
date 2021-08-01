@@ -266,22 +266,22 @@ class UsersController extends Controller
 
         //     }
 
-            $users = DB::table('emails as A')
+            $applications = DB::table('emails as A')
                 ->join('emails as B', 'A.job_id_email', '=', 'B.job_id_email')
                 ->RightJoin('jobs', 'A.job_id_email', '=', 'jobs.id')
-                ->select('A.to_user','A.job_id_email AS job_id_email', 
+                ->select('A.to_user', 'B.cv_user', 'B.user_id as applicant_id', 'A.job_id_email AS job_id_email', 
                 'B.to_user','B.from_user AS from_user', 'jobs.user_id',
                 'jobs.jobtitle')
                 ->where('A.to_user', Auth::user()->email)
                 ->distinct()
                 ->get();
      
-                return $users;
+                //return $applications;
 
            
 
       
-        //}
+            return view('users.myJobs', compact('applications'));
 
        
     } 

@@ -15,6 +15,7 @@ class Email extends Model
       'job_id_email',
       'to_user',
       'from_user',
+      'cv_user',
       'user_id',
       'user_name'
     ];

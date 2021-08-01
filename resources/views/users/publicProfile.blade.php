@@ -143,9 +143,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                       <div align="center">
-                                        @if(isset($user) && $user->count() > 0)
+                                        {{-- @if(isset($user) && $user->count() > 0)
                                         <a  class="header-margin btn btn-lg btn-success" href="{{ route('more.jobs', $user->id) }}" >{{__('messages.View more jobs of this company')}}</a>
-                                        @endif
+                                        @endif --}}
                                       </div>
                                     </div>
                                 </div>

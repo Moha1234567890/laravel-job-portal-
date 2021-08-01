@@ -182,6 +182,12 @@ return [
    "No CV yet" => "No CV yet",
    "Edit Profile" => "edit profile",
    "View more jobs of this company" => "View more jobs of this company",
+  //my jobs
 
+  "Sent you" => "Sent you",
+  "For" => "For",
+  "An Application" => "An Application",
+  "my jobs details" => "my jobs details",
+  "Your jobs don't have any applications yet" => "Your jobs don't have any applications yet",
 
 ];

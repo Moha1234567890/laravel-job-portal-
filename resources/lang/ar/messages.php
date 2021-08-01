@@ -172,7 +172,15 @@ return [
     "No CV yet" => "لا يوجد سيره ذاتيه حتي الان",
     
    "Edit Profile" => "تعديل الحساب",
-   "View more jobs of this company" => "المزيد من الوظائف لهذه الشركه"
+   "View more jobs of this company" => "المزيد من الوظائف لهذه الشركه",
+   "Sent you" => "ارسل اليك",
+   "For" => "ل",
+   "An Application" => "السيره الذاتيه",
+   "my jobs details" => "تفاصيل الوظائف",
+   "Your jobs don't have any applications yet" => "وظائفك ليس لها أي طلبات حتي الان",
+
+
+
     
 
     

@@ -89,6 +89,19 @@
                                                             {{ __('messages.profile') }}
                                                         </a>
                                                     <li> 
+                                                        @if(Auth::user()->type == "Company")
+                                                            <li> <a  class="dropdown-item text-primary" href="{{ route('my.jobs', Auth::user()->id) }}"
+                                                                    >
+                                                                        {{ __('messages.my jobs details') }}
+                                                                    </a>
+                                                            <li> 
+                                                        @endif        
+
+                                                    <li><a  class="dropdown-item text-primary" href="{{ route('my.jobs', Auth::user()->id) }}"
+                                                            >
+                                                                {{ __('messages.profile') }}
+                                                        </a>
+                                                    <li> 
                                                    
                                                     <li> <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >

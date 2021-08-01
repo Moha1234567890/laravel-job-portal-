@@ -62,24 +62,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 });
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','CheckForUrl'], 'namespace' => 'users',], function() {
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'], 'namespace' => 'users',], function() {
 
     Route::group(['prefix' => 'user'], function() {
 
-        Route::get('/profile-update/{id}', 'UsersController@profile')->name('profile');
-        Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update');
-        Route::post('profile-update-cv/{id}', 'UsersController@updateCv')->name('profile.update.cv');
-        Route::get('profile-image-update/{id}', 'UsersController@updateImageGet')->name('profile.update.image.get');
+        Route::get('/profile-update/{id}', 'UsersController@profile')->name('profile')->middleware('CheckForUrl');
+        Route::post('profile-update/{id}', 'UsersController@update')->name('profile.update')->middleware('CheckForUrl');
+        Route::post('profile-update-cv/{id}', 'UsersController@updateCv')->name('profile.update.cv')->middleware('CheckForUrl');
+        Route::get('profile-image-update/{id}', 'UsersController@updateImageGet')->name('profile.update.image.get')->middleware('CheckForUrl');
 
-        Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image');
+        Route::post('profile-image-update/{id}', 'UsersController@updateImage')->name('profile.update.image')->middleware('CheckForUrl');
 
-        Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs');
+        Route::get('saved-jobs/{saved_id}', 'UsersController@savedJobs')->name('saved.jobs')->middleware('CheckForUrl');
         Route::get('more-info', 'UsersController@createMoreInfo')->name('moreinfo')->middleware('CheckForMoreInfo');
         Route::post('more-info//{id}', 'UsersController@storeMoreInfo')->name('store.more.info')->middleware('CheckForMoreInfo');
 
         Route::get('profile/{id}', 'UsersController@profileForPublic')->name('profile.for.public');
         Route::get('more-jobs/{id}', 'UsersController@moreJobs')->name('more.jobs');
-        Route::get('my-jobs/{id}', 'UsersController@myJobs')->name('my.jobs');
+        Route::get('my-jobs/{id}', 'UsersController@myJobs')->name('my.jobs')->middleware('CheckForUrl');
 
         
 

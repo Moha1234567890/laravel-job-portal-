@@ -235,6 +235,8 @@ class JobsController extends Controller
             'job_id_email' => $data['id'],
             'to_user'      => $data['to'],
             'from_user'    => $data['from'],
+            'cv_user'      => $request->image->store('cvs','public'),
+            //'subject'      => $data['subject'],
             'user_id'      => Auth::user()->id,
             'user_name'    => Auth::user()->name
 
