@@ -97,11 +97,11 @@
                                                             <li> 
                                                         @endif        
 
-                                                    <li><a  class="dropdown-item text-primary" href="{{ route('my.jobs', Auth::user()->id) }}"
+                                                    {{-- <li><a  class="dropdown-item text-primary" href="{{ route('my.jobs', Auth::user()->id) }}"
                                                             >
                                                                 {{ __('messages.profile') }}
                                                         </a>
-                                                    <li> 
+                                                    <li>  --}}
                                                    
                                                     <li> <a  class="dropdown-item text-primary" href="{{ route('profile', Auth::user()->id) }}"
                                                         >

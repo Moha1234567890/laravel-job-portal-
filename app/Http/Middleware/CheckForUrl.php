@@ -60,6 +60,18 @@ class CheckForUrl
 
         }
 
+        $userMyJobs = User::findOrFail(Auth::user()->id);
+
+
+        if($request->url('user/more-info') ) {
+           // $user = ($request->route('more-info'));
+          if($userMyJobs->type !== "Company") {
+            return redirect()->route('home');
+
+          } 
+
+        }
+
          
         
       

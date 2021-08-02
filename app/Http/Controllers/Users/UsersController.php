@@ -182,89 +182,11 @@ class UsersController extends Controller
 
     }
 
-    public function moreJobs($id) {
-        // $id = Job::findOrFail($id);
-
-        $moreJobs =  DB::table('jobs')
-        ->rightJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
-        ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
-         'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
-          DB::raw("count(emails.job_id_email) as count"))
-        ->where('jobs.user_id','=', $id)
-       
-        ->groupBy('emails.job_id_email')
-        ->orderBy('created_at','desc')
-
-        ->get();
-
-        return $moreJobs;
-
-      
-
-        
-
-
-        //$myJobs = Job::with('emails')->find(73);
-
-       
-
-        // $myJobs = Job::whereHas('emails', function ($query) use($id) {
-        //     //return $query->where('id', '=', 'job_id_email')
-        //                 return $query->where('user_id', '=', $id);
-        // })->get();
-
-        // return $myJobs;
-    }
-
-    public function myJobs($id) {
-        // $moreJobs =  DB::table('jobs')
-        // ->leftJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
-        // ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
-        //  'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
-        //   DB::raw("count(emails.job_id_email) as count"))
-        // ->where('jobs.user_id','=', $id)
-       
-        // ->groupBy('emails.job_id_email')
-        // ->orderBy('created_at','desc')
-
-        // ->get();
-
-        // foreach($moreJobs as $moreJob) {
-        //     if($moreJob->count == 0) {
-        //         $moreJobs =  DB::table('jobs')
-               
-        //         ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
-        //          'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype')
-        //         ->where('jobs.user_id','=', $id)
-               
-               
-        //         ->orderBy('created_at','desc')
-        
-        //         ->get();
-
-        //         return $moreJobs;
-        //     } else {
-        //         $moreJobs =  DB::table('jobs')
-        //         ->leftJoin('emails', 'jobs.id', '=', 'emails.job_id_email')
-        //         ->select('jobs.status','jobs.created_at as created_at','jobs.jobcategory','jobs.id', 
-        //          'jobs.jobtitle', 'jobs.companyname', 'jobs.jobdesc', 'jobs.jobtype', 'emails.user_id as user_id', 'emails.user_name as user_name', 
-        //           DB::raw("count(emails.job_id_email) as count"))
-        //         ->where('jobs.user_id','=', $id)
-               
-        //         ->groupBy('emails.job_id_email')
-        //         ->orderBy('created_at','desc')
-        
-        //         ->get();
-
-        //         //return $moreJobs;
-
-
-                
+   
     
 
-                
-
-        //     }
+    public function myJobs($id) {
+    
 
             $applications = DB::table('emails as A')
                 ->join('emails as B', 'A.job_id_email', '=', 'B.job_id_email')

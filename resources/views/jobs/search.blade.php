@@ -55,6 +55,78 @@
                     {!!  $getJobs -> links() !!}
             </div>
            </div>
+
+
+             <div class="col-md-8">
+            <form action="{{route('search')}}" method="POST">
+                @csrf
+                <h3>Search</h3>
+                <div class="form-group pb-3">
+                    <input type="text" name="mykeyword" class="form-control" value="{{ old('keyword', $selected_keyword) }}" placeholder="Search word here">
+                </div>
+
+                <div class="pb-3">
+                    <h3>ex</h3>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="ex" value="ex_1_3"> 1 - 3
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="ex" value="ex_3_6"> 3 - 6
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="ex" value="ex_6_9"> 6 - 9
+                        </label>
+                    </div>
+                    {{-- <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="price" value="price_3001_5000"> 9+
+                        </label>
+                    </div> --}}
+                </div>
+
+                <div class="pb-3">
+                    <h3>Category</h3>
+                    @foreach($categories as $category)
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="category" value="{{ $category->id }}" {{ isset($selected_category) && $selected_category == $category->id ? 'checked' : '' }}> {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- <div class="pb-3">
+                    <h3>Tags</h3>
+                    @foreach($tags as $tag)
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="tags[]" value="{{ $tag->id }}" {{ isset($selected_tags) && in_array($tag->id, $selected_tags) ? 'checked' : '' }}> {{ $tag->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div> --}} 
+             
+
+
+
+                <div class="form-group pb-3">
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+
+                    <a href="" class="btn btn-danger btn-block">Reset</a>
+                </div>
+            </form>
+            </div>
+            </div>
+
+
+           
+
+        </div>
         </div>
     </section>
 

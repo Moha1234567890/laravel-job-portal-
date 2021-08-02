@@ -53,7 +53,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post('apply','JobsController@send')->name('apply.job');
         Route::post('save','JobsController@save')->name('save.job');
         Route::get('delete/{job_id}','JobsController@delete')->name('delete.job');
-        Route::get('search','JobsController@search')->name('search');
+        Route::any('search','JobsController@search')->name('search');
        
     });
 
@@ -78,7 +78,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post('more-info//{id}', 'UsersController@storeMoreInfo')->name('store.more.info')->middleware('CheckForMoreInfo');
 
         Route::get('profile/{id}', 'UsersController@profileForPublic')->name('profile.for.public');
-        Route::get('more-jobs/{id}', 'UsersController@moreJobs')->name('more.jobs');
         Route::get('my-jobs/{id}', 'UsersController@myJobs')->name('my.jobs')->middleware('CheckForUrl');
 
         

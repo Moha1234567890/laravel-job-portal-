@@ -3,9 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Job extends Model
 {
+
+    use SearchableTrait;
+
+    protected $searchable = [
+        'columns' => [
+            'jobs.id' => 10,
+            'jobs.email'         => 10,
+            'jobs.jobtitle'        => 10,
+            'jobs.location'       => 10,
+            'jobs.region'      => 10,
+            'jobs.jobtype'     => 10,
+            'jobs.jobcategory'    => 10,
+            'jobs.jobdesc'   => 10,
+          
+         
+            'jobs.companyname'  => 10,
+          
+            'jobs.image' => 10
+        ]
+    ];
 
     protected $table = 'jobs';
 

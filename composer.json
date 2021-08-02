@@ -17,6 +17,8 @@
         "laravel/ui": "^2.4",
         "mariuzzo/laravel-js-localization": "^1.8",
         "mcamara/laravel-localization": "^1.6",
+        "nicolaslopezj/searchable": "1.*",
+
         "tohidplus/laravel-vue-translation": "^2.1"
     },
     "require-dev": {
