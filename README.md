@@ -45,7 +45,9 @@ And then run
 
 ### Admin End
 
-- The first page is about some stats about jobs and applications   
+- The first page is about some stats about jobs and applications
+- You can add unlimited number of admins
+   
 
 
 to be continued...  
