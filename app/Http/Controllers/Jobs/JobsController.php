@@ -349,46 +349,46 @@ class JobsController extends Controller
 
     public function search(SearchRequest $request) {
 
-        $selected_keyword = $request->has('mykeyword') ? $request->get('mykeyword') : null;
-        $selected_ex = $request->has('ex') ? $request->get('ex') : null;
-        $selected_category = $request->has('category') ? $request->get('category') : null;
+        // $selected_keyword = $request->has('mykeyword') ? $request->get('mykeyword') : null;
+        // $selected_ex = $request->has('ex') ? $request->get('ex') : null;
+        // $selected_category = $request->has('category') ? $request->get('category') : null;
 
-        $myJobs = Job::with(['category', 'jobs']);
+        // $myJobs = Job::with(['category', 'jobs']);
 
-        if ($selected_keyword != null){
-            $myJobs = $myJobs->search($selected_keyword);
-        }
+        // if ($selected_keyword != null){
+        //     $myJobs = $myJobs->search($selected_keyword);
+        // }
 
-        if ($selected_ex != null) {
-            $myJobs = $myJobs->when($selected_ex, function ($query) use ($selected_ex){
-               if ($selected_ex == 'price_1_3') {
-                   $query->whereBetween('ex', [1, 3]);
-               } elseif ($selected_ex == 'ex_3_6') {
-                   $query->whereBetween('ex', [3, 6]);
-               } elseif ($selected_ex == 'ex_6_9') {
-                   $query->whereBetween('ex', [6, 9]);
-               }
-            });
-        }
+        // if ($selected_ex != null) {
+        //     $myJobs = $myJobs->when($selected_ex, function ($query) use ($selected_ex){
+        //        if ($selected_ex == 'price_1_3') {
+        //            $query->whereBetween('ex', [1, 3]);
+        //        } elseif ($selected_ex == 'ex_3_6') {
+        //            $query->whereBetween('ex', [3, 6]);
+        //        } elseif ($selected_ex == 'ex_6_9') {
+        //            $query->whereBetween('ex', [6, 9]);
+        //        }
+        //     });
+        // }
 
-        if ($selected_category != null) {
-            $myJobs = $myJobs->whereCategoryId($selected_category);
-        }
+        // if ($selected_category != null) {
+        //     $myJobs = $myJobs->whereCategoryId($selected_category);
+        // }
 
-        $myJobs = $myJobs->orderByDesc('id');
+        // $myJobs = $myJobs->orderByDesc('id');
 
-        $categories = Category::all();
-        $jobs = Job::all();
+        // $categories = Category::all();
+        // $jobs = Job::all();
 
       
 
 
-        Search::create([
+        // Search::create([
 
-            'keyword'       => $request->keyword,
+        //     'keyword'       => $request->keyword,
 
 
-        ]);
+        // ]);
 
         $keyword = $request->get('keyword');
 
@@ -409,8 +409,9 @@ class JobsController extends Controller
 
 
         //return response()->json($myJobs);
+        //, 'categories', 'jobs', 'selected_keyword', 'selected_ex', 'selected_category', 'myJobs'
 
-        return view('jobs.search', compact('getJobs', 'getJobs_counter', 'categories', 'jobs', 'selected_keyword', 'selected_ex', 'selected_category', 'myJobs'));
+        return view('jobs.search', compact('getJobs', 'getJobs_counter'));
     }
 
     public function jobTitle($job_title) {

@@ -57,7 +57,7 @@
            </div>
 
 
-             <div class="col-md-8">
+             {{-- <div class="col-md-8">
             <form action="{{route('search')}}" method="POST">
                 @csrf
                 <h3>Search</h3>
@@ -89,7 +89,7 @@
                     </div> --}}
                 </div>
 
-                <div class="pb-3">
+                {{-- <div class="pb-3">
                     <h3>Category</h3>
                     @foreach($categories as $category)
                         <div class="form-check">
@@ -98,7 +98,7 @@
                             </label>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
 
                 {{-- <div class="pb-3">
                     <h3>Tags</h3>
@@ -114,13 +114,13 @@
 
 
 
-                <div class="form-group pb-3">
+                {{-- <div class="form-group pb-3">
                     <button type="submit" class="btn btn-primary btn-block">Search</button>
 
                     <a href="" class="btn btn-danger btn-block">Reset</a>
                 </div>
             </form>
-            </div>
+            </div> --}}
             </div>
 
 
