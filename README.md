@@ -47,6 +47,7 @@ And then run
 
 - The first page is about some stats about jobs and applications
 - You can add unlimited number of admins
+- You can add unlimited number of categories
    
 
 
